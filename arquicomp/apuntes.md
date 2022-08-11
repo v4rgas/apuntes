@@ -27,7 +27,8 @@ Assembler se encarga de hacer esta traducción
 Traduce un programa escrito de un lenguaje de alto nivel a uno de bajo
 
 # Lógica digital
-## Representación de números enteros
+La cantidad de bits disponible depende del computador, por lo que la precision es finita
+## Representación de números enteros (Unsigned Integers)
 ### Base 10
 Las personas pensamos en base 10 (10 símbolos). El valor numérico de un dígito depende del símbolo y la posición
 $$421 = 4 \cdot 10^2 + 2 \cdot 10^1 + 1 \cdot 10^0$$
@@ -50,3 +51,39 @@ Tres puntos de contacto:
 - Colector: Voltaje > Tierra
 - Base: Si el voltaje es menor que cierto valor transistor actúa como resistencia infinita
 - Emisor: Tierra
+
+
+### Compuertas Fundamentales
+**UN** transistor es equivalente a la compuerta **NOT**
+
+Si conectamos los transistores en serie corresponde a un **NAND**
+
+Si los conectamos en serie corresponde a un **NOR**
+
+### Circuitos Combinaciones
+Corresponde a los circuitos formados por compuertas lógicas (solo importan los inputs del instante, no tienen memoria)
+
+### Half Adder
+La suma de dos bits se comporta como un XOR
+El carry de esta suma se comporta como un AND
+
+Ambos juntos forman un HALF ADDER
+
+Dos Half Adders forman un Full Adder
+
+## Representación de números negativos
+### Signo y Magnitud
+El bit de mas a la izquierda al signo y el resto la magnitud
+$$101 = -2$$
+
+### Complemento de dos
+0001 = 1
+0010 = 2
+0011 = 3
+....
+011 = 7
+1001 = -7
+1011 = -6
+...
+
+
