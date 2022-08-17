@@ -27,3 +27,47 @@ Es una secuencia de largo variable donde cada celda tiene el mismo tamaño y apu
 
 Se almacenan de forma aleatoria en la memoria
 
+## Ordenación y Selectionsort
+Si se quiere encontrar un $a \in A$ la forma mas directa seria comparar cada uno lo que tendera complejidad O(n)
+
+### Secuencias ordenadas
+Secuencia ordenada es tal que $a_1\leq a_2 \leq ...\leq a_n$
+
+Si L es el input y L' corresponde al output como lista ordenada
+
+### Selection Sort
+1. L' parte vacía
+2. Encontrar el menor valor de L
+3. Borrar lo encontrado
+4. Escribirlo en L'
+5. Si quedan valores en L, volver a línea 2
+6. return L'
+
+#### Finitud
+Por cada iteración se saca un elemento, por lo que si L es finito, el algoritmo termina
+#### Correctitud
+P(n): Los primeros n valores borrados de L son los menos de L y ordenados en L'
+
+##### Caso base
+
+P(1) corresponde al estado de las listas liegos de borrar el menor elemento de L
+
+##### Hipotesis inductiva
+Supongamos que P(n) 
+
+##### Tesis
+Para P(n+1) sabemos que P(n) ya esta ordenado y por lo tanto el elemento restante ya es el mas grande de la lista original
+
+P(n+1) también esta ordenado
+
+#### Complejidad
+Dado que hay que ordenar los items uno por uno, hay que iterar al menos n veces
+- Revisar elemento: $\mathcal{O}(n)$
+- La busqueda de menor elemento fuera: $\mathcal{O}(n)$
+
+Total
+$$\mathcal{O}(n^2)$$
+Todo esto es sin contar el costo de insertar y quitar datos de L en L'
+
+##### Complejidad de memoria
+1

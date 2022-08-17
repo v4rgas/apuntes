@@ -77,13 +77,34 @@ El bit de mas a la izquierda al signo y el resto la magnitud
 $$101 = -2$$
 
 ### Complemento de dos
-0001 = 1
-0010 = 2
-0011 = 3
+0001 = 1,
+0010 = 2,
+0011 = 3,
 ....
-011 = 7
-1001 = -7
-1011 = -6
+011 = 7,
+1001 = -7,
+1011 = -6,
 ...
 
+Para pasar de positivos a negativos 
+1. Se invierten los bits: 0110 -> 1001
+2. Se suma uno: 1001+0001 = 1010
+
+### Resta
+Para restar se suman los números positivos con los negativos en complemento de dos
+### Circuito sumador restador
+Para hacer una resta con un ADDER se debe hacer NOT a cada uno de los bits del numero negativo y poner el carry como 1
+
+
+## Programacion
+### Multiplexor
+| S  | M0 |
+|----|----|
+| 0  |  A |
+|  1 | B  |
+
+Permite elegir uno de los dos inputs. Si es 0 pasa A si es 1 pasa B
+
+### Decodificador
+Convierte la información de n bits a uno de los 2^n outputs únicos
 
