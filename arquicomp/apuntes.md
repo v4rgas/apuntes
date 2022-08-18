@@ -163,3 +163,5 @@ Compara bits 1 a 1 y si son iguales output es 1, sino 0
 - Shift Right: $0010 \rightarrow 0001$ (EQUIVALENTE A DIVIDIR POR 2)
 
 ### Latch S-R
+Consiste en dos NAND o NOR interconectadas que permiten guardar un estado dependiendo del ultimo pulso enviado
+
