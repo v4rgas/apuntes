@@ -74,17 +74,47 @@ Para cualquier dos eventos
 $$E_1 \cup E_2 = P(E_1)+P(E_2) - P(E_1 \cap E_2)$$
 
 ### Métodos de Conteo
+
 Cuando S es finito se puede determinar la probabilidad de un suceso sumando las probabilidad de cada punto que componen el suceso
 
 #### Principio de Multiplicación
+
 Si un experimento esta compuesto de k experimentos de tamaños muestrales $n_i$
 $S = n_1 \times n_2 \times...\times n_k$
 
 #### Permutación
+
 Si C es un conjunta de objetos, de cuantas maneras podemos seleccion r objetos
+
 - Con Reemplazo: n^r
 - Sin Reemplazo $n \times (n-1) \times (n-2) ...$
 
 #### Combinación
+
 Muestreo sin remplazo sin importar el orden
 $$\binom{n}{r} = \frac{n!}{r! \times (n-r)!}$$
+
+### Probabilidad Condicional
+
+La probabilidad de que $E_1$ocurra dado $E_2$
+$$P(E_1 |E_2) = \frac{P(E_1 \cap E_2)}{P(E_2)}$$
+$$P(\bar{E}_1|E_2) = 1- P(E_1|E_2)$$
+**POR LO GENERAL** $P(E_1|E_2) \neq P(E_2|E_1)$
+
+### Independencia Estadística
+
+Si dos eventos son independientes, la ocurrencia de uno no afecta las probabilidades del otro
+
+Si $E_1$ y $E_2$ son independientes
+$$P(E_1 \cdot E_2) = P(E_1) \cdot P(E_2)$$
+
+### Ley Multiplicativa
+
+$$
+P(E_1 \cap E_2 \cap E_3) = \left\{
+\begin{array}{c l}
+P(E_3 | E_1 \cap E_2) \cdot P(E_2|E_1) \cdot P(E_1)\\
+P(E_1 \cap E_2 | E_3) \cdot P(E_3)
+\end{array}
+\right.
+$$

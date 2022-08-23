@@ -165,3 +165,13 @@ Compara bits 1 a 1 y si son iguales output es 1, sino 0
 ### Latch S-R
 Consiste en dos NAND o NOR interconectadas que permiten guardar un estado dependiendo del ultimo pulso enviado
 
+# Procesador
+Se utilizan dos registros como input para la ALU y y el output se vuelve a conectar a los registros
+
+Se agrega un AND entre el output de la ALU y el reloj
+
+Además de los registros existe una memoria del programa (Instruction Memory)
+## Instruction Memory
+Consiste muchos registros ordenados. Cada uno de estos registros almacena una instrucción que posteriormente se dará al procesado
+
+A la memoria de instrucciones se conecta un PC (Program Counter) el cual entrega la dirección de la próxima instrucción que se quiere dar
