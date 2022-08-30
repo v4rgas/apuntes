@@ -194,4 +194,11 @@ Sirve para para guardar las variables que vana  ser usadas en el programa
 
 Tiene un data in, un address y un data out
 
+## if y while
+Para poder implementar control de flujo se necesitan añadir mas instrucciones al assembly.
+
+CMP A,B compara contenidos
+JMP (Jump); JLE(Jump if less than or equal), JNE (Jump if not equal)
+
+Para añadir estas instrucciones se necesita añadir un ouput que sale de la alu y entra a la control unit para especificar si saltar o no
 

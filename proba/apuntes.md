@@ -131,3 +131,30 @@ $$P(A) = \Sigma^n_{i=1} P(A \cap E_i) = \Sigma^n_{i=1} P(A|E_i)P(E_i)$$
 
 $$P(A|E_j) \cdot P(E_j) = P(E_j|A) \cdot P(A)$$
 $$P(E_j|A) = \frac{P(A|E_j) \cdot P(E_j)}{P(A)}$$
+
+# Modelos analíticos de fenómenos aleatorios
+
+## Variables Aleatorias y Distribución de Probabilidad
+
+### Eventos y Variables Aleatorias
+
+Una variable aleatoria es un vehículo matemática para representar un evento
+
+Se pueden escribir eventos como
+$$E_1 = (a < X \leq b)$$
+$$E_2 = (c < X \leq d)$$
+
+### Distribución de Probabilidades
+Si X es una variable aleatorio, su probabilidad acumulada puede ser escrita como
+$$F_X(x) = P(X \leq x) \ \forall x \in \mathbb{R}$$
+Cuando X es discreta su probabilidad puntual se denota como
+$$p_X(x) = P(X=x)$$
+Por lo que
+$$F_X(x) = \Sigma_{x_i \leq x} p_X(x_i)$$
+
+Cuando X es continua
+$$P(a < X \leq b) = \int_a^b f_X(x)dx$$
+$$F_X(x) = P(X \leq x) = \int_{- \infty}^x f_x(t) dt$$
+$$f_X(x)=\frac{d}{dx}F_X(x)$$
+
+
