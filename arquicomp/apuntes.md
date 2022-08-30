@@ -50,6 +50,32 @@ $$1101 = 1 \cdot 2^3 + 1 \cdot 2^2 + 0 \cdot 2^1 + 1 \cdot 2^0$$
 
 Los bits se cuentan de izquierda a derecha partiendo del 0
 
+### Algoritmos para transformar
+#### Parte entera
+Se va dividiendo por el valor de la base sucesivamente y se guarda el resto
+
+Ejemplo 53 a base 3
+$$53/3: 2$$
+$$17/3: 2$$
+$$5/3: 2$$
+$$1/3: 1$$
+$$0/3: 0$$
+
+Luego se lee de abajo hacia arriba
+$$01222$$
+
+#### Parte decimal
+Se multilica por la base y me quedo con la parte entera
+$$0.534 \cdot 2: 1$$
+$$0.068 \cdot 2: 0$$
+$$0.136 \cdot 2: 0$$
+$$0.272 \cdot 2: 0$$
+$$0.544 \cdot 2: 1$$
+$$0.088 \cdot 2: 0$$
+
+Hasta tener un entero
+$$0,10001$$
+
 ## Compuertas
 
 Son la base eléctrica sobre la que se construyen los computadores, estan hechas de transistores
