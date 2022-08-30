@@ -163,15 +163,35 @@ Compara bits 1 a 1 y si son iguales output es 1, sino 0
 - Shift Right: $0010 \rightarrow 0001$ (EQUIVALENTE A DIVIDIR POR 2)
 
 ### Latch S-R
+
 Consiste en dos NAND o NOR interconectadas que permiten guardar un estado dependiendo del ultimo pulso enviado
 
 # Procesador
+
 Se utilizan dos registros como input para la ALU y y el output se vuelve a conectar a los registros
 
 Se agrega un AND entre el output de la ALU y el reloj
 
 Además de los registros existe una memoria del programa (Instruction Memory)
+
 ## Instruction Memory
+
 Consiste muchos registros ordenados. Cada uno de estos registros almacena una instrucción que posteriormente se dará al procesado
 
+## PC
+
 A la memoria de instrucciones se conecta un PC (Program Counter) el cual entrega la dirección de la próxima instrucción que se quiere dar
+
+## Opcode
+
+En vez de referenciar cada instrucción con una secuencia de bits de 8 de largo, podemos numerar cada una de estas instrucciones para disminuir la cantidad de bits necesaria para referirse a la instrucción
+
+## Assembly
+Es un version simbolica de los opcode
+
+## Data Memory
+Sirve para para guardar las variables que vana  ser usadas en el programa
+
+Tiene un data in, un address y un data out
+
+

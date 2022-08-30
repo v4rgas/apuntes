@@ -113,11 +113,22 @@ P(1) esta trivialmente ordenado si tenemos un elemento
 
 Luego de la enesima iteración, B esta ordenada
 
-#### Tesis 
+#### Tesis
 
 ##### Complejidad
+
 Insertar requiere dos pasos
+
 1. Busqueda posicion del dato
 2. Insercion: SI es busqueda binaria es $\mathcal{O}(log(n))$
 
+## Merge Sort
 
+### Merge
+
+Si tenemos dos secuencias ordenadas
+
+Merge(A,B):
+
+1. Iniciamos C vacía
+2. sean a y b los primeros elementos de A y B, extraemos el menor

@@ -118,3 +118,16 @@ P(E_1 \cap E_2 | E_3) \cdot P(E_3)
 \end{array}
 \right.
 $$
+
+La independencias de pares NO IMPLICA independencia total
+
+### Teorema de Probabilidades Totales
+
+Si $E_i$ son eventos colectivamente exhaustivos y mutuamente excluyentes:
+
+$$P(A) = \Sigma^n_{i=1} P(A \cap E_i) = \Sigma^n_{i=1} P(A|E_i)P(E_i)$$
+
+### Teorema de Bayes
+
+$$P(A|E_j) \cdot P(E_j) = P(E_j|A) \cdot P(A)$$
+$$P(E_j|A) = \frac{P(A|E_j) \cdot P(E_j)}{P(A)}$$
