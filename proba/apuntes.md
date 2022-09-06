@@ -202,3 +202,25 @@ Coeficiente de asimetría: $\theta_X = \frac{Skewness}{desviación^3}$
 Kurtosis: $E[(X-u_x)^4]$
 
 Coeficiente de curtosis: $K_X = \frac{Kurtosis}{desviación^4}-3$
+
+## Distribuciones de Probabilidad
+
+### Distribucion normal
+
+La funcion densidad de Normal($\mu, \sigma$)
+$$f_X(x) = \frac{1}{\sqrt{2 \pi \sigma^2}}exp\{ -\frac{1}{2}(\frac{x-\mu}{\sigma})^2\}$$
+
+$\mu$ hace que la funcion se desplace en el eje x
+
+$\sigma$ achata o levanta la curva
+
+Cuando $\mu=0, \sigma=1$ correponde a la Normal Estanda
+
+Su acumulada se denota como
+$$\phi(s) = F_S(s) = \int_{-\infty}^s\frac{1}{\sqrt{2 \pi}} e^{-x^2/2} dx$$
+$$\phi(-s) = 1 - \phi(s)$$
+
+Generalizando
+$$F_X(x) = \phi(\frac{x-\mu}{\sigma})$$
+para cualquier normal
+
