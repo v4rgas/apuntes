@@ -202,3 +202,7 @@ JMP (Jump); JLE(Jump if less than or equal), JNE (Jump if not equal)
 
 Para añadir estas instrucciones se necesita añadir un ouput que sale de la alu y entra a la control unit para especificar si saltar o no
 
+## Subrutinas
+Son funciones que se pueden llamar en cualquier linea, mueven el PC para ejecutarse y luego vuelven a donde fueron lalmadas habiendo sido ejecutadas
+
+
