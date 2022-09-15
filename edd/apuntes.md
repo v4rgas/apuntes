@@ -151,3 +151,11 @@ Una raiz es un nodo sin padre
 
 <!-- ABB almacena pares llave valor  -->
 <!-- Un á -->
+
+## Arbole sde busqueda 2-3
+Almacena una llave y un valor
+
+1. Un nodo puede ser un 2 nodo (una llave) o 3 nodo (2 llaves distintas y ordenadas)
+2. Un nodo puede tener 2 o 3 hijos
+
+

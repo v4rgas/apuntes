@@ -205,16 +205,16 @@ Coeficiente de curtosis: $K_X = \frac{Kurtosis}{desviación^4}-3$
 
 ## Distribuciones de Probabilidad
 
-### Distribucion normal
+### Distribución normal
 
-La funcion densidad de Normal($\mu, \sigma$)
+La función densidad de Normal($\mu, \sigma$)
 $$f_X(x) = \frac{1}{\sqrt{2 \pi \sigma^2}}exp\{ -\frac{1}{2}(\frac{x-\mu}{\sigma})^2\}$$
 
-$\mu$ hace que la funcion se desplace en el eje x
+$\mu$ hace que la función se desplace en el eje x
 
 $\sigma$ achata o levanta la curva
 
-Cuando $\mu=0, \sigma=1$ correponde a la Normal Estanda
+Cuando $\mu=0, \sigma=1$ corresponde a la Normal Estando
 
 Su acumulada se denota como
 $$\phi(s) = F_S(s) = \int_{-\infty}^s\frac{1}{\sqrt{2 \pi}} e^{-x^2/2} dx$$
@@ -224,3 +224,28 @@ Generalizando
 $$F_X(x) = \phi(\frac{x-\mu}{\sigma})$$
 para cualquier normal
 
+Media, mediana y moda son iguales en está distribución
+
+### Distribución Log-Normal
+$$f_X(x)=\frac{1}{\sqrt{2 \pi}(\zeta x)} exp(-\frac{1}{2}(\frac{ln(x)-\lambda}{\zeta})^2)$$
+Donde
+$$\lambda = E(ln(X))$$
+$$\zeta = \sqrt{Var(ln(X))}$$
+
+Importante notar que 
+
+Mediana = $exp(\lambda r)$
+
+$$P(X \leq x) = F_X(x) = \phi(\frac{ln(x)-\lambda}{\zeta})$$
+
+$$E(X^z) = e^{\lambda z}M_y(z \zeta)$$
+
+### Distribución Binomial
+$$p_X(x) = \binom{n}{x} p^x(1-p)^{n-x}$$
+$$F_X(x) = \sum p(x)$$
+$$E(X) = np$$
+
+### Distribución Geométrica
+Numero de experimentos hasta el primer exito
+$$P(N=n) = p(1-p)^{n-1}$$
+$$E(N) = \frac{1}{p}$$
