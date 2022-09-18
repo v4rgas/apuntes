@@ -213,18 +213,81 @@ A la memoria de instrucciones se conecta un PC (Program Counter) el cual entrega
 En vez de referenciar cada instrucción con una secuencia de bits de 8 de largo, podemos numerar cada una de estas instrucciones para disminuir la cantidad de bits necesaria para referirse a la instrucción
 
 ## Assembly
+
 Es un version simbolica de los opcode
 
 ## Data Memory
-Sirve para para guardar las variables que vana  ser usadas en el programa
+
+Sirve para para guardar las variables que vana ser usadas en el programa
 
 Tiene un data in, un address y un data out
 
 ## if y while
+
 Para poder implementar control de flujo se necesitan añadir mas instrucciones al assembly.
 
 CMP A,B compara contenidos
 JMP (Jump); JLE(Jump if less than or equal), JNE (Jump if not equal)
 
 Para añadir estas instrucciones se necesita añadir un ouput que sale de la alu y entra a la control unit para especificar si saltar o no
+
+## Subrutinas
+
+Son funciones que se pueden llamar en cualquier linea, mueven el PC para ejecutarse y luego vuelven a donde fueron lalmadas habiendo sido ejecutadas
+
+# Representacion de numeros de punto flotante
+
+$$|signo|mantisa|exponente$$
+
+El primer bit corresponde al signo del numero
+
+El siguiente es numero que quiero representar. Se le suma 1 automáticamente y ya que debe ser notación científica normalizada
+
+El siguiente es el exponente es el numero por el que va multiplicada la fracción en base 2. SIEMPRE va desfasado por 127: exponente = exponente - 127
+
+- 0: exponente = 0 y fraccion = 0
+- Numero no normalizado: exponente 0 y fraccion != 0
+- Infinito: exponente = max y fraccion = 0
+- NaN: exponente = 255 y fraccion != 0
+
+# Multiplicaciones
+## Numeros enteros
+Para multiplicar podemos sumar iterativamente haciendo shift hacia la izquierda
+
+$$1010 \times 1101$$
+$$+ 1010000\times 1$$
+$$+ 101000 \times 1$$
+$$+ 10100 \times 0$$
+$$+ 1010 \times 1$$
+
+## Números negativos
+## Números de punto flotante
+Sumo exponentes y multiplico mantisas
+IEEE754
+
+<!-- # Prueba -->
+<!-- Numeros de todo tipo -->
+<!-- Computador basico -->
+<!-- IEE754 -->
+<!-- Loops, subrutinas -->
+<!-- Assembly computador basico -->
+
+# Poner titulo
+## Endianes
+- Little endian: La direccion va en la posicion menos significativa
+- Big endian: La direccion va en la posciion más significativa
+
+## Alineacion
+Palabra alineada va en direcciones que son multiplo del largo de la memoria
+
+Palabra no alineada parte y termina en direciones entremedio de los multiplos
+
+## Direccionamiento
+Corresponde a como especificar en la instruccion donde estan los operandos
+### Modos
+- Inmediato: Dato codificado como parte de la instrucción
+- Directo: Dirección de memoria del dato
+- Por registro: Dirección del registro del dato
+- Indirecto por registro
+
 

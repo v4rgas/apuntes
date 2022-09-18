@@ -145,6 +145,7 @@ $$E_1 = (a < X \leq b)$$
 $$E_2 = (c < X \leq d)$$
 
 ### Distribución de Probabilidades
+
 Si X es una variable aleatorio, su probabilidad acumulada puede ser escrita como
 $$F_X(x) = P(X \leq x) \ \forall x \in \mathbb{R}$$
 Cuando X es discreta su probabilidad puntual se denota como
@@ -157,4 +158,94 @@ $$P(a < X \leq b) = \int_a^b f_X(x)dx$$
 $$F_X(x) = P(X \leq x) = \int_{- \infty}^x f_x(t) dt$$
 $$f_X(x)=\frac{d}{dx}F_X(x)$$
 
+## Medidas Descriptivas de Variables Aleatorias
 
+### Valores Centrales
+
+Valor medio/esperado:
+$$E(X) = u_x = \int_{-\infty}^{\infty} x \cdot f_X(x) dx$$
+o el promedio ponderado en el caso discreto
+
+Moda: Valor más frecuente o con mayor probabilidad
+
+Mediana: $F_X(x)=\frac{1}{2}$
+
+Si la distribución es simétrica las tres medidas son parecidas
+
+### Medidas de Posición
+
+Percentil es el $x_p$ tal que
+$$F_X(x_p)=p$$
+
+### Función Generadora de Momentos
+
+$$M_X(t) = E [ exp(tX) ]$$
+
+### Medidas de Dispersion
+
+Varianza: $Var(X) = E [ (X-u_x)^2 ]$
+
+Desviación Estandar: $\sqrt{Var(X)}$
+
+Coeficiente de variación: $\delta_X=\frac{\sigma}{u}$
+
+Rango: $max-min$
+
+IQR: $x_{0.75}-x_{0.25}$
+
+### Medidas de asimetría
+
+Skewness: $E[(X-u_x)^3]$
+
+Coeficiente de asimetría: $\theta_X = \frac{Skewness}{desviación^3}$
+
+Kurtosis: $E[(X-u_x)^4]$
+
+Coeficiente de curtosis: $K_X = \frac{Kurtosis}{desviación^4}-3$
+
+## Distribuciones de Probabilidad
+
+### Distribución normal
+
+La función densidad de Normal($\mu, \sigma$)
+$$f_X(x) = \frac{1}{\sqrt{2 \pi \sigma^2}}exp\{ -\frac{1}{2}(\frac{x-\mu}{\sigma})^2\}$$
+
+$\mu$ hace que la función se desplace en el eje x
+
+$\sigma$ achata o levanta la curva
+
+Cuando $\mu=0, \sigma=1$ corresponde a la Normal Estando
+
+Su acumulada se denota como
+$$\phi(s) = F_S(s) = \int_{-\infty}^s\frac{1}{\sqrt{2 \pi}} e^{-x^2/2} dx$$
+$$\phi(-s) = 1 - \phi(s)$$
+
+Generalizando
+$$F_X(x) = \phi(\frac{x-\mu}{\sigma})$$
+para cualquier normal
+
+Media, mediana y moda son iguales en está distribución
+
+### Distribución Log-Normal
+$$f_X(x)=\frac{1}{\sqrt{2 \pi}(\zeta x)} exp(-\frac{1}{2}(\frac{ln(x)-\lambda}{\zeta})^2)$$
+Donde
+$$\lambda = E(ln(X))$$
+$$\zeta = \sqrt{Var(ln(X))}$$
+
+Importante notar que 
+
+Mediana = $exp(\lambda r)$
+
+$$P(X \leq x) = F_X(x) = \phi(\frac{ln(x)-\lambda}{\zeta})$$
+
+$$E(X^z) = e^{\lambda z}M_y(z \zeta)$$
+
+### Distribución Binomial
+$$p_X(x) = \binom{n}{x} p^x(1-p)^{n-x}$$
+$$F_X(x) = \sum p(x)$$
+$$E(X) = np$$
+
+### Distribución Geométrica
+Numero de experimentos hasta el primer exito
+$$P(N=n) = p(1-p)^{n-1}$$
+$$E(N) = \frac{1}{p}$$

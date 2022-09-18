@@ -132,3 +132,30 @@ Merge(A,B):
 
 1. Iniciamos C vacía
 2. sean a y b los primeros elementos de A y B, extraemos el menor
+
+# Estructuas de datos
+
+## Diccionarios
+
+- Se puede asociar un valor a una llave
+- CRUD de valores asociados a una llave
+
+El objetivo principal es facilitar la búsqueda
+
+## Arbol bineario
+Cada nodo tiene <= 1 padre
+Cada nodo tiene a lo mas 2 hijos
+Una hoja es un nodo sin hijos
+Una raiz es un nodo sin padre
+<!-- ## Arbol bineario de busqueda -->
+
+<!-- ABB almacena pares llave valor  -->
+<!-- Un á -->
+
+## Arbole sde busqueda 2-3
+Almacena una llave y un valor
+
+1. Un nodo puede ser un 2 nodo (una llave) o 3 nodo (2 llaves distintas y ordenadas)
+2. Un nodo puede tener 2 o 3 hijos
+
+
