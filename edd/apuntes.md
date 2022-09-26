@@ -159,3 +159,11 @@ Almacena una llave y un valor
 2. Un nodo puede tener 2 o 3 hijos
 
 
+# RELLENAR
+
+## Arboles rojo-negro
+1. Cada nodo es rojo o negro
+2. La raíz es negra
+3. Si un nodo es rojo, sus hijos son negros
+3. La cantidad de nodos negros camino a cada hoja debe ser la misma
+4. Las hojas vacías son negras

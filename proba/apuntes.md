@@ -227,12 +227,13 @@ para cualquier normal
 Media, mediana y moda son iguales en está distribución
 
 ### Distribución Log-Normal
+
 $$f_X(x)=\frac{1}{\sqrt{2 \pi}(\zeta x)} exp(-\frac{1}{2}(\frac{ln(x)-\lambda}{\zeta})^2)$$
 Donde
 $$\lambda = E(ln(X))$$
 $$\zeta = \sqrt{Var(ln(X))}$$
 
-Importante notar que 
+Importante notar que
 
 Mediana = $exp(\lambda r)$
 
@@ -241,11 +242,44 @@ $$P(X \leq x) = F_X(x) = \phi(\frac{ln(x)-\lambda}{\zeta})$$
 $$E(X^z) = e^{\lambda z}M_y(z \zeta)$$
 
 ### Distribución Binomial
+
 $$p_X(x) = \binom{n}{x} p^x(1-p)^{n-x}$$
 $$F_X(x) = \sum p(x)$$
 $$E(X) = np$$
 
 ### Distribución Geométrica
+
 Numero de experimentos hasta el primer exito
 $$P(N=n) = p(1-p)^{n-1}$$
 $$E(N) = \frac{1}{p}$$
+
+### RELLENAR
+
+### Distribución de Poisson
+
+### Distribución Exponencial
+
+En un proceso de Poisson el tiempo transcurrido entre ocurrencia de eventos puede ser descrito por una distribución exponencial
+
+La probabilidad de un cierto tiempo hasta que la primera ocurrencia de un evento es equivalente a la probabildiad del evento no pasando hasta t en un proceso Poisson
+
+$$P(T_1>t) = P(X_t = 0) = e^{-vt}$$
+Con $X_t - Poisson(vt)$
+
+Por lo que
+
+$$F_T(t) = P(T_1 \leq t) = 1 - P(T_1 > t) = 1-e^{-vt}$$
+$$f_{T_1} = v e^{-vt}$$
+
+$$u_x = \frac{1}{v}, \sigma^2_X=\frac{1}{v^2}$$
+
+si se encuentra desplazo en a entonces
+$$u_x = \frac{1}{v} + a, \sigma^2_X=\frac{1}{v^2}$$
+$$t \rightarrow x-a$$
+$$t -> x-a$$
+
+### Distribución Gamma
+
+$$f_X(x) = \frac{v^k}{\Gamma(k)} x^{k-1} e^{-vk}$$
+con
+$$\Gamma(\alpha) = \int_0^{\infty} u^{\alpha - 1} e^{-u }du$$
