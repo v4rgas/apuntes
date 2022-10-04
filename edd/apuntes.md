@@ -181,9 +181,11 @@ El secundario es inserción/modificación eficiente de pares llave/valor
 ## Funciones de hash
 Una función que permite mapear un espacio de llaves a uno mas pequeño
 
-## Insercion con ecadnamiento
+$$h:K \rightarrow \{ 0,...,m-1 \}$$
+
+llamaremos valor de hash de k a K(k)
+
+## Insercion con cadenamiento
 Si al usar la función hash existe una colisión, pongo el valor al principio de la lista ligada
 
-
-
-
+## Ordenacion en tiempo lineal
