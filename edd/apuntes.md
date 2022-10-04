@@ -167,3 +167,23 @@ Almacena una llave y un valor
 3. Si un nodo es rojo, sus hijos son negros
 3. La cantidad de nodos negros camino a cada hoja debe ser la misma
 4. Las hojas vacías son negras
+
+# Tablas de Hash
+Dado una cantidad de elementos y una cantidad de llaves, una table de hash es una estructura que asocia llaves indexadas usando la función de hash
+## Diccionarios
+Es una estructura de datos con las siguientes operaciones 
+1. Asociar un valor a una llave
+
+El principal objetivo es tener una búsqueda eficiente de llaves
+
+El secundario es inserción/modificación eficiente de pares llave/valor
+
+## Funciones de hash
+Una función que permite mapear un espacio de llaves a uno mas pequeño
+
+## Insercion con ecadnamiento
+Si al usar la función hash existe una colisión, pongo el valor al principio de la lista ligada
+
+
+
+
