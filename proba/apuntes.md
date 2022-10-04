@@ -283,3 +283,26 @@ $$t -> x-a$$
 $$f_X(x) = \frac{v^k}{\Gamma(k)} x^{k-1} e^{-vk}$$
 con
 $$\Gamma(\alpha) = \int_0^{\infty} u^{\alpha - 1} e^{-u }du$$
+
+## Multiples Variables Aleatorias
+
+## Esperanza Condicional y Predicción
+
+$$
+E  h(y)|X=x  = \left \{
+    \begin{array}{c l}
+    1\\
+    2
+    \end{array}
+    \right.
+  
+$$
+
+$$
+P(E_1 \cap E_2 \cap E_3) = \left\{
+\begin{array}{c l}
+P(E_3 | E_1 \cap E_2) \cdot P(E_2|E_1) \cdot P(E_1)\\
+P(E_1 \cap E_2 | E_3) \cdot P(E_3)
+\end{array}
+\right.
+$$
