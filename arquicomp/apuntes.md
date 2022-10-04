@@ -189,8 +189,16 @@ Compara bits 1 a 1 y si son iguales output es 1, sino 0
 - Shift Right: $0010 \rightarrow 0001$ (EQUIVALENTE A DIVIDIR POR 2)
 
 ### Latch S-R
+Una entrada de Reset y una de Set que setean o reinician el valor de una salida
 
-Consiste en dos NAND o NOR interconectadas que permiten guardar un estado dependiendo del ultimo pulso enviado
+Se puede constuir con dos NAND interconectadas
+
+### D Latch
+Se toma un Latch S-R y se modifica de tal manera de que existe un pulso que permite o no la actualizacion de estado
+
+### Flip Flop
+El pulso del D Latch es a su vez un pulso corto emitido por le reloj
+
 
 # Procesador
 
@@ -231,9 +239,18 @@ JMP (Jump); JLE(Jump if less than or equal), JNE (Jump if not equal)
 
 Para añadir estas instrucciones se necesita añadir un ouput que sale de la alu y entra a la control unit para especificar si saltar o no
 
-## Subrutinas
+# Saltos y Subrutinas
 
-Son funciones que se pueden llamar en cualquier linea, mueven el PC para ejecutarse y luego vuelven a donde fueron lalmadas habiendo sido ejecutadas
+## Saltos
+Un salto incondicional es un salto a una instrucción especifica de la instruction memory sin ninguna condición. Funciona alternado el Program Counter
+
+Un salto solo ocurre en en condiciones específicas
+
+## Subrutinas
+Una subrutina es el equivalente a una funcion que es llamada y luego retorna a la linea siguiente
+
+Para su implementación es requerido un STACK el cual se encarga de ir guardando secuencialmente las direcciones desde las que la función es llamada
+
 
 # Representacion de numeros de punto flotante
 
