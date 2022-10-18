@@ -351,4 +351,22 @@ P(E_1 \cap E_2 | E_3) \cdot P(E_3)
 \right.
 $$
 
-$$\theta + k \pi cos(x)$$
+# Funciones de Variables Aleatorias
+
+### Suma de Variables Aleatorias Discretas
+
+Si X e Y son dos variables aleatorias discretas, $Z=X+Y$
+$$p_Z= \sum_{x+y=z} p_{x,y}(x,y) = \sum_{x} p_{x,y}(x,z-x)$$
+
+Si son independientes
+$$p_Z = p_X \cdot p_Y$$
+
+### Suma de Variables Aleatorias Continuas
+
+$$f_Z(z) = \int_{-\infty}^{\infty} f_{X,Y}(z-y,y)dy$$
+$$f_Z(z) = \int_{-\infty}^{\infty} f_{X,Y}(x,z-x)dx$$
+$$f_Z = f_X \cdot f_Y$$
+
+### Suma de normales
+
+$$X \pm Y = Normal(u_x \pm u_y, \sqrt{\sigma_x^2 + \sigma_y^2})$$
