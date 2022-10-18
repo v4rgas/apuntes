@@ -50,6 +50,32 @@ $$1101 = 1 \cdot 2^3 + 1 \cdot 2^2 + 0 \cdot 2^1 + 1 \cdot 2^0$$
 
 Los bits se cuentan de izquierda a derecha partiendo del 0
 
+### Algoritmos para transformar
+#### Parte entera
+Se va dividiendo por el valor de la base sucesivamente y se guarda el resto
+
+Ejemplo 53 a base 3
+$$53/3: 2$$
+$$17/3: 2$$
+$$5/3: 2$$
+$$1/3: 1$$
+$$0/3: 0$$
+
+Luego se lee de abajo hacia arriba
+$$01222$$
+
+#### Parte decimal
+Se multilica por la base y me quedo con la parte entera
+$$0.534 \cdot 2: 1$$
+$$0.068 \cdot 2: 0$$
+$$0.136 \cdot 2: 0$$
+$$0.272 \cdot 2: 0$$
+$$0.544 \cdot 2: 1$$
+$$0.088 \cdot 2: 0$$
+
+Hasta tener un entero
+$$0,10001$$
+
 ## Compuertas
 
 Son la base eléctrica sobre la que se construyen los computadores, estan hechas de transistores
@@ -163,8 +189,16 @@ Compara bits 1 a 1 y si son iguales output es 1, sino 0
 - Shift Right: $0010 \rightarrow 0001$ (EQUIVALENTE A DIVIDIR POR 2)
 
 ### Latch S-R
+Una entrada de Reset y una de Set que setean o reinician el valor de una salida
 
-Consiste en dos NAND o NOR interconectadas que permiten guardar un estado dependiendo del ultimo pulso enviado
+Se puede constuir con dos NAND interconectadas
+
+### D Latch
+Se toma un Latch S-R y se modifica de tal manera de que existe un pulso que permite o no la actualizacion de estado
+
+### Flip Flop
+El pulso del D Latch es a su vez un pulso corto emitido por le reloj
+
 
 # Procesador
 
@@ -205,9 +239,18 @@ JMP (Jump); JLE(Jump if less than or equal), JNE (Jump if not equal)
 
 Para añadir estas instrucciones se necesita añadir un ouput que sale de la alu y entra a la control unit para especificar si saltar o no
 
-## Subrutinas
+# Saltos y Subrutinas
 
-Son funciones que se pueden llamar en cualquier linea, mueven el PC para ejecutarse y luego vuelven a donde fueron lalmadas habiendo sido ejecutadas
+## Saltos
+Un salto incondicional es un salto a una instrucción especifica de la instruction memory sin ninguna condición. Funciona alternado el Program Counter
+
+Un salto solo ocurre en en condiciones específicas
+
+## Subrutinas
+Una subrutina es el equivalente a una funcion que es llamada y luego retorna a la linea siguiente
+
+Para su implementación es requerido un STACK el cual se encarga de ir guardando secuencialmente las direcciones desde las que la función es llamada
+
 
 # Representacion de numeros de punto flotante
 
@@ -246,7 +289,7 @@ IEEE754
 <!-- Loops, subrutinas -->
 <!-- Assembly computador basico -->
 
-# Poner titulo
+# Endian
 ## Endianes
 - Little endian: La direccion va en la posicion menos significativa
 - Big endian: La direccion va en la posciion más significativa
@@ -263,5 +306,32 @@ Corresponde a como especificar en la instruccion donde estan los operandos
 - Directo: Dirección de memoria del dato
 - Por registro: Dirección del registro del dato
 - Indirecto por registro
+
+
+# Pipelining
+## Fetch, decode, execute
+Estas tres son la secuecnia de paso que sigue un cpu para cada instrucción
+
+1. Trae la instruccion (fetch)
+2. Decodifica y lee registros
+3. Ejecuta operacion
+4. Escribir en la memoria/registro
+
+## Paralelismo
+- A nivel de instrucciones: Se hace dentro de las instrucciones individuales para obtener mas intrucciones ejecutadas por segundo
+
+- A nivel de procesadores: Multiples CPU que trabajan juntos
+
+### Instrucciones
+El cuello de botella para la velocidad de ejecución se encuentra principalmente en:
+
+- Traer instrucciones de la instruction memory
+- Leer datos en la data memory
+
+Desde hace mucho tiempo los computadores tienen la capacidad de traer instrucciones desde el caché por adelantado y guardarlas en registros especiales
+
+
+#### Pipelining
+Es una tecnica en la que las ejecuciones de multiples instrucciones son traslapadas de modo que en un mismo ciclo usen distintas partes del CPU
 
 
