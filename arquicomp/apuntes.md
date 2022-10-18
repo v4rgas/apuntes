@@ -289,7 +289,7 @@ IEEE754
 <!-- Loops, subrutinas -->
 <!-- Assembly computador basico -->
 
-# Poner titulo
+# Endian
 ## Endianes
 - Little endian: La direccion va en la posicion menos significativa
 - Big endian: La direccion va en la posciion más significativa
@@ -306,5 +306,32 @@ Corresponde a como especificar en la instruccion donde estan los operandos
 - Directo: Dirección de memoria del dato
 - Por registro: Dirección del registro del dato
 - Indirecto por registro
+
+
+# Pipelining
+## Fetch, decode, execute
+Estas tres son la secuecnia de paso que sigue un cpu para cada instrucción
+
+1. Trae la instruccion (fetch)
+2. Decodifica y lee registros
+3. Ejecuta operacion
+4. Escribir en la memoria/registro
+
+## Paralelismo
+- A nivel de instrucciones: Se hace dentro de las instrucciones individuales para obtener mas intrucciones ejecutadas por segundo
+
+- A nivel de procesadores: Multiples CPU que trabajan juntos
+
+### Instrucciones
+El cuello de botella para la velocidad de ejecución se encuentra principalmente en:
+
+- Traer instrucciones de la instruction memory
+- Leer datos en la data memory
+
+Desde hace mucho tiempo los computadores tienen la capacidad de traer instrucciones desde el caché por adelantado y guardarlas en registros especiales
+
+
+#### Pipelining
+Es una tecnica en la que las ejecuciones de multiples instrucciones son traslapadas de modo que en un mismo ciclo usen distintas partes del CPU
 
 

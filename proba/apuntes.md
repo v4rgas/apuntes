@@ -214,7 +214,7 @@ $\mu$ hace que la función se desplace en el eje x
 
 $\sigma$ achata o levanta la curva
 
-Cuando $\mu=0, \sigma=1$ corresponde a la Normal Estando
+Cuando $\mu=0, \sigma=1$ corresponde a la Normal Estándar
 
 Su acumulada se denota como
 $$\phi(s) = F_S(s) = \int_{-\infty}^s\frac{1}{\sqrt{2 \pi}} e^{-x^2/2} dx$$
@@ -241,7 +241,17 @@ $$P(X \leq x) = F_X(x) = \phi(\frac{ln(x)-\lambda}{\zeta})$$
 
 $$E(X^z) = e^{\lambda z}M_y(z \zeta)$$
 
+Hasta 0.3, la $COV = \zeta$
+
 ### Distribución Binomial
+
+Probabilidad de cierta cantidad de exitos dada cantidad de intentos y una probabilidad
+
+n: numero de experimentos
+
+p: probabilidad de suceso
+
+x: cantidad de ocurrencias
 
 $$p_X(x) = \binom{n}{x} p^x(1-p)^{n-x}$$
 $$F_X(x) = \sum p(x)$$
@@ -249,17 +259,35 @@ $$E(X) = np$$
 
 ### Distribución Geométrica
 
-Numero de experimentos hasta el primer exito
+La probabilida un cierto numero de experimentos hasta el primer exito dada una probabilidad
 $$P(N=n) = p(1-p)^{n-1}$$
 $$E(N) = \frac{1}{p}$$
 
-### RELLENAR
+### Distribución Binomial Negativa
+
+Probabilidad de que despues de una cierta cantidad de experimentos ocurran un numero dado de exitos con una probabilidad
+
+$$P(T_k = x) = \binom{x-1}{k-1}p^k (1-p)^{x-k}$$
+$$E(T_k) = \frac{k}{p}$$
+$$Var(T_k) = \frac{k (1-p)}{p^2}$$
 
 ### Distribución de Poisson
 
+La probabilida de una cierta cantidad de exitos dada una frencuencia media y una cantida de tiempo
+
+v: Frecuencia media
+
+t: Tiempo transcurrido
+
+$$P(X_t = x) = \frac{(vt)^x e^{-vt}}{x!}$$
+
+$$\lambda = vt$$
+
+$$E(X) = \lambda$$
+
 ### Distribución Exponencial
 
-En un proceso de Poisson el tiempo transcurrido entre ocurrencia de eventos puede ser descrito por una distribución exponencial
+Probabilidad de un cierto tiempo entre eventos Poisson
 
 La probabilidad de un cierto tiempo hasta que la primera ocurrencia de un evento es equivalente a la probabildiad del evento no pasando hasta t en un proceso Poisson
 
@@ -276,26 +304,42 @@ $$u_x = \frac{1}{v}, \sigma^2_X=\frac{1}{v^2}$$
 si se encuentra desplazo en a entonces
 $$u_x = \frac{1}{v} + a, \sigma^2_X=\frac{1}{v^2}$$
 $$t \rightarrow x-a$$
-$$t -> x-a$$
 
 ### Distribución Gamma
+
+La probabilida de un cierto tiempo hasta la ocurrencia de una dada cantidad de eventos puede ser descrita con Gamma
 
 $$f_X(x) = \frac{v^k}{\Gamma(k)} x^{k-1} e^{-vk}$$
 con
 $$\Gamma(\alpha) = \int_0^{\infty} u^{\alpha - 1} e^{-u }du$$
+
+### Distribución Hipergeométrica
+
+Probabilidad de que una cantidad de elementos pertenezcan a cierta categoria dada una cantidad total de elementos y un cierto tamaño de muestra (muestreo sin reemplazo)
+
+N: cantidad total de elementos
+
+m: numero de elementos en cierta categoría
+
+n: numero de muestras tomadas
+
+x: cantidad de la muestra que pertenece a la categoria
+
+$$p_X(x) = \frac{\binom{m}{x} \binom{N-m}{n-x}}{\binom{N}{n}}$$
 
 ## Multiples Variables Aleatorias
 
 ## Esperanza Condicional y Predicción
 
 $$
-E  h(y)|X=x  = \left \{
+E(Y|X=x)  = \left \{
     \begin{array}{c l}
-    1\\
-    2
+    \sum y \cdot P(Y=y|X=x)\\
+    \int y \cdot f_{Y|X=x}(y)dy
     \end{array}
     \right.
-  
+
+
 $$
 
 $$
@@ -306,3 +350,5 @@ P(E_1 \cap E_2 | E_3) \cdot P(E_3)
 \end{array}
 \right.
 $$
+
+$$\theta + k \pi cos(x)$$
