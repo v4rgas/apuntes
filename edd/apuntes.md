@@ -133,59 +133,124 @@ Merge(A,B):
 1. Iniciamos C vacía
 2. sean a y b los primeros elementos de A y B, extraemos el menor
 
-# Estructuas de datos
+# Estructuras de datos
 
-## Diccionarios
+## Arboles binarios de busqueda (ABB)
 
-- Se puede asociar un valor a una llave
-- CRUD de valores asociados a una llave
+- Cada nodo tiene una llave y un valor
+- Solo puede tener hasta dos hijos
+- El subarbol con llaves menores debe estar a la izquierda
+- El subarbol con llaves mayores debe estar a la derecha
 
-El objetivo principal es facilitar la búsqueda
+## Arbol binario
 
-## Arbol bineario
-Cada nodo tiene <= 1 padre
-Cada nodo tiene a lo mas 2 hijos
-Una hoja es un nodo sin hijos
-Una raiz es un nodo sin padre
-<!-- ## Arbol bineario de busqueda -->
+- Cada nodo tiene <= 1 padre
+- Cada nodo tiene a lo mas 2 hijos
+- Una hoja es un nodo sin hijos
+- Una raiz es un nodo sin padre
 
-<!-- ABB almacena pares llave valor  -->
-<!-- Un á -->
+La altura de un arbol balanceado es O(log(n)) donde n es la cantidad de nodos
 
-## Arbole sde busqueda 2-3
+## Arboles AVL
+
+Un ABB es AVL-Balanceado si:
+
+1. Las alturas de los hijos diferen a los mas por 1
+2. Cada hijo es AVL-Balanceado
+
+Solucion de desbalanceo por insercion:
+
+- Izquierda de la izquierda: Rotacion izquierda
+- Derecha de la derecha: Rotacion derecha
+- Derecha de la izquierda: Rotacion izquierda derecha
+- Izquierda de la derecha: Rotacion derecha izquierda
+
+La insercion y balanceo tienen complejidad O(log(n)) donde n es la cantidad de nodos
+
+## Arboles de busqueda 2-3
+
 Almacena una llave y un valor
 
 1. Un nodo puede ser un 2 nodo (una llave) o 3 nodo (2 llaves distintas y ordenadas)
-2. Un nodo puede tener 2 o 3 hijos
+2. Un nodo puede tener 2 (si es un 2 nodo) o 3 hijos (si es 3 nodo)
 
+Para insertar se hace de las misma manera que en un arbol binario excepto que cuando se convierte en un 4 nodo se hace split poniendo el del medio en el anterior
 
-# RELLENAR
+Insercion es O(log(n)) pero pueden haber muchos splits consecutivos
 
 ## Arboles rojo-negro
+
+Es un arbol ABB en el cual
+
 1. Cada nodo es rojo o negro
 2. La raíz es negra
 3. Si un nodo es rojo, sus hijos son negros
-3. La cantidad de nodos negros camino a cada hoja debe ser la misma
-4. Las hojas vacías son negras
+4. La cantidad de nodos negros camino a cada hoja debe ser la misma
+5. Las hojas vacías son negras
 
-# Tablas de Hash
-Dado una cantidad de elementos y una cantidad de llaves, una table de hash es una estructura que asocia llaves indexadas usando la función de hash
+Todos los arboles rojo-negros tienen un arbol 2-4 equivalente (algunos tienen un 2-3)
+
 ## Diccionarios
-Es una estructura de datos con las siguientes operaciones 
-1. Asociar un valor a una llave
 
-El principal objetivo es tener una búsqueda eficiente de llaves
+- Asociar un valor a una llave
+- Actualizar el valor de una llave
+- Obtener el valor de una llave
+- A veces eliminar llave-valor
 
+El objetivo principal es facilitar la búsqueda
 El secundario es inserción/modificación eficiente de pares llave/valor
 
+Diccionario = array + funcion hash
+
 ## Funciones de hash
+
 Una función que permite mapear un espacio de llaves a uno mas pequeño
 
 $$h:K \rightarrow \{ 0,...,m-1 \}$$
 
 llamaremos valor de hash de k a K(k)
 
-## Insercion con cadenamiento
+## Colisiones
+
+### Insercion con cadenamiento
+
 Si al usar la función hash existe una colisión, pongo el valor al principio de la lista ligada
 
-## Ordenacion en tiempo lineal
+### Direccionamiento abierto
+
+Busco sistematicamente la siguiente celda vacia e inserto ahi. Puede ser de formar:
+
+- Lineal
+- Cuadratica
+- Sumando hash
+
+## Factor de carga
+
+$$\lambda = \frac{n}{m}$$
+n: cantidad de valores almacenados
+
+m: cantidad de espacios totales
+
+## Tablas de Hash
+
+Dado una cantidad de elementos y una cantidad de llaves, una tabla de hash es una estructura que asocia llaves indexadas usando la función de hash
+
+# Ordenacion en tiempo lineal
+# Backtracking
+## Constraint satisfaction problem (CSP)
+Corresponde a una tripleta (X, D, C) tal que
+- X: Conjunto de variables
+- D: Conjunto de dominios respectivos
+- C: Conjunto de restricciones
+
+Para resolver estos problemas:
+1. Fuerza bruta
+- Generar todas las asignaciones de variables
+- Verificar cada asignacion
+
+2. Backtracking
+
+## Backtracking
+1. Asignamos $x_k$ cuando ya se han asignado $x_1...x_{k-1}$
+2. Se verifica si la asignacion parcial resuelve el problema
+3. Si no, se retracta $x_k$
