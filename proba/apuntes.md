@@ -351,9 +351,21 @@ P(E_1 \cap E_2 | E_3) \cdot P(E_3)
 \right.
 $$
 
-# Funciones de Variables Aleatorias
+## Derivación de Distribuciones de Probabilidad
+### Funciones de Variable Aleatorias
+Si g es una funcion de una variable aleatoria X
+$$Y = g(X)$$
+entonces
+$$P(Y=y) = P(X=g^{-1}(y))$$
 
-### Suma de Variables Aleatorias Discretas
+$$f_Y(y) = f_x(g^{-1}(y)) \cdot (\frac{d}{dy} g^{-1}(y))$$
+
+Si $g^{-1}$ no tiene solucion unica, entonces se deben super los $f_Y$ para todas las posibles soluciones
+
+### Funciones de Multiples Variables Aleatorias
+$$Z = g(X,Y)$$
+
+## Suma de Variables Aleatorias Discretas
 
 Si X e Y son dos variables aleatorias discretas, $Z=X+Y$
 $$p_Z= \sum_{x+y=z} p_{x,y}(x,y) = \sum_{x} p_{x,y}(x,z-x)$$

@@ -51,7 +51,9 @@ $$1101 = 1 \cdot 2^3 + 1 \cdot 2^2 + 0 \cdot 2^1 + 1 \cdot 2^0$$
 Los bits se cuentan de izquierda a derecha partiendo del 0
 
 ### Algoritmos para transformar
+
 #### Parte entera
+
 Se va dividiendo por el valor de la base sucesivamente y se guarda el resto
 
 Ejemplo 53 a base 3
@@ -65,6 +67,7 @@ Luego se lee de abajo hacia arriba
 $$01222$$
 
 #### Parte decimal
+
 Se multilica por la base y me quedo con la parte entera
 $$0.534 \cdot 2: 1$$
 $$0.068 \cdot 2: 0$$
@@ -189,16 +192,18 @@ Compara bits 1 a 1 y si son iguales output es 1, sino 0
 - Shift Right: $0010 \rightarrow 0001$ (EQUIVALENTE A DIVIDIR POR 2)
 
 ### Latch S-R
+
 Una entrada de Reset y una de Set que setean o reinician el valor de una salida
 
 Se puede constuir con dos NAND interconectadas
 
 ### D Latch
+
 Se toma un Latch S-R y se modifica de tal manera de que existe un pulso que permite o no la actualizacion de estado
 
 ### Flip Flop
-El pulso del D Latch es a su vez un pulso corto emitido por le reloj
 
+El pulso del D Latch es a su vez un pulso corto emitido por le reloj
 
 # Procesador
 
@@ -242,15 +247,16 @@ Para añadir estas instrucciones se necesita añadir un ouput que sale de la alu
 # Saltos y Subrutinas
 
 ## Saltos
+
 Un salto incondicional es un salto a una instrucción especifica de la instruction memory sin ninguna condición. Funciona alternado el Program Counter
 
 Un salto solo ocurre en en condiciones específicas
 
 ## Subrutinas
+
 Una subrutina es el equivalente a una funcion que es llamada y luego retorna a la linea siguiente
 
 Para su implementación es requerido un STACK el cual se encarga de ir guardando secuencialmente las direcciones desde las que la función es llamada
-
 
 # Representacion de numeros de punto flotante
 
@@ -268,7 +274,9 @@ El siguiente es el exponente es el numero por el que va multiplicada la fracció
 - NaN: exponente = 255 y fraccion != 0
 
 # Multiplicaciones
+
 ## Numeros enteros
+
 Para multiplicar podemos sumar iterativamente haciendo shift hacia la izquierda
 
 $$1010 \times 1101$$
@@ -278,7 +286,9 @@ $$+ 10100 \times 0$$
 $$+ 1010 \times 1$$
 
 ## Números negativos
+
 ## Números de punto flotante
+
 Sumo exponentes y multiplico mantisas
 IEEE754
 
@@ -290,26 +300,110 @@ IEEE754
 <!-- Assembly computador basico -->
 
 # Endian
+
 ## Endianes
+
 - Little endian: La direccion va en la posicion menos significativa
 - Big endian: La direccion va en la posciion más significativa
 
 ## Alineacion
+
 Palabra alineada va en direcciones que son multiplo del largo de la memoria
 
 Palabra no alineada parte y termina en direciones entremedio de los multiplos
 
 ## Direccionamiento
+
 Corresponde a como especificar en la instruccion donde estan los operandos
+
 ### Modos
+
 - Inmediato: Dato codificado como parte de la instrucción
 - Directo: Dirección de memoria del dato
 - Por registro: Dirección del registro del dato
 - Indirecto por registro
 
+# Memoria
+
+## Principio de localidad
+
+- Temporal: Si se hace referencia a una instruccion o dato, entonces probablemente se use de nuevo pronto
+- Espacial: Si se hace referencia a una instruccion o dato, entonces probablemente se usen las cercanas
+
+## Tipos
+
+- SRAM (static ram): volatil, para caches, 6 o 8 transitores por bit, tiempo fijo de acceso
+- DRAM (dynamic ram): volatil, debe ser refrescada, mas barata (transistor + capacitor) por bit, pero mas lenta
+- Flash: no volatil, memoria secundaria en dispositivos moviles
+
+Los datos solo se copian en niveles adjacentes: cache con memoria principal y memoria principal con disco
+
+## Hit y Miss
+
+Cuando el dato pedido por el procesador esta adjacente: hit
+
+Sino: miss
+
+- Hit rate: fraccion de datos encontrados de forma adjacente
+- Miss rate: 1 - Hit Rate
+
+- Hit time: Tiempo que toma acceder el lugar mas cercano de la memoria + tiempo para determinar si es hit o miss
+- Miss penalty: Tiempo que toma acceder a lo que se busca al haber fallado
+
+## Caché y Memoria Principal
+
+Despues de los registros viene la memoria Caché
+### Direct Mapping
+Se mapea 1 a 1 las direcciones del caché con la de la memoria
+
+si la direccion es ABCDEF, EF se vuelve el offset y CD la direccion en la cache y AB el tag
+
+Se debe añadir un bit adicional que dice si es que el caché es valido 
+
+## Fully Associative
+- Una linea de la memoria puede en cualquiera del caché
+- Para encontrar una linea en el caché hay que buscar entre todas
+
+## Set Associative (n-way set associative)
+- Hay un numero fijo (n) de ubiaciones que pueden estar en una línea
+- Solo hay buscar entre n lineas
+
+## Politicas de reemplazo
+Para mapeos asociativos existe:
+- Belady: Se saca la linae que se usará mas lejos en el futuro
+- FIFO: El primero entrar es el primero en salir
+- LRU: se saca la linea con mayor tiempo sin accesos
+- RANDOM: aleatorio
+
+## Acotaciones
+Aumentar le tamaño de las lineas del cache aumenta el costo de un cache miss, pero disminuye el miss rate
+
+
+## Manejo de stores
+hit (cuando lo que queremos escribir ya esta en el caché):
+
+- write-through: Se escribe en el caché y en el memoria al mismo tiempo
+- write-back: se escribe cuando salga del caché
+
+miss (cuando lo que queremos escribir no está en el caché):
+- write-allocate: traemos la linea desde la memoria y luego la escribimos
+- no-write-allocate: solo escribimos el dato en la memoria
+
+## Memoria Principal y Disco 
+### Memoria Virtual
+Permite que muchos procesos compartan una misma memoria principal
+
+Los bloques leidos desde el disco de llaman paginas
+
+Traer paginas a la memoria principal y guardar paginas de vuelta se llama "PAGINACION"
+
+### Tabla de PAginas
+Es un arreglo con tatnas filas como cantidad maxima de posibles paginas virtuales. El numero de la pagina virtual (k) se usa como T[k]
 
 # Pipelining
+
 ## Fetch, decode, execute
+
 Estas tres son la secuecnia de paso que sigue un cpu para cada instrucción
 
 1. Trae la instruccion (fetch)
@@ -318,11 +412,13 @@ Estas tres son la secuecnia de paso que sigue un cpu para cada instrucción
 4. Escribir en la memoria/registro
 
 ## Paralelismo
+
 - A nivel de instrucciones: Se hace dentro de las instrucciones individuales para obtener mas intrucciones ejecutadas por segundo
 
 - A nivel de procesadores: Multiples CPU que trabajan juntos
 
 ### Instrucciones
+
 El cuello de botella para la velocidad de ejecución se encuentra principalmente en:
 
 - Traer instrucciones de la instruction memory
@@ -330,8 +426,6 @@ El cuello de botella para la velocidad de ejecución se encuentra principalmente
 
 Desde hace mucho tiempo los computadores tienen la capacidad de traer instrucciones desde el caché por adelantado y guardarlas en registros especiales
 
-
 #### Pipelining
+
 Es una tecnica en la que las ejecuciones de multiples instrucciones son traslapadas de modo que en un mismo ciclo usen distintas partes del CPU
-
-
