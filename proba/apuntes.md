@@ -370,3 +370,6 @@ $$f_Z = f_X \cdot f_Y$$
 ### Suma de normales
 
 $$X \pm Y = Normal(u_x \pm u_y, \sqrt{\sigma_x^2 + \sigma_y^2})$$
+
+
+### Máximo estimador verosimil
