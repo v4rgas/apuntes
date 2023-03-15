@@ -153,4 +153,5 @@ Fork crea un nuevo proceso como copia del padre y retorna el PID del hijo al pad
 ### Exec
 Carga un binario en la memoria reemplazando el codigo de quien los llamo
 
-
+### Exit
+Termina el proceso con un codigo de retorno dado y lo entrega al padre
