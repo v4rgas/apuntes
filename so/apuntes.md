@@ -155,3 +155,71 @@ Carga un binario en la memoria reemplazando el codigo de quien los llamo
 
 ### Exit
 Termina el proceso con un codigo de retorno dado y lo entrega al padre
+
+## Señales
+Un proceso puede enviar señales a otros procesos
+
+- SIGTERM: le indica al proceso que debe terminar
+- SIGKILL: quita el proceso de la tabla de procesos
+
+existen muchas mas
+
+### Huerfanos
+En linux los hijos del proceso padre pueden seguir corriendo incluso si el padre terminó
+
+Estos procesos son denominados "huerfanos" y pasan a ser parte del proceso init
+
+init hace wait() periodicametne a los hijos
+
+### Zombie
+Es un proceso que ya ha terminado su ejecución pero todavia tiene una entrada en la tabla de procesos
+
+Ocurre cuando un proceso termina y el padre no hace wait()
+
+# Scheduling
+El SO debe elegir cual es el siguiente proceso (ready) que se va a ejectar
+
+El responsable de esto es el scheduler
+
+## Scheduler
+Existen distintos niveles
+- Long term: Admite procesos en la cola ready y determina grado de multiprogramación
+
+- Short term(dispatcher): Selecciona uno de los procesos de la cola y ejecuta cambio de contexto
+
+- Medium term: Modifica temporalemnte grado de multiprogramacion y ejecuta swapping (RAM y disco)
+
+Si los grados de multiprogramacion son demasiados la mayoria de los recursos se iran en page faults. Esto es denominado thrashing
+
+## Modelo de ejecución
+
+Los procesos alternan entre dos estados
+- CPU-BURST (Uso de CPU)
+- IO-BURST (Espera de IO)
+
+## Utilización
+Si p es la probabilidad de que un proceso este en espera de IO
+
+El uso del CPU para n procesos esta dado por
+
+$$CPU = 1-p^n$$
+
+## Tipos de scheduling
+
+### Por tipo de interrupcion
+- Preemptive (expropiativo): Utiliza interrupciones para decidir cuando sacar un proceso de ejecución
+
+- Non-Preemptive (colaborativo): Se espera a que el proceso termine voluntariamente, se bloque en I/O o que termine
+
+### Por objetivo
+- Batch: Mantener CPU al maximo, minimizar turnaround time y maximizar throughput
+- Interactive: Minimizar tiempo de respuesta
+- Real time: Alcanzar deadlines
+
+## Algoritmos
+### First Come, First Serve
+- Non-Preemptive
+- Simple 
+- Poco predecible, convoy effect
+
+### Shortest Job First
