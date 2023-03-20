@@ -57,13 +57,17 @@ input: A, B, C
 output: True si $A \cdot B =_2 C$ (en modulo 2)
 
 ### Algoritmo determinista
+
 Multiplico y comparo $O(n^{2.4})$
 con el mejor algoritmo actual
 
 ### Algoritmo probabilistico
+
 1. Genero $r \in \{0,1\}^n$
 2. si $A \cdot (B \cdot r) =_2 C \cdot r$ return true else false
 
- $O(n^2)$
+$O(n^2)$
 
+## Decision aplazada
 
+Analizar varios eventos aleatorios simultaneos es igual que analizar los eventos secuencialmente aplazado las decisiones futuras
