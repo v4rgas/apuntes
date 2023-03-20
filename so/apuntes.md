@@ -183,12 +183,13 @@ El responsable de esto es el scheduler
 
 ## Scheduler
 Existen distintos niveles
-- Long term: Admite procesos en la cola ready y determina grado de multiprogramación
+- Long term: Admite procesos en la cola ready y determina grado de multiprogramación (Carga procesos en memoria)
 
-- Short term(dispatcher): Selecciona uno de los procesos de la cola y ejecuta cambio de contexto
+- Short term(dispatcher): Selecciona uno de los procesos de la cola y ejecuta cambio de contexto (Ejecuta en CPU ahora)
 
 - Medium term: Modifica temporalemnte grado de multiprogramacion y ejecuta swapping (RAM y disco)
 
+### Thrashing
 Si los grados de multiprogramacion son demasiados la mayoria de los recursos se iran en page faults. Esto es denominado thrashing
 
 ## Modelo de ejecución
@@ -212,7 +213,7 @@ $$CPU = 1-p^n$$
 - Non-Preemptive (colaborativo): Se espera a que el proceso termine voluntariamente, se bloque en I/O o que termine
 
 ### Por objetivo
-- Batch: Mantener CPU al maximo, minimizar turnaround time y maximizar throughput
+- Batch: Mantener CPU al maximo, minimizar turnaround(tiempo en el sistema) time y maximizar throughput
 - Interactive: Minimizar tiempo de respuesta
 - Real time: Alcanzar deadlines
 
@@ -223,3 +224,12 @@ $$CPU = 1-p^n$$
 - Poco predecible, convoy effect
 
 ### Shortest Job First
+- Version Preemtive: Elijo al que le queda menos tiempo
+- Potencial inanición de procesos largos
+- Optimo
+- No se sabe cuanto demora cada CPU-BURST
+
+<!-- ### Interactive -->
+### Round Robin
+
+

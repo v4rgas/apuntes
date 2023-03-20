@@ -71,3 +71,34 @@ $O(n^2)$
 ## Decision aplazada
 
 Analizar varios eventos aleatorios simultaneos es igual que analizar los eventos secuencialmente aplazado las decisiones futuras
+
+# Min-Cut
+- Input: $G(V,E)$ y $|v|\geq2$
+- Output vertice de corte
+## Algoritmo probabilistico
+
+Mientras al cantidad de vertices sea mayor a dos, tomo uno y lo colapso
+
+Probabilidad de error = $\frac{2}{|v|(|v|-1)}$
+
+### Lema
+Si el corte minimo es k, entonces $|E| \geq\frac{|V|k}{2}$
+
+Para $v \in V: N(v) = \{u|\text{ es vecino de }v \}$
+$$\forall v \in V: |N(v)|\geq k$$
+$$\sum |N(v)| \geq k |v|$$
+$$2 |E| \geq k |v|$$
+
+
+### Cota importante
+$$1-x \leq e^{-x}$$
+
+# Variables aleatorias y esperanza
+## Variables aleatorias
+Sea $\Omega, F, P$ un espacio de probabilidades
+
+Un variable alteatoria X es una función
+$$X:\Omega \rightarrow R$$
+$$(X=a) = \{s \in \Omega |X(s)=a\}$$
+$$P(X=a) = \sum P(s)$$
+
