@@ -119,3 +119,44 @@ $$\Sigma \models \phi \implies \Sigma \cup \psi \models \phi$$
 
 ### Revision de conocimiento $\Sigma \circ \phi$
 
+## Satisfacibilidad
+
+### Teorema inconsistencia
+
+$$\Sigma \models \varphi \iff models(\Sigma \cup \{\neg \varphi\}) = \empty$$
+
+### Problema SAT
+
+Es el problema de saber si algo es satifacible o no
+
+Evaluar una formula tiene un complejidad igual a $O(m^2)$ con m el largo de la formula (si es un string)
+
+#### Fuerza bruta
+
+Se podria probar cada evaluación para ver si existe alguna que satisfaga
+
+$$O(m^2 \cdot 2^n)$$
+
+#### DPLL
+
+Disenado para formulas CNF
+
+- Si $\varphi$ es un literal decimos que es una clausula unitaria
+- Si p es una variable que aparece solo como p o solo como $\neg p$ entonces es un literal puro
+- Si una clausula ya incluye un 1, se elimina de el conjunto
+- Si tiene un 0, se dejan solo variables libres. Si no quedan, se deja en el conjunto
+
+### Sistemas deductivos
+Podemos demotrar que un conjunto es inconsistente si como consecuencia logica se tiene la clausula vacia
+
+#### Resolucion
+$$\neg p \vee C_1, p \vee C_2 \implies C_1 \vee C_2$$
+
+Un conjunto es incosistente si se puede obtener por resolucion la clausula vacia
+
+Si la resolucion tiene la regla de tautologia, factorizacion y resoluciion es completo y correcto
+
+- Correctitud: Todo lo que deducimos es consecuencia logica
+
+- Completitud: Podemos deducir cualquier consecuencia logica
+
