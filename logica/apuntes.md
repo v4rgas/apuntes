@@ -22,7 +22,7 @@ $L(P)$ es el menor conjunto que satisface
 
 $$ P \subseteq L(P)$$
 $$ \phi \in L(P) \implies \neg \phi \in L(P)$$
-$$ \phi, \psi \in L(P) \wedge x \in ( \vee, \wedge, \implies,\iff) \implies (\phi x \psi) \in L(P)$$
+$$ \phi, \psi \in L(P) \wedge x \in ( \vee, \wedge, \rightarrow,\leftrightarrow) \implies (\phi x \psi) \in L(P)$$
 
 $\phi \in L(P)$ es una formula proposicional
 
