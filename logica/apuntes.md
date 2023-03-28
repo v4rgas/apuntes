@@ -160,3 +160,67 @@ Si la resolucion tiene la regla de tautologia, factorizacion y resoluciion es co
 
 - Completitud: Podemos deducir cualquier consecuencia logica
 
+
+# Maquinas de Turing
+
+## Palabras
+Sea un alfabeto A un conjunto finito de simbolos
+
+Una palabra es:
+- $w=\epsilon$ palabra vacia
+- $w=a,  a \in A$
+- $w = a \cdot w'$ para alguna palabra w' (concatenar)
+
+El conjutno de todas las palabras con simbolos de A es A*
+
+### Lenguaje
+$$L \subseteq A*$$
+
+## Problemas de decision
+Sea A un alfabeto y $L \subseteq A*$ un lenguaje, un problema de decision asociado a L corresponde a decidir si 
+$$\exists w \in L:w \in L$$
+
+## Algoritmo
+### Tesis Church-Turing
+Todo proceso efectivo es equivalente a una máquina de Turing
+
+## Maquina de Turing
+- Memoria para lectura y escritura
+- Cabeza lectora de estados internos
+- Conjunto de instrucciones
+
+Una cabeza lectura lee una cinta infinita e inicia con un "estado mental"
+
+Si se detiene en un estado no final, se rechaza
+
+### Definicion
+$$M = (Q, A, q_0, F, \delta)$$
+- Q es un conjunto finito de estados
+- A es un alfabeto
+- $q_0$ es un estado inicial
+- $F \subseteq Q$ es un conjunto finito de estados finales
+- $\delta$ es la funcion parcial de transición
+
+### Lenguaje aceptado
+M es un lenguaje aceptado si
+$$L(M) = \{w \in A* | M\ acepta\ w\}$$
+
+### Configuración
+Una configuración de M es una palabra
+$$u \cdot q \cdot v \in A*_{-} \cdot Q \cdot A$$
+q es el estado actual, $u \cdot v$ es el contenido de la cinta y |u|+1 la posicion de la cabeza
+
+#### Estados
+- Detencion si $\delta(q,a)$ no esta definido
+- Aceptación si detención y $q \in F$
+- Rechazo si detención y $q \not\in F$
+
+### Ejecuciones
+Para todo input existe una ejecución unica
+
+### Decibilidad
+Un lenguaje es decidible o recursivo si existe una MT M tal que
+- L = L(M)
+- M se detiene en todo input
+
+Un programa es decidible si existe un algoritmo

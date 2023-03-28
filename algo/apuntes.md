@@ -102,3 +102,29 @@ $$X:\Omega \rightarrow R$$
 $$(X=a) = \{s \in \Omega |X(s)=a\}$$
 $$P(X=a) = \sum P(s)$$
 
+## Esperanza
+$$E[x] = \sum_i i P(X = i)$$
+$$E[x] = \sum_{s \in \Omega} X(s)P(X=s)$$
+$$E[cX] = cE[X]$$
+### Linearidad
+$$E[X+Y] = E[X] + E[Y]$$
+### Desigualdad de Jensen
+$$E[f(x)] \geq f(E[X])$$
+
+## Independencia
+Es independiente si y solo si
+$$\forall a,b \in \mathbb{R}: P(X=a \cap Y=b) = P(X=a)P(Y=b)$$
+
+# Bernoulli y Binomial
+## Bernoulli
+Es bernoulli si
+$$\Omega = \{0,1\}$$
+con $P(1) = p$
+
+## Binomial
+$$\Omega = \{0,1\}^n$$
+$P(X=j) = \binom{n}{j}p^j(1-p)^{n-j}$
+
+
+
+

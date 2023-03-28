@@ -229,7 +229,27 @@ $$CPU = 1-p^n$$
 - Optimo
 - No se sabe cuanto demora cada CPU-BURST
 
-<!-- ### Interactive -->
-### Round Robin
+### Interactive
+#### Round Robin
+- Cada proceso recibe una cantidad igual de tiempo
+- Los procesos son atentidos muy rapido
+- Los procesos largos se van a demorar mucho más de lo que se demorarian con otros algoritmos
 
+#### Priority Scheduling
+- Se atienden por prioridad
+- Prioridades iguales, RR o FCFS
+- Incrementar prioridad de procesos que llevan mas tiempo se denomina Aging
 
+#### Multilevel Feeback Queue
+- Se tienen muchas colas que dependen de la prioridad
+  - A > B, A
+  - A = B, A y B con RR
+  - Los procesos entran en la cola con mayor prioridad
+  - Si un proceso usa su q, prioridad se reduce
+  - Despues de un tiempo S, todo se mueve a la cola con mayor prioridad
+  - Los procesos cortos salen mas rapido y los más largos descienden a una cola de menor prioridad
+
+### Real Time
+El sistema determina si dado un deadline, un periodo y un tiempo de ejecucion es capaz de incoporar el proceso a la ejecución
+#### Monotonic
+- prioridad es $\frac{t}{t}$
