@@ -183,12 +183,13 @@ El responsable de esto es el scheduler
 
 ## Scheduler
 Existen distintos niveles
-- Long term: Admite procesos en la cola ready y determina grado de multiprogramación
+- Long term: Admite procesos en la cola ready y determina grado de multiprogramación (Carga procesos en memoria)
 
-- Short term(dispatcher): Selecciona uno de los procesos de la cola y ejecuta cambio de contexto
+- Short term(dispatcher): Selecciona uno de los procesos de la cola y ejecuta cambio de contexto (Ejecuta en CPU ahora)
 
 - Medium term: Modifica temporalemnte grado de multiprogramacion y ejecuta swapping (RAM y disco)
 
+### Thrashing
 Si los grados de multiprogramacion son demasiados la mayoria de los recursos se iran en page faults. Esto es denominado thrashing
 
 ## Modelo de ejecución
@@ -212,7 +213,7 @@ $$CPU = 1-p^n$$
 - Non-Preemptive (colaborativo): Se espera a que el proceso termine voluntariamente, se bloque en I/O o que termine
 
 ### Por objetivo
-- Batch: Mantener CPU al maximo, minimizar turnaround time y maximizar throughput
+- Batch: Mantener CPU al maximo, minimizar turnaround(tiempo en el sistema) time y maximizar throughput
 - Interactive: Minimizar tiempo de respuesta
 - Real time: Alcanzar deadlines
 
@@ -223,3 +224,32 @@ $$CPU = 1-p^n$$
 - Poco predecible, convoy effect
 
 ### Shortest Job First
+- Version Preemtive: Elijo al que le queda menos tiempo
+- Potencial inanición de procesos largos
+- Optimo
+- No se sabe cuanto demora cada CPU-BURST
+
+### Interactive
+#### Round Robin
+- Cada proceso recibe una cantidad igual de tiempo
+- Los procesos son atentidos muy rapido
+- Los procesos largos se van a demorar mucho más de lo que se demorarian con otros algoritmos
+
+#### Priority Scheduling
+- Se atienden por prioridad
+- Prioridades iguales, RR o FCFS
+- Incrementar prioridad de procesos que llevan mas tiempo se denomina Aging
+
+#### Multilevel Feeback Queue
+- Se tienen muchas colas que dependen de la prioridad
+  - A > B, A
+  - A = B, A y B con RR
+  - Los procesos entran en la cola con mayor prioridad
+  - Si un proceso usa su q, prioridad se reduce
+  - Despues de un tiempo S, todo se mueve a la cola con mayor prioridad
+  - Los procesos cortos salen mas rapido y los más largos descienden a una cola de menor prioridad
+
+### Real Time
+El sistema determina si dado un deadline, un periodo y un tiempo de ejecucion es capaz de incoporar el proceso a la ejecución
+#### Monotonic
+- prioridad es $\frac{t}{t}$

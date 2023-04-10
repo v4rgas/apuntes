@@ -119,3 +119,108 @@ $$\Sigma \models \phi \implies \Sigma \cup \psi \models \phi$$
 
 ### Revision de conocimiento $\Sigma \circ \phi$
 
+## Satisfacibilidad
+
+### Teorema inconsistencia
+
+$$\Sigma \models \varphi \iff models(\Sigma \cup \{\neg \varphi\}) = \empty$$
+
+### Problema SAT
+
+Es el problema de saber si algo es satifacible o no
+
+Evaluar una formula tiene un complejidad igual a $O(m^2)$ con m el largo de la formula (si es un string)
+
+#### Fuerza bruta
+
+Se podria probar cada evaluación para ver si existe alguna que satisfaga
+
+$$O(m^2 \cdot 2^n)$$
+
+#### DPLL
+
+Disenado para formulas CNF
+
+- Si $\varphi$ es un literal decimos que es una clausula unitaria
+- Si p es una variable que aparece solo como p o solo como $\neg p$ entonces es un literal puro
+- Si una clausula ya incluye un 1, se elimina de el conjunto
+- Si tiene un 0, se dejan solo variables libres. Si no quedan, se deja en el conjunto
+
+### Sistemas deductivos
+Podemos demotrar que un conjunto es inconsistente si como consecuencia logica se tiene la clausula vacia
+
+#### Resolucion
+$$\neg p \vee C_1, p \vee C_2 \implies C_1 \vee C_2$$
+
+Un conjunto es incosistente si se puede obtener por resolucion la clausula vacia
+
+Si la resolucion tiene la regla de tautologia, factorizacion y resoluciion es completo y correcto
+
+- Correctitud: Todo lo que deducimos es consecuencia logica
+
+- Completitud: Podemos deducir cualquier consecuencia logica
+
+
+# Maquinas de Turing
+
+## Palabras
+Sea un alfabeto A un conjunto finito de simbolos
+
+Una palabra es:
+- $w=\epsilon$ palabra vacia
+- $w=a,  a \in A$
+- $w = a \cdot w'$ para alguna palabra w' (concatenar)
+
+El conjutno de todas las palabras con simbolos de A es A*
+
+### Lenguaje
+$$L \subseteq A*$$
+
+## Problemas de decision
+Sea A un alfabeto y $L \subseteq A*$ un lenguaje, un problema de decision asociado a L corresponde a decidir si 
+$$\exists w \in L:w \in L$$
+
+## Algoritmo
+### Tesis Church-Turing
+Todo proceso efectivo es equivalente a una máquina de Turing
+
+## Maquina de Turing
+- Memoria para lectura y escritura
+- Cabeza lectora de estados internos
+- Conjunto de instrucciones
+
+Una cabeza lectura lee una cinta infinita e inicia con un "estado mental"
+
+Si se detiene en un estado no final, se rechaza
+
+### Definicion
+$$M = (Q, A, q_0, F, \delta)$$
+- Q es un conjunto finito de estados
+- A es un alfabeto
+- $q_0$ es un estado inicial
+- $F \subseteq Q$ es un conjunto finito de estados finales
+- $\delta$ es la funcion parcial de transición
+
+### Lenguaje aceptado
+M es un lenguaje aceptado si
+$$L(M) = \{w \in A* | M\ acepta\ w\}$$
+
+### Configuración
+Una configuración de M es una palabra
+$$u \cdot q \cdot v \in A*_{-} \cdot Q \cdot A$$
+q es el estado actual, $u \cdot v$ es el contenido de la cinta y |u|+1 la posicion de la cabeza
+
+#### Estados
+- Detencion si $\delta(q,a)$ no esta definido
+- Aceptación si detención y $q \in F$
+- Rechazo si detención y $q \not\in F$
+
+### Ejecuciones
+Para todo input existe una ejecución unica
+
+### Decibilidad
+Un lenguaje es decidible o recursivo si existe una MT M tal que
+- L = L(M)
+- M se detiene en todo input
+
+Un programa es decidible si existe un algoritmo
