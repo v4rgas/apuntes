@@ -223,4 +223,94 @@ Un lenguaje es decidible o recursivo si existe una MT M tal que
 - L = L(M)
 - M se detiene en todo input
 
+Si es que no se detiene para todo input, es recursivametne numerable pero no decidible
+
+
 Un programa es decidible si existe un algoritmo
+
+## Maquinas universales
+Si cod(M) es la codificacion de una maquina de turing
+
+Una maquina universal U:
+- Su entrada es de la forma cod(M)00w para $w \in A*$ y M maquina con alfabeto A
+- U acepta cod(M)00w si y solo si M acepta w
+- Rechaza si entrada no tiene forma correcta
+
+## Problema Halting
+No eixste una maquina de turing tak que
+- H = L(M)
+- M se detiene para todo input
+
+## Reduccion
+Una reduccion trasforma un problema A en un problema B tal que si hay un algoritmo para B hay uno para A
+
+Una reduccion trasforma un lenguaje en otro tal forma que si un algoritmo para B hay un algoritmo para A
+
+### Reducciones de mapeo
+Si existe una funcion computable tal que
+$$w \in L_1 \iff f(w) \in L_2$$
+$$L_1 \leq_m L_2$$
+
+## Funciones computable
+Una funcion es computable si existe una maquina que a calcula
+
+## Lenguajes complementarios
+$$\bar{L} = A* \backslash L$$
+
+
+# rellenar aca 
+
+## Lenguajes
+- RE: aceptados por alguna maquina
+- coRE: complemento de RE
+- R: decidible, aceptados por alguna maquina y siempre se detiene
+
+## Clases de complejidad
+
+## Concepto de paso
+Dada una MT un paso va a ser una transformacion dentro de la maquina
+
+### Tiempo de ejecucion
+El tiempo es la cardinalidad del conjunto de todos los pasos
+
+El tiempo en el peor caso es el maximo de los tiempos para cada palabra
+
+### Tiempo de aceptacion
+- M se detiene para toda entrada
+- L = L(M)
+- $t_M \in O(g)$
+
+entonces L es acpetado en tiempo g
+
+## P
+Un programa puede ser solucioando eficientemente si es que su complejidad es un $O(n^k)$
+
+P es el conjutno de todos los algoritmos con esta complejidado
+
+## P y EXP
+$$P \subseteq EXP$$
+
+## Reduccion polinomial
+Si existe una funcion computable en tiempo polinomial  tal que
+$$w \in L_1 \iff f(w) \in L_2$$
+$$L_1 \leq_p L_2$$
+
+### Teorema
+1. $L_2 \in P \implies L_1\in P$
+2. $L_2 \notin P \implies L_1 \not\in P$
+
+## Dificultad Relativa
+### Hardness
+Dada una clase de complejidad C, L es C-hard si
+$$\forall L' \in C, L'\leq_p L$$
+
+## Dificultad Exacta
+### Completitud
+L es C-Completo si
+- $L \in C$
+- $L$ es $C$-hard
+
+#### Teorema
+Si $P \subsetneq C$ y $L$ es C-hard entonces $L \notin P$
+
+

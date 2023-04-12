@@ -125,6 +125,30 @@ con $P(1) = p$
 $$\Omega = \{0,1\}^n$$
 $P(X=j) = \binom{n}{j}p^j(1-p)^{n-j}$
 
+## Esperanza condicional
+$$E(X|E) = \sum x P(X=x | E=)$$
+
+$$E(X) = E(E(X|Y)) = \sum_i P(Y_i)E(X|Y_i)$$
+
+### Lema
+
+# Momentos y desviaciones
+## Desigualdad de Markov $\forall a \in X: a > 0$
+$$P(X \geq a) \leq \frac{E(X)}{a}$$
+
+## Varianza
+$$Var(X) = E((X-E(X))^2) = E(X^2) - E(X)^2$$
+$$Var(X+Y) = Var(X)+Var(Y) + 2 Cov(X,Y)$$
+
+## Covarianza
+$$Cov(X,Y) = E((X-E(X))(Y-E(Y)))= E(X \cdot Y)-E(X)E(Y)$$
+
+Si dos variables son independientes, COV(X,Y)= 0
+$$E(X \cdot Y) = E(X)E(Y) $$
+
+## Desigualdad de Chebyshev para a>0
+$$Pr(|X-E(X)|\geq a) \leq \frac{Var(X)}{a^2}$$
+$$Pr((X-E(X))^2\geq a^2) \leq \frac{Var(X)}{a^2}$$
 
 
 
