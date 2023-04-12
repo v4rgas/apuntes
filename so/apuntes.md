@@ -253,3 +253,56 @@ $$CPU = 1-p^n$$
 El sistema determina si dado un deadline, un periodo y un tiempo de ejecucion es capaz de incoporar el proceso a la ejecución
 #### Monotonic
 - prioridad es $\frac{t}{t}$
+
+# Threads
+Es un proceso pero mas liviano
+
+## Componentes
+
+- Thread ID
+- PC
+- Registros
+- Stack
+
+Procesos pueden tener uno o mas threads
+
+## Concurrencia
+SI un CPU tiene multiples cores, podria existir concurrencia real pero sino, no necesariamente se ejecutan al mismo tiempo
+
+A veces es mejor ahorrarse los saltos de contexto y utilizar solo un thread
+
+Creacion y destruccion de threads es mas ligera que un proceso
+Threads 
+
+## Que comparten
+Los threads NO comparten
+- Stack
+- Registro
+- Estado
+
+Todo lo otro si
+
+## Implementacion
+### User Space
+Manejados por una biblioteca de usuario
+- No hay syscalls
+- Tabla de threads vive dentro de cada proceso
+- Kernel no ve threads
+- Syscalls de un thread pueden bloquear el proceso porque todos son parte del mismo proceso
+
+Non-blocking syscalls solucionarian este problema
+
+### Kernel Space
+- Syscalls no bloquean el proceso
+- Syscalls más costosas
+- Limitada por el SO
+- fork y signals no son claras
+
+Para evitar crear y destruir threads existen pools de threads que se reutilizan
+
+### Hibrido
+Existen threads the kernel y threads de usuario
+- El kernel solo ve threads de kernel
+- Varios user threads asignados a un kernel thread
+
+Kernel threads son multiplexados entre user threads
