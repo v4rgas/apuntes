@@ -151,4 +151,27 @@ $$Pr(|X-E(X)|\geq a) \leq \frac{Var(X)}{a^2}$$
 $$Pr((X-E(X))^2\geq a^2) \leq \frac{Var(X)}{a^2}$$
 
 
+# #DNF (pag 302)
+$$\bigvee \bigwedge p_i$$
 
+- Input formula en DNF
+- Valuaciones que hace verdadero
+
+## Algoritmo de aproximacion
+Dado un $\epsilon, \delta$ encuentro $\bar{V}$
+$$P(|\bar{V}-V|\geq \epsilon V) \leq \delta$$
+en un tiempo polinomial en
+$|\delta|, \frac{1}{e},\frac{1}{\delta}$
+
+## Estimador no sesgado
+La estrategia es un estimador no sesgado
+
+Sea V el valor real
+Sea $\Omega, F, P$ un espacio de probabilidades
+X es un estimador no sesgado de V si
+$$E(X) = V$$
+
+$$Y = \frac{\sum_{i=1}^kX_i}{k}$$
+$$Var(Y) = \frac{Var(X)}{k}$$
+$$P(|Y-V| \geq \epsilon \cdot V)\leq \frac{1}{\epsilon^2 k}(\frac{E(X^2)}{E(X)^2}-1)$$
+Quiero minimizar el segundo termino
