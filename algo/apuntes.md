@@ -175,3 +175,7 @@ $$Y = \frac{\sum_{i=1}^kX_i}{k}$$
 $$Var(Y) = \frac{Var(X)}{k}$$
 $$P(|Y-V| \geq \epsilon \cdot V)\leq \frac{1}{\epsilon^2 k}(\frac{E(X^2)}{E(X)^2}-1)$$
 Quiero minimizar el segundo termino
+
+## Primero estimador
+$$X(\sigma) = 2^n \text{ si evaluacion es 1, sino 0}$$
+$$E(X) = \sum_{\sigma} X(\sigma)P(\sigma) = \text{\#DNF}$$
