@@ -306,3 +306,40 @@ Existen threads the kernel y threads de usuario
 - Varios user threads asignados a un kernel thread
 
 Kernel threads son multiplexados entre user threads
+
+# Sincronización
+## Race Condition
+Salida de una operacion depende del orden temporal de sus operaciones internas, se deben evitar
+
+## Sección critica
+### Caracteristicas de solucion
+- Exclusion mutua (a lo más un thread)
+- Progreso (a lo menos uno puede entrar)
+- Espera acotada (ausencia de inanición, si un proceso quiere entrar podrá hacerlo en un tiempo finito) 
+
+### Posibles soluciones
+- Deshabilitar las interrupciones (se hace en el sis::tema operativo)
+- Solucion de peterson
+
+### Sincronización por hardware
+#### test_and_set() TSL
+- Recibo false, seteo a true y devuelvo valor anterior
+- Recibo true, seteo a true y devuelvo valor anterior
+
+Todo esto ocurre de forma atomica, por lo que es posible implementar un lock
+
+#### compare_and_swap() (XCHG, CAS)
+- Recibe un valor, lo compara con un valor esperado
+- Si son iguales lo reemplaza por un valor nuevo
+- retorna valor previo
+
+
+#### Spinlock
+ocurre cuando lock=true, while(lock)
+
+## Primitivas de sincronización
+### Mutex Locks
+lock.acquire() toma el lock
+lock.release() lo suelta (error si no esta tomando)
+
+
