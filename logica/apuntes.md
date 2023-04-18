@@ -314,3 +314,43 @@ L es C-Completo si
 Si $P \subsetneq C$ y $L$ es C-hard entonces $L \notin P$
 
 
+# No Determinismo y NP
+## Maquina no determista
+Existe un conjunto de instrucciones para $(q_i, a)$
+
+La maquina acepta si es que existe alguna ejecucion de aceptacion, rechaza si no existe ninguna
+### Arbol de ejecucion
+- Cada nodo es una configuracion
+- Su raiz es la configuracion inicial
+- Las hojas son las configuraciones de detencion
+
+Este arbol puede ser infinito
+
+### Poder expresivo
+Para toda maquina determinista existe una no determinista con el mismo lenguaje. Tambien ocurre en el sentido opuesto
+
+### Paso y tiempo
+- Paso: Un par $(C_1,C_2)$ en una ejecucion
+- Tiempo de M en w: Ejecución más corta de M que acepta w
+- Tiempo de ejecución en el peor caso: n o el timpo maximo para un w de largo n en M
+
+## NP
+$NTIME(g) =$ Todos los L que pueden ser aceptado en tiempo g por una maquina no determinista
+$$NP = \bigcup NTIME(n^k)$$
+
+L es NP si y solo si
+$$L = \{x | \exists y: |y| = p(|x|), (x,y) \in L(M)\}$$
+Para un M que funciona en tiempo polinomial y un polinomio p()
+
+- M es un verificador
+- y es un testigo o certificado
+- Testigo comprueba que $x \in L$
+
+Osea, esta en NP si existe una maquina determinista que corre en tiempo polinomial que verifica el resltado
+
+## $P \subseteq NP \subseteq EXP$
+No se sabe si la contencion es estricta o no
+
+Solo se sabe que $P \subsetneq EXP$
+
+
