@@ -481,11 +481,39 @@ Un conjunto es definible si existe una formula tal que
 $$S = \{(a_1,...,a_k)\in A^k|\mathfrak{A}\models\varphi(a_1,...,a_k)\}$$
 
 ## Isomorfismo
-Son A y B son isomorfas si existe una biyeccion entre ambas que mantenga el mapeo entre ambas (revisar ppt)
+Son A y B son isomorfas si existe una biyeccion $h: A \rightarrow B$
 
 - Si dos estructuras son isomorfas, son identicas excepto por sus dominio (Indistinguibles)
 
+- Para cada simbolo $c \in L$
+$$h(c^A) = c^B$$
 
+- Para cada simbolo de funcion m-aria $f \in L$ y elementos $a_1,...,a_m \in A$
+$$h(f^A(a)...) = f^B(h(a)...)$$
+
+- Para cada relacion
+$$(a, a_2) \in R^A \iff (h(a), h(a_2)) \ in R^B$$
 
 Si h es un isomorfismo de $\mathfrak{A}$ a $\mathfrak{B}$
 $$(\mathfrak{A},\sigma ) \models \phi \iff (\mathfrak{B},h \circ\sigma)\models \phi$$
+
+## Conjuntos no definibles
+$L = \{+\} y A = (R, +^A)$
+
+$$S = \{(a,b,c) \in R^3 | a \cdot b = c\}$$
+
+Si h(x) = x/2 (automorfismo)
+$$(2,2,4) \neq (h(2),h(2),h(4))$$
+
+Como contradice el teorema del isomorfismo, S no es definible
+
+## Definibilidad de estructuras
+Sea L un vocabulario y S[L] el conjunto de L-estructuras
+
+El conjunto de L-estructuras P es una propiedad
+
+Cada propiedad es definible en LPO si existe una L-oracion $\varphi$ tal que
+$$A \in P \iff A \models \varphi$$
+ 
+
+
