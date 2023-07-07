@@ -59,6 +59,12 @@ Extienden las funciones del kernel
 
 ## Modos de protección
 
+El hardware posee dos modos de protección:
+
+- kernel mode: acceso completo al hardware
+- user moed: set restringido de restricciones
+  Si esta en usermode el hardware genera protection fault
+
 Al iniciar el computador se ejecuta código de la tarjeta madre
 
 - BIOS
@@ -182,7 +188,7 @@ init hace wait() periodicametne a los hijos
 
 Es un proceso que ya ha terminado su ejecución pero todavia tiene una entrada en la tabla de procesos
 
-Ocurre cuando un proceso termina y el padre no hace wait()
+Ocurre cuando un proceso termina y el padre no hace wait() (o sea que el padre no ha podido leer el codigo de exit)
 
 # Scheduling
 
@@ -387,6 +393,331 @@ ocurre cuando lock=true, while(lock)
 
 lock.acquire() toma el lock
 lock.release() lo suelta (error si no esta tomando)
+
+## Semaforos
+
+- P(),wait(),down() decrementa valor
+- V(),signal(),up() incremeta valor
+
+Pueden partir con distintos valores valores inciales
+
+### P
+
+```C
+void P() {
+        l.acquire()
+        while(count<=0) {
+                l.release();
+                sleep();
+                l.acquire();
+            }
+        count-=1;
+        l.release();
+    }
+
+```
+
+### V
+
+```C
+void V(S) {
+        l.acquire();
+        count+=1
+        wakeup(/* first from sleep queue */)
+        l.release()
+    }
+```
+
+## Variables de condicion
+
+Permiten bloquearse bajo condiciones aleatorias
+
+- wait() espera a un signal
+- signal() comienza el wait
+
+## Problema de los escritores
+
+N accesos lectura pero solo un escritor
+
+## Filosofos comensales
+
+5 filosofos pasan la vida comiendo y pensando
+
+- Para comer deben tomar ambos palillos
+- Solo puedne tomar un palillo a la vez
+
+# Adminstración de Memoria
+
+## Memoria
+
+### Direcciones de memoria
+
+Direcciones absolutas no sirven con multiprogramación y apuntan a un lugar e la memoria
+
+### Espacios de direcciones
+
+Los CPUs desde CDC6600 hasta el Intel8088 integraban un registro base y uno limit
+
+- base: cuando se cargaba un programa base se cargaba con la primera direccion de memoria fisica asignada
+- limit: se cargaba con la ultima direccion de memoria asignada
+  MMU revisa dir > base, dir < limit
+
+Cada proceso mantiene un espacio unico y secuencial de direcciones y el sistema operativo se encarga de traducirlo
+
+#### Estrategias espacios libres
+
+- Compactacion: Ocurre cuando se fusionan los huecos de la memoria. No se hace por es muy caro
+  La solucion es asignar espacios que no necesiten compactar
+
+- First-fit: Agarro primer lugar disponible
+- Best-fit: Agarro el que deje menos espacio libre (mas pequeño donde quepa)
+- Worst-fit: Agarro el que mas espacio libre deje
+
+La fragmentacon ocurre cuando existen espacios libres no contiguos
+
+## Segmentación
+
+Se divide el espacio de direcciones en espacios más pequieños
+
+La MMU se encarga de traducir direcciones de la tabla de segmentos
+
+Segmentation Fault ocurre cuando se intenta acceder a memoria no localizada
+
+### Tabla de segmentos
+
+| Segment | Base             | Size   | Upwards |
+| ------- | ---------------- | ------ | ------- |
+| code    | inicio de code   | tamaño | 1       |
+| heap    | inicio del heap  | tamaño | 1       |
+| stack   | inicio del stack | tamaño | 0       |
+
+Los primeros bits de una direccion virtual se usan para el segmento, el resto son el offset
+
+## Paginación
+
+Los segmentos son del mismo tamaño y conforman una pagina de memoria
+
+- Espacio virtual: Pagina
+- Espacio fisico: Frame
+
+Paginas y frames son del mismo tamaño
+
+La tabla de paginas asigna una pagina a un frame
+
+Los primeros bits son el VPN (numero de pagina) y se traducen al PFN (numero de frame). El resto de nuemeros son el offset dentro de la pagina
+
+TLB es un cache que sirve para guardar las traducciones
+
+### Variantes de paginacion
+
+Hacer paginas mas grandes haria que la tabla use menos espacios pero provocaría fragmentación interna (espacio sobre asignado)
+
+#### Segmentos paginados
+
+Se podria tener una tabla de paginas por cada segmento (code stack heap)
+
+#### Paginación multinivel
+
+En vez de segmentar, se puede paginar la tabla de paginas
+
+EL VPN se divide en 2, uno apunta a donde esta la tabla de paginas y la otra a la parte de la pagina que estoy buscando
+
+Este esquema se puede extender para mas niveles
+
+#### Tablas de paginas invertidas
+
+En vez de una tabla por proceso, se puede tener una tabla unica para todo el sistema
+
+Se tiene una entrada por cada frame
+
+Hay que buscar de a una las entradas
+
+## Reemplazo de paginas
+
+Generalmente el espacio de direcciones no cabe en la memoria fisica
+
+Los procesos pueden tener memoria no cargada aún (en disco o swap)
+
+Los procesos creen que tienen acceso a todo el rango, el SO se encarga de cargar las paginas necesarias
+
+Si no caben mas en la memoria fisica, se pueden eliminar
+
+### Page fault
+
+Las paginas usan un bit para saber si estan cargadas o no
+
+En el caso que no este cargada entonces se hace Page Fault lo que carga la pagina del disco a la memoria fisica
+
+Si page fault, cargo pagina y corro instruccion de nuevo
+
+### Tipos de reemplazos
+
+- Min: se saca la que va a ser usado mas lejano en el futuro
+
+- FIFO: se saca la que lleva mas tiempo en la memoria
+
+- Random: podria eliminar paginas que se usarane n corto plazo
+
+- LRU: se saca la que lleva mas tiempo sin usarse (poco eficiente porque requiere cambios en cada acceso a la memoria)
+
+Para mejorar LRU se podria mantener una cola ordenada (caro) o un timestamp (barato pero buscar la pagina es caro)
+
+- Algoritmo del reloj: Cada pagina tiene un reference bit. Si esta en 1, se cambia a 0 y se pasa a la siguiente pagina, si esta en 0 se elige esa pagina para borrarla
+
+El reference bit se hace 1 si la pagina fue usada
+
+- Aging: Cada pagina tiene un contador actualizado por hardware. Cada vez que la pagina es accedida se le pone un 1 y se le va haciendo shift en cada tick del reloj
+
+Sirve como una historia de accesos entonces se cual borrar
+
+### bits
+
+- Dirty Bit: Me dice si la pagina ha sido modificada con respecto a la copia en disco.
+
+Si no ha sido modificada con respecto al disco, es muy facil de sacar
+
+- Reference Bit: Me dice si ha sido usada recientemente
+
+## Working Set y thrashing
+
+Workin set $w_{\Delta}(t)$: El conjunto de paginas utilizadas en los ultimos $\Delta$ accesos
+
+El working set es usado por el medium-term scheduler
+
+Si la suma de los working set es mayor que la cantidad de frames, habra thrashing
+
+# Administacion de Almacenamiento
+
+## Dispositivos IO
+
+- Device driver: Codigo que se encarga de interacción con dispositivo
+- Block layer: Capa intermedia, abstraccion de bloques de disco
+- Sistema de archivos: Capa visible al programador
+
+### Transferencia de datos
+
+- Unbuffered: Lectura directa (se bloquea usuario, se envian datos y se reanuda)
+- Buffer en user space: Le entrego una posicion al sistema operativo la cual es asignada para el proceso y avisa cuando este disponible
+- Buffer en el kernel space: Mismo que lo anterior excepto que el sistema operativo lee en un buffer interno y una vez este listo, escribe en el espacio de memoria asignado
+- Double-buffer: Mientras see lee en un buffer se puede escribir en otro
+
+## Memoria secundaria
+
+Más lento pero no volatil
+
+- Discos magneticos: Discos divididos en tracks que son leidos por un cabezal. Cada track esta dividido en sectores del disco. Un cilindro es un conjunto de tracks
+
+Latencia rotacional: Tiempo hasta que sector este abajo del brazo
+Seek time: TIempo para mover el brazo a cilindro buscado
+
+- Discos de estado solido: Sin seektime ni latenica rotaciona
+
+## Sistemas de disco
+
+- Formateo Bajo nivel: Crea estructura de sectores, es ejecutado en fabrica
+
+- Formateo logico: Estructuras para sistema archivos de una particion
+
+- Particionamiento: Agrupación de sectores que son tratados como discos separados
+
+Tabla de partciiones accesible en MBR
+
+Sistemas operativos modernos usan GPT
+
+## Scheduling de accesos
+
+El sistema operativo solicita datos del disco especificando. Estos van en cola al disco
+
+La latencia se mite como el desplazamiento que tiene que hacer el brazo
+
+- FCFS: Primero que llega, primero que se responde
+- Shortest seek time first: Encuentra el más cercano
+
+No es optimo por posible inanición de sectores alejados
+
+- Scan: Se mueve de derecha a izquierda la aguja
+- C-Scan: Busca hacia un lado y luego vuelve al inicio para repetir
+- F-Scan: Ignora solicitudes mientras lee
+
+- Look y C-Look: Como SCAN pero no se mueve hasta el extremo si no es necesario
+
+## Archivos
+
+Un archivo es una agrupación de bytes
+
+### Caracterización
+
+- Nombre (low level, inode number)
+- Nombre (simbolico)
+- Tipo
+- Ubicación
+- Tamaño
+- Proteccion
+- Fecha
+- Usuario propietario
+- Metadata
+
+## API sistemas de archivos
+
+### Archivos
+
+Creacion: Open
+Lectura/Escritura: read, write
+Lectura/Escritura(no secuencial): lseek
+Escritura inmediata: fsync
+Cambio de nombre: mv
+Estado: stat
+Eliminacion: rm
+
+### Directorios
+
+Creacion: mkdir
+Lectura: opendir, readdir, closedir
+Eliminación: rmdir
+
+## Links
+
+Permite que un archivo permita a dos directorios
+
+- Symbolic link: link a nombre de archivo (ln -s)
+- Hard link: Crea otro archivo con el mismo inode (ln)
+
+## Implementación
+
+- MBR: Sector 0 Indica partition table
+  - Boot Control Block: Uno por cada particion, permite cargar el sistema operativo
+
+- Volume control block
+  - Datos de formato del sistema de archivo
+
+### VFS
+Es una interfaz comun para disitntos sistemas de archivo
+
+Cualquier sistema de archivo que implemente VFS puede ser incorporado al sistema
+
+- Tabla de archivo abiertos: mantiene file descriptors
+- v-node: representa el punto de acceso al archivo y apunto a funciones del sistema de archivos que ejecutan llamadas
+
+- FILE* = file-contro block
+
+- Mount table: Tabla de archivos montados
+
+### Asignación de bloques
+Cada archivo requiere utilizar bloques del disco y los bloques deben estar asignada de manera eficiente
+
+- Asignación contigua: Cada archivo tiene un start y un largo. Requiere defragmentacion
+ 
+- Asignación enlazada: Cada bloque indica cual es el bloque siguiente. Se guarda el inicio y el final
+
+- Asignación enlazada FAT: La tabla FAT guarda los enlaces entre bloques del archivo
+
+- Asignación indexada: Archivos contienen un index block(gasta un bloque), el cual contiene los bloques de cada archivo
+
+- Asignación multinivel: Cada entrada de un bloque indice apunta a otro bloque indice
+
+### Espacio libres
+- BITMAP: bit que representa cada espacio libre, rapido pero no escala bien
+- Lista enlazada: punteros a bloques libres
 
 # Redes
 El objetivo es que un proceso se pueda comunicar con otro
@@ -1044,8 +1375,3 @@ Cada switch ve su arbol
 Permite crear LAN virtuales y se hace modificando paquete Ethernet
 
 Se expande el campo de Type para añadir el numero de VLAN y avisar que es de ese tipo
-
-
-
-
-
