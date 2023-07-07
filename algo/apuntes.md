@@ -102,3 +102,80 @@ $$X:\Omega \rightarrow R$$
 $$(X=a) = \{s \in \Omega |X(s)=a\}$$
 $$P(X=a) = \sum P(s)$$
 
+## Esperanza
+$$E[x] = \sum_i i P(X = i)$$
+$$E[x] = \sum_{s \in \Omega} X(s)P(X=s)$$
+$$E[cX] = cE[X]$$
+### Linearidad
+$$E[X+Y] = E[X] + E[Y]$$
+### Desigualdad de Jensen
+$$E[f(x)] \geq f(E[X])$$
+
+## Independencia
+Es independiente si y solo si
+$$\forall a,b \in \mathbb{R}: P(X=a \cap Y=b) = P(X=a)P(Y=b)$$
+
+# Bernoulli y Binomial
+## Bernoulli
+Es bernoulli si
+$$\Omega = \{0,1\}$$
+con $P(1) = p$
+
+## Binomial
+$$\Omega = \{0,1\}^n$$
+$P(X=j) = \binom{n}{j}p^j(1-p)^{n-j}$
+
+## Esperanza condicional
+$$E(X|E) = \sum x P(X=x | E=)$$
+
+$$E(X) = E(E(X|Y)) = \sum_i P(Y_i)E(X|Y_i)$$
+
+### Lema
+
+# Momentos y desviaciones
+## Desigualdad de Markov $\forall a \in X: a > 0$
+$$P(X \geq a) \leq \frac{E(X)}{a}$$
+
+## Varianza
+$$Var(X) = E((X-E(X))^2) = E(X^2) - E(X)^2$$
+$$Var(X+Y) = Var(X)+Var(Y) + 2 Cov(X,Y)$$
+
+## Covarianza
+$$Cov(X,Y) = E((X-E(X))(Y-E(Y)))= E(X \cdot Y)-E(X)E(Y)$$
+
+Si dos variables son independientes, COV(X,Y)= 0
+$$E(X \cdot Y) = E(X)E(Y) $$
+
+## Desigualdad de Chebyshev para a>0
+$$Pr(|X-E(X)|\geq a) \leq \frac{Var(X)}{a^2}$$
+$$Pr((X-E(X))^2\geq a^2) \leq \frac{Var(X)}{a^2}$$
+
+
+# #DNF (pag 302)
+$$\bigvee \bigwedge p_i$$
+
+- Input formula en DNF
+- Valuaciones que hace verdadero
+
+## Algoritmo de aproximacion
+Dado un $\epsilon, \delta$ encuentro $\bar{V}$
+$$P(|\bar{V}-V|\geq \epsilon V) \leq \delta$$
+en un tiempo polinomial en
+$|\delta|, \frac{1}{e},\frac{1}{\delta}$
+
+## Estimador no sesgado
+La estrategia es un estimador no sesgado
+
+Sea V el valor real
+Sea $\Omega, F, P$ un espacio de probabilidades
+X es un estimador no sesgado de V si
+$$E(X) = V$$
+
+$$Y = \frac{\sum_{i=1}^kX_i}{k}$$
+$$Var(Y) = \frac{Var(X)}{k}$$
+$$P(|Y-V| \geq \epsilon \cdot V)\leq \frac{1}{\epsilon^2 k}(\frac{E(X^2)}{E(X)^2}-1)$$
+Quiero minimizar el segundo termino
+
+## Primero estimador
+$$X(\sigma) = 2^n \text{ si evaluacion es 1, sino 0}$$
+$$E(X) = \sum_{\sigma} X(\sigma)P(\sigma) = \text{\#DNF}$$
