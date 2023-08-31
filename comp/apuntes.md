@@ -1,75 +1,116 @@
-# Introduccion al procesamiento paralelos de datos
-## Arquitecturas y procesadores modernos
-- Paralelismo de instrucciones: Varias instrucciones se corren el mismo tiempo
-- Paralelismo de datos: Subdivido los datos de entrada para correrlos de forma parelelo
+# Introducción al Procesamiento Paralelo de Datos
 
-Para ejectuar instruciones mas rapido se puede usar
+## Arquitecturas y Procesadores Modernos
 
-## Instruction Level Paralelism
-- Out of order
-- Pipelining
-- Branch-prediction
-- Prefetching
-Permiten ocular la latencia
+- **Paralelismo de Instrucciones:** Varias instrucciones se ejecutan al mismo tiempo.
+- **Paralelismo de Datos:** Los datos de entrada se subdividen para su procesamiento en paralelo.
 
-## FPU
-En computo cientifico importa la capacidad de trabajr con floats
+Para mejorar la ejecución de instrucciones más rápidamente, se pueden emplear técnicas como:
 
-En una FPU tradicional
-$$T(n) = n \times l \times t$$
-donde n son la cantidad de resultados, l el numero de etapas y t el clock cyle time
+## Instruction Level Paralelism (ILP)
 
-Si se utiliza Pipelining
-$$T(n) = (s+l+n-1) \times t$$
-donde s es la inialización
+- **Out of Order:** Reordenamiento de instrucciones para reducir la latencia.
+- **Pipelining:** División del proceso de ejecución en etapas para ejecutar múltiples instrucciones en paralelo.
+- **Branch Prediction:** Predicción de ramificaciones para evitar retrasos por decisiones condicionales.
+- **Prefetching:** Adelanto de datos a la caché antes de su necesidad para reducir latencia.
 
-## Peak Performance
-Si cada FPU produce un resultado por ciclo
-$$Peak = clockspeed \times FPUs$$
+## Unidad de Punto Flotante (FPU)
 
-## Real Performance
-Se utilizan benchamrks como
-- Linpack
-- HPCG
+En cómputo científico, trabajar con números de punto flotante es crucial.
 
-Es efectada por latencia
+En una FPU tradicional, el tiempo de ejecución se calcula como:
+- Sin Pipelining: T(n) = n * l * t (n: resultados, l: etapas, t: tiempo de ciclo)
+- Con Pipelining: T(n) = (s + l + n - 1) * t (s: inicialización)
 
-## CPU
-Los registros son programables mientras que el resto de caché depened del hardware
+## Rendimiento Peak y Rendimiento Real
 
-A medida que se baja en la lista se tiene menos velocidad de acceso pero más velocidad
+- **Rendimiento Peak:** Se calcula multiplicando la velocidad del reloj por la cantidad de FPUs.
+- **Rendimiento Real:** Medido con benchmarks como Linpack y HPCG, afectado por la latencia.
 
-1. Registros
-2. L1
-3. L2 (De aqui hacia abajo son compartidos y deben manejar coherencia)
-4. L3
-5. Memoria principal
+## Jerarquía de Memoria en CPU
+
+1. Registros (rápidos pero limitados y programables).
+2. L1 Caché.
+3. L2 Caché (compartido, gestiona coherencia entre núcleos).
+4. L3 Caché (compartido, mayor capacidad).
+5. Memoria Principal.
 
 ## Caché
-El working set corresponde al conjunto de paginas usadas por un programa
 
-Al programar se debe tomar en cuanto el funcionamiento del caché
+- **Working Set:** Conjunto de páginas usadas por un programa.
+- Programar considerando el funcionamiento de la caché para maximizar la eficiencia.
 
-<!-- ### Scratch -->
-- Valid: Con copia coherete en memoria
-- Reserved: Valida con unica copia
-- Dirty: Modificado
-- Invalida: Modificado en otro caché (a traves de snooping o tag directories)
+### Problemas de Coherencia en Caché
 
-### Miss
-- Compulsory: Obligatoria
-- Capacity: Sin capacidad
-- Conflict: Intento guardar un dato en dos lugares distintos
-- Invalidation: Se invalidó el caché por un cambio en sus valores
+- Valid: Datos en caché con copia coherente en memoria.
+- Reserved: Datos en caché válidos con única copia.
+- Dirty: Datos modificados en caché.
+- Invalid: Datos inválidos debido a modificaciones en otro caché.
 
-### Coherencia
-Los problemas de coherencia ocurren cuando se intenta acceder a un mismo dato que fue motificado concurrentemente
+### Fallos en Caché (Miss)
 
-## RAM
-### UMA
-Todos los nodos utilizan una unica memoria RAM compartida, esto puede llevar a que se sature la conexión con la RAM
+- Compulsory: Primer acceso a un dato.
+- Capacity: Caché sin capacidad para los datos.
+- Conflict: Dos datos intentan ocupar la misma ubicación en caché.
+- Invalidation: Caché se invalida por cambios en otros cachés.
 
-#### NUMA
-Cada nodo tiene una conexión directa a un pedazo de la RAM, si un nodo quiere acceder a un dato fuera de su pedazo de RAM, debe enviar un mensaje y pedirlo
+### Coherencia de Caché
+
+- Problemas al acceder a un mismo dato modificado concurrentemente en diferentes cachés.
+
+## Tipos de Arquitecturas de RAM
+
+- **UMA (Uniform Memory Access):** Todos los nodos comparten una única memoria RAM.
+- **NUMA (Non-Uniform Memory Access):** Cada nodo tiene conexión directa a un segmento de RAM, requiere comunicación para acceder a datos fuera de su segmento.
+
+## Metricas computación concurrente
+- **Tiempo de ejecución**: Ncpu
+- **Speedup** : t1/tN
+- **Eficiencia** : speedup/N
+
+# Parallel Computing
+## ILP
+### SIMD
+Single Instruction Multiple Data
+
+### SIMT
+Single Instruction Multile Thread
+
+## Data-Paralelism
+
+## Task-Paralelism
+Cuando se tiene una 
+
+## Function Parallelism
+
+## Speedup y eficiencia
+
+### Speedup
+- Tp: Tiempre de ejecucion en p procesadores
+- T1: Tiempo base
+El speedup corresponde a T1/Tp 
+
+#### Speedup superlineal
+Usualmente ocurre por temas de cache, corresponde a cuando el speedup es mejor al ideal
+
+### Eficiencia
+Speedup/P
+
+## Ley de Amdahl
+El codigo inheremente secuencial limita la eficiencia del paralelismo
+
+Si Fs es el la fraccion de tiempo secuencial y Fp es la fraccion paralelizable
+Tp = T1(Fs + Fp/P)
+
+Entonces el speedup esta limitado a 
+Sp = 1/Fs
+
+## Ley de Gustafson
+En un mejor computadorpuedo hacer mas trabajos el mismo tiempo
+Tp = FsTp + pFpTp
+Sp = p-(p-1)*Fs
+
+ 
+
 
 

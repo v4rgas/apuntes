@@ -41,6 +41,3 @@ Dimensiones
 3. Psicologica
 4. Espiritual
 
-5. Terriotorial satisfacion con el entorno fisico
-6. Cultural respeto a herencia cultural
-

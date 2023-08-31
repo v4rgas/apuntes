@@ -172,6 +172,18 @@ Se diferencia entre tres niveles logicos estratificados para permitir accesos a 
 - Nivel de procesamiento (funcionalidad central de aplicacion)
 - Nivel de datos (sistema de archivo persistente)
 
+### Arquitectura de dos capas físicas
+Existe un cliente que contiene solo los programas que se utilizan a nivel de inferaz de usuario y un servidor que se encarga de todo el resto
+
+### Arquitectura de tres capas fisicas
+- Cliente
+- Middleware
+- Servidor de datos
+
+### Arquitectura publicacion-suscripcion
+El servidor tiene una referencia del cliente y cada vez que ocurre algo el servidor envia la información al cliente
+
+
 ## Mensajes asincronos
 Son apropiados si la informacion fluye por los canales en una dirección pero no para procesos de tipo cliente y servidor
 
@@ -208,10 +220,150 @@ Todas las llamadas a procedimientos deberian ser en principio igual que hacer un
 - Cualquiera de los computadores puede fallar, no hay forma de saber si la operación se concretó
 
 ## Operación transparente en RPC
+### append(data, dbList)
+Si se tuviese acceso a una base de datos que permite agregar a datos a una lista
+
+# ARREGLAR!!!
+
+<!-- Si append es un proceso remoto entonces ocurre que: -->
+
+<!-- Al llamar a append las representaciones de data y dbList se ponen en el stack de la siguiente manera: -->
+<!-- - data: Se usa una copia-por-valor, las modificaciones en el servidor no la afectan, se pasa una copia del valor -->
+<!-- - dbList: Se una copia-por-refencia, se hace una copia de toda la estructura que se encuentra en la direccion de memoria y se envia al servidor -->
+
+
+### Flujo
 1. Cliente llamba un procedimiento
 2. Stub (encargado de comunicar con servidor) construye un mensaje
 3. Mensaje se envía a través de la red
 4. Sistema operativo del servidor entrega el mensaje al Stub del servidor
 5. Stub desempaqueta el mensaje
 6. Stub del sevidor hace una llamada local al procedimiento
+
+### Marshaling (Paso de parametros)
+Corresponde al empaque de los mensajes hecho por el stub para ser enviados al servidor
+El servidor solo ve una serie de bytes
+
+### Punteros
+Los punteros solo tienen sentido dentro de un espacio de memoria determinado
+
+Una de las soluciones es copiar la estructura completa al stack para luego copiarla de vuelta y sobreescribir el valor original
+
+Esto es llamado copia-por-valor/restauracion
+
+
+# Arquitecturas
+## Patron observador
+- Un Sujeto publica informacion
+- Los objetos que se suscriben implementan interfaz Observador
+- Cada Observador tiene un metodo actualizar
+- Sujeto permite registrar observadores y llama a su metodo actualizar cuando los datos se actualizan
+- La clase que representa los Datos hereda de sujeto
+
+# Detección de terminación
+## Casos simples
+Cuando un programa esta ocrrindoe en un unico procesador, se que sabe que ha terminado si:
+- Cada proceso esta bloqueado o terminado
+- No hay operaciones I/O
+
+## Casos distribuidos
+En un prgorama distribuido:
+- El estado global no es visible para ningun procesador
+- Incluso si todos los procesadores estan desocupados, puede haber mensajes en transito entre procesadores
+
+### Detección en anillos
+Si existe un solo token y la conexión es unidireccional
+
+En cualquier instante:
+- Un proceso esta desocupado si terminó o esta suspendido ejecutando receive
+- Despues de recibir un mensaje, un proceso se vuelve activo
+
+Si un token esta desocupado y tiene el token, inicia el algoritmo para detectar detención
+
+Si token parte y termina en un nodo que esta desocupado, se sabe que el algoritmo distribuido que se estaba ejecutando terminó
+
+#### Multiples conexiones
+Si existe de una conexión por nodo, el algoritmo requiere que se pase el token por cada uno de los caminos posibles (ciclo de euler) para detectar detención
+
+Se requiere contar el numero de veces consecutivas que ha pasado por un nodo inactivo
+
+Dado que rojo es activo y azul es inactivo
+
+Al recibir el token:
+- Si el valor del token igual a la cantidad de nodos, se anuncia terminación y se detiene
+- Si el proceso esta rojo, se pinta azul, pone el token en 0 y lo envia
+- Si esta azul, se incrementa el valor del token y se pasa
+
+## Algoritmo basado en arbol de cobertura
+### Version Simple
+- Cada hoja le reporta a su padro si ha terminado
+
+- Cada nodo reporta a su padre cuando han temrinado y todos sus hijos han terminado
+
+- El proceso raiz determina cuando ocurre la detención
+
+# Instaneas globales
+Es un registro consistente de los estados de todos los nodos y canales en un sistema distribuido
+
+Para que sea consistente, cada mensaje debe estar en uno de dos estados
+- enviado y en transito a un canal
+ recibido
+
+ No se requiere que toda la informacion se recolecte a un instante en particular
+
+ ## Estado de los nodos y canales
+ - Estado de nodo: Valores de sus variables internas
+ - Estado canal: Secuencia de mensajes que se enviaron por canal pero no estan recibidos
+    - Mensajes enviados por nodo A, recibidos por nodo B y los que aun estan en el canal
+    - Mensaje marker separa los mensajes enviados antes y despues de tomar instantanea
+
+## Algoritmo
+Supongamos que un nodo inicia el algoritmo
+- Envio send c(marker, myID) a todos los canales c en mi output
+
+- Se debe guardar el ultimo mensaje enviado a ese destino
+- Se debe agregar un proceso para recibir marker
+- Se debe agregar un proceso que regista el estado una vez ha recibido markers por todos sus canales de input
+
+Cuando un nodo recibe el primer marker (orden de comenzar a registrar estados)
+1. Se registra el estado en sus canales de output
+2. Se registran los canales recibidos por los canales de entrada
+    - todos los mensajes recibidos por el canal donde llego el marker hasta antes del marker
+    - la diferencia entre el ultimo mensaje recibido hasta antes de que el nodo registrara su estado y el ultimo recibido antes de recibir el marker
+3. envia marker por cada canal
+
+1. Recibo mensaje por un canal
+2. Guardo el ultimo mensaje recibido por ese canal (messageAtMarker[canal])
+3. Si es el primer marker
+    1. Guardo el array de todos los ultimos mensajes que envie a cada canal (stateatRecord)
+    2. Guardo el array de todos los ultimos mensajes que recibi en cada canal (messageatRecord)
+    3. Por cada canal de output, envio marker y mi id
+4. Espero a recibir makers a traves de todos los canales de input
+
+Los mensajes del canal seran desde messageAtRecord[channel]+1 hasta messageAtMarker[channel]
+
+# Problema filosofos comenzales
+## Solucion descentralizada
+Cada filoso es atendido por un mozo (proceso waiter) a traves de los canales hungry, eat, done
+
+Cada filosofo
+1. send hungry()
+2. receive eat()
+3. send done()
+
+Cada mozo tienes canales para pedir los cubiertos
+- needL, needR, passL, passR
+
+Cada mozo
+1. Si recibe hungry
+    1. envia needL y needR
+    2. recibe los cubiertos y se los da al filosofo
+    3. envio los cubiertos de vuelta
+ 
+<!-- para la prueba -->
+<!-- # seccion critica distribuida -->
+<!-- # rpc -->
+<!-- # algoritmos de terminación -->
+
+
 
