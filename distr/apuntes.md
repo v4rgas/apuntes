@@ -158,6 +158,10 @@ Cada proceso tiene 2 arreglos
 
 
 # RPC (Remote Procedure Core)
+Es un mecanismo de invocación remota que sirve para llamar procedimientos de forma remota.
+
+La llamada es bloqueante y se espera a recibir respuesta
+
 ## Arquitectura de capas
 ### Estratificada pura
 Cada capa solo llama a la de abajo
