@@ -1,38 +1,40 @@
 # Sistemas distribuidos
 
-Coleccion de entidades independientes que cooperan para resolver un problema
+Colección de entidades independientes que cooperan para resolver un problema
 
-- Para comunicar, se envian y reciben mensajes en vez de compartir memoria
+- Para comunicar, se envían y reciben mensajes en vez de compartir memoria
 
-- No existe certeza de si de recibio el mensaje
+- No existe certeza de si de recibió el mensaje
 
 - No comparten memoria ni reloj
 
-- Hay autonomía y heterogeneidad (debilmente acoplados)
+- Hay autonomía y heterogeneidad (débilmente acoplados)
 
-- Se espera que el usuario vea la coleccion de computadores como un solo computador
+- Se espera que el usuario vea la colección de computadores como un solo computador
 
-Una ejecucion distribuidas es la ejecución de procesos a través del sistema sistribuido para conseguir un objectivo en común
+Una ejecución distribuida es la ejecución de procesos a través del sistema sistribuido para conseguir un objetivo en común
 
 <!-- ## Algoritmos distribuidos -->
 
 ## Memoria distribuida
 
-Se podrian usar operaciones read/write pero los programas tendrian que implementar busy waiting
+Se podrian usar operaciones *read/write* pero los programas tendrian que implementar *busy waiting*
 
 ### Operaciones de red
 
 - Existen canales compartidos que conectan procesos
-- Cada proceso tiene variables locales (no tienen accesos concurrentes, no se requiere mutex)
+- Cada proceso tiene variables locales (no tienen accesos concurrentes, no se requiere *Mutex*)
 - Procesos se comunican para interactuar
 
 ### Canales
 
-Los canales son FIFO, confiables y libre de errores. El acceso a un canal es atómico
+Los canales permiten comunicar procesos dentro de un sistema distribuido
+
+Los canales son colas FIFO, confiables y libres de error. El acceso a un canal es atómico
 
 1. Se crea un canal
-2. Se envia algo por el canal
-3. Alguien hace recieve y guarda lo que se envió
+2. Se envía algo por el canal
+3. Alguien hace `receive` y guarda lo que se envió
 
 **channel ch(tp1 id1,...,tpn idn)**
 
@@ -40,40 +42,48 @@ Los canales son FIFO, confiables y libre de errores. El acceso a un canal es at�
 - tp es el tipo de datos
 - id nombre del campo transmitido
 
-channel input(char) -> un canal que recibe caracteres
+`channel input(char)` -> un canal que recibe caracteres
 
 **send ch(expr1,...)**
 
-- expr1 son expresiones cuyos tipos corresponden al canal
+- `expr1` son expresiones cuyos tipos corresponden al canal
 
-Al hacer send el mensaje se añade a una cola (no es bloqueante)
+Al hacer `send` el mensaje se añade a una cola (no es bloqueante)
 
 **receive ch(var,...)**
 
-- var son las variables donde se guarda loq ue recibe
+- `var` son las variables donde se guarda lo que recibe
 
-recieve saca el primer mensaje de la cola y se lo asigna a al variable (es bloqueante)
+`receive` saca el primer mensaje de la cola y se lo asigna a la variable (es bloqueante)
 
 ### Problema de la sección critica
 
 El problema ocurre cuando varios procesos tienen acceso a recursos compartidos
 
-Existen protocolos de entrada y de salida que rodean a la sección critica y que evitan el acceso simultaneo al recurso
+Existen protocolos de entrada y de salida que rodean a la sección crítica y que evitan el acceso simultáneo al recurso
 
-Una solucion debe cumplir con
+Una solución debe cumplir con
 
-- Exclusion mutua
-- No hay deadlock
+- Exclusión mutua
+- No hay *deadlock*
 - No hay postergación innecesaria
 - Un proceso que intenta entrar finalmente lo logra (progreso)
 
-#### Algoritmo sacar numero
+#### Algoritmo sacar número
 
-Cada proceso que quiere entrar a su sección critico saca un numero y espera su turno para correr la sección critica
+Cada proceso que quiere entrar a su sección crítica saca un número y espera su turno para correr la sección crítica
+
+Variables compartidas:
+
+- `number <- 1`. Dispensador de números
+- `next <- 1`. Proceso que está actualmente en la sección crítica
+- `turn[n] <- {0 ... 0}`. Número que sacó cada uno de los n procesos
+
+`FA(number, 1)` suma 1 a la variable compartida number
 
 Esto requiere memoria compartida porque todos los procesos necesitan saber cual es el siguiente numero y cual es el numero actual
 
-#### Algoritmo panaderia
+#### Algoritmo panadería
 
 1. Asigno mi turno en 1
 2. Consulto el turno de todos los demas
@@ -81,72 +91,72 @@ Esto requiere memoria compartida porque todos los procesos necesitan saber cual 
 4. Mientras mi numero sea mayor a cualquier otro espero
 5. Si tengo el mismo numero que otro entonces el de menor id pasa primero
 
-#### Algoritmo Ricart-Agrawla
+#### Algoritmo Ricart-Agrawala
 
 Cada nodo tiene dos procesos
 
 Principal:
 
-1. Escojo un numero que va creciendo
-2. Le pido permiso a todos los demas para entrar a la sección critica a través de un mensaje con mi numero e ID
+1. Escojo un número que va creciendo
+2. Le pido permiso a todos los demás para entrar a la sección crítica a través de un mensaje con mi número e ID
 3. Espero a que todos me den permiso para entrar
-4. Al salir de la sección critica aviso a todos los procesos de la cola del proceso recieve salí de la cola
+4. Al salir de la sección crítica aviso a todos los procesos de la cola del proceso `receive` salí de la cola
 
-Recieve:
+Receive:
 
 1. Recibo solicitues de un cierto nodo y turno
-2. Si el turno es menor al mio, entonces apruebo
-3. Sino lo inserto en un cola
+2. Si el turno es menor al mío, entonces apruebo
+3. Si no, lo inserto en una cola `deferred`
 
 Los principales problemas
 
-- la seleccion de numero. Debo elegir siempre un numero mayor al que he visto
+- La seleccion de número. Debo elegir siempre un número mayor al que he visto. Para solucionarlo, se introduce una variable local `highest` para cada nodo que tiene como valor el `rqst#` más grande que ha recibido
 
-- Si dos procesos tienen el mismo numero, desempato con el numero de proceso
+- Dos procesos podrían elegir el mismo número. Para solucionar esto, desempato con el número de proceso
 
-- Estoy esperando a todos los procesos pero pueden haber procesos que no quieren entrar, si no quiero entrar deberia siempre aceptar a todos
+- Estoy esperando a todos los procesos pero pueden haber procesos que no quieren entrar, si no quiero entrar debería siempre aceptar a todos
 
 #### Eficiencia
 Un algoritmo con muchos nodos puede ser ineficiente
 
-Para entrar a su sección critica un nodo debe
+Para entrar a su sección crítica un nodo debe
 1. Enviar n-1 mensajes
 2. Recibir n-1 mensajes
 Incluso si nadie quiere entrar
 
-
 #### Algoritmos basados en tokens
 Solo se puede entrar a la sección critica si es que se tiene el token
 
-Un nodo con token puede entrar a la sección critica una cantidad arbitraria de veces
+Un nodo con token puede entrar a la sección crítica una cantidad arbitraria de veces
 
 #### Token circulando en un anillo
 El token va circulando en un anillo, se utiliza y se pasa al siguiente en el anillo
+
 - Helper
 1. Recibo el token
 2. Si User lo quiere se lo paso y espero a que termine
 3. Envio el token al siguiente
 
 - User
-1. Se pide el token para entrar al helper
+1. Se pide el token para entrar al Helper
 2. Espero hasta que reciba el token
-3. Corro sección critica
+3. Corro sección crítica
 4. Salgo y entrego el token al siguiente
 
-#### Algoritmo Ricart_agrawala con Tokens
+#### Algoritmo Ricart-Agrawala con Tokens
 Cada proceso tiene 2 arreglos
-- Granted: El numero que tenia cada turno la ultima vez que se metio a la sección critica
- - Este array va inludio en el mensaje que tiene al token, y la significativa es la ultima enviada
-- Request: Numeros que acompañaban al ultimo mensaje que rqst de cada nodo
+- `Granted`: El número que tenia cada turno la última vez que se metió a la sección crítica
+ - Este array va incluido en el mensaje que tiene al token, y la significativa es la ultima enviada
+- `Request`: Números que acompañaban al ultimo mensaje `rqst` de cada nodo
 
 - Main
 1. Si no tengo el Token
-    1. Defino mi turno como el ultimo + 1
-    2. Le aviso a todos los nodos que quiero entrar a la sección critica
+    1. Defino mi turno como el último + 1
+    2. Le aviso a todos los nodos que quiero entrar a la sección crítica
     3. Espero a recibir el token
-    4. Cuando reciba el token entro a la sección critica
-    5. Pongo mi numero de turno en granted
-    6. Envio Token con granted
+2. Cuando reciba el token entro a la sección crítica
+3. Pongo mi numero de turno en granted
+4. Envio Token con granted
 
 - Receiver
 1. Espero que me pidan permiso para entrar
@@ -157,16 +167,16 @@ Cada proceso tiene 2 arreglos
 1. Si existe un p tal que request[p] > granted[p] elijo uno y envio token
 
 
-# RPC (Remote Procedure Core)
+# RPC (Remote Procedure Call)
 Es un mecanismo de invocación remota que sirve para llamar procedimientos de forma remota.
 
 La llamada es bloqueante y se espera a recibir respuesta
 
 ## Arquitectura de capas
 ### Estratificada pura
-Cada capa solo llama a la de abajo
+Cada capa solo llama a la capa **inmediatamente** inferior
 ### Estratificada mezclada
-Capa puede llamar a cualquier capa de abajo
+Cada capa puede llamar a cualquier capa de abajo
 ### Estratificada con upcalls
 Una capa de abajo puede llamar a una capa inmediatamente superior
 
@@ -183,6 +193,8 @@ Existe un cliente que contiene solo los programas que se utilizan a nivel de inf
 - Cliente
 - Middleware
 - Servidor de datos
+
+El Middleware podría actuar como servidor o como cliente dependiendo de con quién esté interactuando
 
 ### Arquitectura publicacion-suscripcion
 El servidor tiene una referencia del cliente y cada vez que ocurre algo el servidor envia la información al cliente
@@ -258,7 +270,7 @@ Esto es llamado copia-por-valor/restauracion
 
 # Arquitecturas
 ## Patron observador
-- Un Sujeto publica informacion
+- Un Sujeto publica información
 - Los objetos que se suscriben implementan interfaz Observador
 - Cada Observador tiene un metodo actualizar
 - Sujeto permite registrar observadores y llama a su metodo actualizar cuando los datos se actualizan
@@ -266,20 +278,20 @@ Esto es llamado copia-por-valor/restauracion
 
 # Detección de terminación
 ## Casos simples
-Cuando un programa esta ocrrindoe en un unico procesador, se que sabe que ha terminado si:
+Cuando un programa esta corriendo en un único procesador, se sabe que ha terminado si:
 - Cada proceso esta bloqueado o terminado
 - No hay operaciones I/O
 
 ## Casos distribuidos
 En un prgorama distribuido:
 - El estado global no es visible para ningun procesador
-- Incluso si todos los procesadores estan desocupados, puede haber mensajes en transito entre procesadores
+- Incluso si todos los procesadores estan desocupados, puede haber mensajes en tránsito entre procesadores
 
 ### Detección en anillos
 Si existe un solo token y la conexión es unidireccional
 
 En cualquier instante:
-- Un proceso esta desocupado si terminó o esta suspendido ejecutando receive
+- Un proceso esta desocupado si terminó o esta suspendido ejecutando `receive`
 - Despues de recibir un mensaje, un proceso se vuelve activo
 
 Si un token esta desocupado y tiene el token, inicia el algoritmo para detectar detención
@@ -300,32 +312,32 @@ Al recibir el token:
 
 ## Algoritmo basado en arbol de cobertura
 ### Version Simple
-- Cada hoja le reporta a su padro si ha terminado
+- Cada hoja le reporta a su padre si ha terminado
 
 - Cada nodo reporta a su padre cuando han temrinado y todos sus hijos han terminado
 
-- El proceso raiz determina cuando ocurre la detención
+- El proceso raíz determina cuando ocurre la detención
 
-# Instaneas globales
+# Instantáneas globales
 Es un registro consistente de los estados de todos los nodos y canales en un sistema distribuido
 
 Para que sea consistente, cada mensaje debe estar en uno de dos estados
 - enviado y en transito a un canal
- recibido
+- recibido
 
- No se requiere que toda la informacion se recolecte a un instante en particular
+No se requiere que toda la informacion se recolecte a un instante en particular
 
- ## Estado de los nodos y canales
- - Estado de nodo: Valores de sus variables internas
- - Estado canal: Secuencia de mensajes que se enviaron por canal pero no estan recibidos
+## Estado de los nodos y canales
+- Estado de nodo: Valores de sus variables internas
+- Estado canal: Secuencia de mensajes que se enviaron por canal pero no estan recibidos
     - Mensajes enviados por nodo A, recibidos por nodo B y los que aun estan en el canal
-    - Mensaje marker separa los mensajes enviados antes y despues de tomar instantanea
+    - Mensaje marker separa los mensajes enviados antes y despues de tomar instantánea
 
 ## Algoritmo
 Supongamos que un nodo inicia el algoritmo
-- Envio send c(marker, myID) a todos los canales c en mi output
+- Envío `send c(marker, myID)` a todos los canales `c` en mi output
 
-- Se debe guardar el ultimo mensaje enviado a ese destino
+- Se debe guardar el último mensaje enviado a ese destino
 - Se debe agregar un proceso para recibir marker
 - Se debe agregar un proceso que regista el estado una vez ha recibido markers por todos sus canales de input
 
@@ -333,24 +345,24 @@ Cuando un nodo recibe el primer marker (orden de comenzar a registrar estados)
 1. Se registra el estado en sus canales de output
 2. Se registran los canales recibidos por los canales de entrada
     - todos los mensajes recibidos por el canal donde llego el marker hasta antes del marker
-    - la diferencia entre el ultimo mensaje recibido hasta antes de que el nodo registrara su estado y el ultimo recibido antes de recibir el marker
+    - la diferencia entre el último mensaje recibido hasta antes de que el nodo registrara su estado y el último recibido antes de recibir el marker
 3. envia marker por cada canal
 
 1. Recibo mensaje por un canal
 2. Guardo el ultimo mensaje recibido por ese canal (messageAtMarker[canal])
 3. Si es el primer marker
-    1. Guardo el array de todos los ultimos mensajes que envie a cada canal (stateatRecord)
-    2. Guardo el array de todos los ultimos mensajes que recibi en cada canal (messageatRecord)
-    3. Por cada canal de output, envio marker y mi id
-4. Espero a recibir makers a traves de todos los canales de input
+    1. Guardo el array de todos los últimos mensajes que envié a cada canal (stateatRecord)
+    2. Guardo el array de todos los últimos mensajes que recibí en cada canal (messageatRecord)
+    3. Por cada canal de output, envío marker y mi id
+4. Espero a recibir markers a través de todos los canales de input
 
-Los mensajes del canal seran desde messageAtRecord[channel]+1 hasta messageAtMarker[channel]
+Los mensajes del canal serán desde messageAtRecord[channel]+1 hasta messageAtMarker[channel]
 
 # Problema filosofos comenzales
 ## Solucion descentralizada
-Cada filoso es atendido por un mozo (proceso waiter) a traves de los canales hungry, eat, done
+Cada filósofo es atendido por un mozo (proceso waiter) a traves de los canales hungry, eat, done
 
-Cada filosofo
+Cada filósofo
 1. send hungry()
 2. receive eat()
 3. send done()
