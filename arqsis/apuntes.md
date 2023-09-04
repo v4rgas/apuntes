@@ -208,3 +208,14 @@ Existen muchos tipos de diagramas UML, entre ellos estan
     - Cada capa encapsula una funcionalidad
     - Datos: Parametros y paquetes
     - Topologia: Lineal
+    - Bajo paralelismo, arquitectura rigida, poco tolerante a fallos
+
+- Cliente-Servidor
+    - Confiable
+    - Sencillo y probado
+    - Centralizadom pesado en terminos de red
+
+- Microkernel
+    - Funcionalidad core minima posible
+    - Usualmente se usa en kernels, pero actualmente tiene muchos usos
+

@@ -324,7 +324,7 @@ Se requiere que exista un "nodo de entorno" que no reciba ningun mensaje durante
 
 Un nodo envia señales de confirmación si
 - InDeficit > 1
-- InDeficit = 1 y isTerminated() y outDeficit = 0
+- InDeficit = 1 y isTerminated() (nodo ya terminó) y outDeficit = 0
 
 # Instaneas globales
 Es un registro consistente de los estados de todos los nodos y canales en un sistema distribuido
