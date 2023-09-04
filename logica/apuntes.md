@@ -515,5 +515,62 @@ El conjunto de L-estructuras P es una propiedad
 Cada propiedad es definible en LPO si existe una L-oracion $\varphi$ tal que
 $$A \in P \iff A \models \varphi$$
  
+## Conjuntos infinitos de formulas
+ Un conjunto de formulas es satisfacible si existe un $(\mathfrak{A}, \sigma)$ tal que $\forall \phi \in \Sigma,(\mathfrak{A}, \sigma) \models \phi$
+
+ Es infinitamente satisfacible si todo $\Sigma' \subseteq \Sigma$ es satisfacible
+
+## Teorema Compacidad
+ Un conjunto de formulas es satisfacible si y solo si es finitamente satisfacible
+
+## Definibilidad generalizada
+Una propiedad es definible de forma generalizada en LPO si existe un conjutnode L-oraciones $\Sigma$ tal que
+
+$$\mathfrak{A} \in P \iff \mathfrak{A} \models \Sigma$$
+
+Es elementalmente definible si 
+
+$$\mathfrak{A} \in P \iff \mathfrak{A} \models \varphi$$
+
+## Equivalencia
+
+Dos estructuras son equivalentes si para toda L-oracion $\varphi$
+$$\mathfrak{A} \models \varphi \iff \mathfrak{B} \models \varphi$$
+
+## Modelos no Estandar
+Son dos L-estructuras esquivalentes pero no isomorfas
+
+## Consecuencia logica
+$$\mathfrak{A} \models \Sigma \iff \mathfrak{A} \models \varphi$$
+
+## Sistemas deductivos
+Un sistema deductivo (demostracion) de $\varphi$ desde $\Sigma$ es una secuencia finita de formulas de primer orden se van obteniendo de formulas precedentes hasta $\varphi$
+
+# Teorias
+Un conjunto de L-oraciones $\Sigma$ es una teoria si
+1. Es satisfacible
+2. Es cerrado bajo consecuencia logica
+
+$$Th(\mathfrak{A}) = \{\varphi | \mathfrak{A} \models \varphi \}$$
+
+Sea $\Sigma$ un conjunto de L-oraciones
+$$Th(\Sigma) = \{\varphi | \Sigma \models \varphi\}$$
+$\Sigma$ es un conjunto de axiomas, una teoria axiomatiazable
+
+## Teoria Completa
+Una teoria es completa si ocurre tiene como consecuencia logica $\varphi$ o $\neg \varphi$ para toda oracion
+
+Si no es no completa
+
+Dos teorias son equivalente si
+$$\mathfrak{A} \models \varphi \iff B \models \varphi$$
+
+Si para cualquier A y B son equivalentes, entonces es una teoria completa
+
+## Teorias Categoricas
+Son teorias categoricas si para cada par de estructuras que satisfacen son isomorfas
+
+toda teoria categorica es completa
+
 
 

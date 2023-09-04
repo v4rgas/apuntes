@@ -14,20 +14,15 @@ Coleccion de entidades independientes que cooperan para resolver un problema
 
 Una ejecucion distribuidas es la ejecución de procesos a través del sistema sistribuido para conseguir un objectivo en común
 
-<!-- ## Algoritmos distribuidos -->
-
-## Memoria distribuida
-
-Se podrian usar operaciones read/write pero los programas tendrian que implementar busy waiting
+## Red de comunicaciones
+Se podrian usar operaciones read/write (como en variables compartidas) pero los programas tendrian que implementar busy waiting
 
 ### Operaciones de red
-
 - Existen canales compartidos que conectan procesos
 - Cada proceso tiene variables locales (no tienen accesos concurrentes, no se requiere mutex)
 - Procesos se comunican para interactuar
 
 ### Canales
-
 Los canales son FIFO, confiables y libre de errores. El acceso a un canal es atómico
 
 1. Se crea un canal
@@ -67,13 +62,13 @@ Una solucion debe cumplir con
 - No hay postergación innecesaria
 - Un proceso que intenta entrar finalmente lo logra (progreso)
 
-#### Algoritmo sacar numero
+#### Algoritmo sacar numero (memoria compartida)
 
 Cada proceso que quiere entrar a su sección critico saca un numero y espera su turno para correr la sección critica
 
 Esto requiere memoria compartida porque todos los procesos necesitan saber cual es el siguiente numero y cual es el numero actual
 
-#### Algoritmo panaderia
+#### Algoritmo panaderia (memoria compartida)
 
 1. Asigno mi turno en 1
 2. Consulto el turno de todos los demas
@@ -95,7 +90,8 @@ Principal:
 Recieve:
 
 1. Recibo solicitues de un cierto nodo y turno
-2. Si el turno es menor al mio, entonces apruebo
+2. Si estoy no quiero entrar, acepto
+3. Si el turno es menor al mio, entonces apruebo
 3. Sino lo inserto en un cola
 
 Los principales problemas
@@ -133,11 +129,11 @@ El token va circulando en un anillo, se utiliza y se pasa al siguiente en el ani
 3. Corro sección critica
 4. Salgo y entrego el token al siguiente
 
-#### Algoritmo Ricart_agrawala con Tokens
+#### Algoritmo Ricart-Agrawala con Tokens
 Cada proceso tiene 2 arreglos
-- Granted: El numero que tenia cada turno la ultima vez que se metio a la sección critica
- - Este array va inludio en el mensaje que tiene al token, y la significativa es la ultima enviada
-- Request: Numeros que acompañaban al ultimo mensaje que rqst de cada nodo
+- granted: El numero que tenia cada turno la ultima vez que se metio a la sección critica
+ - Este array va includio en el mensaje que tiene al token, y la unica copia significativa es la que va con el token
+- request: El numero que acompañaba al ultimo mensaje que rqst de cada nodo
 
 - Main
 1. Si no tengo el Token
@@ -156,36 +152,14 @@ Cada proceso tiene 2 arreglos
 - SendToken
 1. Si existe un p tal que request[p] > granted[p] elijo uno y envio token
 
+# Arquitecturas
+
 
 # RPC (Remote Procedure Core)
 Es un mecanismo de invocación remota que sirve para llamar procedimientos de forma remota.
 
 La llamada es bloqueante y se espera a recibir respuesta
 
-## Arquitectura de capas
-### Estratificada pura
-Cada capa solo llama a la de abajo
-### Estratificada mezclada
-Capa puede llamar a cualquier capa de abajo
-### Estratificada con upcalls
-Una capa de abajo puede llamar a una capa inmediatamente superior
-
-### Estratificación lógica de aplicaciones
-Se diferencia entre tres niveles logicos estratificados para permitir accesos a bases de datos
-- Nivel de interfaz (interración con el usuario)
-- Nivel de procesamiento (funcionalidad central de aplicacion)
-- Nivel de datos (sistema de archivo persistente)
-
-### Arquitectura de dos capas físicas
-Existe un cliente que contiene solo los programas que se utilizan a nivel de inferaz de usuario y un servidor que se encarga de todo el resto
-
-### Arquitectura de tres capas fisicas
-- Cliente
-- Middleware
-- Servidor de datos
-
-### Arquitectura publicacion-suscripcion
-El servidor tiene una referencia del cliente y cada vez que ocurre algo el servidor envia la información al cliente
 
 
 ## Mensajes asincronos
@@ -196,6 +170,10 @@ Cada cliente necesitaria un canal de respuesta diferente, por lo que abrian much
 Para interacciones cliente-servidor es mejor usar RPC
 
 ## Mecanismo RPC
+Un programa esta compuesto por modulos que contienen procesos y procedimientos
+
+Un proceso en un modulo se comunica con otro proceso en otro modulo llamando procedimientos exportados
+
 Se hace una llamada remota a un servidor para que ejecute un procedimiento de la misma manera en que se podría hacer una llamada local para ejecutar un procedimiento
 
 Despues de la llamada remota se puede esperar a que el sevidor devuelva el resultado del procedimiento
@@ -223,19 +201,6 @@ Todas las llamadas a procedimientos deberian ser en principio igual que hacer un
 - Hay que pasar parámetros y resultados entre computadores
 - Cualquiera de los computadores puede fallar, no hay forma de saber si la operación se concretó
 
-## Operación transparente en RPC
-### append(data, dbList)
-Si se tuviese acceso a una base de datos que permite agregar a datos a una lista
-
-# ARREGLAR!!!
-
-<!-- Si append es un proceso remoto entonces ocurre que: -->
-
-<!-- Al llamar a append las representaciones de data y dbList se ponen en el stack de la siguiente manera: -->
-<!-- - data: Se usa una copia-por-valor, las modificaciones en el servidor no la afectan, se pasa una copia del valor -->
-<!-- - dbList: Se una copia-por-refencia, se hace una copia de toda la estructura que se encuentra en la direccion de memoria y se envia al servidor -->
-
-
 ### Flujo
 1. Cliente llamba un procedimiento
 2. Stub (encargado de comunicar con servidor) construye un mensaje
@@ -255,9 +220,46 @@ Una de las soluciones es copiar la estructura completa al stack para luego copia
 
 Esto es llamado copia-por-valor/restauracion
 
-
 # Arquitecturas
-## Patron observador
+## Arquitectura de software
+Es como deben ser organizados componentes del sismtea y como deben interactuar
+- Componentes: Unidad modular con inferfaces
+- Conectores: Mecanismos que median comunicacion
+
+## Arquitectura de capas
+### Estratificada pura
+Cada capa solo llama a la de abajo
+### Estratificada mezclada
+Capa puede llamar a cualquier capa de abajo
+### Estratificada con upcalls
+Una capa de abajo puede llamar a una capa inmediatamente superior
+
+### Estratificación lógica de aplicaciones
+Se diferencia entre tres niveles logicos estratificados para permitir accesos a bases de datos
+- Nivel de interfaz (interración con el usuario)
+- Nivel de procesamiento (funcionalidad central de aplicacion)
+- Nivel de datos (sistema de archivo persistente)
+
+### Arquitectura de dos capas físicas
+Existe un cliente que contiene solo los programas que se utilizan a nivel de inferaz de usuario y un servidor que se encarga de todo el resto
+
+### Arquitectura de tres capas fisicas
+- Cliente
+- Middleware
+- Servidor de datos
+
+
+## Separación entre procesamiento y coordinación
+Existen
+- Acomplamiento referencial: Un proceso solo puede comunicarse cuando conoce el identificador de otro
+- Acomplamiento temporal: Ambos deben estar corriendo al mismo tiempo
+
+### Arquitectura publicacion-suscripcion
+El servidor tiene una referencia del cliente y cada vez que ocurre algo el servidor envia la información al cliente
+- Basado en tópicos (atributo, valor)
+- Basado en contenidos (atributo, rango)
+
+#### Patron observador
 - Un Sujeto publica informacion
 - Los objetos que se suscriben implementan interfaz Observador
 - Cada Observador tiene un metodo actualizar
@@ -271,7 +273,7 @@ Cuando un programa esta ocrrindoe en un unico procesador, se que sabe que ha ter
 - No hay operaciones I/O
 
 ## Casos distribuidos
-En un prgorama distribuido:
+En un programa distribuido:
 - El estado global no es visible para ningun procesador
 - Incluso si todos los procesadores estan desocupados, puede haber mensajes en transito entre procesadores
 
@@ -284,7 +286,7 @@ En cualquier instante:
 
 Si un token esta desocupado y tiene el token, inicia el algoritmo para detectar detención
 
-Si token parte y termina en un nodo que esta desocupado, se sabe que el algoritmo distribuido que se estaba ejecutando terminó
+Si token parte y termina en el mismo nodo que esta desocupado, se sabe que el algoritmo distribuido que se estaba ejecutando terminó
 
 #### Multiples conexiones
 Si existe de una conexión por nodo, el algoritmo requiere que se pase el token por cada uno de los caminos posibles (ciclo de euler) para detectar detención
