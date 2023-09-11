@@ -12,18 +12,14 @@ Colección de entidades independientes que cooperan para resolver un problema
 
 - Se espera que el usuario vea la colección de computadores como un solo computador
 
-Una ejecución distribuida es la ejecución de procesos a través del sistema sistribuido para conseguir un objetivo en común
+Una ejecución distribuida es la ejecución de procesos a través del sistema distribuido para conseguir un objetivo en común
 
-<!-- ## Algoritmos distribuidos -->
-
-## Memoria distribuida
-
-Se podrian usar operaciones *read/write* pero los programas tendrian que implementar *busy waiting*
+## Red de comunicaciones
+Se podrian usar operaciones read/write (como en variables compartidas) pero los programas tendrian que implementar busy waiting
 
 ### Operaciones de red
-
 - Existen canales compartidos que conectan procesos
-- Cada proceso tiene variables locales (no tienen accesos concurrentes, no se requiere *Mutex*)
+- Cada proceso tiene variables locales (no tienen accesos concurrentes, no se requiere mutex)
 - Procesos se comunican para interactuar
 
 ### Canales
@@ -69,7 +65,7 @@ Una solución debe cumplir con
 - No hay postergación innecesaria
 - Un proceso que intenta entrar finalmente lo logra (progreso)
 
-#### Algoritmo sacar número
+#### Algoritmo sacar número (memoria compartida)
 
 Cada proceso que quiere entrar a su sección crítica saca un número y espera su turno para correr la sección crítica
 
@@ -79,17 +75,17 @@ Variables compartidas:
 - `next <- 1`. Proceso que está actualmente en la sección crítica
 - `turn[n] <- {0 ... 0}`. Número que sacó cada uno de los n procesos
 
-`FA(number, 1)` suma 1 a la variable compartida number
+`FA(number, 1)` suma 1 a la variable compartida `number`
 
 Esto requiere memoria compartida porque todos los procesos necesitan saber cual es el siguiente numero y cual es el numero actual
 
-#### Algoritmo panadería
+#### Algoritmo panadería (memoria compartida)
 
 1. Asigno mi turno en 1
 2. Consulto el turno de todos los demas
-3. Fijo mi turno como el maximo de todos los turnos + 1
-4. Mientras mi numero sea mayor a cualquier otro espero
-5. Si tengo el mismo numero que otro entonces el de menor id pasa primero
+3. Fijo mi turno como el máximo de todos los turnos + 1
+4. Mientras mi número sea mayor a cualquier otro espero
+5. Si tengo el mismo número que otro entonces el de menor id pasa primero
 
 #### Algoritmo Ricart-Agrawala
 
@@ -105,8 +101,9 @@ Principal:
 Receive:
 
 1. Recibo solicitues de un cierto nodo y turno
-2. Si el turno es menor al mío, entonces apruebo
-3. Si no, lo inserto en una cola `deferred`
+2. Si no quiero entrar a la sección crítica, acepto
+3. Si el turno es menor al mío, entonces apruebo
+4. Si no, lo inserto en la cola `deferred`
 
 Los principales problemas
 
@@ -145,9 +142,9 @@ El token va circulando en un anillo, se utiliza y se pasa al siguiente en el ani
 
 #### Algoritmo Ricart-Agrawala con Tokens
 Cada proceso tiene 2 arreglos
-- `Granted`: El número que tenia cada turno la última vez que se metió a la sección crítica
- - Este array va incluido en el mensaje que tiene al token, y la significativa es la ultima enviada
-- `Request`: Números que acompañaban al ultimo mensaje `rqst` de cada nodo
+- `granted`: El número que tenia cada turno la última vez que se metió a la sección crítica
+ - Este array va incluido en el mensaje que tiene al token, y la única copia significativa es la que va con el token
+- `request`: El número que acompañaba al ultimo mensaje `rqst` de cada nodo
 
 - Main
 1. Si no tengo el Token
@@ -164,7 +161,9 @@ Cada proceso tiene 2 arreglos
 3. Si tengo el token y no estoy en la sección critica, envio el token
 
 - SendToken
-1. Si existe un p tal que request[p] > granted[p] elijo uno y envio token
+1. Si existe un p tal que `request[p]` > `granted[p]` elijo uno y envio token
+
+# Arquitecturas
 
 
 # RPC (Remote Procedure Call)
@@ -172,32 +171,6 @@ Es un mecanismo de invocación remota que sirve para llamar procedimientos de fo
 
 La llamada es bloqueante y se espera a recibir respuesta
 
-## Arquitectura de capas
-### Estratificada pura
-Cada capa solo llama a la capa **inmediatamente** inferior
-### Estratificada mezclada
-Cada capa puede llamar a cualquier capa de abajo
-### Estratificada con upcalls
-Una capa de abajo puede llamar a una capa inmediatamente superior
-
-### Estratificación lógica de aplicaciones
-Se diferencia entre tres niveles logicos estratificados para permitir accesos a bases de datos
-- Nivel de interfaz (interración con el usuario)
-- Nivel de procesamiento (funcionalidad central de aplicacion)
-- Nivel de datos (sistema de archivo persistente)
-
-### Arquitectura de dos capas físicas
-Existe un cliente que contiene solo los programas que se utilizan a nivel de inferaz de usuario y un servidor que se encarga de todo el resto
-
-### Arquitectura de tres capas fisicas
-- Cliente
-- Middleware
-- Servidor de datos
-
-El Middleware podría actuar como servidor o como cliente dependiendo de con quién esté interactuando
-
-### Arquitectura publicacion-suscripcion
-El servidor tiene una referencia del cliente y cada vez que ocurre algo el servidor envia la información al cliente
 
 
 ## Mensajes asincronos
@@ -208,6 +181,10 @@ Cada cliente necesitaria un canal de respuesta diferente, por lo que abrian much
 Para interacciones cliente-servidor es mejor usar RPC
 
 ## Mecanismo RPC
+Un programa está compuesto por módulos que contienen procesos y procedimientos
+
+Un proceso en un módulo se comunica con otro proceso en otro módulo llamando procedimientos exportados
+
 Se hace una llamada remota a un servidor para que ejecute un procedimiento de la misma manera en que se podría hacer una llamada local para ejecutar un procedimiento
 
 Despues de la llamada remota se puede esperar a que el sevidor devuelva el resultado del procedimiento
@@ -235,19 +212,6 @@ Todas las llamadas a procedimientos deberian ser en principio igual que hacer un
 - Hay que pasar parámetros y resultados entre computadores
 - Cualquiera de los computadores puede fallar, no hay forma de saber si la operación se concretó
 
-## Operación transparente en RPC
-### append(data, dbList)
-Si se tuviese acceso a una base de datos que permite agregar a datos a una lista
-
-# ARREGLAR!!!
-
-<!-- Si append es un proceso remoto entonces ocurre que: -->
-
-<!-- Al llamar a append las representaciones de data y dbList se ponen en el stack de la siguiente manera: -->
-<!-- - data: Se usa una copia-por-valor, las modificaciones en el servidor no la afectan, se pasa una copia del valor -->
-<!-- - dbList: Se una copia-por-refencia, se hace una copia de toda la estructura que se encuentra en la direccion de memoria y se envia al servidor -->
-
-
 ### Flujo
 1. Cliente llamba un procedimiento
 2. Stub (encargado de comunicar con servidor) construye un mensaje
@@ -267,9 +231,47 @@ Una de las soluciones es copiar la estructura completa al stack para luego copia
 
 Esto es llamado copia-por-valor/restauracion
 
-
 # Arquitecturas
-## Patron observador
+## Arquitectura de software
+Es cómo deben ser organizados componentes del sistema y cómo deben interactuar
+- Componentes: Unidad modular con interfaces
+- Conectores: Mecanismos que median comunicación
+
+## Arquitectura de capas
+### Estratificada pura
+Cada capa solo llama a la capa **inmediatamente** inferior
+### Estratificada mezclada
+Cada capa puede llamar a cualquier capa de abajo
+### Estratificada con upcalls
+Una capa de abajo puede llamar a una capa inmediatamente superior
+
+### Estratificación lógica de aplicaciones
+Se diferencia entre tres niveles logicos estratificados para permitir accesos a bases de datos
+- Nivel de interfaz (interración con el usuario)
+- Nivel de procesamiento (funcionalidad central de aplicacion)
+- Nivel de datos (sistema de archivo persistente)
+
+### Arquitectura de dos capas físicas
+Existe un cliente que contiene solo los programas que se utilizan a nivel de inferaz de usuario y un servidor que se encarga de todo el resto
+
+### Arquitectura de tres capas fisicas
+- Cliente
+- Middleware
+- Servidor de datos
+
+El Middleware podría actuar como servidor o como cliente dependiendo de con quién esté interactuando
+
+## Separación entre procesamiento y coordinación
+Existen
+- Acoplamiento referencial: Un proceso solo puede comunicarse cuando conoce el identificador de otro
+- Acoplamiento temporal: Ambos deben estar corriendo al mismo tiempo
+
+### Arquitectura publicación-suscripción
+El servidor tiene una referencia del cliente y cada vez que ocurre algo el servidor envía la información al cliente
+- Basado en tópicos (atributo, valor)
+- Basado en contenidos (atributo, rango)
+
+#### Patrón observador
 - Un Sujeto publica información
 - Los objetos que se suscriben implementan interfaz Observador
 - Cada Observador tiene un metodo actualizar
@@ -283,8 +285,8 @@ Cuando un programa esta corriendo en un único procesador, se sabe que ha termin
 - No hay operaciones I/O
 
 ## Casos distribuidos
-En un prgorama distribuido:
-- El estado global no es visible para ningun procesador
+En un programa distribuido:
+- El estado global no es visible para ningún procesador
 - Incluso si todos los procesadores estan desocupados, puede haber mensajes en tránsito entre procesadores
 
 ### Detección en anillos
@@ -296,17 +298,17 @@ En cualquier instante:
 
 Si un token esta desocupado y tiene el token, inicia el algoritmo para detectar detención
 
-Si token parte y termina en un nodo que esta desocupado, se sabe que el algoritmo distribuido que se estaba ejecutando terminó
+Si token llega de vuelta al mismo nodo en el que partió, y éste está desocupado, se sabe que el algoritmo distribuido que se estaba ejecutando terminó
 
-#### Multiples conexiones
-Si existe de una conexión por nodo, el algoritmo requiere que se pase el token por cada uno de los caminos posibles (ciclo de euler) para detectar detención
+#### Múltiples conexiones
+Si existe de una conexión por nodo, el algoritmo requiere que se pase el token por cada uno de los caminos posibles (ciclo de Euler) para detectar detención
 
 Se requiere contar el numero de veces consecutivas que ha pasado por un nodo inactivo
 
 Dado que rojo es activo y azul es inactivo
 
 Al recibir el token:
-- Si el valor del token igual a la cantidad de nodos, se anuncia terminación y se detiene
+- Si el valor del token es igual a la cantidad de nodos, se anuncia terminación y se detiene
 - Si el proceso esta rojo, se pinta azul, pone el token en 0 y lo envia
 - Si esta azul, se incrementa el valor del token y se pasa
 
@@ -330,8 +332,8 @@ No se requiere que toda la informacion se recolecte a un instante en particular
 ## Estado de los nodos y canales
 - Estado de nodo: Valores de sus variables internas
 - Estado canal: Secuencia de mensajes que se enviaron por canal pero no estan recibidos
-    - Mensajes enviados por nodo A, recibidos por nodo B y los que aun estan en el canal
-    - Mensaje marker separa los mensajes enviados antes y despues de tomar instantánea
+    - Mensajes enviados por nodo A, recibidos por nodo B y los que aún están en el canal
+    - Mensaje marker separa los mensajes enviados antes y después de tomar instantánea
 
 ## Algoritmo
 Supongamos que un nodo inicia el algoritmo
@@ -349,17 +351,17 @@ Cuando un nodo recibe el primer marker (orden de comenzar a registrar estados)
 3. envia marker por cada canal
 
 1. Recibo mensaje por un canal
-2. Guardo el ultimo mensaje recibido por ese canal (messageAtMarker[canal])
+2. Guardo el ultimo mensaje recibido por ese canal (`messageAtMarker[canal]`)
 3. Si es el primer marker
     1. Guardo el array de todos los últimos mensajes que envié a cada canal (stateatRecord)
     2. Guardo el array de todos los últimos mensajes que recibí en cada canal (messageatRecord)
     3. Por cada canal de output, envío marker y mi id
 4. Espero a recibir markers a través de todos los canales de input
 
-Los mensajes del canal serán desde messageAtRecord[channel]+1 hasta messageAtMarker[channel]
+Los mensajes del canal serán desde `messageAtRecord[channel]+1` hasta `messageAtMarker[channel]`
 
-# Problema filosofos comenzales
-## Solucion descentralizada
+# Problema filósofos comensales
+## Solución descentralizada
 Cada filósofo es atendido por un mozo (proceso waiter) a traves de los canales hungry, eat, done
 
 Cada filósofo
@@ -375,11 +377,3 @@ Cada mozo
     1. envia needL y needR
     2. recibe los cubiertos y se los da al filosofo
     3. envio los cubiertos de vuelta
- 
-<!-- para la prueba -->
-<!-- # seccion critica distribuida -->
-<!-- # rpc -->
-<!-- # algoritmos de terminación -->
-
-
-
