@@ -1,15 +1,10 @@
 # Sistemas distribuidos
-
 Colección de entidades independientes que cooperan para resolver un problema
 
 - Para comunicar, se envían y reciben mensajes en vez de compartir memoria
-
 - No existe certeza de si de recibió el mensaje
-
 - No comparten memoria ni reloj
-
 - Hay autonomía y heterogeneidad (débilmente acoplados)
-
 - Se espera que el usuario vea la colección de computadores como un solo computador
 
 Una ejecución distribuida es la ejecución de procesos a través del sistema distribuido para conseguir un objetivo en común
@@ -315,10 +310,28 @@ Al recibir el token:
 ## Algoritmo basado en arbol de cobertura
 ### Version Simple
 - Cada hoja le reporta a su padre si ha terminado
-
 - Cada nodo reporta a su padre cuando han temrinado y todos sus hijos han terminado
+- El proceso raíz determina cuándo ocurre la detención
 
-- El proceso raíz determina cuando ocurre la detención
+### Version segura, basada en colorear tokens
+1. Todos los tokens inician azules
+2. Si un nodo manda un mensaje a otro token se vuelve rojo
+3. Si un nodo se desocupe le manda un token de su color propio al padre y se cambia a color azul
+4. Si se recibe un token rojo y uno azul de los hijos, se envia un token rojo al padre al terminar
+5. Si el token padre recibe un token rojo al final, se reinicia el algoritmo de deteccion
+
+### Algoritmo de Dijkstra
+Se requiere que exista un "nodo de entorno" que no reciba ningun mensaje durante la computación regular
+
+- Por cada mensaje recibido por un nodo se manda una confirmacion inversa
+- La diferencia entre el numero de mensajes recibidos por `node[i]` y señales de confirmacion enviadas a traves de arista `e` es `inDeficit[e]`
+- La diferencia entre el numero de mensajes enviados por todas sus aristas  el numero de señales recibidas `outDeficit`
+- Cuando un nodo termina no envia mas mensajes pero sigue enviando señales mientras `inDeficit[e]!=0`
+- Si outDeficit_env = 0, se anuncia terminación
+
+Un nodo envia señales de confirmación si
+- InDeficit > 1
+- InDeficit = 1 y isTerminated() (nodo ya terminó) y outDeficit = 0
 
 # Instantáneas globales
 Es un registro consistente de los estados de todos los nodos y canales en un sistema distribuido
