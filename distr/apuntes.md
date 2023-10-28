@@ -390,3 +390,42 @@ Cada mozo
     1. envia needL y needR
     2. recibe los cubiertos y se los da al filosofo
     3. envio los cubiertos de vuelta
+
+# Relojes lógicos
+
+<!--- Revisar sección 1 del capítulo 5 del libro -->
+
+Es muy complejo sincronizar los relojes de los computadores. Lo que es más factible es ponerse de acuerdo en el orden de los eventos.
+
+No es fácil decidir un orden entre eventos locales
+
+## Algoritmo de Lamport
+Sean:
+- `A`, `B` y `C` procesos
+- `lc` variable local de cada proceso que representa su reloj lógico. Todos inicializados en 0
+- `send(ts)` envío de un mensaje con su timestamp (valor actual del reloj lógico)
+- `receive(ts)` recepción de un mensaje con el timestamp del proceso que lo envió
+
+El algoritmo de Lamport se define como:
+
+1. Al enviar un mensaje, el proceso emisor realiza `send(lc)` con su valor de `lc` actual
+2. Inmediatamente después, el mismo proceso incrementa `lc` en 1
+3. Al recibir un mensaje, el proceso receptor actualiza el valor de `lc` como el máximo entre: su valor actual de `lc` y el timestamp+1
+4. Luego, incrementa en 1 el valor de `lc`
+
+Se incrementa el `lc` después de recibir para que no hayan dos eventos a la misma hora lógica. Por lo mismo, los timestamps deben crecer monotónicamente.
+
+Si dos procesos tienen algún evento en la misma hora lógica, se distinguen por número de proceso.
+
+## Multicast totalmente ordenado
+
+Para resolver problemas de dependencia de eventos (*e.g.* lectura sucia en bases de datos) los mensajes (con su respectivo timestamp) se guardan en una cola. Los ack siguen la misma regla.
+
+La idea del multicasting es que todos los procesos reciban los mensajes en el mismo orden, resolviendo problemas de dependencia.
+
+- Cada mensaje es recibido por todos los procesos, incluido su emisor (*i.e.* broadcast)
+- Cada mensaje tiene un timestamp asociado
+- Cada proceso tiene una cola de prioridades en donde la prioridad es el timestamp (menor timestamp, más prioritario)
+- Cuando un proceso recibe un mensaje regular, envía un ACK con su timestamp. Notar que este timestamp debe ser mayor al del mensaje original
+- Dado que estamos en *broadcast*, eventualmente todos los procesos tienen la misma cola
+- Si el mensaje ha sido reconocido (*acknowledged*) por todos los procesos, se elimina de todas las colas en conjunto con sus ACKs
