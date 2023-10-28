@@ -429,3 +429,198 @@ La idea del multicasting es que todos los procesos reciban los mensajes en el mi
 - Cuando un proceso recibe un mensaje regular, envía un ACK con su timestamp. Notar que este timestamp debe ser mayor al del mensaje original
 - Dado que estamos en *broadcast*, eventualmente todos los procesos tienen la misma cola
 - Si el mensaje ha sido reconocido (*acknowledged*) por todos los procesos, se elimina de todas las colas en conjunto con sus ACKs
+
+## Semaforos distribuidos
+En sistemas de memoria comaprtida, representamos un semáforo s como un entero
+
+- `P(s)` espera hasta que `s` sea positivo y lo decrementa
+- `V(s)` incrementa `s`
+
+El numero de operaciones P terminadas es igual a el numero de operaciones V terminadas + s
+
+### Implementación
+En cada proceso
+- Una cola local ed mensajes mq
+- Un reloj logico lc
+
+Para ejecutar al operacion P o V un proceso hace broacast incluyendo
+- Identidad
+- Etiqueta P o V
+- timestamp
+
+Broadcast es una operación atomica, los mensajes enviados por dos procesos pueden ser recibidos en ordenes distintos
+
+En el multicast totalmente ordenado, los mensaje se en el mismo orden por cada receptor
+
+### Mensajes totalmente recibidos y prefijos estables
+Si un mensaje `m` tiene un timestamp ts y se reciben mensajes de todos los otros procesos con timestamps > ts, entonces `m` esta totalmente recibido
+
+Ningun mensaje va a tener un timestamp menor que ts
+
+La parte de la cola que tiene mensajes totalmente recibidos se denomina "prefijo estable"
+
+### Mensajes ACK de recepcion
+Cada vez que se recibe un P o V se envia un ACK con un timestamp normal y su proposito es apurar la determinacion de cuando un mensaje se vuelve totalmente recibido
+
+### Actualizacion de prefijos estables
+Cada proceso guarda una variable que representa el valor del semaforo
+
+Por cada mensaje en el prefijo esatble
+- Si es V, incremento s y elimino mensaje
+- Si es P, reviso en orden de timestamp. Si s>0 decremento s, y elimino el mensaje
+
+Todos los procesos toman la misma decisiona cerca del orden en que finalizan las operaciones
+
+### user y helper
+En cada nodo ocurre que
+
+1. user solicita a helper la ejecuciones de P o V
+2. en caso de que sea P, user espera hasta autorización
+3. helper entonce se encarga de: 
+    - maneja la cola de mensajes
+    - el valor del semaoro
+    - broacast de solicitudes
+    - recepciones de mensaje P o V mandado por otros helper, incluyendose
+
+## Relojes vectoriales
+Los timestamps pasan a ser vectores con los valores de los vectores logicos de todos los otros procesos
+
+Cada vez que envio un mensaje, envio el vector entero de timestamps
+
+Actualizo cada entrada del vector al mayor valor que haya visto para esa entrada
+
+### Reglas de actualización
+- Antes de ejecutar un evento actualizo mi reloj `V[i] += 1`
+- Al enviar un mensaje adjunto mi reloj vectorial
+- Al recibir un mensaje, ajusto mi propio vector `V[k] = max(V[k], ts(m)[k]) para todo k` 
+- Al recibir un mensaje le sumo 1 a mi reloj
+
+### Causalidad
+Definamos la relacion
+$$ts(a) < ts(b) \iff \forall k, ts(a) \leq ts(b) \wedge \exists k', ts(a)[k'] < ts(b)[k']$$
+
+Entonces se puede notar que ts(m1) < ts(m2) podria ser que m2 es causalmente dependiente de m1
+
+# Consenso
+Como ponerse de acuerdo respecto a algo
+
+## Sistema confiable
+- Inocuo ante fallas (fallas no producen daños)
+- Tolerante a fallas (continua si hay fallas)
+
+La replicación es uno de los metodos en lo que se puede lograr un sistema confiable
+
+## Como lograr consenso
+### Si no hay fallas
+El algoritmo para lograr consenso se puede realizar una votación simple
+
+### Si hay fallas
+Consideremos dos tipos de fallas de los procesos
+- Fallas simples: Proceso deja de funcionar
+- Fallas bizantinas: Un nodo puede enviar mensajes arbitrarios diseñados para que el consenso falle
+
+Resolver este tipo de problemas requiere poder asumir que si un computador deja de enviar mensajes despues de un cierto tiempo, este dejo de funcionar
+
+#### Problema de los generales bizantinos
+- Un grupo de ejercitos bizantinos rodea una ciudad
+- Solo pueden capturar la ciudad si todos atacan juntos
+- Los generales tienen mensajeros completamente confiables
+- Los generales pueden ser traidores que intentan que no se llegue a consenso
+
+Hay que diseñar un algoritmo para que todos lo generales lleguen a consenso
+
+### Algoritmo simple de una rueda
+1. Cada nodo envia mensajes y recibe respuestas sobre la cual decision se va a tomar
+2. Si la votación es empate entonces se retiran
+
+Si un nodo se cae, el resto de nodos no puedan llegar a consenso
+
+### Algoritmo doble rueda
+1. Se hace una rueda simple 
+2. Por cada nodo envio lo que recibi acerca de los otros nodos
+3. Digo que el voto de un nodo va a ser igual a el voto de mayoria entre los valores reportados para ese nodo y los valores recibidos
+
+Este algoritmo resuelve el problema con fallas simples y el de fallos bizantinos para 4 nodos si 1 falla
+
+Por cada traidor adicional hay que enviar una vuelta adicional de mensajes (que dijo a sobre que dijo b que dijo c)
+
+El numero de generales debe ser $n \geq 3t+1$ con t la cantidad de traidores
+    
+
+# Algoritmos de eleccion
+## Bully
+Si un proceso se da cuenta que el coordinador no responde entonces:
+1. k envia mensaje election a todos los procesos con identificadores > k
+2. Si nadie responde, k gana y se vuelve coordinador
+3. Si uno responde, entonces ese se hace cargo
+
+## Basado en anillo logico
+
+# Consistencia y replicación
+## Razones
+- Confiabilidad
+- Desempeño
+
+## Modelo de consistencia data-centric
+Es un contrato entre los procesos y la informacion
+
+Si lo procesos siguen ciertas reglas, entonce el sistema funciona correctamente
+
+## Soluciones
+Para resolver estos problemas es necesario tener relojes logicos para definir cual fue el ultimo write
+
+La replicacion de datos no puede ser resuelta de forma eficiente por lo general eficia implica relajar consistencia
+
+Existen multiples modelos de consistencia
+
+### Consistencia Secuencial
+El resultado de cualquier ejecucion es el mismo que si las operaciones si ejecutasen en algun orden secuencial
+
+### Consistencia Causal
+Si hay dos operaciones tal que una es potencialmente causa de la otra, nadie puede ver la segunda antes de la primera
+
+Las operaciones que no estan causalmente relacionadas se denominan concurrentes
+
+### Consistencia de Entrada
+Se asocia un lock a los datos y se utilizan los locks bajo consistencia secuencial
+
+# Lectores y escritores
+- Lectores solo leen BD
+- Escritores la actualizan
+- La BD parte en un estado consistente
+- Un escritor debe tener acceso exclusivo a la BD
+- Los lectores pueden leer todos al mismo tiempo
+
+# Referencias Globales
+## Arquitecutra basada en objetos
+Cada objeto es un componente
+
+Los componetnes estan conectados a traves de RPC
+
+Ofrece una forma de encapsular una entidad unica
+
+La interfaz del objeto oculta detalles de implementación
+
+Un proxy se encarga del marshaling y el skeleton del unmarshaling
+
+## RPC Asincrono
+A veces no es necesario esperar a que el servidor devuelva los resultados por lo que se puede hacer una llamada asincrona y solo esperar confirmacion de recepción
+
+## RPC Sincrono Referido
+Se llama al servidor y despues se puede decidir cuando esperar la respuesta
+
+### RPC Multicast
+UN cliente puede envair a multiples servidores
+
+## Arquitectura Pub/Sub
+Existe acoplamiento temporal pero no referencial
+
+Es un desafio implementar de manera eficiente y escalable el matching entre subs y notififaciones sin perder bajo acoplamiento
+
+## Shared Space
+Se crean 3 operaciones
+- in
+- read
+- out
+
+Se publica y cualquier puede leer
