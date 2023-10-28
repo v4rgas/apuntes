@@ -219,3 +219,14 @@ Existen muchos tipos de diagramas UML, entre ellos estan
     - Funcionalidad core minima posible
     - Usualmente se usa en kernels, pero actualmente tiene muchos usos
 
+# Estilos y Patrones
+## Interprete
+El interprete parsea, ejecuta comandos de entrada y actualiza el estado mantenido
+
+### Codigo Movil
+Un elemento de datos se transforma dinamicamente en un componente de procesamientos de datos
+- Datos: Codigo como datos
+- Topologia: Red
+
+Containers cuando se despliegan varios tipos de sistemas
+
