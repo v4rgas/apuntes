@@ -392,12 +392,11 @@ Cada mozo
     3. envio los cubiertos de vuelta
 
 # Relojes lógicos
+Es imposible sincronizar todos los relojes fisicos por lo que no se pueden usar timestamps convencionales para ordernar
 
-<!--- Revisar sección 1 del capítulo 5 del libro -->
+Un reloj logico es un contador que incrementa a medida que ocurren eventos (send, broacast, receive)
 
-Es muy complejo sincronizar los relojes de los computadores. Lo que es más factible es ponerse de acuerdo en el orden de los eventos.
-
-No es fácil decidir un orden entre eventos locales
+Cada reloj logico parte en 0 y cada mensajer contiene un timestamp de este reloj
 
 ## Algoritmo de Lamport
 Sean:
@@ -440,7 +439,7 @@ El numero de operaciones P terminadas es igual a el numero de operaciones V term
 
 ### Implementación
 En cada proceso
-- Una cola local ed mensajes mq
+- Una cola local de mensajes mq
 - Un reloj logico lc
 
 Para ejecutar al operacion P o V un proceso hace broacast incluyendo
@@ -555,11 +554,105 @@ Si un proceso se da cuenta que el coordinador no responde entonces:
 3. Si uno responde, entonces ese se hace cargo
 
 ## Basado en anillo logico
+Cada proceso tiene un sucecesor
+
+1. Un nodo inicia con un mensaje Election con una cola a la cual se añade
+2. Busca el primero de sus sucesores que conteste y lo envia
+3. Cada nodo al recibir el mensaje se añade a la cola
+4. Cuando da la vuelta entera se elige el con mayor indice
+
+## Para entornos inalambricos
+1. Un nodo cualquier inicia el algoritmo y envia election a todos sus vecinos
+2. Cuando un nodo recibe election por primera vez, se asigna como padre el que envio y se envia todos sus vecinos
+3. Si se recibe de un nodo diferente se envia un ack
+
+
+# Determinacion de topologia
+## Lamport
+1. El primer nodo envia una sonda a sus vecinos
+2. Cada nodo repite lo mismo
+3. despues cada nodo envia la respuesta con la informacion de la topologia al nodo desde que recibio la sonda
+
+# Arquitecturas descentralizadas p2p
+Todos los nodos que forman un sistema p2p son iguales
+
+Existe simetria en la mayor parte de interacciones
+
+## Overlay Network
+Existen dos tipos
+### No estructuado
+Cada nodo tiene una lista ad hoc de vecinos
+
+- El overlay resulta aleatorio
+- Se cambia de vecinos continuamente
+- Para buscar un dato no hay ruta predeterminada
+
+#### Flooding
+Para buscar un dato
+1. Nodo u envia una solicitud de busqueda a todos sus vecinos
+2. Si un nodo ya lo recibio la solicitud, se ignora
+3. Si no busca localmente el dato
+4. Si no tiene el dato entonces solicita a todos sus vecinos
+5. Si lo tiene, responde al nodo el cual recibio la solicitud
+
+Es un algoritmo muy costoso en terminos de comunicacion
+
+Se limita la cantida dde saltos de los mensajes con un TTL
+
+#### Random walks
+1. Un nodo esolicita un dato a un vecino de manera aleatoria
+2. Si no tiene l dato, reenvia la solicitud a otro vecino elegido aleatoriamente
+
+Puede demorarse mucho en buscar el dato pero se suelen iniciar varias random walks
+
+## Estructurado
+#### Superpeers
+Una alternativa es designar nodos especiales que mantienen indices de los  datos o actua como broker
+
+Todo nodo regular (weak) esta conectado a un super peer
+
+Para elegir un super peer debe cumplir que
+1. Conexion rapida
+2. Distribucion pareja
+3. Numero maximo de nodos atendidos 
+
+##### Gravitacion
+Una alternativa es poner a los nodos en un espacio 2d
+
+1. Asignamos N superpeers con N tokens
+2. Cada token representa una fuerza de repulsion que hace que otro token se aleje
+3. Si todos los toquen ejercen la misma fuerza, se van a alejar unos de otros, por lo que estaran distribuidos de manera uniforme
+4. El token se pasa cuando las fuerzas sobre el exceden cierto limite
+5. Despues de tener el nodo un tiempo, el nodo se vuelve super peer
+
+##### Chord
+Otra alternativa es que cada nodo tenga un identificar de bits y utilizar los primeros bits  para marcar a los superpeers
+
+Un dato con clave k de m bits se almacena en un nodo con id >= k
+Se envia la solicitud al nodo mayor
 
 # Consistencia y replicación
 ## Razones
 - Confiabilidad
 - Desempeño
+
+## MIMD
+Los multiprocesadores utilizan una memoria compartida
+
+Los multicomputadores enviar y reciben mensajes
+
+### Multiprocesador
+Mientras mas lejano el procesador más ciclos se requieren para acceder a la memoria
+
+#### UMA
+Acceso uniforma a la memoria, cada procesador tiene su propio cache y además hay uno compartido
+
+Al usar un unico BUS, el tamaño maximo actualmente es de al rededor de 32 CPU
+
+#### NUMA
+Cada procesador tiene su memoria y existe una red de interconexion que sirve para comunicarse
+
+Si no tienen cache, la coherencia de memoria esta garantizada
 
 ## Modelo de consistencia data-centric
 Es un contrato entre los procesos y la informacion
