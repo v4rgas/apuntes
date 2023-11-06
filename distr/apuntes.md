@@ -717,3 +717,36 @@ Se crean 3 operaciones
 - out
 
 Se publica y cualquier puede leer
+
+# Middleware
+Es un capa de software que se encuentra sobre el sistema operativo
+
+## Rol
+Middleware es a un sistema distribuido lo mismo que un sistema oeprativo es a un computador
+
+Gestiona recursos de manera eficienet a traves de una red
+
+Oculta a las aplicaciones (como tan razonablemente sea posible) los detalles
+
+## Organizacion
+Se suelen utilizar 
+- Wrappers, Adapters
+- Interceptores (permiten ejecucion de codigo entre medio de llamadas)
+
+Para lograr `openness`
+
+Los componentes deben obedecer reglas estandares que describen la sintaxis y semantico de los servicios que proporcionan
+
+### Brokers
+Los wrappers a veces no escalan bien ya que se necesitan muchos por cada una de las apliaciones
+
+Los brokers son un mecanismo que simplifica la implementaciones de mulitples wrappers ya que conoce a todas las aplicaciones y ofrece interfacs para cada una
+
+Las aplicaciones le piden al broker que contacte la otra aplicacion
+
+Esto tiene la desventaja de tener un solo punto de falla
+
+
+
+
+
