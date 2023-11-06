@@ -69,13 +69,6 @@ En una FPU tradicional, el tiempo de ejecución se calcula como:
 - **Eficiencia** : speedup/N
 
 # Parallel Computing
-## ILP
-### SIMD
-Single Instruction Multiple Data
-
-### SIMT
-Single Instruction Multile Thread
-
 ## Data-Paralelism
 
 ## Task-Paralelism
@@ -110,7 +103,41 @@ En un mejor computadorpuedo hacer mas trabajos el mismo tiempo
 Tp = FsTp + pFpTp
 Sp = p-(p-1)*Fs
 
- 
+## Concurrencia
+- Computo paralelo: Actividades se pueden ejectuar de manera no secuencial
+- Computo concurrente: Actividades se pueden ejectuar al mismo tiempo
+- Computo distribuido: Actividades en diversos procesadores usualmente con memorias separadas
+- Computo asincrono: Permite ejecutar actividades en distinto orden
 
+## Arquitecturas
+- SISD: single instruction single data
+    - CPU tradicional, una instruccion ejecuta sobre un dato
+- SIMD: single instruction multiple data
+    - Computaciones vectoriales, GPU (SIMT)
+- MISD: multiple instruction single data
+    - Computacion redundante
+- MIMD: multiple instruction multiple data
+    - Computacion paralela
 
+## Arquitecturaras de memoria
+- UMA
+    - Todos los procesadores comparten memoria
+- NUMA
+    - Cada procesador tiene un trozo de la RAM asignado, pero tambien pueden acceder al de los otros
+    - ccNUMA, cache coherent
+    - Affinity: Un proceso se ejecuta en el procesador que tiene sus datos
+
+# Parallel Programming
+## Fork Join
+Se define un thread principal que crea más threads los cuales luego hacen join al thread principal
+
+## Modelos de memoria y consistencia secuencia
+### Consistencia secuencial
+- Lo que se lee es lo ultimo que se escribio
+- Las operaciones de memoria ocurren en el orden del programa
+
+## Affinity
+Permite vincular y desvicular threads o procesos a un cierto CPU o rango de CPUs
+
+Es bueno que threads que comparten datos esten dentro del mismo cache
 
