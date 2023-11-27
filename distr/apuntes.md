@@ -574,11 +574,16 @@ Cada proceso tiene un sucecesor
 3. despues cada nodo envia la respuesta con la informacion de la topologia al nodo desde que recibio la sonda
 
 # Arquitecturas descentralizadas p2p
+
 Todos los nodos que forman un sistema p2p son iguales
+
+En un sistema peer to peer existen muchas posiblidades de conexiones
 
 Existe simetria en la mayor parte de interacciones
 
 ## Overlay Network
+Consiste en superponer una red sobre los nodos para forzar un patron de conexion
+
 Existen dos tipos
 ### No estructuado
 Cada nodo tiene una lista ad hoc de vecinos
@@ -586,6 +591,7 @@ Cada nodo tiene una lista ad hoc de vecinos
 - El overlay resulta aleatorio
 - Se cambia de vecinos continuamente
 - Para buscar un dato no hay ruta predeterminada
+
 
 #### Flooding
 Para buscar un dato
@@ -606,6 +612,13 @@ Se limita la cantida dde saltos de los mensajes con un TTL
 Puede demorarse mucho en buscar el dato pero se suelen iniciar varias random walks
 
 ## Estructurado
+## Hashing
+Es util asignar un hash a cada proceso y dato
+
+Luego con una tabla de hash distribuida se puede buscar donde esta un cierto proceso o dato
+
+Con la tabla de hash se donde ir, con la topologia se como llegar
+
 #### Superpeers
 Una alternativa es designar nodos especiales que mantienen indices de los  datos o actua como broker
 
@@ -625,11 +638,16 @@ Una alternativa es poner a los nodos en un espacio 2d
 4. El token se pasa cuando las fuerzas sobre el exceden cierto limite
 5. Despues de tener el nodo un tiempo, el nodo se vuelve super peer
 
-##### Chord
+### Chord
 Otra alternativa es que cada nodo tenga un identificar de bits y utilizar los primeros bits  para marcar a los superpeers
 
-Un dato con clave k de m bits se almacena en un nodo con id >= k
-Se envia la solicitud al nodo mayor
+Un dato con clave k de m bits se almacena en un nodo con el menor identificador tal que id >= k
+
+Existen atajos entre nodos para poder ir rapidamente a los recursos necesitados
+
+Estos atajos son asignados mediante algun algoritmo
+
+Permite la union y la secesion de nodos
 
 # Consistencia y replicación
 ## Razones
@@ -746,7 +764,149 @@ Las aplicaciones le piden al broker que contacte la otra aplicacion
 
 Esto tiene la desventaja de tener un solo punto de falla
 
+# Procesos
+Los procesos y threads son una forma de hacer mas cosas al mismo tiempo
+
+## Virtualizacion
+Permite extender o reemplazar una interfaz existente para imitar el comportamiento de otro sistema
+
+La virtualizacion permtite que cada aplicacion corra en su propia maquina virtual (con sus propias librerias y sistema operativo)
+
+La escencia de la virtualizacion es imitar library functions, system calls, privileged instructions, general instruction
+
+### Niveles
+1. Sistema que corre sobre el sistema operativo el cual traduce las system calls
+2. Sistema implementado como una capa que esconde el hardware original (virtual machine)
+3. Un monitor de maquina virtual hosted que corre encima de un sistema operativo anfitrion
+
+# Servidores
+### Stateless
+No almacenan informacion del cliente
+
+- Soft state: Se mantiene un estado por un tiempo limitado
+- Session state: Seria de operacion por un unico usuario durante un tiempo limitado
+### Stateful
+Mantienen estado de los clientes
+
+### Servidores de objetos
+- Ofrecen un medio para invocar objetos
+- Los servicios son implementados por estos objetos
+- Es fácil cambiar servicios agrando o sacando objetos
+
+Los objetos tienen datos y codigos
+
+#### Objetos transitorios
+Existen solo mientras el servidor existe o menos
 
 
+Una politica es que el objeto usara recursos solo mientras sea necesario, teniendo que ser creado cuando se necesita
+
+La otra es tenerlos todos creados lo que tiene un costo mayor
+
+Los objetos de la msima clase pueden compatir codigo
+
+## Threads
+Opciones
+- Tener un solo thread
+- Un thread por cada objeto (lo que protege objetos de accesos concurrentes)
+- Thread por cada invocación
+
+### Politicas de despacho
+- Incondicionalmente justa: Toda accion atomica incondicional va a ser ejecutada
+- Debilmente justa: Incondicionalmente justa y todas las acciones atomicas condicionales que permanecen verdadera van a ser ejecutadas 
+- Fuertemente justa: Incondicionalmente justa y toda accion condicional elegible es ejecutada finalmente
+
+### Locks
+Se requieren instrucciones atomicas para poder hacer locks correctos, estas instrucciones pueden ser:
+```python
+bool TS(bool lock):
+    bool init = lock
+    lock = true
+    return init
+```
+
+```python
+bool FA(int var, int incr):
+    int tmp = var
+    var += incr
+    return tmp
+```
+
+## Politica de activacion
+Son las decisiones sobre como invocar un objeto
+
+Un adaptador es un mecanismo para agrupar objetos segun la politica de activacion (sofware que implementa politica)
 
 
+## Clusters
+Coleccion de computaores conectados a traves de una red
+
+Cada computador corre uno o mas servidores
+
+### Separacion 3 capas
+#### Switches
+Unico punto de acceso al cluster, tiene una unica direccion de red
+
+Pueden haber multiples switches
+
+Es un trasport layer switch el que acepta solicitued de coenxion y las pasa a un servidor
+
+Cuando el servidor responde se hace pasar por el switch
+
+#### Content Awaer
+La ventaja es que el switch podria comenza ra hacer caching para mejorar los tiempos de respuesta
+
+## Clusters de area ancha
+Proveedores de cloud manejan data centers dispeustos en diferentes ubicaciones en todo el mundo
+
+Ofrecen a sus usuarios la capacidad de constrir sistemas distribuidos de area ancah formados por un conjunto grande ade maquinas virtuales
+
+# Fallas
+Un sistema distribuido es mas resistente a fallas debido a que deben caerse todos los nodos para dejar de funcionar
+
+La resistencia a fallas esta relacionada a los sistemas "dependables"
+
+## Dependability
+- Availability
+- Reliability
+- Safety
+- Maintainability
+
+## Tipos de fallas
+- Crash failure
+- Omission failure
+    - Receive omission
+    - Send omission
+- Timing failure
+- Response failure
+    - Value failure
+    - State transition failure
+- Arbitrary failure
+
+## Sistemas
+### Async
+No se puede asumir sobre la velocida de ejecucion o del envio de mensajes
+
+No se puede saber si hubo un error o solo es demora
+### Sync
+Se garantiza que los mensajes se recibiran en un tiempo especifico
+
+### Parcialmente sync
+Casi siempre se ejecuta como un sistemas sincronico pero no esta garantizado
+
+Normalmente se utilizan timeouts para saber si un proceso se cayo
+
+Las soluciones ante fallas deben tomar en cuenta que puede ser que no se haya caido realmente
+
+## Estrategia
+Lo que hacen los sistemas tolerantes a fallas es que ocultan la ocurrencia de fallas a los otros procesos
+
+Una forma es usar redundancia
+
+### Information redundancy
+Bits extra que permiten recuperar bits perdidos o revisar si es que esta completo el mensaje
+
+### Time redundancy
+Se hace una accion y si es necesario se hace de nuevo
+
+Si la accion no esta terminada se cancela
