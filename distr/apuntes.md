@@ -910,3 +910,41 @@ Bits extra que permiten recuperar bits perdidos o revisar si es que esta complet
 Se hace una accion y si es necesario se hace de nuevo
 
 Si la accion no esta terminada se cancela
+
+### Physical redundancy
+Procesos extra se agregan a un servidor en caso de que si uno falla esten los otros
+
+Tambien puede ser hecho de manera fisica
+
+#### TMR
+Cada procesos esta triplicado, envian su respuesta a 3 procesos para votar y luego en base a eso se toma cual es la respuesta con la que se queda
+
+## Grupos de procesos
+Se tienen grupos de procesos que desde afuera se ven como un solo gran proceso muy tolerante a fallas
+Todos los procesos del grupo reciben todos los mensajes y si uno falla siempre hay otro para suplirlo
+
+Un proceso puede entrar, salir y estar en varios grupos
+
+## Teorema CAP
+En cualquier sistema interconectado con datos compartidos solo se pueden garantizar 2 de 3 propiedades
+- Consistencia
+- Availability
+- tolerant to the Partitioning
+
+## Deteccion de fallas
+Se utilizan probes y timeotes para detectar fallas
+
+Tiene la desventaja que es facil que se generen falsos positivos
+
+La deteccion de fallos tambien puede ser implementada como un efecto secundario de intercambiar informacion con los vecinos
+
+En "gossip based information dissemination" los procesos regularmente avisan su disponibilidad
+
+### Fallas en RPC
+Enmascarar las diferencias entre fallas locales y remotas no es facil
+
+1. Unable to locate server
+2. Request from client to server is lost
+3. Server crashes after receiving a request
+4. The reply message from the server to the client is lost
+5. The client crashes after sending a request
