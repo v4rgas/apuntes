@@ -8,4 +8,11 @@ Se utiliza en disciplinas como:
 - Comportamientos del mercado
 
 
-$min f(x),g_i(x)\leq b_i, i = 1,...,m, x \in C$
+## Forma algebraica
+$$min f(x),g_i(x)\leq b_i, i = 1,...,m, x \in C$$
+
+Donde $g(x) \leq b$ representa una restriccion
+
+$x \in R^n$ una variable
+
+$f(x): R^n \rightarrow R$ una funcion objetivo
