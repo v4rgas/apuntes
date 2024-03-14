@@ -21,3 +21,7 @@ El principal objetivo es dejar de lado los beneficios individuales y trabajar en
 2. Respeto: Deber de mostrar consideracion por nosotros mismos, los demas y los recursos confiados
 3. Equidad: Tomar decisiones y actuar de manera imparcial y objetiva
 4. Honestidad: Verdad y sinceridad
+
+# PMBOK
+## Portafolio
+Conjunto de proyectos, prorgamas y otras iniciativas que se agrupan para facilitar la gestion de un trabajo

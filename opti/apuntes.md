@@ -30,4 +30,11 @@ $$\forall x,y \in S, \forall \lambda \in [ 0,1 ] \implies \lambda x + (1 - \lamb
 El conjunto definido por una desigualdad lineal es convexo
 
 ### Funcion Convexa
-$$f(\lambda x)$$
+$$f(\lambda x + (1-\lambda)y) \leq \lambda f(x) + (1-\lambda)f(y), \forall x,y, \forall \lambda \in [0,1]$$
+
+#### Estrictamente Convexa
+$$f(\lambda x + (1-\lambda)y) < \lambda f(x) + (1-\lambda)f(y), \forall x \neq y, \forall \lambda \in (0,1)$$
+
+### Conjuntos de Nivel
+Dado un $f: H \rightarrow R$
+$$C_k = \{x \in H | f(x) = k \}$$
