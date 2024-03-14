@@ -25,3 +25,37 @@ El principal objetivo es dejar de lado los beneficios individuales y trabajar en
 # PMBOK
 ## Portafolio
 Conjunto de proyectos, prorgamas y otras iniciativas que se agrupan para facilitar la gestion de un trabajo
+
+## Programa
+Un grupo de proyectos gestionados en forma coordinada
+
+## Proyecto
+Esfuerzo temporal destinado a crear un unico producto
+
+## Direccion de Proyectos
+Es la aplicacion de conocimientos, habilidades y tecnicas para alcanzar los requerimientos de un proyecto
+
+## Roles
+### Director de Proyecto
+- Direccion tecnica de proyectos
+- Liderazgo
+- Gestion estrategica de negocios
+
+### Patrocinador
+Dueño del proyecto y de la mayoría de los recrusos requeridos en la organizacion en la que el proyecto se lleva acabo
+
+### Equipo de proyecto
+- Especialistas
+- Reportan al director del proyecto
+
+## Creación de Valor
+### Componentes
+La entrega de valor ocurre en el entorno e interior de la organización
+
+- Politicas, metodologias, gobernanza
+- Legislación, competencia, economía
+
+### Flujo de informacion
+Para que la entrega de valor sea eficiente, la niformacion debe circular de forma adecuada
+
+
