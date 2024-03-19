@@ -21,7 +21,7 @@ $f(x): R^n \rightarrow R$ una funcion objetivo
 ### Combinacion Convexa
 $$y = a_1 x_1 + a_2 x_2 + ... + a_n x_n$$
 
-y es una combinacion convexa si $\sum_{i=1}^n a_i = 1, 0 \leq a \leq 1$
+y es una combinacion convexa si $\sum2_{i=1}^n a_i = 1, 0 \leq a \leq 1$
 
 ### Conjunto Convexo
 Un conjunto $S \subseteq R^n$ es convexo si
@@ -38,3 +38,5 @@ $$f(\lambda x + (1-\lambda)y) < \lambda f(x) + (1-\lambda)f(y), \forall x \neq y
 ### Conjuntos de Nivel
 Dado un $f: H \rightarrow R$
 $$C_k = \{x \in H | f(x) = k \}$$
+
+

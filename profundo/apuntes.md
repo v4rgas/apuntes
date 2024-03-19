@@ -16,3 +16,27 @@ $$f* = arg min_{f \in H} L(f(x)) $$
 Aproximated as
 
 $$f*_{Tr} = arg min_{f \in H} \frac{1}{N} \sum_{x_i \in Tr}^N L(f(x_i))$$
+
+# K-Nearest Neighbors
+- Case based reasoning
+- Supervised approach
+- Can be used for prediction and classification
+
+1. Achieves amazing reults with large datasets
+2. Critical issue is to use a suitable distance metric
+3. A good metric is related to quentifying semantic distance
+4. Supervised ML is related to learning suitable metrics
+
+## Implementations
+- Majority vote
+- Weighted majority vote: Weight vote is proportional to the inverse of the distance
+
+## Distance metric
+Eucledian distance isnt always the best choice
+
+Finding suitable metrics is one of the mains tasks of a ML technique
+
+Deep Learning is an excellent tool to build semantic distance spaces
+
+# Distributed representations
+    

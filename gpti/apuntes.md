@@ -58,4 +58,29 @@ La entrega de valor ocurre en el entorno e interior de la organización
 ### Flujo de informacion
 Para que la entrega de valor sea eficiente, la niformacion debe circular de forma adecuada
 
+### Sistemas de gobernanza organizacional
+Incluye definir la autoridad para aprobar cambios y tomar otras decisiones
+
+### Funciones asociadas con proyectos
+- Supervicion y Coordinador
+- Presentar objetivos, retroalimentacion
+- Facilitar y apoyar
+
+### Entorno del proyecto
+- Interno: Portafolio, programa, proyectos, procesos, practicas, seguridad
+- Externo: Condiciones del mercado, normativas, influencias sociales y culturales
+
+### Gestión del Producto
+Los productos requieren ser gestionados durante todo su ciclo de vida
+
+## Principios de la direccion de proyecto
+- Ser administrador, digiligente, respetuoso y cuidadoso
+- Reconocer y responder interacciones del sistema
+- Navegar en la complejidad
+- Demostrrar conductas de liderazgo
+- Adaptar con base en el contexto
+- Incoporar la calidad en los procesos y los entregables
+- Optimizar las respuestas a los riesgos
+- Adoptar la adaptabilidad y resiliencia
+
 
