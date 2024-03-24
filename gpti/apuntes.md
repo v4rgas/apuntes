@@ -11,9 +11,11 @@ Este curso presenta los conceptos de gestión de proyectos TI, orientados al des
 Consisten en organizar, priorizar, planificar , controlar y mantener en continua comunicacion todos los recursos de un proyecto
 
 # Etica
-Conjunto de normas morales que rigen la conduca de la persona
+Conjunto de normas morales que rigen la conduca de la persona. Esta depende en gran parte del contexto social.
 ## Etica Profesional
-El principal objetivo es dejar de lado los beneficios individuales y trabajar en conjunto por el bien común
+El principal objetivo es dejar de lado los beneficios individuales y trabajar en conjunto por el bien común. No siempre existe una vía concreta y/o única de proceder. En este caso estaríamos hablando de un dilema ético.
+
+Para entender el comportamiento de una organización, se debe considerar que las personas actúan en base a incentivos (*e.g.* casos de copia en la universidad, colusiones).
 
 ## Etica en gestion de proyectos
 ### Valores
