@@ -85,4 +85,7 @@ Los productos requieren ser gestionados durante todo su ciclo de vida
 - Optimizar las respuestas a los riesgos
 - Adoptar la adaptabilidad y resiliencia
 
+Estos principios tienen similitud con los principios del manifiesto ágil. El cumplimiento de estos es fundamental para el éxito del proyecto bajo esta metodología.
 
+## Dominios de desempeño
+Puntos de atención para la labor de quien esté a cargo de la gestión de proyectos.
