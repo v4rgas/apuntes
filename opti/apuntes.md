@@ -40,7 +40,7 @@ Dado un $f: H \rightarrow R$
 $$C_k = \{x \in H | f(x) = k \}$$
 
 ## Tipos de Problemas
-### Problema de la mochila
+### La mochila
 - Un excursionista tiene una mochila con carga total de b kilos
 - Debe elegir entre n productos 
 - Cada producto j pesa $a_j$ kilos y tiene $c_j$ energía
@@ -53,3 +53,16 @@ $$max \sum_j c_j x_j$$
 $$\sum_j a_j x_j \leq b$$
 
 $$x_j \in \{ 0,1 \}$$
+
+### Vendedor viajero
+- Tenemos n ciudades
+- El vendedor debe recorrer cada ciudad
+- Conozco el costo de viajar entre cada par de ciudades
+    - $c_{ij}$
+Se busca secuencia para pasar por ciudades todas las ciudades minimizando costo
+
+### Solucion
+$$min \sum_i \sum_j c_{ij} x_{ij}$$
+$$\sum_j x_{ij} = 1$$
+$$\sum_i x_{ij} = 1$$
+$$\sum_{i \in C}(\sum_{j\notin C} x_{ij} + \sum_{k \notin C} x_{ki} ) \geq 2 $$
