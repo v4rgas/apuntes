@@ -1,50 +1,50 @@
 # Introducción
-Este curso presenta los conceptos de gestión de proyectos TI, orientados al desarrollo de sistemas de información
+Este curso presenta los conceptos de gestión de proyectos TI, orientados al desarrollo de sistemas de información.
 
 ## Objetivos
-- Describir el valor estrategico de proyectos
-- Describir la interaccion con otros niveles de egstion
-- Identificar los desafios al gestion
-- Conocer y utilizar metologias y herramientas
+- Describir el valor estratégico de proyectos
+- Describir la interacción con otros niveles de gestión
+- Identificar los desafíos al gestionar un proyecto
+- Conocer y utilizar metodologías y herramientas
 
-## Gestion de proyectos
-Consisten en organizar, priorizar, planificar , controlar y mantener en continua comunicacion todos los recursos de un proyecto
+## Gestión de proyectos
+Consiste en organizar, priorizar, planificar, controlar y mantener en continua comunicación todos los recursos de un proyecto.
 
-# Etica
+# Ética
 Conjunto de normas morales que rigen la conduca de la persona. Esta depende en gran parte del contexto social.
-## Etica Profesional
+## Ética Profesional
 El principal objetivo es dejar de lado los beneficios individuales y trabajar en conjunto por el bien común. No siempre existe una vía concreta y/o única de proceder. En este caso estaríamos hablando de un dilema ético.
 
 Para entender el comportamiento de una organización, se debe considerar que las personas actúan en base a incentivos (*e.g.* casos de copia en la universidad, colusiones).
 
-## Etica en gestion de proyectos
+## Ética en gestion de proyectos
 ### Valores
-1. Responsabilidad: Obligación de asumar las decisiones que tomamos y no tomamos
-2. Respeto: Deber de mostrar consideracion por nosotros mismos, los demas y los recursos confiados
+1. Responsabilidad: Obligación de asumir las decisiones que tomamos y no tomamos
+2. Respeto: Deber de mostrar consideración por nosotros mismos, los demás y los recursos confiados
 3. Equidad: Tomar decisiones y actuar de manera imparcial y objetiva
 4. Honestidad: Verdad y sinceridad
 
 # PMBOK
 ## Portafolio
-Conjunto de proyectos, prorgamas y otras iniciativas que se agrupan para facilitar la gestion de un trabajo
+Conjunto de proyectos, prorgamas y otras iniciativas que se agrupan para facilitar la gestión de un trabajo.
 
 ## Programa
-Un grupo de proyectos gestionados en forma coordinada
+Un grupo de proyectos gestionados en forma coordinada.
 
 ## Proyecto
-Esfuerzo temporal (*i.e.* acotado en tiempo) destinado a crear un unico producto
+Esfuerzo temporal (*i.e.* acotado en tiempo) destinado a crear un único producto.
 
 ## Direccion de Proyectos
-Es la aplicacion de conocimientos, habilidades y tecnicas para alcanzar los requerimientos de un proyecto
+Es la aplicacion de conocimientos, habilidades y técnicas para alcanzar los requerimientos de un proyecto.
 
 ## Roles
 ### Director de Proyecto
-- Direccion tecnica de proyectos
+- Dirección técnica de proyectos
 - Liderazgo
-- Gestion estrategica de negocios
+- Gestión estratégica de negocios
 
 ### Patrocinador
-Dueño del proyecto y de la mayoría de los recrusos requeridos en la organizacion en la que el proyecto se lleva acabo
+Dueño del proyecto y de la mayoría de los recrusos requeridos en la organizacion en la que el proyecto se lleva a cabo.
 
 ### Equipo de proyecto
 - Especialistas
@@ -52,24 +52,24 @@ Dueño del proyecto y de la mayoría de los recrusos requeridos en la organizaci
 
 ## Creación de Valor
 ### Componentes
-La entrega de valor ocurre en el entorno e interior de la organización
+La entrega de valor ocurre en el entorno e interior de la organización.
 
 - Politicas, metodologias, gobernanza
 - Legislación, competencia, economía
 
-### Flujo de informacion
-Para que la entrega de valor sea eficiente, la niformacion debe circular de forma adecuada
+### Flujo de información
+Para que la entrega de valor sea eficiente, la información debe circular de forma adecuada.
 
 ### Sistemas de gobernanza organizacional
-Incluye definir la autoridad para aprobar cambios y tomar otras decisiones
+Incluye definir la autoridad para aprobar cambios y tomar otras decisiones.
 
 ### Funciones asociadas con proyectos
-- Supervicion y Coordinador
+- Supervisión y Coordinador
 - Presentar objetivos, retroalimentacion
 - Facilitar y apoyar
 
 ### Entorno del proyecto
-- Interno: Portafolio, programa, proyectos, procesos, practicas, seguridad
+- Interno: Portafolio, programa, proyectos, procesos, prácticas, seguridad
 - Externo: Condiciones del mercado, normativas, influencias sociales y culturales
 
 ### Gestión del Producto
