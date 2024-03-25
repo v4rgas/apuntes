@@ -39,4 +39,17 @@ $$f(\lambda x + (1-\lambda)y) < \lambda f(x) + (1-\lambda)f(y), \forall x \neq y
 Dado un $f: H \rightarrow R$
 $$C_k = \{x \in H | f(x) = k \}$$
 
+## Tipos de Problemas
+### Problema de la mochila
+- Un excursionista tiene una mochila con carga total de b kilos
+- Debe elegir entre n productos 
+- Cada producto j pesa $a_j$ kilos y tiene $c_j$ energía
 
+Se necesita maximizar la energía sin exceder el peso
+
+#### Solucion
+$$max \sum_j c_j x_j$$
+
+$$\sum_j a_j x_j \leq b$$
+
+$$x_j \in \{ 0,1 \}$$
