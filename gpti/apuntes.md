@@ -32,7 +32,7 @@ Conjunto de proyectos, prorgamas y otras iniciativas que se agrupan para facilit
 Un grupo de proyectos gestionados en forma coordinada
 
 ## Proyecto
-Esfuerzo temporal destinado a crear un unico producto
+Esfuerzo temporal (*i.e.* acotado en tiempo) destinado a crear un unico producto
 
 ## Direccion de Proyectos
 Es la aplicacion de conocimientos, habilidades y tecnicas para alcanzar los requerimientos de un proyecto
