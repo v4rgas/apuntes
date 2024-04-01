@@ -66,3 +66,28 @@ $$min \sum_i \sum_j c_{ij} x_{ij}$$
 $$\sum_j x_{ij} = 1$$
 $$\sum_i x_{ij} = 1$$
 $$\sum_{i \in C}(\sum_{j\notin C} x_{ij} + \sum_{k \notin C} x_{ki} ) \geq 2 $$
+
+# Problemas no lineales
+## Fermat-Weber
+Minimizar suma de distancias a m puntos en un plano desde un punto c
+## Menor circulo circunscrito
+Supongamos que tenemos m puntos en un plano, se debe determinar las coordnadas del punto que minimice la mayor a distancia a los otros puntos
+
+## Machine learning
+Construye un hiperplano de tal manea que todos los puntos de un tipo esten arriba y los del otro por abajo
+
+Maximizar la distancia de los puntos hacia el hiperplano
+
+## Definiciones
+1. Un poliedro es un conjutno definido por restricciones lineales
+2. Un punto en un poliedro es un punto extremo si no puede ser escrito como combinacion convexa de dos puntos diferentes de P
+
+### Maximo global
+### Minimo local
+
+## Teoremas
+Sea P un problema convexo. Sea x un minimo local de f en D, entonces x es minimo global de f en D
+
+
+
+

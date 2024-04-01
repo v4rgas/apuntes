@@ -56,10 +56,12 @@ Two main ingredients
 
 ### Trainable Feature Extractor
 
-## HIerarchical Compositional Representation
+## Hierarchical Compositional Representation
+This architecture provides an efficient learning framework, where lower level layers are shared by higher level layers
 Examples:
 - Sounds > Phonemes > Syllables > Words
 - Pixels > Edges > Parts > Objects
 
-## Neural Network
-    
+# Convolutional Neural Networks
+Convolution provides a mechanism to search for a given feature by sliding a filter through the spatial span of the input
+

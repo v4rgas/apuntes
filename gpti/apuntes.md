@@ -83,4 +83,19 @@ Los productos requieren ser gestionados durante todo su ciclo de vida
 - Optimizar las respuestas a los riesgos
 - Adoptar la adaptabilidad y resiliencia
 
+# Dominios de desempeño
+## Interesados
+- Interesado: Individuo que puede verse afectado por resultado de proyecto
+- Analisis de interesados: Recopilar y analizar infomracion a fin de determinar los intereses a tener a cuenta
+
+### Preguntas clave
+- Que
+- Por que
+- Para quien
+
+### Como involucrar interesados
+Se involucran mediante la comunicación
+
+- Verbal: Presentaciones, conversaciones, revisiones del proyecto
+- Por escrito: Informes de avance, correo electronico, caso de negocio
 
