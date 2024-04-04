@@ -65,7 +65,7 @@ Incluye definir la autoridad para aprobar cambios y tomar otras decisiones.
 
 ### Funciones asociadas con proyectos
 - Supervisión y Coordinador
-- Presentar objetivos, retroalimentacion
+- Presentar objetivos, retroalimentación
 - Facilitar y apoyar
 
 ### Entorno del proyecto
@@ -76,7 +76,7 @@ Incluye definir la autoridad para aprobar cambios y tomar otras decisiones.
 Los productos requieren ser gestionados durante todo su ciclo de vida
 
 ## Principios de la direccion de proyecto
-- Ser administrador, digiligente, respetuoso y cuidadoso
+- Ser administrador, diligente, respetuoso y cuidadoso
 - Reconocer y responder interacciones del sistema
 - Navegar en la complejidad
 - Demostrrar conductas de liderazgo
@@ -86,20 +86,19 @@ Los productos requieren ser gestionados durante todo su ciclo de vida
 - Adoptar la adaptabilidad y resiliencia
 
 # Dominios de desempeño
+Puntos de atención para la labor de quien esté a cargo de la gestión de proyectos.
+
 ## Interesados
 - Interesado: Individuo que puede verse afectado por resultado de proyecto
-- Analisis de interesados: Recopilar y analizar infomracion a fin de determinar los intereses a tener a cuenta
+- Análisis de interesados: Recopilar y analizar información a fin de determinar los intereses a tener en cuenta
 
 ### Preguntas clave
-- Que
-- Por que
-- Para quien
+- Qué
+- Por qué
+- Para quién
 
 ### Como involucrar interesados
 Se involucran mediante la comunicación
 
 - Verbal: Presentaciones, conversaciones, revisiones del proyecto
-- Por escrito: Informes de avance, correo electronico, caso de negocio
-
-## Dominios de desempeño
-Puntos de atención para la labor de quien esté a cargo de la gestión de proyectos.
+- Por escrito: Informes de avance, correo electrónico, caso de negocio
