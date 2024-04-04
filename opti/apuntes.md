@@ -88,6 +88,24 @@ Maximizar la distancia de los puntos hacia el hiperplano
 ## Teoremas
 Sea P un problema convexo. Sea x un minimo local de f en D, entonces x es minimo global de f en D
 
+# Existencia de soluciones
+- Funcion obejtivo lineal
+- Restricciones lineales
+- f continua
+- D es cerrado
+- f lo puedo acotar por abajo (si minimizo)
 
+Entonces f posee un minimo global dentro de D
 
+# Equivalencias
+## Definicion fundamental
+Solución optima no es lo mismo que valor óptimo
 
+## Equivalencia 1
+max f(x) = min -f(x)
+
+## Equivalencia 2
+Encontrar el $\mu$ mas pequeño tal que existaun x que satisfaga f(x) $\leq \mu$ 
+
+## Equivalencia 3
+1x
