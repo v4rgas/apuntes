@@ -38,5 +38,30 @@ Finding suitable metrics is one of the mains tasks of a ML technique
 
 Deep Learning is an excellent tool to build semantic distance spaces
 
+## Hashing
+Local Sensitive Hashing can approximate NN
+
 # Distributed representations
-    
+Knoledge of some object is distributed in several dimentions
+
+# Deep Learning
+Two main ingredients
+1. Feature Learning
+2. Hierarchical compositional representation
+
+## Feature Learning
+### Handcrafted Feature Extractor
+- Bag of Words
+- SIFT Based Representation
+
+### Trainable Feature Extractor
+
+## Hierarchical Compositional Representation
+This architecture provides an efficient learning framework, where lower level layers are shared by higher level layers
+Examples:
+- Sounds > Phonemes > Syllables > Words
+- Pixels > Edges > Parts > Objects
+
+# Convolutional Neural Networks
+Convolution provides a mechanism to search for a given feature by sliding a filter through the spatial span of the input
+
