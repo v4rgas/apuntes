@@ -108,3 +108,60 @@ Se involucran mediante la comunicación
 
 - Verbal: Presentaciones, conversaciones, revisiones del proyecto
 - Por escrito: Informes de avance, correo electrónico, caso de negocio
+
+### Modelos
+
+#### Modelos de comunicación
+
+##### Comunicación intercultural
+- La comunicación es inherentemente dependiente de la cultura
+- Existen distintos tipos de barreras: conocimiento, experiencia, idioma, pensamiento, entre otros.
+- No es exclusivo de interacciones entre gente de distintos países, también puede ocurrir entre personas de distintos rubros.
+- Parte del problema es saber usar la jerga adecuada.
+- Pueden ocurrir conflictos por diferencias culturales.
+
+##### Efectividad de los canales de comunicación
+- Un canal de comunicación es efectivo mientras más interacción haya y más aspectos de la comunicación estén involucrados (expresividad, emociones, gestos, entonación, etc). Por ejemplo, una conversación cara a cara con pizarrón es más efectivo que una grabación de audio.
+- La forma óptima de comunicarse es usando opciones de modelado (*e.g.* conversación por teléfono, videollamada, conversación cara a cara) y opciones de documentación (*e.g.* grabación de audio o video) a la vez.
+
+##### Brecha de ejecución y evaluación
+- Brecha de ejecución: Grado en que un elemento corresponde a lo que una persona espera que haga.
+- Brecha de evaluación: Grado en que un elemento ayuda al usuario a descubrir cómo interpretarlo e interactuar con él eficazmente.
+
+#### Modelos de cambios
+
+##### Gestión del cambio en las organizaciones
+1. Formular: Por qué es necesario el cambio y en qué mejora.
+2. Planificar: Planificar fases de cambio.
+3. Implementar: Demostrar las capacidades del estado futuro, luego comprobar las capacidades para confirmar que los cambios están generando lo esperado. A su vez se levantan mejoras en respuesta a lo observado.
+4. Gestionar la transición: Abordar las necesidades relacionadas con el cambio.
+5. Mantener: Asegurar que no se vuelva a los procesos previos.
+
+##### ADKAR
+1. Awareness
+2. Desire
+3. Knowledge
+4. Action
+5. Reinforcement
+
+##### Proceso de 8 pasos para liderar el cambio
+1. Crear sentido de urgencia
+2. Coalición para liderar el cambio
+3. Crear una visión para el cambio
+4. Comunicar la visión
+5. Eliminar obstáculos
+6. Asegurar trinfos a corto plazo (*quick win*)
+7. Construir sobre el cambio
+8. Anclar el cambio en la cultura de la empresa
+
+##### Transición
+- Modelo que intenta comprender los efectos psicológicos del cambio.
+- Tres etapas:
+  1. Terminar, perder y dejar ir: Miedo, ira, disgusto e incertidumbre.
+  2. Zona neutral: Frustración, resentimiento, confusión y disminuición de la productividad
+  3. Nuevo comienzo: Aceptación y motivación por mejorar
+
+##### Otros modelos
+- Conflicto: Seis formas de abordar el conflicto. Considera el poder relativo entre los individuos y el deseo de mantener una buena relación.
+- Negociación: Pensar en Ganar-Ganar. Considerar aspectos como: carácter, confianza y enfoque.
+- Prominencia
