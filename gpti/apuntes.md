@@ -90,12 +90,18 @@ Puntos de atención para la labor de quien esté a cargo de la gestión de proye
 
 ## Interesados
 - Interesado: Individuo que puede verse afectado por resultado de proyecto
-- Análisis de interesados: Recopilar y analizar información a fin de determinar los intereses a tener en cuenta
+- Análisis de interesados: Recopilar y analizar información a fin de determinar los intereses a tener en cuenta.
+
+- No todos los interesados tienen el mismo nivel de incidencia sobre el proyecto. Por ejemplo, en un proyecto de construcción de un estadio para un equipo de fútbol, la dirigencia del equipo tiene más poder que sus aficionados, siendo ambos grupos considerados como interesados.
+- Es posible agrupar a los interesados por variables como: nivel de afectación, cantidad de involucrados, tipo de involucramiento, entre otros.
+- Uno de los principales interesados es el sponsor, ya que es el dueño del proyecto y tiene poder sobre éste.
 
 ### Preguntas clave
 - Qué
 - Por qué
 - Para quién
+
+Es necesario responder estas preguntas para generar valor.
 
 ### Como involucrar interesados
 Se involucran mediante la comunicación
