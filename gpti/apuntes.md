@@ -169,12 +169,10 @@ Se involucran mediante la comunicación
 #### Métodos para recopilación y análisis de datos
 
 ##### Análisis de interesados
-
 - Recopila y analiza información a fin de determinar los intereses a tener en cuenta.
 - Se puede crear una matriz que refleje el compromiso actual y deseado para cada uno de los interesados.
 
 #### Métodos de reuniones y eventos
-
 - Conferencia de oferentes: Reuniones previas a una licitación o propuesta para asegurar que todos los proveedores comprendan la necesidad de adquisición.
 - Lanzamiento: Encuentro al comienzo de un proyecto con el fin de establecer formalmente las expectativas.
 - *Backlog refinement*: El *backlog* es elaborado progresivamente y repriorizado para identificar el trabajo que se puede realizar en una próxima iteración.
@@ -186,7 +184,6 @@ Se involucran mediante la comunicación
 - Cierre del proyecto: Obtener la aceptación final del alcance entregado por parte del patrocinador, el dueño del producto o el cliente una vez el proyecto haya llegado a su fin.
 
 #### Otros métodos
-
 - Mapeo de impacto: Planificación estratégica que sirve como hoja de ruta visual para la organización durante el desarrollo.
 - Puntuación neta del promotor: Índice que mide voluntad de los clientes para recomendar a otros los productos o servicios de una organización.
 - Esquema de priorización: Identificar actividades del portafolio, programa, proyecto o componentes primordiales según ciertos criterios del grupo de trabajo.
@@ -194,7 +191,6 @@ Se involucran mediante la comunicación
 ### Artefactos
 
 #### Artefactos de estrategia
-
 Documentos que son creados antes o al comienzo del proyecto que abordan información estratégica, de negocio o de alto nivel sobre el proyecto.
 
 ##### Caso de negocio
@@ -220,41 +216,32 @@ Documentos que son creados antes o al comienzo del proyecto que abordan informac
   - Estructura de costos
 
 ##### Informe del proyecto
-
 Entrega una visión general sobre objetivos, entregables y procesos.
 
 ##### Declaración de la visión del proyecto
-
 Descripción concisa del proyecto, declara el propósito e inspira a la contribución por parte del equipo.
 
 ##### Hoja de ruta (*roadmap*)
-
 Línea de tiempo que describe hitos, acontecimientos significativos, revisiones y puntos de decisión.
 
 ##### Acta de constitución del proyecto
-
 Documento emitido por el iniciador del proyecto o patrocinador, que autoriza un proyecto y confiere la autoridad para aplicar los recursos de la organización a las actividades de este.
 
 #### Artefactos de bitácora y registro
 
 ##### Registro de interesados
-
 Registra información acerca de los interesados del proyecto, que incluye información, evaluación y clasificación de los mismos.
 
 #### Artefactos de plan
-
 Medio propuesto para lograr algo. Los planes generalmente son documentos escritos.
 
 ##### Plan para la dirección del proyecto
-
 Documento que describe el modo en que el proyecto será ejecutado, monitoreado y controlado y cerrado.
 
 ##### Plan de gestión de las comunicaciones
-
 Describe cómo, cuándo y por medio de quién se administrará y difundirá la información del proyecto.
 
 ##### Plan de involucramiento de los interesados
-
 Identifica las estrategias y acciones requeridas para promover el involucramiento de los interesados en la toma de decisiones y la ejecución del proyecto o programa.
 - Niveles de compromiso actual y deseado
 - Impacto y alcance de los cambios en los interesados
@@ -266,20 +253,16 @@ Identifica las estrategias y acciones requeridas para promover el involucramient
 - Método para actualizar y refinar el plan de gestión de los interesados.
 
 #### Artefactos de diagramas jerárquicos
-
 Comienzan con información de alto nivel que es descompuesta progresivamente en niveles más detallados. Se elaboran a medida que se conoce información sobre el proyecto.
 
 ##### Estructura de desglose de la organización
-
 Representación jerárquica de la organización del proyecto que ilustra la relación entre las actividades y las unidades de la organización que las llevarán a cabo.
 
 #### Artefactos de datos e información visual
-
 - Matriz de priorización: Diagrama de dispersión que muestra el esfuerzo en el eje horizontal y el valor en el eje vertical. Clasifica los elementos por prioridad.
 - Matriz de evaluación del involucramiento de los interesados: Compara los niveles de involucramiento actual y deseado de los interesados.
 
 #### Acuerdos y contratos
-
 - Acuerdo: Cualquier documento o comunicación que defina las intenciones de las partes.
 - Contrato: Acuerdo vinculante para las partes en virtud del cual el vendedor se obliga a proveer el producto, servicio o resultado especificado y el comprador a pagar por él.
   - Contratos de precio fijo: Establece un precio fijo para un producto, servicio o resultado bien definido.
@@ -289,8 +272,55 @@ Representación jerárquica de la organización del proyecto que ilustra la rela
   - Otros acuerdos: Memorando de entendimiento (MOU), memorando de acuerdo (MOA), acuerdo de nivel de servicios (SLA), acuerdo básico de pedidos (BOA).
 
 #### Otros artefactos
-
 - Lista de actividades: Tabla documentada de actividades que muestra la descripción de la actividad, su identificador y una descripción suficientemente detallada del alcance del trabajo.
 - Documentos de las licitaciones: Se utilizan para solicitar propuestas de los posibles vendedores.
 - Documentación de requisitos: Registro de los requisitos del producto y la información pertinente necesaria para administrar los requisitos, que incluye la categoría asociada, la prioridad y los criterios de aceptación.
 - Historias de usuario: Breve descripción del resultado para un usuario específico. Es un compromiso de una conversación a fin de aclarar detalles.
+
+## Equipo
+
+### Definiciones base
+- Director de proyecto: Persona nombrada por la organización para liderar al equipo.
+- Equipo de dirección de proyecto: Miembros del equipo que participan directamente en las actividades de dirección del proyecto.
+- Equipo de proyecto: Conjunto de individuos que realizan el trabajo del proyecto con el fin de alcanzar sus objetivos.
+
+### Características
+- Visión y objetivos
+- Roles y responsabilidades
+- Operaciones del equipo de proyecto: Canales de comunicación y resolución de diferencias
+- Orientación
+
+### Cultura y valores
+- Crecimiento: Identificar posibles mejoras
+- Transparencia: Comunicar posibles sesgos en toma de decisiones
+- Integridad
+- Respeto
+- Discurso positivo
+- Apoyo
+- Coraje: Incentivar debate de ideas
+- Celebración del éxito
+
+### Tipos de liderazgo
+- Dirección y liderazgo centralizado: Una única persona rinde cuentas. Todo cambio o proceso debe ser aprobado por esta persona, que en general es el director del proyecto.
+- Dirección y liderazgo distribuidos: Un grupo de personas rinde cuentas o el rol de liderazgo va rotando de acuerdo al proceso que se esté desarrollando y las habilidades de cada integrante.
+
+#### Ventajas del liderazgo distribuido
+- Elimina obstáculos
+- Es un escudo contra la desviación
+- Brinda oportunidades de estímulo y desarrollo
+
+### Habilidades de liderazgo
+- Establecer y mantener visión: Identificar lo que se pretende conseguir con el proyecto.
+- Pensamiento crítico: Analizar objetivamente los dominios de desempeño. Identificar causas de problemas.
+- Motivación: Identificar motivaciones del equipo y trabajarlas.
+- Habilidades interpersonales: Gestionar la interacción entre distintas personalidades.
+  - Inteligencia emocional: Reconocer nuestras emociones y la de los demás para actuar correctamente.
+  - Toma de decisiones: El líder debe encontrar el equilibrio entre incluir a todo el equipo y cumplir con los objetivos y plazos. Puede ser unilateral (rápido) o en equipo (consenso).
+  - Gestión de conflictos: Mantener comunicaciones abiertas y respetuosas; centrarse en los problemas, no en las personas; enfocarse en el presente y el futuro, no el pasado; buscar alternativas en conjunto.
+
+### Relación entre liderazgo e involucrados
+Variables que influyen:
+- Experiencia con el tipo de proyecto: Menos experiencia requiere mayor supervisión
+- Madurez de los miembros del equipo: Participantes más nuevos requieren mayor supervisión
+- Estructura de gobernanza: Influye en nivel de autoridad y rendición de cuentas
+- Equipos de proyecto distribuidos: Trabajo en simultáneo facilita el progreso al mejorar la comunicación y coordinación
