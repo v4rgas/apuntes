@@ -267,8 +267,7 @@ Representación jerárquica de la organización del proyecto que ilustra la rela
 - Contrato: Acuerdo vinculante para las partes en virtud del cual el vendedor se obliga a proveer el producto, servicio o resultado especificado y el comprador a pagar por él.
   - Contratos de precio fijo: Establece un precio fijo para un producto, servicio o resultado bien definido.
   - Contrato por tiempo y materiales: Establece una tarifa fija, pero no un enunciado preciso del trabajo. Puede utilizarse para el aumento de personal, expertos en la materia u otro tipo de apoyo externo.
-  - Contratos de costo reembolsable: Implica efectuar pagos al vendedor por los costos reales en que incurriera para completar el trabajo, más honorarios que representan la ganancia del vendedor. Se utilizan a menudo cuando el alcance del proyecto no está bien definido o está sujeto a cambios frecuentes.
-  - Contrato de entrega indefinida cantidad indefinida: Provee una cantidad indefinida de bienes o servicios, con límites inferior y superior establecidos, y dentro de un período determinado. Estos contratos pueden ser usados para compromisos de arquitectura, ingeniería o tecnología de la información.
+  - Contratos de costo reembolsable: Implica efectuar pagos al vendedor por los costos reales en que incurriera para completar el trabajo, más honorarios que representan la ganancia del vendedor. Se utilizan a menudo cuando el alcance del proyecto no está bien definido o está sujeto a cambios frecuentes. Contrato de entrega indefinida cantidad indefinida: Provee una cantidad indefinida de bienes o servicios, con límites inferior y superior establecidos, y dentro de un período determinado. Estos contratos pueden ser usados para compromisos de arquitectura, ingeniería o tecnología de la información.
   - Otros acuerdos: Memorando de entendimiento (MOU), memorando de acuerdo (MOA), acuerdo de nivel de servicios (SLA), acuerdo básico de pedidos (BOA).
 
 #### Otros artefactos
@@ -301,8 +300,8 @@ Representación jerárquica de la organización del proyecto que ilustra la rela
 - Celebración del éxito
 
 ### Tipos de liderazgo
-- Dirección y liderazgo centralizado: Una única persona rinde cuentas. Todo cambio o proceso debe ser aprobado por esta persona, que en general es el director del proyecto.
-- Dirección y liderazgo distribuidos: Un grupo de personas rinde cuentas o el rol de liderazgo va rotando de acuerdo al proceso que se esté desarrollando y las habilidades de cada integrante.
+- Centralizado: Una única persona rinde cuentas. Todo cambio o proceso debe ser aprobado por esta persona, que en general es el director del proyecto.
+- Distribuidos: Un grupo de personas rinde cuentas o el rol de liderazgo va rotando de acuerdo al proceso que se esté desarrollando y las habilidades de cada integrante.
 
 #### Ventajas del liderazgo distribuido
 - Elimina obstáculos
@@ -324,3 +323,4 @@ Variables que influyen:
 - Madurez de los miembros del equipo: Participantes más nuevos requieren mayor supervisión
 - Estructura de gobernanza: Influye en nivel de autoridad y rendición de cuentas
 - Equipos de proyecto distribuidos: Trabajo en simultáneo facilita el progreso al mejorar la comunicación y coordinación
+
