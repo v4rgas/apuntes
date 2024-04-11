@@ -324,3 +324,85 @@ Variables que influyen:
 - Estructura de gobernanza: Influye en nivel de autoridad y rendición de cuentas
 - Equipos de proyecto distribuidos: Trabajo en simultáneo facilita el progreso al mejorar la comunicación y coordinación
 
+### Modelos de Liderazgo Situacional
+- Permite asumir distintos estilos de liderazgo
+- Está alineado con el coaching y facilita encontrar oportunidades de mejora
+- Contribuye a un clima positivo 
+
+- Puede generar confusion
+
+#### OSCAR
+- Objeivos
+- Situaciones
+- Consecuencias-Opciones
+- Acciones
+
+### Modelos de Motivacion
+
+#### Factores Higiene y Motivacion
+
+##### Higiene
+
+- Condiciones de trabajo
+- Adminsitracion
+- Salario
+- Relacion con supervisores
+- Beneficios
+
+##### Motivacionales
+
+- El trabajo en si
+- Realizacion
+- Reconocimiento
+- Progreso
+- Responsabilidad
+
+#### Motivacion intrinseca versus extriseca
+
+##### Extinseco
+- Incentivos
+- Castigo
+- Dinero
+- Elogios
+- Competencia
+
+##### Intrínseco
+- Curiosidad
+- Resolucion de problemas
+- Desafio
+- Reconocimiento
+- Sentido de pertenencia
+
+#### Teoría de las necesidades
+Logro -> Afiliacion -> Poder -> Logro
+
+#### Teoria XYZ
+
+#### Escalera de Tuckman
+- Formacion
+- Turbulencia
+- Normalizacion
+- Desempeno
+- Disolucion
+
+#### Modelo Drexler/Sibbet
+- Proposito
+- Confianza
+- Objetivo
+- Compromiso
+- Implementacion
+- Alto rendimiento
+- Renovación
+
+### Metodos
+#### Lanzamiento
+Es importante hacer una reunion de inicio de proyecto
+
+#### Reunion de cierre
+Igual de importante que hacer lanzamiento es marcar el cierre del proyecto
+
+
+
+
+
+

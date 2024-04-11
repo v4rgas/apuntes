@@ -68,4 +68,43 @@ Convolution provides a mechanism to search for a given feature by sliding a filt
 # Intro to Keras
 Keras is a high level neural network library
 
-## Models
+
+# Activatio Functions
+## ReLU
+$$max(x,0)$$
+
+## Soft Max
+$$\frac{e^z_i}{\sum_i e^{z_i}}$$
+
+- Is differentiable
+- Pushes the highes value up and the rest down
+- Good output fo rlog likelihood optimizations
+
+## Leaky ReLU
+$$max(ax,x)$$
+
+- Does not saturate
+- Faster convergence than sigmoid
+- Efficient
+- Not good for classification
+- Non zero centered
+
+## ELU
+$$x, x > 0$$
+$$a(e^x-1), otherwise$$
+
+- Requieres calculation of e(x)
+- All benefits of ReLU and LeakyReLU
+
+# Loss function and regularization
+## Negative log-likelihood
+- COmmon loss function used in ML
+- Well suited for continous variables
+- Larger penalty to larger erros
+
+## Cross entropy
+Overhead of transmiting a signal by a pdf p(x) using an ecoding that considers a pdf q(x)
+
+## Multi-Label vs Multi-Class
+- Multi-Label: Se puede pertenecer a más de una clase
+- Multi-Class: Se elige una clase entre todas
