@@ -516,3 +516,42 @@ Periodo de Tiempo Preestablecido: Periodo corto y fijo de tiempo en el que se de
 
 #### Artefactos de línea base
 Cronograma de hitos: Presenta hitos con fechas planificadas.
+
+## Entrega
+
+### Definiciones base
+- Requisito: Condición o capacidad que debe estar presente para satisfacer una necesidad de negocio
+- Estructura de desglose del trabajo: Descomposición jerárquica del alcance total del trabajo a ser realizado por el equipo para cumplir con los objeBvos del proyecto y crear los entregables requeridos
+- Definición de terminado: Lista de criterios para considerar un entregable como listo
+- Calidad: Grado en el que un conjunto de caracterísBcas inherentes saBsface los requisitos
+- Costo de la calidad: Todos los costos incurridos durante la vida del producto por inversión en la prevención de no conformidad con los requisitos, evaluación en cuanto a su conformidad con los requisitos e incumplimiento de ellos
+
+Los entregables deben cumplir con:
+- Requisitos: Trabajados y documentados durante la planificación inicial.
+  - Tipos:
+    - Restricción
+    - Especificación
+    - Supuesto
+  - Recolección de requisitos: Se busca que sean
+    - Claros
+    - Concisos
+    - Verificables
+    - Consistentes
+    - Completos
+    - Trazables
+- Definición de alcance: Suma de los productos, servicios y resultados a ser proporcionados como un proyecto. Se trabaja de manera conjunta con el objetivo de jerarquizar las actividades y crear los entregables requeridos. Se puede hacer a través de desarrollo de estructura de desglose de trabajo o a través de historias de usuario. Se debe definir cuando se considera un entregable como terminado:
+  - Criterios de aceptación
+  - Medidas de desempeño técnico
+  - Definición de listo
+- Objetivos móviles de finalización: Control de cambios que evalúa las repercusiones de las modificaciones. Se debe intentar encontrar un equilibrio entre alcance, costo y tiempo
+
+Calidad de la entrega:
+- Costo de la calidad: Contempla una gestión de áreas como:
+  - Prevención: Evitar defectos o fallas (*e.g.* requisitos de productos o servicios, planificación de la calidad, aseguramiento de calidad, capacitación).
+  - Evaluación: Monitorear y controlar el grado de conformidad con respecto a los requisitos (*e.g.* verificación, auditorías de calidad, calificación de proveedores).
+  - Fallas internas: Identificar fallas y problemas que generan que el producto o servicio no cumpla con los estándares convenidos antes de la entrega (*e.g.* identificación de desperdicio, identificación de desechos, retrabajo o rectificación, análisis de fallas).
+  - Fallas externas: Identificar fallas y problemas luego de que el cliente recibió el producto o servicio ofrecido (*e.g.* reparaciones y mantenimientos, reclamaciones de garantía, quejas, devoluciones, reputación afectada).
+- Costo del cambio: Mientras más tarde se encuentre un defecto, más caro será corregirlo. Se debe ser proactivo en la identificación y solución temprana de problemas.
+- Resultados subóptimos: La falta de requisitos claros puede llevar a disminución en la calidad. En esos casos se trabaja con las ideas de:
+  - Tolerancia: Rango establecido para los resultados aceptables
+  - Límites de control: Fronteras de la variación normal para un proceso
