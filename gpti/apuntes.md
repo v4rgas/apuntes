@@ -324,69 +324,90 @@ Variables que influyen:
 - Estructura de gobernanza: Influye en nivel de autoridad y rendición de cuentas
 - Equipos de proyecto distribuidos: Trabajo en simultáneo facilita el progreso al mejorar la comunicación y coordinación
 
-### Modelos de Liderazgo Situacional
-Pros:
+### Modelos
+
+#### Modelos de Liderazgo Situacional
+Ventajas:
 - Permite asumir distintos estilos de liderazgo
 - Está alineado con el *coaching* y facilita encontrar oportunidades de mejora
 - Contribuye a un clima positivo 
-Contras:
+Desventajas:
 - Puede generar confusion
+- Toda la responsabilidad recae en el líder
 
-#### OSCAR
+##### *Situational Leadership II*
+Modela los distintos estilos de liderazgo dados dos ejes:
+- Competencia: Habilidad, conocimiento y destreza de un individuo
+- Compromiso: Confianza y motivación
+
+##### OSCAR
 - Objeivos
 - Situaciones
 - Consecuencias-Opciones
 - Acciones
 
-### Modelos de Motivación
+#### Modelos de Motivación
 
-#### Factores Higiene y Motivación
-
-##### Higiene
-
+##### Factores de Higiene y de Motivación
+Factores de higiene:
 - Condiciones de trabajo
 - Adminsitración
 - Salario
 - Relación con supervisores
 - Beneficios
 
-##### Motivacionales
-
+Factores motivacionales:
 - El trabajo en sí
 - Realización
 - Reconocimiento
 - Progreso
 - Responsabilidad
 
-#### Motivación intrínseca versus extrínseca
-
-##### Extrínseco
+##### Motivación intrínseca versus extrínseca
+Extrínseca:
 - Incentivos
 - Castigo
 - Dinero
 - Elogios
 - Competencia
 
-##### Intrínseco
+Intrínseca:
 - Curiosidad
 - Resolución de problemas
 - Desafío
 - Reconocimiento
 - Sentido de pertenencia
 
-#### Teoría de las necesidades
+##### Teoría de las necesidades
 Logro -> Afiliación -> Poder -> Logro
 
-#### Teoria XYZ
+##### Teoria XYZ
+Teoría X:
+- Perezosa
+- Busca primero su seguridad
+- La persona prefiere ser dirigida
+- Su motivación es el dinero
 
-#### Escalera de Tuckman
+Teoría Y:
+- Esfuerzo físico y mental es natural
+- Se esfuerza por conseguir los objetivos
+- Están motivados
+- Creativos e ingeniosos
+
+Teoría Z:
+- Alineación real de los intereses de los trabajadores con los de la empresa
+- La humanización de las condiciones de trabajo aumenta la productividad de le empresa y a la vez, la autoestima de los empleados
+
+#### Modelos de desarrollo del equipo de proyecto
+
+##### Escalera de Tuckman
 - Formación
 - Turbulencia
 - Normalización
 - Desempeño
 - Disolución
 
-#### Modelo Drexler/Sibbet
+##### Modelo Drexler/Sibbet
 - Propósito
 - Confianza
 - Objetivo
@@ -396,8 +417,24 @@ Logro -> Afiliación -> Poder -> Logro
 - Renovación
 
 ### Métodos
-#### Lanzamiento
-Es importante hacer una reunión de inicio de proyecto
 
-#### Reunión de cierre
-Igual de importante que hacer lanzamiento es marcar el cierre del proyecto
+#### Métodos de reuniones y eventos
+
+##### Retrospectiva
+Los participantes exploran su trabajo y sus resultados con el fin de mejorar tanto el proceso como el producto.
+
+### Artefactos
+
+#### Artefactos de diagramas jerárquicos
+
+##### Estructura de desglose de recursos
+Representación jerárquica de los recursos por categoría y tipo.
+
+#### Otros artefactos
+
+##### Calendario del proyecto
+Identifica los días laborables y turnos de trabajo disponibles para las actividades programadas.
+
+##### Acta de constitución de proyecto
+- Registra los valores, acuerdos y pautas operativas del equipo de proyecto
+- Establece expectativas claras respecto al comportamiento aceptable del equipo
