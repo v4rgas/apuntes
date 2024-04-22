@@ -438,3 +438,47 @@ Identifica los días laborables y turnos de trabajo disponibles para las activid
 ##### Acta de constitución de proyecto
 - Registra los valores, acuerdos y pautas operativas del equipo de proyecto
 - Establece expectativas claras respecto al comportamiento aceptable del equipo
+
+## Enfoque
+
+### Definiciones base
+- Entregable: Cualquier producto, resultado o capacidad única y verificable para ejecutar un servicio que se debe producir para completar un proceso, una fase o un proyecto
+- Enfoque de desarrollo: Método utilizado para crear y desarrollar el producto durante el ciclo de vida del proyecto
+  - Enfoque predictivo (cascada): El principal esfuerzo se centra en la planificación y la definición temprana de todas las etapas para poder disminuir la incertidumbre. Utilizado para altas inversiones y altos niveles de riesgo
+  - Enfoque híbrido: Mezcla aspectos predictivos y adaptativos. Útil para proyectos de varios entregables y entregas incrementales
+  - Enfoque adaptativo: Paquetes de trabajo más pequeños y plazos más cortos. Útil para alta incertidumbre y volatilidad
+- Cadencia: Ritmo de actividades del proyecto
+  - Entrega única
+  - Entregas múltiples: Entregas independientes (*e.g.* torres de edificios)
+  - Entregas periódicas: Entregas múltiples pero con un periodo definido (mensual, semestral, anual, etc)
+  - Entregas continuas: Entregas incrementales. Asociado a metodologías ágiles.
+- Fase del proyecto: Conjunto de actividades relacionadas lógicamente que culmina con la finalización de entregables
+- Ciclo de vida del proyecto: Serie de fases que atraviesa un proyecto
+  1. Viabilidad
+  2. Diseño
+  3. Construcción
+  4. Prueba
+  5. Despliegue
+  6. Cierre
+
+### Variables a considerar
+Tipo de producto, servicio o resultado
+- Grado de innovación: Predictivo para equipos con experiencia. Adaptativo en caso contrario
+- Certidumbre de requisitos: Predictivo para requisitos planificables. Adaptativo para escenarios inciertos, volátiles o complejos
+- Estabilidad del alcance: Predictivo para entregables estáticos y sin cambios. Adaptativo en caso contrario
+- Facilidad de cambio: Predictivo si no es posible gestión y planificación del cambio. Adaptativo en otro caso
+- Opciones de entrega: Predictivo si la entrega es única
+- Riesgos: Predictivo si es posible mitigación o planificación del riesgo. Adaptativo para modularización e incrementalidad
+- Requisitos de seguridad: Predictivo para seguridad rigurosa
+- Regulaciones: Predictivo para proyectos altamente regulados
+
+Proyecto
+- Interesados: Depende de participación, poder e influencia en los entregables
+- Cronograma: Adaptativo permite entregar tempranamente un avance
+- Financiamiento: Adaptativo para inseguridad en los costos
+
+Organización
+- Estructura organizacional: Predictivo para estructuras rígidas y burocráticas. Adaptativo en estructuras más horizontales
+- Cultura: Predictivo para alta planificación y estimación respecto de líneas base. Adaptativo para libertad de autogestión
+- Capacidad organizacional: Adaptativo requiere que sus participantes tengan compromiso con la idea iterativa y que las instalaciones, las políticas y formas de trabajo sean consistentes.
+- Tamaño y ubicación del equipo: Predictivo para equipos grandes y distribuidos. Adaptativo para equipos pequeños y centralizados
