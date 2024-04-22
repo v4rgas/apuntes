@@ -482,3 +482,37 @@ Organización
 - Cultura: Predictivo para alta planificación y estimación respecto de líneas base. Adaptativo para libertad de autogestión
 - Capacidad organizacional: Adaptativo requiere que sus participantes tengan compromiso con la idea iterativa y que las instalaciones, las políticas y formas de trabajo sean consistentes.
 - Tamaño y ubicación del equipo: Predictivo para equipos grandes y distribuidos. Adaptativo para equipos pequeños y centralizados
+
+### Modelos
+
+#### Modelos de complejidad
+
+##### Modelo de referencia Cynefin
+Utilizado para diagnosticar las relaciones de causa y efecto como ayuda para la toma de decisiones.
+- Para situaciones claras, recurrir a mejores prácticas
+- Para situaciones complicadas, evaluar y analizar la situación y aplicar buenas prácticas
+- Para situaciones complejas, sondear el entorno y percibir la situación con acciones emergentes
+- Para situaciones caóticas, ordenar la situación a través de prácticas novedosas que aclaren un poco el estado en el que se encuentra
+- Para situaciones de desorden, analizar e identificar la posibilidad de descomponer en partes que caigan en las categorías anteriores
+
+##### Matriz de Stacey
+Examina dos dimensiones para determinar la complejidad relativa de un proyecto:
+- Incertidumbre relativa de las necesidades del producto
+- Incertidumbre relativa de la tecnología que se utilizará
+
+##### Otros modelos
+Planificación: Modelo que compara tiempo y esfuerzo invertidos en la elaboración de planes para reducir el riesgo.
+
+### Métodos
+
+#### Métodos para recopilación y análisis de datos
+- Plazo de recuperación
+- Valor actual neto
+
+#### Otros métodos
+Periodo de Tiempo Preestablecido: Periodo corto y fijo de tiempo en el que se debe completar el trabajo.
+
+### Artefactos
+
+#### Artefactos de línea base
+Cronograma de hitos: Presenta hitos con fechas planificadas.
