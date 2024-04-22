@@ -325,10 +325,11 @@ Variables que influyen:
 - Equipos de proyecto distribuidos: Trabajo en simultáneo facilita el progreso al mejorar la comunicación y coordinación
 
 ### Modelos de Liderazgo Situacional
+Pros:
 - Permite asumir distintos estilos de liderazgo
-- Está alineado con el coaching y facilita encontrar oportunidades de mejora
+- Está alineado con el *coaching* y facilita encontrar oportunidades de mejora
 - Contribuye a un clima positivo 
-
+Contras:
 - Puede generar confusion
 
 #### OSCAR
@@ -337,29 +338,29 @@ Variables que influyen:
 - Consecuencias-Opciones
 - Acciones
 
-### Modelos de Motivacion
+### Modelos de Motivación
 
-#### Factores Higiene y Motivacion
+#### Factores Higiene y Motivación
 
 ##### Higiene
 
 - Condiciones de trabajo
-- Adminsitracion
+- Adminsitración
 - Salario
-- Relacion con supervisores
+- Relación con supervisores
 - Beneficios
 
 ##### Motivacionales
 
-- El trabajo en si
-- Realizacion
+- El trabajo en sí
+- Realización
 - Reconocimiento
 - Progreso
 - Responsabilidad
 
-#### Motivacion intrinseca versus extriseca
+#### Motivación intrínseca versus extrínseca
 
-##### Extinseco
+##### Extrínseco
 - Incentivos
 - Castigo
 - Dinero
@@ -368,41 +369,35 @@ Variables que influyen:
 
 ##### Intrínseco
 - Curiosidad
-- Resolucion de problemas
-- Desafio
+- Resolución de problemas
+- Desafío
 - Reconocimiento
 - Sentido de pertenencia
 
 #### Teoría de las necesidades
-Logro -> Afiliacion -> Poder -> Logro
+Logro -> Afiliación -> Poder -> Logro
 
 #### Teoria XYZ
 
 #### Escalera de Tuckman
-- Formacion
+- Formación
 - Turbulencia
-- Normalizacion
-- Desempeno
-- Disolucion
+- Normalización
+- Desempeño
+- Disolución
 
 #### Modelo Drexler/Sibbet
-- Proposito
+- Propósito
 - Confianza
 - Objetivo
 - Compromiso
-- Implementacion
+- Implementación
 - Alto rendimiento
 - Renovación
 
-### Metodos
+### Métodos
 #### Lanzamiento
-Es importante hacer una reunion de inicio de proyecto
+Es importante hacer una reunión de inicio de proyecto
 
-#### Reunion de cierre
+#### Reunión de cierre
 Igual de importante que hacer lanzamiento es marcar el cierre del proyecto
-
-
-
-
-
-
