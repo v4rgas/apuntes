@@ -39,6 +39,9 @@ $$f(\lambda x + (1-\lambda)y) < \lambda f(x) + (1-\lambda)f(y), \forall x \neq y
 Dado un $f: H \rightarrow R$
 $$C_k = \{x \in H | f(x) = k \}$$
 
+Si la funcion es convexa
+$$x \in R^n : f(x) \leq a$$
+
 ## Tipos de Problemas
 ### La mochila
 - Un excursionista tiene una mochila con carga total de b kilos
@@ -89,13 +92,34 @@ Maximizar la distancia de los puntos hacia el hiperplano
 Sea P un problema convexo. Sea x un minimo local de f en D, entonces x es minimo global de f en D
 
 # Existencia de soluciones
-- Funcion obejtivo lineal
-- Restricciones lineales
-- f continua
-- D es cerrado
-- f lo puedo acotar por abajo (si minimizo)
+## Casos donde solucion optima no esta asegurada
+1. Dominio vacio
+2. Restricciones de desigualdad estricta
+3. Funcion objetivo mejora en direccion a dominio no acotado
+4. Funcion objetivo discontinua
 
-Entonces f posee un minimo global dentro de D
+### Hipotesis H
+- f es continua
+- D es cerrado
+- D es no vacio
+
+Si $f(x) \rightarrow x$ cuando $|x| \rightarrow \infty$ entonces hay minimo
+
+### Bolzano-Wirtrass
+- f es continuo
+- problema no es vacio
+- Dominio cerrado y acotado
+
+f alcanza puntos extremos
+
+
+### Teorema Practico
+- funcion objetivo lineal y continua
+- restricciones lineales
+- Dominio cerrado
+- f se puede acotar por abajo 
+
+entonces existe un minimo global dentro de f
 
 # Equivalencias
 ## Definicion fundamental
