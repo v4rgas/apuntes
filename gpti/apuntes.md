@@ -324,85 +324,234 @@ Variables que influyen:
 - Estructura de gobernanza: Influye en nivel de autoridad y rendición de cuentas
 - Equipos de proyecto distribuidos: Trabajo en simultáneo facilita el progreso al mejorar la comunicación y coordinación
 
-### Modelos de Liderazgo Situacional
+### Modelos
+
+#### Modelos de Liderazgo Situacional
+Ventajas:
 - Permite asumir distintos estilos de liderazgo
-- Está alineado con el coaching y facilita encontrar oportunidades de mejora
+- Está alineado con el *coaching* y facilita encontrar oportunidades de mejora
 - Contribuye a un clima positivo 
-
+Desventajas:
 - Puede generar confusion
+- Toda la responsabilidad recae en el líder
 
-#### OSCAR
+##### *Situational Leadership II*
+Modela los distintos estilos de liderazgo dados dos ejes:
+- Competencia: Habilidad, conocimiento y destreza de un individuo
+- Compromiso: Confianza y motivación
+
+##### OSCAR
 - Objeivos
 - Situaciones
 - Consecuencias-Opciones
 - Acciones
 
-### Modelos de Motivacion
+#### Modelos de Motivación
 
-#### Factores Higiene y Motivacion
-
-##### Higiene
-
+##### Factores de Higiene y de Motivación
+Factores de higiene:
 - Condiciones de trabajo
-- Adminsitracion
+- Adminsitración
 - Salario
-- Relacion con supervisores
+- Relación con supervisores
 - Beneficios
 
-##### Motivacionales
-
-- El trabajo en si
-- Realizacion
+Factores motivacionales:
+- El trabajo en sí
+- Realización
 - Reconocimiento
 - Progreso
 - Responsabilidad
 
-#### Motivacion intrinseca versus extriseca
-
-##### Extinseco
+##### Motivación intrínseca versus extrínseca
+Extrínseca:
 - Incentivos
 - Castigo
 - Dinero
 - Elogios
 - Competencia
 
-##### Intrínseco
+Intrínseca:
 - Curiosidad
-- Resolucion de problemas
-- Desafio
+- Resolución de problemas
+- Desafío
 - Reconocimiento
 - Sentido de pertenencia
 
-#### Teoría de las necesidades
-Logro -> Afiliacion -> Poder -> Logro
+##### Teoría de las necesidades
+Logro -> Afiliación -> Poder -> Logro
 
-#### Teoria XYZ
+##### Teoria XYZ
+Teoría X:
+- Perezosa
+- Busca primero su seguridad
+- La persona prefiere ser dirigida
+- Su motivación es el dinero
 
-#### Escalera de Tuckman
-- Formacion
+Teoría Y:
+- Esfuerzo físico y mental es natural
+- Se esfuerza por conseguir los objetivos
+- Están motivados
+- Creativos e ingeniosos
+
+Teoría Z:
+- Alineación real de los intereses de los trabajadores con los de la empresa
+- La humanización de las condiciones de trabajo aumenta la productividad de le empresa y a la vez, la autoestima de los empleados
+
+#### Modelos de desarrollo del equipo de proyecto
+
+##### Escalera de Tuckman
+- Formación
 - Turbulencia
-- Normalizacion
-- Desempeno
-- Disolucion
+- Normalización
+- Desempeño
+- Disolución
 
-#### Modelo Drexler/Sibbet
-- Proposito
+##### Modelo Drexler/Sibbet
+- Propósito
 - Confianza
 - Objetivo
 - Compromiso
-- Implementacion
+- Implementación
 - Alto rendimiento
 - Renovación
 
-### Metodos
-#### Lanzamiento
-Es importante hacer una reunion de inicio de proyecto
+### Métodos
 
-#### Reunion de cierre
-Igual de importante que hacer lanzamiento es marcar el cierre del proyecto
+#### Métodos de reuniones y eventos
 
+##### Retrospectiva
+Los participantes exploran su trabajo y sus resultados con el fin de mejorar tanto el proceso como el producto.
 
+### Artefactos
 
+#### Artefactos de diagramas jerárquicos
 
+##### Estructura de desglose de recursos
+Representación jerárquica de los recursos por categoría y tipo.
 
+#### Otros artefactos
 
+##### Calendario del proyecto
+Identifica los días laborables y turnos de trabajo disponibles para las actividades programadas.
+
+##### Acta de constitución de proyecto
+- Registra los valores, acuerdos y pautas operativas del equipo de proyecto
+- Establece expectativas claras respecto al comportamiento aceptable del equipo
+
+## Enfoque
+
+### Definiciones base
+- Entregable: Cualquier producto, resultado o capacidad única y verificable para ejecutar un servicio que se debe producir para completar un proceso, una fase o un proyecto
+- Enfoque de desarrollo: Método utilizado para crear y desarrollar el producto durante el ciclo de vida del proyecto
+  - Enfoque predictivo (cascada): El principal esfuerzo se centra en la planificación y la definición temprana de todas las etapas para poder disminuir la incertidumbre. Utilizado para altas inversiones y altos niveles de riesgo
+  - Enfoque híbrido: Mezcla aspectos predictivos y adaptativos. Útil para proyectos de varios entregables y entregas incrementales
+  - Enfoque adaptativo: Paquetes de trabajo más pequeños y plazos más cortos. Útil para alta incertidumbre y volatilidad
+- Cadencia: Ritmo de actividades del proyecto
+  - Entrega única
+  - Entregas múltiples: Entregas independientes (*e.g.* torres de edificios)
+  - Entregas periódicas: Entregas múltiples pero con un periodo definido (mensual, semestral, anual, etc)
+  - Entregas continuas: Entregas incrementales. Asociado a metodologías ágiles.
+- Fase del proyecto: Conjunto de actividades relacionadas lógicamente que culmina con la finalización de entregables
+- Ciclo de vida del proyecto: Serie de fases que atraviesa un proyecto
+  1. Viabilidad
+  2. Diseño
+  3. Construcción
+  4. Prueba
+  5. Despliegue
+  6. Cierre
+
+### Variables a considerar
+Tipo de producto, servicio o resultado
+- Grado de innovación: Predictivo para equipos con experiencia. Adaptativo en caso contrario
+- Certidumbre de requisitos: Predictivo para requisitos planificables. Adaptativo para escenarios inciertos, volátiles o complejos
+- Estabilidad del alcance: Predictivo para entregables estáticos y sin cambios. Adaptativo en caso contrario
+- Facilidad de cambio: Predictivo si no es posible gestión y planificación del cambio. Adaptativo en otro caso
+- Opciones de entrega: Predictivo si la entrega es única
+- Riesgos: Predictivo si es posible mitigación o planificación del riesgo. Adaptativo para modularización e incrementalidad
+- Requisitos de seguridad: Predictivo para seguridad rigurosa
+- Regulaciones: Predictivo para proyectos altamente regulados
+
+Proyecto
+- Interesados: Depende de participación, poder e influencia en los entregables
+- Cronograma: Adaptativo permite entregar tempranamente un avance
+- Financiamiento: Adaptativo para inseguridad en los costos
+
+Organización
+- Estructura organizacional: Predictivo para estructuras rígidas y burocráticas. Adaptativo en estructuras más horizontales
+- Cultura: Predictivo para alta planificación y estimación respecto de líneas base. Adaptativo para libertad de autogestión
+- Capacidad organizacional: Adaptativo requiere que sus participantes tengan compromiso con la idea iterativa y que las instalaciones, las políticas y formas de trabajo sean consistentes.
+- Tamaño y ubicación del equipo: Predictivo para equipos grandes y distribuidos. Adaptativo para equipos pequeños y centralizados
+
+### Modelos
+
+#### Modelos de complejidad
+
+##### Modelo de referencia Cynefin
+Utilizado para diagnosticar las relaciones de causa y efecto como ayuda para la toma de decisiones.
+- Para situaciones claras, recurrir a mejores prácticas
+- Para situaciones complicadas, evaluar y analizar la situación y aplicar buenas prácticas
+- Para situaciones complejas, sondear el entorno y percibir la situación con acciones emergentes
+- Para situaciones caóticas, ordenar la situación a través de prácticas novedosas que aclaren un poco el estado en el que se encuentra
+- Para situaciones de desorden, analizar e identificar la posibilidad de descomponer en partes que caigan en las categorías anteriores
+
+##### Matriz de Stacey
+Examina dos dimensiones para determinar la complejidad relativa de un proyecto:
+- Incertidumbre relativa de las necesidades del producto
+- Incertidumbre relativa de la tecnología que se utilizará
+
+##### Otros modelos
+Planificación: Modelo que compara tiempo y esfuerzo invertidos en la elaboración de planes para reducir el riesgo.
+
+### Métodos
+
+#### Métodos para recopilación y análisis de datos
+- Plazo de recuperación
+- Valor actual neto
+
+#### Otros métodos
+Periodo de Tiempo Preestablecido: Periodo corto y fijo de tiempo en el que se debe completar el trabajo.
+
+### Artefactos
+
+#### Artefactos de línea base
+Cronograma de hitos: Presenta hitos con fechas planificadas.
+
+## Entrega
+
+### Definiciones base
+- Requisito: Condición o capacidad que debe estar presente para satisfacer una necesidad de negocio
+- Estructura de desglose del trabajo: Descomposición jerárquica del alcance total del trabajo a ser realizado por el equipo para cumplir con los objeBvos del proyecto y crear los entregables requeridos
+- Definición de terminado: Lista de criterios para considerar un entregable como listo
+- Calidad: Grado en el que un conjunto de caracterísBcas inherentes saBsface los requisitos
+- Costo de la calidad: Todos los costos incurridos durante la vida del producto por inversión en la prevención de no conformidad con los requisitos, evaluación en cuanto a su conformidad con los requisitos e incumplimiento de ellos
+
+Los entregables deben cumplir con:
+- Requisitos: Trabajados y documentados durante la planificación inicial.
+  - Tipos:
+    - Restricción
+    - Especificación
+    - Supuesto
+  - Recolección de requisitos: Se busca que sean
+    - Claros
+    - Concisos
+    - Verificables
+    - Consistentes
+    - Completos
+    - Trazables
+- Definición de alcance: Suma de los productos, servicios y resultados a ser proporcionados como un proyecto. Se trabaja de manera conjunta con el objetivo de jerarquizar las actividades y crear los entregables requeridos. Se puede hacer a través de desarrollo de estructura de desglose de trabajo o a través de historias de usuario. Se debe definir cuando se considera un entregable como terminado:
+  - Criterios de aceptación
+  - Medidas de desempeño técnico
+  - Definición de listo
+- Objetivos móviles de finalización: Control de cambios que evalúa las repercusiones de las modificaciones. Se debe intentar encontrar un equilibrio entre alcance, costo y tiempo
+
+Calidad de la entrega:
+- Costo de la calidad: Contempla una gestión de áreas como:
+  - Prevención: Evitar defectos o fallas (*e.g.* requisitos de productos o servicios, planificación de la calidad, aseguramiento de calidad, capacitación).
+  - Evaluación: Monitorear y controlar el grado de conformidad con respecto a los requisitos (*e.g.* verificación, auditorías de calidad, calificación de proveedores).
+  - Fallas internas: Identificar fallas y problemas que generan que el producto o servicio no cumpla con los estándares convenidos antes de la entrega (*e.g.* identificación de desperdicio, identificación de desechos, retrabajo o rectificación, análisis de fallas).
+  - Fallas externas: Identificar fallas y problemas luego de que el cliente recibió el producto o servicio ofrecido (*e.g.* reparaciones y mantenimientos, reclamaciones de garantía, quejas, devoluciones, reputación afectada).
+- Costo del cambio: Mientras más tarde se encuentre un defecto, más caro será corregirlo. Se debe ser proactivo en la identificación y solución temprana de problemas.
+- Resultados subóptimos: La falta de requisitos claros puede llevar a disminución en la calidad. En esos casos se trabaja con las ideas de:
+  - Tolerancia: Rango establecido para los resultados aceptables
+  - Límites de control: Fronteras de la variación normal para un proceso
