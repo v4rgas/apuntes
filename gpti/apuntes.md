@@ -555,3 +555,222 @@ Calidad de la entrega:
 - Resultados subóptimos: La falta de requisitos claros puede llevar a disminución en la calidad. En esos casos se trabaja con las ideas de:
   - Tolerancia: Rango establecido para los resultados aceptables
   - Límites de control: Fronteras de la variación normal para un proceso
+
+### Modelos
+
+#### Otros modelos
+
+##### Grupos de procesos
+- **NO** son fases de un proyecto
+- Interactúan dentro de cada fase del ciclo de vida de un proyecto (*e.g.* Inicio, Planificación, Ejecución,
+Monitoreo y Control, Cierre)
+- En un enfoque basado en procesos, la salida de un proceso es la entrada de otro o es un entregable
+
+### Métodos
+
+#### Métodos para recopilación y análisis de datos
+
+##### Análisis de alternativas
+Identificar las posibles soluciones de un problema (con sus respectivos medios) y seleccionar las más adecuadas para lograr los objetivos. Útil en análisis de prefactibilidad.
+
+##### Análisis de supuestos y restricciones
+Los supuestos (*i.e.* factores que se consideran verdaderos sin demostrarlos) se contemplan en todas las etapas, especialmente en formulación y planificación y permite avanzar en la ejecución del proyecto. Monitorearlos y controlarlos es fundamental dado que el no cumplimiento podría alejar al proyecto del éxito. Los supuestos pueden ser de tipo:
+- De recursos
+- Entrega
+- Presupuestos
+- Alcance
+- Metodológicos y tecnológicos
+
+Las restricciones deben equilibrarse. Pueden tomarse distintas variables en consideración. Por ejemplo, se debe balancear el alcance respecto al costo y tiempo del proyecto (*e.g.* un proyecto de gran alcance no puede ser barato ni rápido). Un análisis más completo incluye variables como riesgo, recursos y calidad.
+
+##### Estudios comparativos
+Comparación de prácticas, procesos y productos respecto a los de otras organizaciones. Útil para identificar mejores prácticas, generar ideas y métricas para el desempeño.
+
+##### Hoja de verificación
+Hoja de anotaciones que puede utilizarse como lista de control cuando se recopilan datos. Útil para categorizar.
+
+##### Costo de calidad
+Incluye todos los costos en los que se ha incurrido durante la vida del producto
+- Prevención
+- Evaluación
+- Fallas internas
+- Fallas externas
+
+##### Análisis de procesos
+Revisión sistemática de los pasos y procedimientos para realizar una actividad.
+
+##### Análisis de causa raíz
+Utilizado para determinar causas de una variación, defecto o riesgo. Más de una variación, defecto o riesgo pueden deberse a una causa raíz. Algunas técnicas:
+- Los 5 por qué
+- Análisis de cambios/eventos
+- Diagrama de espina de causa y efecto.
+
+##### Análisis de sensibilidad
+Es un análisis cuantitativo. Esta técnica analítica se usa para determinar qué riesgos individuales del proyecto u otras fuentes de incertidumbre tienen el mayor impacto posible sobre los resultados del proyecto.
+
+##### Mapeo del flujo de valor
+Método de diagrama de flujo para ilustrar, analizar y mejorar los pasos necesarios para entregar un producto o prestar un servicio. Verifican el flujo de los pasos del proceso y la información desde su origen hasta la entrega al cliente.
+
+#### Métodos de reuniones y eventos
+
+##### Comité de control de cambios
+Grupo de personas responsables de revisar, evaluar, aprobar, retrasar o rechazar los cambios del proyecto. Las decisiones adoptadas son registradas y comunicadas a los interesados correspondientes.
+
+#### Otros métodos
+
+##### Modelado
+Creación de representaciones simplificadas de sistemas, soluciones o entregables. Facilita un análisis más profundo al identificar lagunas en la información, áreas de falta de comunicación o requisitos adicionales.
+
+### Artefactos
+
+#### Artefactos de bitácora y registro
+
+##### Registro de supuestos
+- Supuestos y restricciones a lo largo del proyecto
+- Supuesto: Factor que se considera verdadero, real o cierto, sin prueba ni demostración
+- Restricción: Factor que limita las opciones para dirigir un proyecto, programa, portafolio o proceso.
+- Restricciones y supuestos estratégicos y operativos de alto nivel normalmente se identifican en el caso de negocio antes del inicio del proyecto.
+
+##### Lista de trabajo pendiente
+- Lista ordenada del trabajo a realizar.
+- Asociadas al producto, requisitos, impedimentos, etc.
+- Priorización de elementos.
+- El trabajo priorizado es entonces programado para las próximas iteraciones.
+
+##### Registro de cambios
+Lista completa de cambios presentados durante el proyecto y su estado actual. Un cambio puede ser una modificación de cualquier entregable, componente del plan para la dirección del proyecto o documento del proyecto formalmente controlados.
+
+##### Registro de riesgos
+Registro de las salidas de los procesos de gestión de riesgos. La información puede incluir: la persona responsable de la gestión del riesgo, la probabilidad, el impacto, la puntuación del riesgo, las respuestas previstas al riesgo y otra información utlizada para obtener una comprensión de alto nivel de los riesgos individuales.
+
+#### Artefactos de plan
+
+##### Plan de control de cambios
+Establece el comité de control de cambios, documenta su grado de autoridad y describe cómo se ha de implementar el sistema de control de cambios.
+
+##### Plan de gestión de la calidad
+Programa que describe la implementación de las políticas, procedimientos y pautas aplicables para alcanzar los objetivos de calidad.
+- ¿Requisitos de calidad y/o estándares?
+- ¿Cómo demostrará su cumplimiento?
+  - Políticas y estándares adoptados
+  - Plan de mejora de procesos: Límites, métricas, configuración, presupuesto
+  - Métricas de calidad
+
+/* ##### Plan de liberación */
+
+##### Plan de gestión de requisitos
+Describe el análisis, documentación y gestión de los requisitos. Debe incluir:
+- Planificación, monitoreo y reporte de actividades asociadas a los requisitos y qué se informará sobre éstas.
+- Actividades de gestión de la configuración: cómo iniciar cambios del producto, cómo se analizará el impacto, cómo será el monitoreo, seguimiento y reporte, así como los niveles de autorización requeridos para aprobar dichos cambios.
+- Priorización de requisitos
+- Métricas del producto a utilizar
+- Estructura de trazabilidad
+
+##### Plan de gestión de alcance
+Describe el modo en que el alcance será definido, desarrollado, monitoreado, controlado y validado. Incluye:
+- Proceso para elaborar un enunciado detallado del alcance del proyecto.
+- Proceso para crear la EDT.
+- Proceso para mantener y aprobar la EDT.
+- Proceso para obtener aceptación formal de los entregables
+- Proceso para controlar cómo se procesarán las solicitudes de cambio
+
+##### Plan de gestión del cronograma
+Establece criterios y actividades para desarrollar, monitorear y controlar el cronograma:
+- Herramientas para creación del cronograma
+- Nivel de precisión en estimaciones de tiempo
+- Estimación de reserva de contingencias
+- Actualización de línea base de tiempo
+- Nivel de tolerancia al desvío respecto a la línea base
+- Reglas de definición de avance
+- Cuentas de control de la EDT para gestionar avances
+- Metodología y fórmulas para reportar avances
+- Presentación de informes de avance
+
+##### Plan de pruebas
+Describe los entregables que serán probados, las pruebas que se llevarán a cabo y los procesos que se utilizarán
+para las mismas.
+
+#### Artefactos de diagramas jerárquicos
+
+##### Estructura de desglose del producto
+Estructura jerárquica que refleja los componentes y los entregables de un producto.
+Ejemplo: Una Mountain Bike (proyecto) se divide en varios componentes (sistemas de ruedas, motor, frenos, entre otros) y estos a su vez se dividen en componentes más pequeños (palancas y cables, etc).
+
+##### Estructura de desglose del trabajo
+Descomposición jerárquica del alcance total del trabajo a realizar para cumplir con los objetivos del proyecto y crear los entregables requeridos.
+- Organiza y define el alcance total del proyecto
+- Representa el trabajo del proyecto documentado en el enunciado del alcance del proyecto vigente
+- Sus elementos ayudan a los interesados a desarollar una visión clara del producto final y de lo necesario para alcanzarlo.
+- Trabajo se refiere a los productos y entregables, no a las actividades
+- Es la base para otros documentos como el cronograma y varias otras estimaciones
+
+#### Artefactos de línea base
+
+##### Línea base para la medición del desempeño
+Líneas base del alcance, del cronograma (es el cronograma final aprobado) y costos integrados (Presupuesto aprobado), son utilizadas para comparación, a fin de gestionar, medir y controlar la ejecución del proyecto.
+
+##### Línea base del alcance
+Es la versión aprobada de un enunciado del alcance, EDT y su diccionario de la EDT asociado, que puede cambiarse uflizando procedimientos formales de control de cambios y que se utiliza como base de comparación con los resultados reales
+
+#### Artefactos de datos e información visual
+
+##### Gráfica de trabajo pendiente o realizado
+Representación gráfica del trabajo pendiente en un período de tiempo prestablecido o del trabajo realizado con miras a la liberación de un producto o entregable.
+
+##### Diagrama de causa y efecto
+Representación visual que ayuda a rastrear un efecto no deseado hasta su causa raíz. Es decir, es utilizado en el análisis de causa raíz.
+
+##### Diagrama de tiempo de ciclo
+Muestra el tiempo de ciclo promedio de los elementos de trabajo completados. Puede ser mostrado como un diagrama de dispersión o de barras.
+
+##### Diagrama de flujo acumulativo
+Indica las funcionalidades completadas, las funcionalidades en desarrollo y las que están en la lista de trabajo pendiente. Puede incluir características en estados intermedios, como las características diseñadas pero no construidas, en garantía de calidad o en prueba.
+
+##### Diagrama de flujo
+Representación de las entradas, acciones de proceso y salidas de uno o más procesos dentro de un sistema.
+
+##### Diagrama de tiempo de entrega
+Muestra la tendencia a lo largo del promedio del tiempo de entrega de los elementos terminados. Puede ser mostrado como un diagrama de dispersión o de barras
+
+##### Matriz de trazabilidad de requisitos
+Vincula los requisitos del producto
+
+##### Diagrama de dispersión
+Muestra la relación entre dos variables
+
+##### Story Map
+Modelo visual de todas las características y funcionalidades deseadas para un producto determinado. Da una visión holística de lo que se está construyendo y por qué.
+
+##### Diagrama de rendimiento
+Muestra los entregables aceptados a lo largo del tiempo. El eje vertical muestra el número de días que tuvieron un determinado rendimiento. El eje horizontal representa el rendimiento real como una cantidad de elementos de trabajo completados.
+
+##### Caso de uso
+Describe y explora la forma en que un usuario interactúa con un sistema a fin de lograr un objetivo específico.
+
+##### Mapa de flujo de valor
+Utilizado para documentar, analizar y mejorar el flujo de información o materiales necesarios con el fin de producir un producto o servicio. Pueden ser utilizados para identificar desperdicios.
+
+##### Diagrama de velocidad
+Hace seguimiento de la tasa a la que son producidos, validados y aceptados los entregables dentro de un intervalo predefinido.
+
+#### Artefactos de informes
+
+##### Informe de calidad
+Documento que incluye cuestiones de gestión de calidad, recomendaciones para acciones correctivas y resumen de conclusiones de actividades de control de calidad y puede incluir recomendaciones para mejoras de proceso, proyecto y producto.
+
+#### Otros artefactos
+
+##### Métricas
+Describen un atributo y cómo medirlo. Algunas:
+- Alcance
+- Tiempo
+- Costos
+- Calidad
+- Riesgos
+- Productividad
+- Margen
+
+Categorías:
+- De retrospectiva
+- De diagnóstico
+- Predictivas
