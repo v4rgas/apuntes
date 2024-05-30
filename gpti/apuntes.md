@@ -774,3 +774,46 @@ Categorías:
 - De retrospectiva
 - De diagnóstico
 - Predictivas
+
+## Planificación
+
+### Definiciones base
+- Estimación: Evaluación cuantitativa del valor o resultado de una variable.
+- Exactitud: Evaluación de la corrección en términos de calidad.
+- Precisión: Evaluación de la exactitud en términos de calidad.
+- Intensificación: Método para acortar cronograma con menor incremento de costo mediante añadición de recursos.
+- Ejecución rápida: Método que busca realizar en paralelo actividades que regularmente se realizan de manera secuencial.
+- Presupuesto: Estimación aprobada para el proyecto.
+
+### Aspectos a tener en cuenta
+- Enfoque de desarrollo
+- Entregables del proyecto
+- Requisitos organizacionales
+- Condiciones del mercado
+- Restricciones legales
+
+### Variables para la planificación
+- Entregas: Comprender el caso de negocio, requisitos de interesados y alcance
+  - Desarrollo predictivo: Planificar por adelantado. Útil declaración de alcance y/o EDT.
+  - Desarrollo iterativo o incremental: Planificación a través de épicas. Priorización de trabajo significativo. Minimizar costo de implementación.
+- Estimación: Evaluación cuantitativa del esfuerzo, duración, costos, recursos. Traducido en valor o resultado probable
+  - Rango: El rango de estimación es mayor al inicio del proyecto, debido a la incertidumbre.
+  - Confianza: Mayor experiencia, mayor confianza. En escenarios inciertos, la confianza es baja.
+  - Exactitud: Las estimaciones mejoran (*i.e.* se acercan al objetivo) con el tiempo.
+  - Precisión: Resultados consistentes con distintas maneras de anticiparse.
+- Cronograma: Modelación para ejecutar actividades del proyecto (duraciones, dependencia, recursos, entre otros).
+  - Enfoque predictivo: Estimar esfuerzo, asignar recursos, ajustar secuencia. Intensificación o ejecución rápida en caso de atraso. Atrasos consideran dependencias, de tipo obligatoria, externa (no modificables) o discrecional, interna (modificables).
+  - Enfoque adaptativo: Desarrollo incremental. Períodos de tiempo prestablecidos. Estimación del trabajo y avance por cada período. Revisión del *backlog* al final de cada iteración. Repriorizar en caso de ser necesario.
+- Presupuesto: Traducción en valor financiero de las estimaciones que involucran gasto/inversión. Debe considerar:
+  - Asignación por actividades o paquetes de trabajo
+  - Fondos de reserva para eventos inciertos o no considerados
+  - Reservas de gestión para actividades inesperadas o fuera del alcance
+
+### ¿Qué planificar?
+- Estructura y composición del equipo: Identificar habilidades requeridas para el proyecto. Responsabilidad del director de proyecto.
+- Comunicación: Para cada interesado variará en importancia, frecuencia e intensidad de la información. Puede ser interna o externa, sensible o pública, general o detallada. Debe tenerse en cuenta: ¿Quién necesita la información y de qué tipo se necesita?, ¿por qué se debe compartir?, ¿cuál es la mejor manera de proporcionar la información?, ¿Cuándo y con qué frecuencia se necesita la información?
+- Recursos físicos: Todo lo que no es humano. La planificación incluye la gestión de pedidos, consideración de plazos, materiales, inventario y costos asociados.
+- Adquisición: Hacer o comprar. Fuentes externas
+- Cambios: Realizar por medio de un control de cambios, repriorizar el trabajo o a través de una nueva línea base. Puede verse afectado por restricciones legales.
+- Métricas: Orientadas al producto o servicio.
+- Alineación: Planificación alineada con alcances, requisitos, recursos, fondos asignados, interesados, entre otros.
