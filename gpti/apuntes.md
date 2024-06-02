@@ -817,3 +817,179 @@ Categorías:
 - Cambios: Realizar por medio de un control de cambios, repriorizar el trabajo o a través de una nueva línea base. Puede verse afectado por restricciones legales.
 - Métricas: Orientadas al producto o servicio.
 - Alineación: Planificación alineada con alcances, requisitos, recursos, fondos asignados, interesados, entre otros.
+
+### Métodos
+
+#### Métodos para recopilación y análisis de datos
+
+##### Análisis de justificación del negocio
+Resultados utilizados para justificar un proyecto:
+- Tasa interna de retorno
+- Retorno de la inversión
+- Relación costo-beneficio
+
+##### Análisis mediante árbol de decisiones
+Permite evaluar posibles resultados, costos y consecuencias de una decisión compleja. Útil para análisis de datos y toma de decisiones.
+
+##### Análisis del valor ganado
+Método de análisis que utiliza mediciones asociadas con el alcance, cronograma y costo para determinar:
+- Desempeño del costo: Mide la eficiencia del costo para el trabajo completado hasta la fecha. Consiste en la razón entre el valor ganado y el costo real. Menor a 1 significa costo superior al planificado, en otro caso es costo inferior respecto al desempeño. Fórmula: EV/AC.
+- Desempeño del cronograma: Mide la eficiencia con que el equipo del proyecto está utilizando su tiempo. Menor a 1 significa que la cantidad de trabajo llevada a cabo es menor que la prevista (atraso). Fórmula: EV/PV.
+
+##### Valor monetario esperado
+Metodología que combina medidas de alcance, cronograma y recursos para evaluar el desempeño y avance del proyecto. Establece y evalúa tres dimensiones:
+- Valor planificado (PV): Presupuesto asignado para completar un entregable o paquete de trabajo, sin considerar la reserva de gestión.
+- Valor ganado (EV): Presupuesto asociado al trabajo que se ha completado.
+- Costo real (AC): Costo incurrido por el trabajo llevado a cabo.
+
+##### Diagrama de influencias
+Representación gráfica de situaciones que muestran influencias causales, cronología de eventos y otras relaciones entre variables y resultados.
+
+##### Evaluación del ciclo de vida
+Herramienta utilizada para evaluar impacto ambiental.
+
+##### Análisis de hacer o comprar
+Proceso de recopilación y organización de datos sobre requisitos y posterior análisis respecto a las alternativas (compra y fabricación interna).
+
+##### Matriz de probabilidad o impacto
+Vincula la probabilidad de ocurrencia de riesgos con su impacto sobre los objetivos del proyecto. Este análisis cualitativo comprende:
+- Impacto o pérdida si ocurre
+- Probabilidad que suceda
+- Severidad = impacto * probabilidad
+- Efectos del riesgo
+
+##### Análisis de regresión
+Método estadístico que examina la relación entre variables e identifica las que tienen mayor impacto en un tema de interés.
+
+##### Simulación
+Análisis cuantitativo que tiene como objetivo mostrar el efecto de las incertidumbres para evaluar impacto en los objetivos.
+
+##### Análisis FODA
+Herramienta diseñada para comprender la situación de un negocio listando **F**ortalezas, **O**portunidades, **D**ebilidades y **A**menazas.
+
+##### Análisis de escenarios "¿Qué pasa si...?"
+Técnica analítica que evalúa escenarios para predecir efecto sobre objetivos del proyecto.
+
+#### Métodos de estimación
+
+##### Agrupamiento de afinidad
+Agrupa visualmente ideas o asuntos. Útil para organizar ideas afines para comprender un problema y hallar soluciones.
+
+##### Estimación análoga
+- Técnica para estimar la duración o el costo de una actividad/proyecto mediante la utilización de datos históricos de una actividad/proyecto similar.
+- Utiliza parámetros como duración, presupuesto, tamaño, carga y complejidad.
+- Rápida y económica, pero imprecisa
+
+##### Puntos de función
+Estimación de cantidad de funcionalidad comercial en un sistema de información. Se usan para calcular medida de tamaño funcional de un sistema de software:
+- Definir frontera de la aplicación
+- Identificar funciones disponibles para el usuario y organizar por cantidad en cinco grupos:
+  1. Salidas
+  2. Consultas (también llamada Peticiones)
+  3. Entradas
+  4. Ficheros (internos, también llamada Archivos)
+  5. Interfaces (también llamada Ficheros externos)
+- Clasificar y ponderar cada función por nivel de complejidad
+
+##### Estimación multipunto
+Evalúa el costo o duración mediante promedio de estimaciones (optimistas, pesimistas y más probables). Usado cuando existe incertidumbre en otras estimaciones.
+- Three-point estimating: Asume que los escenarios optimista, pesimista y más probable ocurren con la misma probabilidad.
+- PERT: Promedio ponderado. El escenario más probable se multiplica por 4, se suman los escenarios optimista y pesimista. Luego se divide todo entre 6
+
+##### Estimación paramétrica
+Calcula el costo o la duración basándose en datos históricos y parámetros del proyecto. Fórmula: (Monto histórico/Valor histórico) * Valor actual
+
+##### Estimación relativa
+Crea estimaciones que derivan de la realización de comparación con un conjunto de trabajos similares, teniendo en cuenta esfuerzo, complejidad e incertidumbre.
+
+##### Estimación puntual
+Involucra uso de datos para calcular valor único que refleja estimación más probable.
+
+##### Estimación por punto de historia
+Miembros del equipo asignan puntos de esfuerzo —abstractos, pero relativos— para implementar una historia de usuario. Representa dificultad considerando complejidad, riesgo y esfuerzo.
+
+##### Delphi de banda ancha
+Múltiples rondas de estimación, llegando a consenso con el equipo de proyecto en cada ronda. *Planning poker* es una variación de este método.
+
+#### Métodos de reuniones y eventos
+
+##### Reunión diaria de pie (*daily standup*)
+- Corta (~15 minutos)
+- Siempre en el mismo lugar
+- Siempre a la misma hora
+- Todo el equipo participa
+- Preguntas a cada miembro
+  - ¿Qué hice ayer?
+  - ¿Qué haré hoy?
+  - ¿Qué debo enfrentar?
+
+/* ##### Planificación */
+
+### Artefactos
+
+#### Artefactos de bitácora y registros
+
+##### Lista de trabajo pendiente ajustada al riesgo
+Incluye el trabajo y las acciones para abordar amenazas y oportunidades.
+
+#### Artefactos de plan
+
+##### Plan de gestión de los costos
+Programa que describe la forma en que los costos serán planificados, estructurados y controlados.
+- Unidad de medida (Días, HH, etc)
+- Nivel de precisión
+- Nivel de exactitud
+- Formato y frecuencia de presentación de informes
+  - ¿Cuánto vale una hora de trabajo?
+  - ¿Licencias y soporte?
+  - ¿Materiales e insumos?
+  - ¿Servicios e infraestructura?
+
+##### Plan de iteración
+Plan detallado para la iteración actual
+
+##### Plan de gestión de las adquisiciones
+(Explicar con apuntes anotados en clase)
+
+##### Plan de gestión de los recursos
+Describe cómo se adquieren, asignan, monitorean y controlan recursos del proyecto.
+
+/* ##### Plan de gestión de los riesgos */
+
+#### Artefactos de línea base
+
+##### Presupuesto
+Es la estimación aprobada para el proyecto/actividad. Se determina sumando el costo de las actividades. La estimación de costos se suele realizar después de aprobar el presupuesto, cuando debería ser al revés.
+
+##### Cronograma del proyecto
+Salida de un modelo de programación que presenta actividades vinculadas con fechas, duraciones, hitos y recursos.
+- Definir actividades: Consiste en identificar acciones que deben ser llevadas a cabo para conseguir los entregables.
+  - Proyecto -> Entregables -> Paquetes de trabajo -> Actividades
+- Secuenciar actividades: Deben identificarse dependencias entre actividades.
+  - Obligatorias: Siguen secuencia debido a la naturaleza del trabajo
+  - Discrecionales: Secuencia definida por el equipo. Basadas en experiencia y mejores prácticas
+  - Externas: Una actividad que no pertenece al proyecto lo impacta
+- Tipos de secuencias:
+  - Final-Inicio: La actividad no puede comenzar hasta que termine la anterior
+  - Final-Final: Ambas actividades deben terminar a la vez
+  - Inicio-Inicio: Ambas actividades deben comenzar a la vez
+  - Inicio-Final: La actividad no puede finalizar hasta que comience la siguiente
+- Estimar o definir recursos: Determinar equipo necesario y roles como: Jefe de proyecto, experto, arquitecto junior, arquitecto senior, analista programador, líder QA, analista QA.
+- Estimar duración de la actividad: Estimar a través de juicio experto o método PERT.
+- Desarrollar cronograma: Se logra determinar fechas de inicio y término de actividades y del proyecto a través de un proceso iterativo. Deben ser realistas para garantizar su cumplimiento.
+  1. Estimar fecha de inicio de proyecto
+  2. Asignar recursos a cada actividad
+  3. Indicar HH estimadas
+  4. Revisar sobreasignación y dar solución
+    - Asignar otro recurso a la actividad
+    - Aplazar actividad
+- Analizar cronograma: Revisar fechas y asignación de recursos de forma realista, identificar ruta crítica, revisar cumplimiento de fechas de entregables.
+- Método de ruta crítica: Obtener ruta con menor holgura
+- Compresión del cronograma: Ejecución rápida implica aumento de riesgo. Intensificación implica aumento de costo.
+- Fallas de estimación:
+  - Supuesto erróneo: Las personas dedican el 100% de su tiempo en oficina al trabajo y están disponibles inmediatamente
+  - La productividad no es proporcional al número de personas trabajando en una tarea
+  - Agregar gente a un proyecto atrasado hace que se atrase más
+  - Lo inesperado siempre ocurre
+  - Mala definición (o falta de definición) de tareas
+  - Enfoque (excesivamente) optimista
