@@ -949,7 +949,10 @@ Programa que describe la forma en que los costos serán planificados, estructura
 Plan detallado para la iteración actual
 
 ##### Plan de gestión de las adquisiciones
-(Explicar con apuntes anotados en clase)
+- Administración+: El contratante asume todo el riesgo (*e.g.* contratar mano de obra)
+- Precio unitario: El contratante asume gran parte del riesgo (*e.g.* servicios de reparación/mantención)
+- Suma alzada: El contratado asume gran parte del riesgo (*e.g.* ampliación de casa. Trato por producto terminado. Costos acordados con anticipación. Existe el riesgo de imprevistos)
+- Llave en mano: El contratado asume todo el riesgo (*e.g.* comprar un departamento ya construido, comprar un auto)
 
 ##### Plan de gestión de los recursos
 Describe cómo se adquieren, asignan, monitorean y controlan recursos del proyecto.
@@ -993,3 +996,23 @@ Salida de un modelo de programación que presenta actividades vinculadas con fec
   - Lo inesperado siempre ocurre
   - Mala definición (o falta de definición) de tareas
   - Enfoque (excesivamente) optimista
+
+#### Artefactos de datos e información visuales
+
+##### Diagrama de afinidad
+Muestra un gran número de ideas clasificadas en grupos para su revisión y análisis.
+
+##### Diagrama de Gantt
+Suministra información del cronograma donde las actividades se enumeran en el eje vertical y las fechas en el eje horizontal. Las duraciones son barras horizontales.
+
+##### Diagrama de red de cronograma del proyecto
+Muestra las relaciones lógicas que existen entre las actividades del cronograma del proyecto.
+
+##### Matriz de asignación de responsabilidades
+Cuadrícula que muestra los recursos del proyecto asignados a cada paquete de trabajo.
+
+##### Curva S
+Muestra los costos acumulados durante un período específico.
+- Se emplean para controlar el proyecto durante su ejecución
+- Se basan en la información reunida en la carta Gantt una vez optimizada la asignación de recursos
+- Eje X unidad de tiempo. Eje Y porcentaje de avance y HH.
