@@ -1044,3 +1044,47 @@ Muestra los costos acumulados durante un período específico.
 - Gestionar aprendizaje: El equipo analiza periódicamente qué se hizo (retrospectivas) y cómo mejorar (lecciones aprendidas).
 - Gestión del conocimiento: Compartir lecciones y análisis con el resto del equipo.
 - Conocimiento tácito y explícito: La organización debe velar por la incorporación de conocimiento posterior al término del proyecto para que sirva como insumo para futuros trabajos.
+
+### Métodos
+
+#### Métodos de reuniones y eventos
+
+##### Revisión del riesgo
+Se analiza el estado de riesgos existentes y la identificación de nuevos riesgos. Esto incluye:
+- Determinar si el riesgo está activo.
+- Evaluación de respuestas al riesgo para determinar efectividad. Actualizar en caso que no sea efectivo.
+- Identificar y analizar nuevos riesgos. Cerrar los que no están activos.
+
+##### Estatus
+Evento programado periódicamente para intercambiar y analizar información sobre el progreso actual del proyecto y su desempeño.
+
+### Artefactos
+
+#### Artefactos de bitácora y registro
+
+##### Registro de incidentes
+Un incidente es una condición o situación actual que puede tener un impacto en los objetivos del proyecto. Se registran para supervisar la información sobre los incidentes activos y asignarlos a una parte responsable para su seguimiento y resolución.
+
+##### Registro de lecciones aprendidas
+Se utiliza para registrar los conocimientos adquiridos, de modo que se puedan utilizar para mejorar el desempeño futuro del equipo del proyecto y/o de la organización.
+
+#### Artefactos de diagramas jerárquicos
+
+##### Estructura de desglose del riesgo
+Representación jerárquica de las posibles fuentes de riesgos. Se separan en categorías y luego se dividen en fuentes concretas de riesgo (*e.g* en categorías pueden ir "De negocios", "Técnico", "Externo", "Organizacional", "De gestión" y en fuentes de "Técnico" puede ser "Tecnología", "Hardware", "Software", "Red". En "De gestión" puede ser "Estimaciones", "Planificaciones", entre otros).
+
+#### Artefactos de datos e información visuales
+
+##### Tablero
+Conjunto de diagramas y gráficos que muestra el progreso o el rendimiento en relación con mediciones importantes del proyecto.
+
+##### Radiador de información
+Indicación visible y física que proporciona información al resto de la organización, permitiendo el intercambio oportuno de conocimientos (*e.g. product backlog*).
+
+#### Artefactos de informes
+
+##### Informe de riesgos
+Este documento es desarrollado a lo largo de los procesos de gestión de riesgos y resume la información sobre los riesgos individuales del proyecto y el nivel de riesgo general del proyecto.
+
+##### Informe de estatus
+Proporciona un informe sobre el estado actual del proyecto. Puede incluir información sobre el avance desde el último informe y pronósticos sobre el desempeño de los costos y del cronograma.
