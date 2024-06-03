@@ -1016,3 +1016,31 @@ Muestra los costos acumulados durante un período específico.
 - Se emplean para controlar el proyecto durante su ejecución
 - Se basan en la información reunida en la carta Gantt una vez optimizada la asignación de recursos
 - Eje X unidad de tiempo. Eje Y porcentaje de avance y HH.
+
+## Trabajo
+
+### Definiciones base
+- Documentos de las licitaciones: Documentos utilizados para solicitar información, cotizaciones o propuestas a posibles vendedores.
+- Conferencias de oferentes: Reuniones con posibles vendedores previas a la licitación para asegurar que se comprende la necesidad de adquisición.
+- Conocimiento explícito: Puede codificarse utilizando símbolos tales como palabras, números e imágenes.
+- Conocimiento tácito: Puede ser difícil de articular y compartir, tales como creencias, experiencia y percepciones.
+
+### ¿Cómo optimizar el proceso de trabajo?
+- Método de producción Lean: Uso de técnicas de mapeo de flujo de valor para medir proporción de actividades que agregan valor respecto del total de actividades.
+- Retrospectivas o lecciones aprendidas: Reuniones que permiten identificar oportunidades de mejora y posibles cambios para aumentar la eficiencia
+- Siguiente mejor inversión: Útil para decidir si seguir con la tarea (generación de valor) o continuar con la siguiente.
+
+### ¿Cómo garantizar un correcto desarrollo del trabajo?
+- Equilibrar competencias de acuerdo a ciertas restricciones: Cumplimiento de normativas legales, presupuesto, entre otros. Debe mantener la satisfacción de los interesados.
+- Mantener enfoque: Monitorear avance para equilibrar carga de trabajo. Medir satisfacción de interesados para mantener motivación. Centrarse en entrega de valor, manteniendo la capacidad productiva del equipo.
+- Comunicarse e involucrarse en el proyecto: Retroalimentación continua sobre el desempeño para satisfacer interesados.
+- Gestionar recursos físicos: Considerar logística detrás de la gestión de materiales o suministros, ya que influye en los resultados.
+- Trabajar con adquisiciones: Dos formas distintas:
+  - Proceso de licitación: Proceso en el que empresas postulan como ofertantes a realizar o proveer el producto o servicio que se busca adquirir. La oferta seleccionada se hace en base a criterios establecidos.
+  - Contratación: Acuerdo con sustento legal que obliga a las partes a cumplir con lo acordado. Se debe considerar como una restricción para el desarrollo del proyecto
+- Monitorear nuevos trabajos y cambios:
+  - Proyectos adaptativos: Gestionar expectativas del cliente para evitar cambios constantemente. Debe existir comunicación que permita negociar, considerando cronograma, presupuesto, prioridades y alcances.
+  - Proyectos predictivos: Gestión de cambios por parte del equipo según planificación inicial. Debe aprobarse y documentarse el cambio.
+- Gestionar aprendizaje: El equipo analiza periódicamente qué se hizo (retrospectivas) y cómo mejorar (lecciones aprendidas).
+- Gestión del conocimiento: Compartir lecciones y análisis con el resto del equipo.
+- Conocimiento tácito y explícito: La organización debe velar por la incorporación de conocimiento posterior al término del proyecto para que sirva como insumo para futuros trabajos.
