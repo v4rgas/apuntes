@@ -1286,3 +1286,65 @@ Muestra la representación gráfica de datos numéricos. El eje vertical muestra
      - Empoderamiento: ¿se confía, apoya y alienta al equipo del proyecto para que haga propio el proyecto?
      - Cultura organizacional: ¿están alineados los valores de la organización con el enfoque de desarrollo del proyecto?
 4. Implementar mejora continua: Se deben dar puntos de revisión y retrospectivas que permitan inspeccionar y adaptar el proceso, el enfoque de desarrollo y la frecuencia de entrega. Fomenta el sentido de pertenencia y demuestra compromiso de aplicar mejoras
+
+# Gestión del cambio
+
+## Elementos críticos de un proyecto
+
+### Gestión del alcance
+1. Se ha definido expresamente por qué y para qué se hará el proyecto
+2. Las razones para realizarlo son imperiosas, válidas en el “largo plazo”. Se origina en un análisis racional de las necesidades de la organización
+3. Es compatible con la estrategia de la empresa y con la arquitectura informática
+4. Los costos de desarrollo y operación son compatibles con los beneficios y el valor agregado
+5. La evaluación del proyecto cubre el período completo de existencia de la inversión
+6. Se ha evaluado los riesgos del proyecto, y se han definido medidas de mitigación suficientes
+7. Cuenta con apoyo político y presupuestario, de los ejecutivos relevantes. No es demasiado contracultural
+8. El alcance está claramente definido, señalando lo incluido y lo no incluido, estableciendo las fronteras del proyecto
+9. La duración y magnitud del proyecto son prudentes. El plazo y el presupuesto es razonable
+10. Se dispone de los profesionales necesarios, en cantidad, calidad y disposición
+
+#### Ley de Gall
+"Un sistema complejo que funciona ha evolucionado de un sistema simple que funcionó. El planteamiento inverso también es cierto: un sistema complejo diseñado así desde cero nunca funciona y no puede hacerse funcionar. Debes empezar de nuevo, comenzando con un sistema simple."
+
+### Manejo político
+- Sin apoyo político, es difícil producir un cambio. Por lo tanto, el proyecto no tendrá éxito
+- El cambio o pérdida de apoyos claves puede ser fatal
+- El apoyo político es necesario, pero no suficiente
+- Mientras más arriba el apoyo, menos comprensión del proyecto
+- A veces hay buen inicio, pero no perseverancia
+- Es crucial un estado de *"ownership"*
+- La estructura de los equipos de trabajo debe asegurar que se cuenta con todo el *know-how*, el apoyo político, la fuerza para convencer a opositores y la capacidad de decisión
+- El héroe debe ser el dueño del proyecto
+
+### Metodología de gestión
+- Metodologías > Improvisación
+- Modelos teóricos vs Mejores prácticas:  “Aplicarlos no es una receta de éxito, no hacerlo es una receta para el fracaso”
+- Plan: Los planes sirven para:
+  - Estimar magnitudes
+  - Decidir estrategias
+  - Evaluar riesgos
+  - Medir avance
+  - Saber qué hacer
+  - Coordinar
+
+### Gestión del cambio
+- El impacto sobre las personas afecta su conducta y su bienestar
+- Normalmente no se considera legítimo o eficiente considerar las emociones en el manejo del proyecto. Sin embargo, ellas pueden determinar el fracaso de éste
+
+#### Resistencia al cambio
+- En el contexto de un cambio se modifican las emociones y la acción de los interesados
+- Las personas sienten que pierden
+  - Identidad
+  - Control
+  - Pertenencia
+  - Poder
+  - Competencia
+  - Certidumbre sobre su futuro
+- La resistencia al cambio es natural. El desafío de todo proyecto es reconocerla, identificar sus dimensiones y diseñar estrategias para superarla
+
+#### Premisas
+- Las organizaciones aprenden a manejar con éxito la adaptación a nuevas situaciones y desafíos
+- Las personas son las que cambian, las que movilizan o bloquean los cambios
+- Toda organización cuenta con personas capaces de lograr resultados sobresalientes
+- La gestión del cambio es un delicado equilibrio entre el impacto e influencia de pocos y la aceptación/adopción de muchos
+- La consolidación del cambio requiere la instalación de competencias y actitudes en las personas
