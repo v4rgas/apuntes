@@ -1167,3 +1167,28 @@ Proporciona un informe sobre el estado actual del proyecto. Puede incluir inform
 Para abordar estos peligros, se consideran dos áreas:
 - Prevención y planificación para considerar posibles escenarios y qué respuesta se tendría en cada uno de ellos. Se recomienda manejar un umbral aceptable de variaciones para algunas métricas que puedan sufrir cambios.
 - Resolución y actuar a tiempo para los casos en que los resultados no sean los planificados.
+
+### Métodos
+
+#### Métodos para recopilación y análisis de datos
+
+##### Pronósticos
+Estimación o predicción de condiciones y eventos futuros para el proyecto.
+- Pronóstico cualitativo: Utiliza opiniones y juicios de expertos en la materia.
+- Pronóstico causal o econométrico: Identifica las variables que pueden tener un impacto significativo en los resultados.
+- Pronóstico cuantitativo: Utiliza modelos en los que la información del pasado se utiliza para predecir el desempeño futuro. Ejemplos son el Costo final del proyecto (suma entre el costo real y la estimación de costo del trabajo faltante) y la Estimación de la duración total del proyecto (cociente entre el tiempo planificado por el cronograma y el índice de desempeño de éste).
+
+##### Análisis de tendencias
+Utiliza modelos matemáticos para pronosticar resultados futuros basado en resultados históricos.
+
+##### Análisis de variación
+Utilizado para determinar causa y grado de diferencia entre la línea base y el desempeño real.
+- Variación de costo: Es el monto del déficit o superávit presupuestario en un momento dado. Es la diferencia entre el valor ganado y el costo real. Difícil de recuperar en caso de ser negativo.
+- Variación de cronograma: Determina en qué medida el proyecto está adelantado o retrasado en relación con la fecha de entrega en un momento determinado. Es la diferencia entre el valor ganado y el valor planificado.
+
+### Artefactos
+
+#### Artefactos de datos e información visuales
+
+##### Histograma
+Muestra la representación gráfica de datos numéricos. El eje vertical muestra el número de días que tuvieron un determinado rendimiento. El eje horizontal representa la cantidad de elementos de trabajo completados.
