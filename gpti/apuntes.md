@@ -1236,3 +1236,53 @@ Muestra la representación gráfica de datos numéricos. El eje vertical muestra
     - Un riesgo ha cambiado o puede descartarse
     - Se respetan las políticas y los procedimientos de gestión de riesgos
     - Las reservas para contingencias deben modificarse para alinearlas con la evaluación actual de riesgos
+
+## Adaptación
+
+### ¿Qué se adapta?
+- Selección del ciclo de vida y del enfoque de desarrollo: Cada proyecto presenta sus propios objetivos y condiciones que lo hacen único, por lo que estos lineamientos se deben adecuar a la situación en la que se esté desarrollando el proyecto.
+- Procesos: En la adaptación a ciertos tipos de enfoques puede ocurrir que existan elementos del tipo de enfoque que se:
+  - __Agreguen__, para cumplir con estándares o requisitos.
+  - __Modifiquen__, para aumentar efectividad en el desarrollo de las etapas.
+  - __Eliminen__, para reducir costos o esfuerzos que puedan no ser necesarios.
+  - __Combinen__, para aportar beneficios adicionales.
+  - __Alineen__, para armonizar los elementos para que haya una definición, comprensión y aplicación coherentes.
+- Involucramiento: La adaptación de los involucrados se da en tres áreas:
+  - __Personas__, evaluando capacidades y aptitudes que generen valor de acuerdo a los objetivos y condiciones del proyecto.
+  - __Empoderamiento__, asignando responsabilidades acorde a los atributos de cada miembro del equipo y la capacidad de tomar decisiones.
+  - __Integración__, incluyendo elementos o personas externas que puedan ser de utilidad para cumplir eficaz y eficientemente con los objetivos.
+- Herramientas: Tendrán que ser definidas por el equipo y de acuerdo a la experiencia previa que los miembros tengan. Se debe realizar ajuste según condiciones económicas y restricciones del cliente. El líder representa al equipo en la negociación de estas herramientas.
+- Métodos y artefactos: Todos los elementos que se exigen en un determinado enfoque de trabajo pueden ser adaptados según las necesidades de la contraparte y las características del proyecto.
+
+### Proceso de adaptación
+1. Seleccionar enfoque de desarrollo inicial: Según experiencia del equipo, cadencia o regularidad de entrega y conocimiento del producto a desarrollar.
+2. Adaptar para la organización: Se debe adaptar los procesos propios del proyecto con los objetivos estratégicos más generales que pueda tener la organización. Cobran importancia dos involucrados relevantes:
+   - Director de proyecto:
+     - Dirección técnica de proyectos: Conocimientos, habilidades y comportamientos relacionados con ámbitos específicos de la dirección de proyectos.
+     - Liderazgo: Conocimientos, habilidades y comportamientos necesarios para guiar, motivar y dirigir un equipo y alcanzar las metas.
+     - Gestión estratégica y de negocios: El conocimiento y la pericia en la industria y organización, que mejora el desempeño y entrega de mejor manera los resultados del negocio.
+   - Oficina de dirección de proyectos (PMO): Estructura de gestión de la organización, que estandariza procesos relacionados a la gobernabilidad de proyectos y da facilidades para compartir recursos, metodologías, herramientas y técnicas
+     - Monitorear el rendimiento de los proyectos
+     - Alinear los proyectos con los objetivos de negocio
+     - Desarrollar capacidades de la organización en la gestión corporativa de proyectos
+3. Adaptar para el proyecto: Se busca adaptar los distintos aspectos del proyecto que puedan generar un impacto en el resultado mismo que se busca desarrollar. Referentes a:
+   - Producto y entregables
+     - Cumplimiento/criticidad: ¿qué grado de rigor y aseguramiento de calidad de los procesos es apropiado?
+     - Tipo de producto/entregable: ¿es el producto bien conocido y tangible o se está trabajando con algo intangible, como un software?
+     - Mercado de la industria: ¿qué sucede con los competidores e interesados externos?
+     - Tecnología: ¿es la tecnología estable o está en rápida evolución y obsolescencia?
+     - Período de tiempo: ¿en qué periodos estaremos trabajando?
+     - Estabilidad de requisitos: ¿qué probabilidad hay de que existan cambios en los requerimientos básicos?
+     - Seguridad: ¿son confidenciales los elementos del proyecto?
+     - Entrega incremental: ¿se debe ir aprobando por el cliente o puede estar terminado de una vez?
+   - Equipo de proyecto
+     - Tamaño del equipo: ¿cuántas personas trabajarán y serán a tiempo completo o parcial?
+     - Ubicación de trabajo: ¿dónde se encontrará el equipo y cada uno de sus integrantes?
+     - Experiencia del equipo: ¿los miembros del equipo tienen experiencia en alguna industria, organización o trabajo conjunto previo?
+     - Acceso al cliente: ¿se puede obtener comunicación frencuente o es mejor menor periodicidad?
+   - Cultura
+     - Aceptación: ¿hay entusiasmo por el enfoque propuesto?
+     - Confianza: ¿está comprome do el equipo con el desarrollo?
+     - Empoderamiento: ¿se confía, apoya y alienta al equipo del proyecto para que haga propio el proyecto?
+     - Cultura organizacional: ¿están alineados los valores de la organización con el enfoque de desarrollo del proyecto?
+4. Implementar mejora continua: Se deben dar puntos de revisión y retrospectivas que permitan inspeccionar y adaptar el proceso, el enfoque de desarrollo y la frecuencia de entrega. Fomenta el sentido de pertenencia y demuestra compromiso de aplicar mejoras
