@@ -1192,3 +1192,47 @@ Utilizado para determinar causa y grado de diferencia entre la línea base y el 
 
 ##### Histograma
 Muestra la representación gráfica de datos numéricos. El eje vertical muestra el número de días que tuvieron un determinado rendimiento. El eje horizontal representa la cantidad de elementos de trabajo completados.
+
+## Incertidumbre
+
+### Definiciones base
+- Incertidumbre: Falta de comprensión y conciencia de los problemas, eventos, caminos a seguir o soluciones a buscar. Es una situación inherente a todo proyecto. Se deben tomar medidas como:
+  - Recopilar información: Al incorporar más datos puede que se obtenga una precisión mayor de la situación.
+  - Prepararse para múltiples resultados: Realizar un análisis de escenarios sirve para anticiparse a situaciones futuras.
+  - Diseño basado en conjuntos: Al planificar distintas áreas en conjunto se compromete al equipo a conseguir avances en conjunto.
+  - Incorporar resiliencia: El equipo y la organización debe contar con habilidades y capacidades para adaptarse y responder rápidamente a cambios inesperados.
+- Ambigüedad: Estado de confusión, con dificultad para identificar la causa de los eventos, o tener múltiples opciones entre las cuales elegir.
+  - Ambigüedad conceptual: Se da cuando se usan términos similares de maneras diferentes.
+  - Ambigüedad situacional: Se da cuando se puede tener más de un resultado de una actividad a desarrollar. Es posible enfrentar esta con Elaboración progresiva del plan de proyecto con la información que se va obteniendo, Experimentos para identificar relaciones causa-efecto y Prototipos.
+- Complejidad: Característica de un programa o proyecto o de su entorno que es difícil de gestionar debido al comportamiento humano, el comportamiento del sistema y la ambiguedad. Se aborda dependiendo del tipo:
+  - Complejidad basada en sistemas
+    - Desacople: Desconectar partes del sistema para simplificarlo.
+    - Simulación: Identificar posibles escenarios en proyectos similares.
+  - Complejidad basada en replanteamiento
+    - Diversidad: Al incluir distintos recursos se pueden complementar las habilidades para conseguir apreciar aspectos desde distintos ángulos.
+    - Equilibrio: Se deben considerar datos de todo tipo para poder obtener información completa y no sesgada con respecto a una sola variable.
+  - Complejidad basada en procesos
+    - Iterar: Construir de forma incremental para ir incorporando gradualmente características que puedan modificar el resultado.
+    - Involucrar: Incluir la participación de todos los interesados.
+    - Falla segura: Incorporar elementos que proporcionen una degradación parcial de la funcionalidad en caso de falla.
+- Volatilidad: Posibilidad de un cambio rápido e impredecible. Para enfrentarla podemos considerar:
+  - Análisis de alternativas: Encontrar opciones para cumplir con el objetivo (*e.g.* mezclar habilidades, redistribuir trabajo, subcontratar, entre otros)
+  - Reserva: Reservas de costos y cronograma para cubrir posibles subestimaciones.
+- Riesgo: Evento o condición incierta que, si se produce, tiene efecto en los objetivos del proyecto.
+  - Amenazas
+    - __Escalar__ la respuesta, ya que excede los alcances del proyecto y no hay autoridad para proceder.
+    - __Transferir__ para que un tercero se haga cargo y solucione la amenaza.
+    - __Mitigar__ el impacto, reduciendo probabilidad de ocurrencia y previniendo, evitando así pagar un mayor costo que reparar.
+    - __Aceptar__ que existe un problema y que no se puede enfrentar.
+  - Oportunidades
+    - __Explotar__ una vez ocurrida para obtener máximo beneficio
+    - __Escalar__ la respuesta, ya que excede los alcances del proyecto y no hay autoridad para proceder.
+    - __Compartir__ la responsabilidad para aprovechar la oportunidad.
+    - __Mejorar__ para asegurar que ocurra la oportunidad y obtener el beneficio.
+    - __Aceptar__ que existe una oportunidad.
+  - Reservas para contingencias y de gestión: Tiempo o presupuesto que se reserva ante eventuales escenarios o riesgos no planificados que puedan darse en el transcurso del proyecto.
+  - Revisión de riesgo: Aplica técnicas tales como el análisis de variación y de tendencias, que requieren el uso de información de desempeño generada durante la ejecución del proyecto. Su finalidad es determinar si:
+    - Los supuestos siguen siendo válidos
+    - Un riesgo ha cambiado o puede descartarse
+    - Se respetan las políticas y los procedimientos de gestión de riesgos
+    - Las reservas para contingencias deben modificarse para alinearlas con la evaluación actual de riesgos
