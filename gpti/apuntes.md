@@ -656,7 +656,7 @@ Programa que describe la implementación de las políticas, procedimientos y pau
   - Plan de mejora de procesos: Límites, métricas, configuración, presupuesto
   - Métricas de calidad
 
-/* ##### Plan de liberación */
+<!--- ##### Plan de liberación --->
 
 ##### Plan de gestión de requisitos
 Describe el análisis, documentación y gestión de los requisitos. Debe incluir:
@@ -923,7 +923,7 @@ Múltiples rondas de estimación, llegando a consenso con el equipo de proyecto 
   - ¿Qué haré hoy?
   - ¿Qué debo enfrentar?
 
-/* ##### Planificación */
+<!--- ##### Planificación --->
 
 ### Artefactos
 
@@ -957,7 +957,7 @@ Plan detallado para la iteración actual
 ##### Plan de gestión de los recursos
 Describe cómo se adquieren, asignan, monitorean y controlan recursos del proyecto.
 
-/* ##### Plan de gestión de los riesgos */
+<!--- ##### Plan de gestión de los riesgos --->
 
 #### Artefactos de línea base
 
@@ -1088,3 +1088,82 @@ Este documento es desarrollado a lo largo de los procesos de gestión de riesgos
 
 ##### Informe de estatus
 Proporciona un informe sobre el estado actual del proyecto. Puede incluir información sobre el avance desde el último informe y pronósticos sobre el desempeño de los costos y del cronograma.
+
+## Medición
+
+### Definiciones base
+- Métrica:  Descripción de un atributo del proyecto o producto y cómo medirlo.
+- Línea base: Versión aprobada de un producto de trabajo que se utiliza como base de comparación con los resultados reales.
+- Tablero:  Conjunto de diagramas y gráficos que muestran el avance o el rendimiento en relación con mediciones importantes del proyecto.
+
+### Medidas efectivas
+- Indicadores claves de desempeño: Medidas cuantificables utilizadas para evaluar el éxito de un proyecto:
+  - Indicadores adelantados
+  - Indicadores rezagados
+- Métricas efectivas: Definir correctamente qué y cómo se va a medir. Usar criterios SMART:
+  - Specific: Mediciones bien definidas en cuanto a qué medir. Debe tener un único criterio.
+  - Meaningful: Debe estar relacionada al caso de negocio, las líneas base o los requisitos.
+  - Achievable: Acorde a las personas, tecnología y entorno.
+  - Relevant: Debe aportar valor y ser información procesable
+  - Time-bound: Debe ser oportuna. Es decir, la información debe ser entregada a tiempo para ser utilizada en toma de decisiones.
+
+### ¿Qué medir?
+- Métricas sobre entregables: Cuantificar características o atributos propios del servicio, producto o trabajo a realizar.
+  - Información sobre errores o defectos: Identificar origen, cantidad y resolución.
+  - Medidas de desempeño: Evalúan atributos físicos o funcionalidades como el tamaño, peso, capacidad, exactitud, confiabilidad, eficiencia, entre otras.
+  - Medidas del desempeño técnico: Evaluaciones de cumplimiento de los componentes del sistema respecto a los requisitos que miden avance de la solución técnica.
+- Entrega: Medir elementos propios de un paquete, conjunto de actividades o funcionalidades.
+  - Trabajo en curso: Cantidad de elementos de trabajo que están siendo elaboradas.
+  - Tiempo de entrega: Cantidad de tiempo desde un elemento de la lista de trabajo pendiente hasta el final de la iteración.
+  - Tiempo de ciclo: Cantidad de tiempo en completar una tarea.
+  - Tamaño de la cola: Cantidad de elementos pendiente por realizar.
+  - Tamaño del lote: Estimación de trabajo que se espera completar en una iteración.
+  - Eficiencia de procesos: Relación de tiempo entre actividades que agregan valor y actividades que no.
+- Desempeño con respecto a la línea base: Referencia para comparar avances en una componente del proyecto, como costos y cronograma.
+  - Sobre cronograma:
+    - Fechas de inicio y finalización: Comparación entre fechas planificadas y reales.
+    - Esfuerzo y duración: Comparación con las estimaciones para medir si lo planificado es válido.
+    - Variación del cronograma: Evaluación de desempeño de la ruta crítica para identificar valor ganado y planificado.
+    - Índice de desempeño del cronograma: Medición de gestión del valor ganado para identificar eficiencia.
+    - Tasa de finalización de características: Evaluación de la tasa de aceptación de las características durante revisiones para evaluar cumplimiento.
+  - Sobre costo:
+    - Costo real y planificación: Relación entre valores estimados y reales.
+    - Variación del costo: Medición para identificar valor ganado entre monto real y estimado.
+    - Índice de desempeño del costo: Medición de la eficiencia del gasto respecto al trabajo.
+- Recursos:
+  - Utilización de recursos: Comparación del uso de recursos con el valor estimado.
+  - Avance en costos de recursos: Comparación entre costo real y estimado de los recursos a utilizar.
+- Interesados:
+  - Puntuación neta del promotor: Grado en que un interesado (generalmente el cliente) está dispuesto a recomendar un producto, servicio o resultado.
+  - Moral: Compromiso y motivación que tienen los miembros del equipo con el desarrollo del proyecto.
+  - Rotación: Variación de la asignación de una actividad o miembro del equipo a ciertas labores. Altas tasas de rotación indican una baja en la moral.
+  - Diagramas de estados de ánimo: Medición de las sensaciones, emociones y reacciones del equipo de trabajo.
+- Valor de negocio: Buscan mantener alineados los entregables del proyecto con el caso de negocio y la obtención de beneficios de los mismos.
+  - Relación costo-beneficio: Comparación del valor real y estimado de una actividad o inversión. (> 1 indica mayor costo)
+  - Entrega de beneficio: Identificación del beneficio que entrega la realización de un proyecto y compararla con el resultado real obtenido.
+  - Retorno de la Inversión: Rendimiento financiero de la ganancia con respecto al costo. Es medido continuamente para determinar si sigue siendo provechoso continuar con el proyecto.
+  - Valor Actual Neto: Diferencia entre el valor actual de las entradas y salidas de capital durante un periodo de tiempo.
+- Pronósticos: Medidas para anticipar el futuro y poder planificar ciertas áreas críticas del proyecto, entender el impacto de ciertos eventos o la dependencia de ciertos factores.
+  - Estimación hasta la conclusión: Medida de gestión del valor ganado que pronostica el costo para terminar el trabajo restante del proyecto.
+  - Estimación a la conclusión: Medida de gestión del valor ganado que pronostica el costo total para completar todo el trabajo.
+  - Variación a la conclusión: Pronóstico del monto de déficit o superávit presupuestal. Es la diferencia entre el presupuesto hasta la conclusión y la estimación hasta la conclusión.
+  - Índice de desempeño del trabajo por completar: Estimación del desempeño del costo requerido para cumplir con un objetivo de gestión especificado. Es el cociente entre el costo para culminar el trabajo pendiente y el presupuesto restante.
+  - Análisis de regresión: Método analítico en el que una serie de variables de entrada se examinan en relación a sus correspondientes resultados de salida a fin de desarrollar una relación matemática o estadística.
+  - Análisis de rendimiento: Evaluación del número de elementos que se completan en un marco de tiempo fijo.
+
+### ¿Cómo presentar la información?
+- Tableros de control
+- Radiador de información
+- Controles visuales
+
+### Peligros en las mediciones
+- Efecto Hawthorne: La medición puede influir en el comportamiento de las personas (*e.g.* si medimos cantidad de entregables, el equipo se centrará más en cantidad que en calidad).
+- Métrica de vanidad: Medición de un dato que no es útil para tomar decisiones.
+- Desmoralización: Metas muy difíciles de alcanzar.
+- Sesgo de confirmación: La medición arroja los resultados que de antemano se desean encontrar.
+- Correlación versus causalidad: Concluir cosas que no tienen relación en base a las mediciones realizadas.
+- Mal uso de métricas: El objetivo de la medición debe quedar clara previo a la toma de la medida para evitar recabar información incorrectamente o centrarse en algo que no corresponde.
+
+Para abordar estos peligros, se consideran dos áreas:
+- Prevención y planificación para considerar posibles escenarios y qué respuesta se tendría en cada uno de ellos. Se recomienda manejar un umbral aceptable de variaciones para algunas métricas que puedan sufrir cambios.
+- Resolución y actuar a tiempo para los casos en que los resultados no sean los planificados.
