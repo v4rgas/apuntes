@@ -555,3 +555,796 @@ Calidad de la entrega:
 - Resultados subóptimos: La falta de requisitos claros puede llevar a disminución en la calidad. En esos casos se trabaja con las ideas de:
   - Tolerancia: Rango establecido para los resultados aceptables
   - Límites de control: Fronteras de la variación normal para un proceso
+
+### Modelos
+
+#### Otros modelos
+
+##### Grupos de procesos
+- **NO** son fases de un proyecto
+- Interactúan dentro de cada fase del ciclo de vida de un proyecto (*e.g.* Inicio, Planificación, Ejecución,
+Monitoreo y Control, Cierre)
+- En un enfoque basado en procesos, la salida de un proceso es la entrada de otro o es un entregable
+
+### Métodos
+
+#### Métodos para recopilación y análisis de datos
+
+##### Análisis de alternativas
+Identificar las posibles soluciones de un problema (con sus respectivos medios) y seleccionar las más adecuadas para lograr los objetivos. Útil en análisis de prefactibilidad.
+
+##### Análisis de supuestos y restricciones
+Los supuestos (*i.e.* factores que se consideran verdaderos sin demostrarlos) se contemplan en todas las etapas, especialmente en formulación y planificación y permite avanzar en la ejecución del proyecto. Monitorearlos y controlarlos es fundamental dado que el no cumplimiento podría alejar al proyecto del éxito. Los supuestos pueden ser de tipo:
+- De recursos
+- Entrega
+- Presupuestos
+- Alcance
+- Metodológicos y tecnológicos
+
+Las restricciones deben equilibrarse. Pueden tomarse distintas variables en consideración. Por ejemplo, se debe balancear el alcance respecto al costo y tiempo del proyecto (*e.g.* un proyecto de gran alcance no puede ser barato ni rápido). Un análisis más completo incluye variables como riesgo, recursos y calidad.
+
+##### Estudios comparativos
+Comparación de prácticas, procesos y productos respecto a los de otras organizaciones. Útil para identificar mejores prácticas, generar ideas y métricas para el desempeño.
+
+##### Hoja de verificación
+Hoja de anotaciones que puede utilizarse como lista de control cuando se recopilan datos. Útil para categorizar.
+
+##### Costo de calidad
+Incluye todos los costos en los que se ha incurrido durante la vida del producto
+- Prevención
+- Evaluación
+- Fallas internas
+- Fallas externas
+
+##### Análisis de procesos
+Revisión sistemática de los pasos y procedimientos para realizar una actividad.
+
+##### Análisis de causa raíz
+Utilizado para determinar causas de una variación, defecto o riesgo. Más de una variación, defecto o riesgo pueden deberse a una causa raíz. Algunas técnicas:
+- Los 5 por qué
+- Análisis de cambios/eventos
+- Diagrama de espina de causa y efecto.
+
+##### Análisis de sensibilidad
+Es un análisis cuantitativo. Esta técnica analítica se usa para determinar qué riesgos individuales del proyecto u otras fuentes de incertidumbre tienen el mayor impacto posible sobre los resultados del proyecto.
+
+##### Mapeo del flujo de valor
+Método de diagrama de flujo para ilustrar, analizar y mejorar los pasos necesarios para entregar un producto o prestar un servicio. Verifican el flujo de los pasos del proceso y la información desde su origen hasta la entrega al cliente.
+
+#### Métodos de reuniones y eventos
+
+##### Comité de control de cambios
+Grupo de personas responsables de revisar, evaluar, aprobar, retrasar o rechazar los cambios del proyecto. Las decisiones adoptadas son registradas y comunicadas a los interesados correspondientes.
+
+#### Otros métodos
+
+##### Modelado
+Creación de representaciones simplificadas de sistemas, soluciones o entregables. Facilita un análisis más profundo al identificar lagunas en la información, áreas de falta de comunicación o requisitos adicionales.
+
+### Artefactos
+
+#### Artefactos de bitácora y registro
+
+##### Registro de supuestos
+- Supuestos y restricciones a lo largo del proyecto
+- Supuesto: Factor que se considera verdadero, real o cierto, sin prueba ni demostración
+- Restricción: Factor que limita las opciones para dirigir un proyecto, programa, portafolio o proceso.
+- Restricciones y supuestos estratégicos y operativos de alto nivel normalmente se identifican en el caso de negocio antes del inicio del proyecto.
+
+##### Lista de trabajo pendiente
+- Lista ordenada del trabajo a realizar.
+- Asociadas al producto, requisitos, impedimentos, etc.
+- Priorización de elementos.
+- El trabajo priorizado es entonces programado para las próximas iteraciones.
+
+##### Registro de cambios
+Lista completa de cambios presentados durante el proyecto y su estado actual. Un cambio puede ser una modificación de cualquier entregable, componente del plan para la dirección del proyecto o documento del proyecto formalmente controlados.
+
+##### Registro de riesgos
+Registro de las salidas de los procesos de gestión de riesgos. La información puede incluir: la persona responsable de la gestión del riesgo, la probabilidad, el impacto, la puntuación del riesgo, las respuestas previstas al riesgo y otra información utlizada para obtener una comprensión de alto nivel de los riesgos individuales.
+
+#### Artefactos de plan
+
+##### Plan de control de cambios
+Establece el comité de control de cambios, documenta su grado de autoridad y describe cómo se ha de implementar el sistema de control de cambios.
+
+##### Plan de gestión de la calidad
+Programa que describe la implementación de las políticas, procedimientos y pautas aplicables para alcanzar los objetivos de calidad.
+- ¿Requisitos de calidad y/o estándares?
+- ¿Cómo demostrará su cumplimiento?
+  - Políticas y estándares adoptados
+  - Plan de mejora de procesos: Límites, métricas, configuración, presupuesto
+  - Métricas de calidad
+
+<!--- ##### Plan de liberación --->
+
+##### Plan de gestión de requisitos
+Describe el análisis, documentación y gestión de los requisitos. Debe incluir:
+- Planificación, monitoreo y reporte de actividades asociadas a los requisitos y qué se informará sobre éstas.
+- Actividades de gestión de la configuración: cómo iniciar cambios del producto, cómo se analizará el impacto, cómo será el monitoreo, seguimiento y reporte, así como los niveles de autorización requeridos para aprobar dichos cambios.
+- Priorización de requisitos
+- Métricas del producto a utilizar
+- Estructura de trazabilidad
+
+##### Plan de gestión de alcance
+Describe el modo en que el alcance será definido, desarrollado, monitoreado, controlado y validado. Incluye:
+- Proceso para elaborar un enunciado detallado del alcance del proyecto.
+- Proceso para crear la EDT.
+- Proceso para mantener y aprobar la EDT.
+- Proceso para obtener aceptación formal de los entregables
+- Proceso para controlar cómo se procesarán las solicitudes de cambio
+
+##### Plan de gestión del cronograma
+Establece criterios y actividades para desarrollar, monitorear y controlar el cronograma:
+- Herramientas para creación del cronograma
+- Nivel de precisión en estimaciones de tiempo
+- Estimación de reserva de contingencias
+- Actualización de línea base de tiempo
+- Nivel de tolerancia al desvío respecto a la línea base
+- Reglas de definición de avance
+- Cuentas de control de la EDT para gestionar avances
+- Metodología y fórmulas para reportar avances
+- Presentación de informes de avance
+
+##### Plan de pruebas
+Describe los entregables que serán probados, las pruebas que se llevarán a cabo y los procesos que se utilizarán
+para las mismas.
+
+#### Artefactos de diagramas jerárquicos
+
+##### Estructura de desglose del producto
+Estructura jerárquica que refleja los componentes y los entregables de un producto.
+Ejemplo: Una Mountain Bike (proyecto) se divide en varios componentes (sistemas de ruedas, motor, frenos, entre otros) y estos a su vez se dividen en componentes más pequeños (palancas y cables, etc).
+
+##### Estructura de desglose del trabajo
+Descomposición jerárquica del alcance total del trabajo a realizar para cumplir con los objetivos del proyecto y crear los entregables requeridos.
+- Organiza y define el alcance total del proyecto
+- Representa el trabajo del proyecto documentado en el enunciado del alcance del proyecto vigente
+- Sus elementos ayudan a los interesados a desarollar una visión clara del producto final y de lo necesario para alcanzarlo.
+- Trabajo se refiere a los productos y entregables, no a las actividades
+- Es la base para otros documentos como el cronograma y varias otras estimaciones
+
+#### Artefactos de línea base
+
+##### Línea base para la medición del desempeño
+Líneas base del alcance, del cronograma (es el cronograma final aprobado) y costos integrados (Presupuesto aprobado), son utilizadas para comparación, a fin de gestionar, medir y controlar la ejecución del proyecto.
+
+##### Línea base del alcance
+Es la versión aprobada de un enunciado del alcance, EDT y su diccionario de la EDT asociado, que puede cambiarse uflizando procedimientos formales de control de cambios y que se utiliza como base de comparación con los resultados reales
+
+#### Artefactos de datos e información visual
+
+##### Gráfica de trabajo pendiente o realizado
+Representación gráfica del trabajo pendiente en un período de tiempo prestablecido o del trabajo realizado con miras a la liberación de un producto o entregable.
+
+##### Diagrama de causa y efecto
+Representación visual que ayuda a rastrear un efecto no deseado hasta su causa raíz. Es decir, es utilizado en el análisis de causa raíz.
+
+##### Diagrama de tiempo de ciclo
+Muestra el tiempo de ciclo promedio de los elementos de trabajo completados. Puede ser mostrado como un diagrama de dispersión o de barras.
+
+##### Diagrama de flujo acumulativo
+Indica las funcionalidades completadas, las funcionalidades en desarrollo y las que están en la lista de trabajo pendiente. Puede incluir características en estados intermedios, como las características diseñadas pero no construidas, en garantía de calidad o en prueba.
+
+##### Diagrama de flujo
+Representación de las entradas, acciones de proceso y salidas de uno o más procesos dentro de un sistema.
+
+##### Diagrama de tiempo de entrega
+Muestra la tendencia a lo largo del promedio del tiempo de entrega de los elementos terminados. Puede ser mostrado como un diagrama de dispersión o de barras
+
+##### Matriz de trazabilidad de requisitos
+Vincula los requisitos del producto
+
+##### Diagrama de dispersión
+Muestra la relación entre dos variables
+
+##### Story Map
+Modelo visual de todas las características y funcionalidades deseadas para un producto determinado. Da una visión holística de lo que se está construyendo y por qué.
+
+##### Diagrama de rendimiento
+Muestra los entregables aceptados a lo largo del tiempo. El eje vertical muestra el número de días que tuvieron un determinado rendimiento. El eje horizontal representa el rendimiento real como una cantidad de elementos de trabajo completados.
+
+##### Caso de uso
+Describe y explora la forma en que un usuario interactúa con un sistema a fin de lograr un objetivo específico.
+
+##### Mapa de flujo de valor
+Utilizado para documentar, analizar y mejorar el flujo de información o materiales necesarios con el fin de producir un producto o servicio. Pueden ser utilizados para identificar desperdicios.
+
+##### Diagrama de velocidad
+Hace seguimiento de la tasa a la que son producidos, validados y aceptados los entregables dentro de un intervalo predefinido.
+
+#### Artefactos de informes
+
+##### Informe de calidad
+Documento que incluye cuestiones de gestión de calidad, recomendaciones para acciones correctivas y resumen de conclusiones de actividades de control de calidad y puede incluir recomendaciones para mejoras de proceso, proyecto y producto.
+
+#### Otros artefactos
+
+##### Métricas
+Describen un atributo y cómo medirlo. Algunas:
+- Alcance
+- Tiempo
+- Costos
+- Calidad
+- Riesgos
+- Productividad
+- Margen
+
+Categorías:
+- De retrospectiva
+- De diagnóstico
+- Predictivas
+
+## Planificación
+
+### Definiciones base
+- Estimación: Evaluación cuantitativa del valor o resultado de una variable.
+- Exactitud: Evaluación de la corrección en términos de calidad.
+- Precisión: Evaluación de la exactitud en términos de calidad.
+- Intensificación: Método para acortar cronograma con menor incremento de costo mediante añadición de recursos.
+- Ejecución rápida: Método que busca realizar en paralelo actividades que regularmente se realizan de manera secuencial.
+- Presupuesto: Estimación aprobada para el proyecto.
+
+### Aspectos a tener en cuenta
+- Enfoque de desarrollo
+- Entregables del proyecto
+- Requisitos organizacionales
+- Condiciones del mercado
+- Restricciones legales
+
+### Variables para la planificación
+- Entregas: Comprender el caso de negocio, requisitos de interesados y alcance
+  - Desarrollo predictivo: Planificar por adelantado. Útil declaración de alcance y/o EDT.
+  - Desarrollo iterativo o incremental: Planificación a través de épicas. Priorización de trabajo significativo. Minimizar costo de implementación.
+- Estimación: Evaluación cuantitativa del esfuerzo, duración, costos, recursos. Traducido en valor o resultado probable
+  - Rango: El rango de estimación es mayor al inicio del proyecto, debido a la incertidumbre.
+  - Confianza: Mayor experiencia, mayor confianza. En escenarios inciertos, la confianza es baja.
+  - Exactitud: Las estimaciones mejoran (*i.e.* se acercan al objetivo) con el tiempo.
+  - Precisión: Resultados consistentes con distintas maneras de anticiparse.
+- Cronograma: Modelación para ejecutar actividades del proyecto (duraciones, dependencia, recursos, entre otros).
+  - Enfoque predictivo: Estimar esfuerzo, asignar recursos, ajustar secuencia. Intensificación o ejecución rápida en caso de atraso. Atrasos consideran dependencias, de tipo obligatoria, externa (no modificables) o discrecional, interna (modificables).
+  - Enfoque adaptativo: Desarrollo incremental. Períodos de tiempo prestablecidos. Estimación del trabajo y avance por cada período. Revisión del *backlog* al final de cada iteración. Repriorizar en caso de ser necesario.
+- Presupuesto: Traducción en valor financiero de las estimaciones que involucran gasto/inversión. Debe considerar:
+  - Asignación por actividades o paquetes de trabajo
+  - Fondos de reserva para eventos inciertos o no considerados
+  - Reservas de gestión para actividades inesperadas o fuera del alcance
+
+### ¿Qué planificar?
+- Estructura y composición del equipo: Identificar habilidades requeridas para el proyecto. Responsabilidad del director de proyecto.
+- Comunicación: Para cada interesado variará en importancia, frecuencia e intensidad de la información. Puede ser interna o externa, sensible o pública, general o detallada. Debe tenerse en cuenta: ¿Quién necesita la información y de qué tipo se necesita?, ¿por qué se debe compartir?, ¿cuál es la mejor manera de proporcionar la información?, ¿Cuándo y con qué frecuencia se necesita la información?
+- Recursos físicos: Todo lo que no es humano. La planificación incluye la gestión de pedidos, consideración de plazos, materiales, inventario y costos asociados.
+- Adquisición: Hacer o comprar. Fuentes externas
+- Cambios: Realizar por medio de un control de cambios, repriorizar el trabajo o a través de una nueva línea base. Puede verse afectado por restricciones legales.
+- Métricas: Orientadas al producto o servicio.
+- Alineación: Planificación alineada con alcances, requisitos, recursos, fondos asignados, interesados, entre otros.
+
+### Métodos
+
+#### Métodos para recopilación y análisis de datos
+
+##### Análisis de justificación del negocio
+Resultados utilizados para justificar un proyecto:
+- Tasa interna de retorno
+- Retorno de la inversión
+- Relación costo-beneficio
+
+##### Análisis mediante árbol de decisiones
+Permite evaluar posibles resultados, costos y consecuencias de una decisión compleja. Útil para análisis de datos y toma de decisiones.
+
+##### Análisis del valor ganado
+Método de análisis que utiliza mediciones asociadas con el alcance, cronograma y costo para determinar:
+- Desempeño del costo: Mide la eficiencia del costo para el trabajo completado hasta la fecha. Consiste en la razón entre el valor ganado y el costo real. Menor a 1 significa costo superior al planificado, en otro caso es costo inferior respecto al desempeño. Fórmula: EV/AC.
+- Desempeño del cronograma: Mide la eficiencia con que el equipo del proyecto está utilizando su tiempo. Menor a 1 significa que la cantidad de trabajo llevada a cabo es menor que la prevista (atraso). Fórmula: EV/PV.
+
+##### Valor monetario esperado
+Metodología que combina medidas de alcance, cronograma y recursos para evaluar el desempeño y avance del proyecto. Establece y evalúa tres dimensiones:
+- Valor planificado (PV): Presupuesto asignado para completar un entregable o paquete de trabajo, sin considerar la reserva de gestión.
+- Valor ganado (EV): Presupuesto asociado al trabajo que se ha completado.
+- Costo real (AC): Costo incurrido por el trabajo llevado a cabo.
+
+##### Diagrama de influencias
+Representación gráfica de situaciones que muestran influencias causales, cronología de eventos y otras relaciones entre variables y resultados.
+
+##### Evaluación del ciclo de vida
+Herramienta utilizada para evaluar impacto ambiental.
+
+##### Análisis de hacer o comprar
+Proceso de recopilación y organización de datos sobre requisitos y posterior análisis respecto a las alternativas (compra y fabricación interna).
+
+##### Matriz de probabilidad o impacto
+Vincula la probabilidad de ocurrencia de riesgos con su impacto sobre los objetivos del proyecto. Este análisis cualitativo comprende:
+- Impacto o pérdida si ocurre
+- Probabilidad que suceda
+- Severidad = impacto * probabilidad
+- Efectos del riesgo
+
+##### Análisis de regresión
+Método estadístico que examina la relación entre variables e identifica las que tienen mayor impacto en un tema de interés.
+
+##### Simulación
+Análisis cuantitativo que tiene como objetivo mostrar el efecto de las incertidumbres para evaluar impacto en los objetivos.
+
+##### Análisis FODA
+Herramienta diseñada para comprender la situación de un negocio listando **F**ortalezas, **O**portunidades, **D**ebilidades y **A**menazas.
+
+##### Análisis de escenarios "¿Qué pasa si...?"
+Técnica analítica que evalúa escenarios para predecir efecto sobre objetivos del proyecto.
+
+#### Métodos de estimación
+
+##### Agrupamiento de afinidad
+Agrupa visualmente ideas o asuntos. Útil para organizar ideas afines para comprender un problema y hallar soluciones.
+
+##### Estimación análoga
+- Técnica para estimar la duración o el costo de una actividad/proyecto mediante la utilización de datos históricos de una actividad/proyecto similar.
+- Utiliza parámetros como duración, presupuesto, tamaño, carga y complejidad.
+- Rápida y económica, pero imprecisa
+
+##### Puntos de función
+Estimación de cantidad de funcionalidad comercial en un sistema de información. Se usan para calcular medida de tamaño funcional de un sistema de software:
+- Definir frontera de la aplicación
+- Identificar funciones disponibles para el usuario y organizar por cantidad en cinco grupos:
+  1. Salidas
+  2. Consultas (también llamada Peticiones)
+  3. Entradas
+  4. Ficheros (internos, también llamada Archivos)
+  5. Interfaces (también llamada Ficheros externos)
+- Clasificar y ponderar cada función por nivel de complejidad
+
+##### Estimación multipunto
+Evalúa el costo o duración mediante promedio de estimaciones (optimistas, pesimistas y más probables). Usado cuando existe incertidumbre en otras estimaciones.
+- Three-point estimating: Asume que los escenarios optimista, pesimista y más probable ocurren con la misma probabilidad.
+- PERT: Promedio ponderado. El escenario más probable se multiplica por 4, se suman los escenarios optimista y pesimista. Luego se divide todo entre 6
+
+##### Estimación paramétrica
+Calcula el costo o la duración basándose en datos históricos y parámetros del proyecto. Fórmula: (Monto histórico/Valor histórico) * Valor actual
+
+##### Estimación relativa
+Crea estimaciones que derivan de la realización de comparación con un conjunto de trabajos similares, teniendo en cuenta esfuerzo, complejidad e incertidumbre.
+
+##### Estimación puntual
+Involucra uso de datos para calcular valor único que refleja estimación más probable.
+
+##### Estimación por punto de historia
+Miembros del equipo asignan puntos de esfuerzo —abstractos, pero relativos— para implementar una historia de usuario. Representa dificultad considerando complejidad, riesgo y esfuerzo.
+
+##### Delphi de banda ancha
+Múltiples rondas de estimación, llegando a consenso con el equipo de proyecto en cada ronda. *Planning poker* es una variación de este método.
+
+#### Métodos de reuniones y eventos
+
+##### Reunión diaria de pie (*daily standup*)
+- Corta (~15 minutos)
+- Siempre en el mismo lugar
+- Siempre a la misma hora
+- Todo el equipo participa
+- Preguntas a cada miembro
+  - ¿Qué hice ayer?
+  - ¿Qué haré hoy?
+  - ¿Qué debo enfrentar?
+
+<!--- ##### Planificación --->
+
+### Artefactos
+
+#### Artefactos de bitácora y registros
+
+##### Lista de trabajo pendiente ajustada al riesgo
+Incluye el trabajo y las acciones para abordar amenazas y oportunidades.
+
+#### Artefactos de plan
+
+##### Plan de gestión de los costos
+Programa que describe la forma en que los costos serán planificados, estructurados y controlados.
+- Unidad de medida (Días, HH, etc)
+- Nivel de precisión
+- Nivel de exactitud
+- Formato y frecuencia de presentación de informes
+  - ¿Cuánto vale una hora de trabajo?
+  - ¿Licencias y soporte?
+  - ¿Materiales e insumos?
+  - ¿Servicios e infraestructura?
+
+##### Plan de iteración
+Plan detallado para la iteración actual
+
+##### Plan de gestión de las adquisiciones
+- Administración+: El contratante asume todo el riesgo (*e.g.* contratar mano de obra)
+- Precio unitario: El contratante asume gran parte del riesgo (*e.g.* servicios de reparación/mantención)
+- Suma alzada: El contratado asume gran parte del riesgo (*e.g.* ampliación de casa. Trato por producto terminado. Costos acordados con anticipación. Existe el riesgo de imprevistos)
+- Llave en mano: El contratado asume todo el riesgo (*e.g.* comprar un departamento ya construido, comprar un auto)
+
+##### Plan de gestión de los recursos
+Describe cómo se adquieren, asignan, monitorean y controlan recursos del proyecto.
+
+<!--- ##### Plan de gestión de los riesgos --->
+
+#### Artefactos de línea base
+
+##### Presupuesto
+Es la estimación aprobada para el proyecto/actividad. Se determina sumando el costo de las actividades. La estimación de costos se suele realizar después de aprobar el presupuesto, cuando debería ser al revés.
+
+##### Cronograma del proyecto
+Salida de un modelo de programación que presenta actividades vinculadas con fechas, duraciones, hitos y recursos.
+- Definir actividades: Consiste en identificar acciones que deben ser llevadas a cabo para conseguir los entregables.
+  - Proyecto -> Entregables -> Paquetes de trabajo -> Actividades
+- Secuenciar actividades: Deben identificarse dependencias entre actividades.
+  - Obligatorias: Siguen secuencia debido a la naturaleza del trabajo
+  - Discrecionales: Secuencia definida por el equipo. Basadas en experiencia y mejores prácticas
+  - Externas: Una actividad que no pertenece al proyecto lo impacta
+- Tipos de secuencias:
+  - Final-Inicio: La actividad no puede comenzar hasta que termine la anterior
+  - Final-Final: Ambas actividades deben terminar a la vez
+  - Inicio-Inicio: Ambas actividades deben comenzar a la vez
+  - Inicio-Final: La actividad no puede finalizar hasta que comience la siguiente
+- Estimar o definir recursos: Determinar equipo necesario y roles como: Jefe de proyecto, experto, arquitecto junior, arquitecto senior, analista programador, líder QA, analista QA.
+- Estimar duración de la actividad: Estimar a través de juicio experto o método PERT.
+- Desarrollar cronograma: Se logra determinar fechas de inicio y término de actividades y del proyecto a través de un proceso iterativo. Deben ser realistas para garantizar su cumplimiento.
+  1. Estimar fecha de inicio de proyecto
+  2. Asignar recursos a cada actividad
+  3. Indicar HH estimadas
+  4. Revisar sobreasignación y dar solución
+    - Asignar otro recurso a la actividad
+    - Aplazar actividad
+- Analizar cronograma: Revisar fechas y asignación de recursos de forma realista, identificar ruta crítica, revisar cumplimiento de fechas de entregables.
+- Método de ruta crítica: Obtener ruta con menor holgura
+- Compresión del cronograma: Ejecución rápida implica aumento de riesgo. Intensificación implica aumento de costo.
+- Fallas de estimación:
+  - Supuesto erróneo: Las personas dedican el 100% de su tiempo en oficina al trabajo y están disponibles inmediatamente
+  - La productividad no es proporcional al número de personas trabajando en una tarea
+  - Agregar gente a un proyecto atrasado hace que se atrase más
+  - Lo inesperado siempre ocurre
+  - Mala definición (o falta de definición) de tareas
+  - Enfoque (excesivamente) optimista
+
+#### Artefactos de datos e información visuales
+
+##### Diagrama de afinidad
+Muestra un gran número de ideas clasificadas en grupos para su revisión y análisis.
+
+##### Diagrama de Gantt
+Suministra información del cronograma donde las actividades se enumeran en el eje vertical y las fechas en el eje horizontal. Las duraciones son barras horizontales.
+
+##### Diagrama de red de cronograma del proyecto
+Muestra las relaciones lógicas que existen entre las actividades del cronograma del proyecto.
+
+##### Matriz de asignación de responsabilidades
+Cuadrícula que muestra los recursos del proyecto asignados a cada paquete de trabajo.
+
+##### Curva S
+Muestra los costos acumulados durante un período específico.
+- Se emplean para controlar el proyecto durante su ejecución
+- Se basan en la información reunida en la carta Gantt una vez optimizada la asignación de recursos
+- Eje X unidad de tiempo. Eje Y porcentaje de avance y HH.
+
+## Trabajo
+
+### Definiciones base
+- Documentos de las licitaciones: Documentos utilizados para solicitar información, cotizaciones o propuestas a posibles vendedores.
+- Conferencias de oferentes: Reuniones con posibles vendedores previas a la licitación para asegurar que se comprende la necesidad de adquisición.
+- Conocimiento explícito: Puede codificarse utilizando símbolos tales como palabras, números e imágenes.
+- Conocimiento tácito: Puede ser difícil de articular y compartir, tales como creencias, experiencia y percepciones.
+
+### ¿Cómo optimizar el proceso de trabajo?
+- Método de producción Lean: Uso de técnicas de mapeo de flujo de valor para medir proporción de actividades que agregan valor respecto del total de actividades.
+- Retrospectivas o lecciones aprendidas: Reuniones que permiten identificar oportunidades de mejora y posibles cambios para aumentar la eficiencia
+- Siguiente mejor inversión: Útil para decidir si seguir con la tarea (generación de valor) o continuar con la siguiente.
+
+### ¿Cómo garantizar un correcto desarrollo del trabajo?
+- Equilibrar competencias de acuerdo a ciertas restricciones: Cumplimiento de normativas legales, presupuesto, entre otros. Debe mantener la satisfacción de los interesados.
+- Mantener enfoque: Monitorear avance para equilibrar carga de trabajo. Medir satisfacción de interesados para mantener motivación. Centrarse en entrega de valor, manteniendo la capacidad productiva del equipo.
+- Comunicarse e involucrarse en el proyecto: Retroalimentación continua sobre el desempeño para satisfacer interesados.
+- Gestionar recursos físicos: Considerar logística detrás de la gestión de materiales o suministros, ya que influye en los resultados.
+- Trabajar con adquisiciones: Dos formas distintas:
+  - Proceso de licitación: Proceso en el que empresas postulan como ofertantes a realizar o proveer el producto o servicio que se busca adquirir. La oferta seleccionada se hace en base a criterios establecidos.
+  - Contratación: Acuerdo con sustento legal que obliga a las partes a cumplir con lo acordado. Se debe considerar como una restricción para el desarrollo del proyecto
+- Monitorear nuevos trabajos y cambios:
+  - Proyectos adaptativos: Gestionar expectativas del cliente para evitar cambios constantemente. Debe existir comunicación que permita negociar, considerando cronograma, presupuesto, prioridades y alcances.
+  - Proyectos predictivos: Gestión de cambios por parte del equipo según planificación inicial. Debe aprobarse y documentarse el cambio.
+- Gestionar aprendizaje: El equipo analiza periódicamente qué se hizo (retrospectivas) y cómo mejorar (lecciones aprendidas).
+- Gestión del conocimiento: Compartir lecciones y análisis con el resto del equipo.
+- Conocimiento tácito y explícito: La organización debe velar por la incorporación de conocimiento posterior al término del proyecto para que sirva como insumo para futuros trabajos.
+
+### Métodos
+
+#### Métodos de reuniones y eventos
+
+##### Revisión del riesgo
+Se analiza el estado de riesgos existentes y la identificación de nuevos riesgos. Esto incluye:
+- Determinar si el riesgo está activo.
+- Evaluación de respuestas al riesgo para determinar efectividad. Actualizar en caso que no sea efectivo.
+- Identificar y analizar nuevos riesgos. Cerrar los que no están activos.
+
+##### Estatus
+Evento programado periódicamente para intercambiar y analizar información sobre el progreso actual del proyecto y su desempeño.
+
+### Artefactos
+
+#### Artefactos de bitácora y registro
+
+##### Registro de incidentes
+Un incidente es una condición o situación actual que puede tener un impacto en los objetivos del proyecto. Se registran para supervisar la información sobre los incidentes activos y asignarlos a una parte responsable para su seguimiento y resolución.
+
+##### Registro de lecciones aprendidas
+Se utiliza para registrar los conocimientos adquiridos, de modo que se puedan utilizar para mejorar el desempeño futuro del equipo del proyecto y/o de la organización.
+
+#### Artefactos de diagramas jerárquicos
+
+##### Estructura de desglose del riesgo
+Representación jerárquica de las posibles fuentes de riesgos. Se separan en categorías y luego se dividen en fuentes concretas de riesgo (*e.g* en categorías pueden ir "De negocios", "Técnico", "Externo", "Organizacional", "De gestión" y en fuentes de "Técnico" puede ser "Tecnología", "Hardware", "Software", "Red". En "De gestión" puede ser "Estimaciones", "Planificaciones", entre otros).
+
+#### Artefactos de datos e información visuales
+
+##### Tablero
+Conjunto de diagramas y gráficos que muestra el progreso o el rendimiento en relación con mediciones importantes del proyecto.
+
+##### Radiador de información
+Indicación visible y física que proporciona información al resto de la organización, permitiendo el intercambio oportuno de conocimientos (*e.g. product backlog*).
+
+#### Artefactos de informes
+
+##### Informe de riesgos
+Este documento es desarrollado a lo largo de los procesos de gestión de riesgos y resume la información sobre los riesgos individuales del proyecto y el nivel de riesgo general del proyecto.
+
+##### Informe de estatus
+Proporciona un informe sobre el estado actual del proyecto. Puede incluir información sobre el avance desde el último informe y pronósticos sobre el desempeño de los costos y del cronograma.
+
+## Medición
+
+### Definiciones base
+- Métrica:  Descripción de un atributo del proyecto o producto y cómo medirlo.
+- Línea base: Versión aprobada de un producto de trabajo que se utiliza como base de comparación con los resultados reales.
+- Tablero:  Conjunto de diagramas y gráficos que muestran el avance o el rendimiento en relación con mediciones importantes del proyecto.
+
+### Medidas efectivas
+- Indicadores claves de desempeño: Medidas cuantificables utilizadas para evaluar el éxito de un proyecto:
+  - Indicadores adelantados
+  - Indicadores rezagados
+- Métricas efectivas: Definir correctamente qué y cómo se va a medir. Usar criterios SMART:
+  - Specific: Mediciones bien definidas en cuanto a qué medir. Debe tener un único criterio.
+  - Meaningful: Debe estar relacionada al caso de negocio, las líneas base o los requisitos.
+  - Achievable: Acorde a las personas, tecnología y entorno.
+  - Relevant: Debe aportar valor y ser información procesable
+  - Time-bound: Debe ser oportuna. Es decir, la información debe ser entregada a tiempo para ser utilizada en toma de decisiones.
+
+### ¿Qué medir?
+- Métricas sobre entregables: Cuantificar características o atributos propios del servicio, producto o trabajo a realizar.
+  - Información sobre errores o defectos: Identificar origen, cantidad y resolución.
+  - Medidas de desempeño: Evalúan atributos físicos o funcionalidades como el tamaño, peso, capacidad, exactitud, confiabilidad, eficiencia, entre otras.
+  - Medidas del desempeño técnico: Evaluaciones de cumplimiento de los componentes del sistema respecto a los requisitos que miden avance de la solución técnica.
+- Entrega: Medir elementos propios de un paquete, conjunto de actividades o funcionalidades.
+  - Trabajo en curso: Cantidad de elementos de trabajo que están siendo elaboradas.
+  - Tiempo de entrega: Cantidad de tiempo desde un elemento de la lista de trabajo pendiente hasta el final de la iteración.
+  - Tiempo de ciclo: Cantidad de tiempo en completar una tarea.
+  - Tamaño de la cola: Cantidad de elementos pendiente por realizar.
+  - Tamaño del lote: Estimación de trabajo que se espera completar en una iteración.
+  - Eficiencia de procesos: Relación de tiempo entre actividades que agregan valor y actividades que no.
+- Desempeño con respecto a la línea base: Referencia para comparar avances en una componente del proyecto, como costos y cronograma.
+  - Sobre cronograma:
+    - Fechas de inicio y finalización: Comparación entre fechas planificadas y reales.
+    - Esfuerzo y duración: Comparación con las estimaciones para medir si lo planificado es válido.
+    - Variación del cronograma: Evaluación de desempeño de la ruta crítica para identificar valor ganado y planificado.
+    - Índice de desempeño del cronograma: Medición de gestión del valor ganado para identificar eficiencia.
+    - Tasa de finalización de características: Evaluación de la tasa de aceptación de las características durante revisiones para evaluar cumplimiento.
+  - Sobre costo:
+    - Costo real y planificación: Relación entre valores estimados y reales.
+    - Variación del costo: Medición para identificar valor ganado entre monto real y estimado.
+    - Índice de desempeño del costo: Medición de la eficiencia del gasto respecto al trabajo.
+- Recursos:
+  - Utilización de recursos: Comparación del uso de recursos con el valor estimado.
+  - Avance en costos de recursos: Comparación entre costo real y estimado de los recursos a utilizar.
+- Interesados:
+  - Puntuación neta del promotor: Grado en que un interesado (generalmente el cliente) está dispuesto a recomendar un producto, servicio o resultado.
+  - Moral: Compromiso y motivación que tienen los miembros del equipo con el desarrollo del proyecto.
+  - Rotación: Variación de la asignación de una actividad o miembro del equipo a ciertas labores. Altas tasas de rotación indican una baja en la moral.
+  - Diagramas de estados de ánimo: Medición de las sensaciones, emociones y reacciones del equipo de trabajo.
+- Valor de negocio: Buscan mantener alineados los entregables del proyecto con el caso de negocio y la obtención de beneficios de los mismos.
+  - Relación costo-beneficio: Comparación del valor real y estimado de una actividad o inversión. (> 1 indica mayor costo)
+  - Entrega de beneficio: Identificación del beneficio que entrega la realización de un proyecto y compararla con el resultado real obtenido.
+  - Retorno de la Inversión: Rendimiento financiero de la ganancia con respecto al costo. Es medido continuamente para determinar si sigue siendo provechoso continuar con el proyecto.
+  - Valor Actual Neto: Diferencia entre el valor actual de las entradas y salidas de capital durante un periodo de tiempo.
+- Pronósticos: Medidas para anticipar el futuro y poder planificar ciertas áreas críticas del proyecto, entender el impacto de ciertos eventos o la dependencia de ciertos factores.
+  - Estimación hasta la conclusión: Medida de gestión del valor ganado que pronostica el costo para terminar el trabajo restante del proyecto.
+  - Estimación a la conclusión: Medida de gestión del valor ganado que pronostica el costo total para completar todo el trabajo.
+  - Variación a la conclusión: Pronóstico del monto de déficit o superávit presupuestal. Es la diferencia entre el presupuesto hasta la conclusión y la estimación hasta la conclusión.
+  - Índice de desempeño del trabajo por completar: Estimación del desempeño del costo requerido para cumplir con un objetivo de gestión especificado. Es el cociente entre el costo para culminar el trabajo pendiente y el presupuesto restante.
+  - Análisis de regresión: Método analítico en el que una serie de variables de entrada se examinan en relación a sus correspondientes resultados de salida a fin de desarrollar una relación matemática o estadística.
+  - Análisis de rendimiento: Evaluación del número de elementos que se completan en un marco de tiempo fijo.
+
+### ¿Cómo presentar la información?
+- Tableros de control
+- Radiador de información
+- Controles visuales
+
+### Peligros en las mediciones
+- Efecto Hawthorne: La medición puede influir en el comportamiento de las personas (*e.g.* si medimos cantidad de entregables, el equipo se centrará más en cantidad que en calidad).
+- Métrica de vanidad: Medición de un dato que no es útil para tomar decisiones.
+- Desmoralización: Metas muy difíciles de alcanzar.
+- Sesgo de confirmación: La medición arroja los resultados que de antemano se desean encontrar.
+- Correlación versus causalidad: Concluir cosas que no tienen relación en base a las mediciones realizadas.
+- Mal uso de métricas: El objetivo de la medición debe quedar clara previo a la toma de la medida para evitar recabar información incorrectamente o centrarse en algo que no corresponde.
+
+Para abordar estos peligros, se consideran dos áreas:
+- Prevención y planificación para considerar posibles escenarios y qué respuesta se tendría en cada uno de ellos. Se recomienda manejar un umbral aceptable de variaciones para algunas métricas que puedan sufrir cambios.
+- Resolución y actuar a tiempo para los casos en que los resultados no sean los planificados.
+
+### Métodos
+
+#### Métodos para recopilación y análisis de datos
+
+##### Pronósticos
+Estimación o predicción de condiciones y eventos futuros para el proyecto.
+- Pronóstico cualitativo: Utiliza opiniones y juicios de expertos en la materia.
+- Pronóstico causal o econométrico: Identifica las variables que pueden tener un impacto significativo en los resultados.
+- Pronóstico cuantitativo: Utiliza modelos en los que la información del pasado se utiliza para predecir el desempeño futuro. Ejemplos son el Costo final del proyecto (suma entre el costo real y la estimación de costo del trabajo faltante) y la Estimación de la duración total del proyecto (cociente entre el tiempo planificado por el cronograma y el índice de desempeño de éste).
+
+##### Análisis de tendencias
+Utiliza modelos matemáticos para pronosticar resultados futuros basado en resultados históricos.
+
+##### Análisis de variación
+Utilizado para determinar causa y grado de diferencia entre la línea base y el desempeño real.
+- Variación de costo: Es el monto del déficit o superávit presupuestario en un momento dado. Es la diferencia entre el valor ganado y el costo real. Difícil de recuperar en caso de ser negativo.
+- Variación de cronograma: Determina en qué medida el proyecto está adelantado o retrasado en relación con la fecha de entrega en un momento determinado. Es la diferencia entre el valor ganado y el valor planificado.
+
+### Artefactos
+
+#### Artefactos de datos e información visuales
+
+##### Histograma
+Muestra la representación gráfica de datos numéricos. El eje vertical muestra el número de días que tuvieron un determinado rendimiento. El eje horizontal representa la cantidad de elementos de trabajo completados.
+
+## Incertidumbre
+
+### Definiciones base
+- Incertidumbre: Falta de comprensión y conciencia de los problemas, eventos, caminos a seguir o soluciones a buscar. Es una situación inherente a todo proyecto. Se deben tomar medidas como:
+  - Recopilar información: Al incorporar más datos puede que se obtenga una precisión mayor de la situación.
+  - Prepararse para múltiples resultados: Realizar un análisis de escenarios sirve para anticiparse a situaciones futuras.
+  - Diseño basado en conjuntos: Al planificar distintas áreas en conjunto se compromete al equipo a conseguir avances en conjunto.
+  - Incorporar resiliencia: El equipo y la organización debe contar con habilidades y capacidades para adaptarse y responder rápidamente a cambios inesperados.
+- Ambigüedad: Estado de confusión, con dificultad para identificar la causa de los eventos, o tener múltiples opciones entre las cuales elegir.
+  - Ambigüedad conceptual: Se da cuando se usan términos similares de maneras diferentes.
+  - Ambigüedad situacional: Se da cuando se puede tener más de un resultado de una actividad a desarrollar. Es posible enfrentar esta con Elaboración progresiva del plan de proyecto con la información que se va obteniendo, Experimentos para identificar relaciones causa-efecto y Prototipos.
+- Complejidad: Característica de un programa o proyecto o de su entorno que es difícil de gestionar debido al comportamiento humano, el comportamiento del sistema y la ambiguedad. Se aborda dependiendo del tipo:
+  - Complejidad basada en sistemas
+    - Desacople: Desconectar partes del sistema para simplificarlo.
+    - Simulación: Identificar posibles escenarios en proyectos similares.
+  - Complejidad basada en replanteamiento
+    - Diversidad: Al incluir distintos recursos se pueden complementar las habilidades para conseguir apreciar aspectos desde distintos ángulos.
+    - Equilibrio: Se deben considerar datos de todo tipo para poder obtener información completa y no sesgada con respecto a una sola variable.
+  - Complejidad basada en procesos
+    - Iterar: Construir de forma incremental para ir incorporando gradualmente características que puedan modificar el resultado.
+    - Involucrar: Incluir la participación de todos los interesados.
+    - Falla segura: Incorporar elementos que proporcionen una degradación parcial de la funcionalidad en caso de falla.
+- Volatilidad: Posibilidad de un cambio rápido e impredecible. Para enfrentarla podemos considerar:
+  - Análisis de alternativas: Encontrar opciones para cumplir con el objetivo (*e.g.* mezclar habilidades, redistribuir trabajo, subcontratar, entre otros)
+  - Reserva: Reservas de costos y cronograma para cubrir posibles subestimaciones.
+- Riesgo: Evento o condición incierta que, si se produce, tiene efecto en los objetivos del proyecto.
+  - Amenazas
+    - __Escalar__ la respuesta, ya que excede los alcances del proyecto y no hay autoridad para proceder.
+    - __Transferir__ para que un tercero se haga cargo y solucione la amenaza.
+    - __Mitigar__ el impacto, reduciendo probabilidad de ocurrencia y previniendo, evitando así pagar un mayor costo que reparar.
+    - __Aceptar__ que existe un problema y que no se puede enfrentar.
+  - Oportunidades
+    - __Explotar__ una vez ocurrida para obtener máximo beneficio
+    - __Escalar__ la respuesta, ya que excede los alcances del proyecto y no hay autoridad para proceder.
+    - __Compartir__ la responsabilidad para aprovechar la oportunidad.
+    - __Mejorar__ para asegurar que ocurra la oportunidad y obtener el beneficio.
+    - __Aceptar__ que existe una oportunidad.
+  - Reservas para contingencias y de gestión: Tiempo o presupuesto que se reserva ante eventuales escenarios o riesgos no planificados que puedan darse en el transcurso del proyecto.
+  - Revisión de riesgo: Aplica técnicas tales como el análisis de variación y de tendencias, que requieren el uso de información de desempeño generada durante la ejecución del proyecto. Su finalidad es determinar si:
+    - Los supuestos siguen siendo válidos
+    - Un riesgo ha cambiado o puede descartarse
+    - Se respetan las políticas y los procedimientos de gestión de riesgos
+    - Las reservas para contingencias deben modificarse para alinearlas con la evaluación actual de riesgos
+
+## Adaptación
+
+### ¿Qué se adapta?
+- Selección del ciclo de vida y del enfoque de desarrollo: Cada proyecto presenta sus propios objetivos y condiciones que lo hacen único, por lo que estos lineamientos se deben adecuar a la situación en la que se esté desarrollando el proyecto.
+- Procesos: En la adaptación a ciertos tipos de enfoques puede ocurrir que existan elementos del tipo de enfoque que se:
+  - __Agreguen__, para cumplir con estándares o requisitos.
+  - __Modifiquen__, para aumentar efectividad en el desarrollo de las etapas.
+  - __Eliminen__, para reducir costos o esfuerzos que puedan no ser necesarios.
+  - __Combinen__, para aportar beneficios adicionales.
+  - __Alineen__, para armonizar los elementos para que haya una definición, comprensión y aplicación coherentes.
+- Involucramiento: La adaptación de los involucrados se da en tres áreas:
+  - __Personas__, evaluando capacidades y aptitudes que generen valor de acuerdo a los objetivos y condiciones del proyecto.
+  - __Empoderamiento__, asignando responsabilidades acorde a los atributos de cada miembro del equipo y la capacidad de tomar decisiones.
+  - __Integración__, incluyendo elementos o personas externas que puedan ser de utilidad para cumplir eficaz y eficientemente con los objetivos.
+- Herramientas: Tendrán que ser definidas por el equipo y de acuerdo a la experiencia previa que los miembros tengan. Se debe realizar ajuste según condiciones económicas y restricciones del cliente. El líder representa al equipo en la negociación de estas herramientas.
+- Métodos y artefactos: Todos los elementos que se exigen en un determinado enfoque de trabajo pueden ser adaptados según las necesidades de la contraparte y las características del proyecto.
+
+### Proceso de adaptación
+1. Seleccionar enfoque de desarrollo inicial: Según experiencia del equipo, cadencia o regularidad de entrega y conocimiento del producto a desarrollar.
+2. Adaptar para la organización: Se debe adaptar los procesos propios del proyecto con los objetivos estratégicos más generales que pueda tener la organización. Cobran importancia dos involucrados relevantes:
+   - Director de proyecto:
+     - Dirección técnica de proyectos: Conocimientos, habilidades y comportamientos relacionados con ámbitos específicos de la dirección de proyectos.
+     - Liderazgo: Conocimientos, habilidades y comportamientos necesarios para guiar, motivar y dirigir un equipo y alcanzar las metas.
+     - Gestión estratégica y de negocios: El conocimiento y la pericia en la industria y organización, que mejora el desempeño y entrega de mejor manera los resultados del negocio.
+   - Oficina de dirección de proyectos (PMO): Estructura de gestión de la organización, que estandariza procesos relacionados a la gobernabilidad de proyectos y da facilidades para compartir recursos, metodologías, herramientas y técnicas
+     - Monitorear el rendimiento de los proyectos
+     - Alinear los proyectos con los objetivos de negocio
+     - Desarrollar capacidades de la organización en la gestión corporativa de proyectos
+3. Adaptar para el proyecto: Se busca adaptar los distintos aspectos del proyecto que puedan generar un impacto en el resultado mismo que se busca desarrollar. Referentes a:
+   - Producto y entregables
+     - Cumplimiento/criticidad: ¿qué grado de rigor y aseguramiento de calidad de los procesos es apropiado?
+     - Tipo de producto/entregable: ¿es el producto bien conocido y tangible o se está trabajando con algo intangible, como un software?
+     - Mercado de la industria: ¿qué sucede con los competidores e interesados externos?
+     - Tecnología: ¿es la tecnología estable o está en rápida evolución y obsolescencia?
+     - Período de tiempo: ¿en qué periodos estaremos trabajando?
+     - Estabilidad de requisitos: ¿qué probabilidad hay de que existan cambios en los requerimientos básicos?
+     - Seguridad: ¿son confidenciales los elementos del proyecto?
+     - Entrega incremental: ¿se debe ir aprobando por el cliente o puede estar terminado de una vez?
+   - Equipo de proyecto
+     - Tamaño del equipo: ¿cuántas personas trabajarán y serán a tiempo completo o parcial?
+     - Ubicación de trabajo: ¿dónde se encontrará el equipo y cada uno de sus integrantes?
+     - Experiencia del equipo: ¿los miembros del equipo tienen experiencia en alguna industria, organización o trabajo conjunto previo?
+     - Acceso al cliente: ¿se puede obtener comunicación frencuente o es mejor menor periodicidad?
+   - Cultura
+     - Aceptación: ¿hay entusiasmo por el enfoque propuesto?
+     - Confianza: ¿está comprome do el equipo con el desarrollo?
+     - Empoderamiento: ¿se confía, apoya y alienta al equipo del proyecto para que haga propio el proyecto?
+     - Cultura organizacional: ¿están alineados los valores de la organización con el enfoque de desarrollo del proyecto?
+4. Implementar mejora continua: Se deben dar puntos de revisión y retrospectivas que permitan inspeccionar y adaptar el proceso, el enfoque de desarrollo y la frecuencia de entrega. Fomenta el sentido de pertenencia y demuestra compromiso de aplicar mejoras
+
+# Gestión del cambio
+
+## Elementos críticos de un proyecto
+
+### Gestión del alcance
+1. Se ha definido expresamente por qué y para qué se hará el proyecto
+2. Las razones para realizarlo son imperiosas, válidas en el “largo plazo”. Se origina en un análisis racional de las necesidades de la organización
+3. Es compatible con la estrategia de la empresa y con la arquitectura informática
+4. Los costos de desarrollo y operación son compatibles con los beneficios y el valor agregado
+5. La evaluación del proyecto cubre el período completo de existencia de la inversión
+6. Se ha evaluado los riesgos del proyecto, y se han definido medidas de mitigación suficientes
+7. Cuenta con apoyo político y presupuestario, de los ejecutivos relevantes. No es demasiado contracultural
+8. El alcance está claramente definido, señalando lo incluido y lo no incluido, estableciendo las fronteras del proyecto
+9. La duración y magnitud del proyecto son prudentes. El plazo y el presupuesto es razonable
+10. Se dispone de los profesionales necesarios, en cantidad, calidad y disposición
+
+#### Ley de Gall
+"Un sistema complejo que funciona ha evolucionado de un sistema simple que funcionó. El planteamiento inverso también es cierto: un sistema complejo diseñado así desde cero nunca funciona y no puede hacerse funcionar. Debes empezar de nuevo, comenzando con un sistema simple."
+
+### Manejo político
+- Sin apoyo político, es difícil producir un cambio. Por lo tanto, el proyecto no tendrá éxito
+- El cambio o pérdida de apoyos claves puede ser fatal
+- El apoyo político es necesario, pero no suficiente
+- Mientras más arriba el apoyo, menos comprensión del proyecto
+- A veces hay buen inicio, pero no perseverancia
+- Es crucial un estado de *"ownership"*
+- La estructura de los equipos de trabajo debe asegurar que se cuenta con todo el *know-how*, el apoyo político, la fuerza para convencer a opositores y la capacidad de decisión
+- El héroe debe ser el dueño del proyecto
+
+### Metodología de gestión
+- Metodologías > Improvisación
+- Modelos teóricos vs Mejores prácticas:  “Aplicarlos no es una receta de éxito, no hacerlo es una receta para el fracaso”
+- Plan: Los planes sirven para:
+  - Estimar magnitudes
+  - Decidir estrategias
+  - Evaluar riesgos
+  - Medir avance
+  - Saber qué hacer
+  - Coordinar
+
+### Gestión del cambio
+- El impacto sobre las personas afecta su conducta y su bienestar
+- Normalmente no se considera legítimo o eficiente considerar las emociones en el manejo del proyecto. Sin embargo, ellas pueden determinar el fracaso de éste
+
+#### Resistencia al cambio
+- En el contexto de un cambio se modifican las emociones y la acción de los interesados
+- Las personas sienten que pierden
+  - Identidad
+  - Control
+  - Pertenencia
+  - Poder
+  - Competencia
+  - Certidumbre sobre su futuro
+- La resistencia al cambio es natural. El desafío de todo proyecto es reconocerla, identificar sus dimensiones y diseñar estrategias para superarla
+
+#### Premisas
+- Las organizaciones aprenden a manejar con éxito la adaptación a nuevas situaciones y desafíos
+- Las personas son las que cambian, las que movilizan o bloquean los cambios
+- Toda organización cuenta con personas capaces de lograr resultados sobresalientes
+- La gestión del cambio es un delicado equilibrio entre el impacto e influencia de pocos y la aceptación/adopción de muchos
+- La consolidación del cambio requiere la instalación de competencias y actitudes en las personas
