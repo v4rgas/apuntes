@@ -50,4 +50,42 @@ $\mathcal{L}$
 
 Estado Letra, Estado Letra, Estado Letra
 
+### Lenguaje aceptado por un automatada
+Un lenguaje se dice regular si y solo si existe un automata finito determinista A tal que
+
+$$L = L(A)$$
+
+Un lenguaje aceptado por A se define como 
+
+$$L(A) = \{ w \in \Sigma^* | A \ acepta \ w\}$$
+
 # Construcciones de automatas
+## Automatas con funcion parcial de transición
+A = ($Q, \Sigma, \delta, q_0, F$)
+
+Donde
+
+$$\delta: Q \times E \rightarrow Q$$
+
+A acepta w si existe una ejecucion de A sobre w
+
+
+## Comnplemento, intersección y union
+Dados dos lenguajes L, L' $\subseteq \Sigma^*$
+$$L^C = \{w \in \Sigma^* | w \notin L \}$$
+$$L \cap L' = \{w \in \Sigma^* | w \in L \wedge w \in L' \}$$
+$$L \cup L' = \{w \in \Sigma^* | w \in L \vee w \in L' \}$$
+
+### Complemento
+$$A = (Q, \Sigma, \delta, q_0, Q \backslash F)$$
+
+### Intersección
+$$Q^\times = Q \times Q' = \{(q, q') | q \in Q, q' \in Q' \}$$
+$$\delta^\times((q, q'),a) = (\delta(q,a), \delta'(q',a))$$
+$$q^\times_0 = (q_0, q_0')$$
+$$F^\times = F \times F'$$
+
+Equivalente al producto de A y A'
+$$A \times A'$$
+
+
