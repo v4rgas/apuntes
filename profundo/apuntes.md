@@ -108,3 +108,25 @@ Overhead of transmiting a signal by a pdf p(x) using an ecoding that considers a
 ## Multi-Label vs Multi-Class
 - Multi-Label: Se puede pertenecer a más de una clase
 - Multi-Class: Se elige una clase entre todas
+
+## Regularization
+Action of constraining the hypothesis space to foster good solutions
+
+Most common form of regularitazion is to add a norm penalty $\Omega (W)$ over the paramenters
+$$L(W) = L(f(x),y;W)+\alpha \Omega(W)$$
+
+# Gradient Descent for DL
+Loss function:
+$$L(W) = \sum_n L(f(x_n),y_n;W)+\alpha \Omega(W)$$
+
+Weight update is given by
+$$w_i = w_i^{old} - \nabla \frac{dL}{dw_i}$$
+
+## Adaptive Gradient Methods
+Each weight has its own learning rate
+$$w_i = w_i^{old} - \nabla_i \frac{dL}{dw_i}$$
+
+# Object Recognition
+## Rol Pooling
+
+# RNN

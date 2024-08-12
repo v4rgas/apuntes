@@ -133,3 +133,11 @@ Encontrar el $\mu$ mas pequeño tal que existaun x que satisfaga f(x) $\leq \mu$
 
 ## Equivalencia 3
 1x
+
+
+# Poliedros
+## Poliedro no acotado
+Existe al menos un vector y no nulo tal que
+$$x+y \in D, \forall x \in D$$
+
+### Teorema
