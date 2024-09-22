@@ -69,8 +69,12 @@ $$\delta: Q \times E \rightarrow Q$$
 
 A acepta w si existe una ejecucion de A sobre w
 
+Por todo automata con transicion de función parcial, existe un automata A' con funcion total de transicion tal que 
 
-## Comnplemento, intersección y union
+$$L(A) = L(A')$$
+
+
+## Complemento, intersección y union
 Dados dos lenguajes L, L' $\subseteq \Sigma^*$
 $$L^C = \{w \in \Sigma^* | w \notin L \}$$
 $$L \cap L' = \{w \in \Sigma^* | w \in L \wedge w \in L' \}$$
@@ -88,4 +92,67 @@ $$F^\times = F \times F'$$
 Equivalente al producto de A y A'
 $$A \times A'$$
 
+# Automatas no deterministas
+## Estructura
+$$A = (Q, \Sigma, \Delta,I,F)$$
 
+donde existe una relacion de transición
+
+$$\Delta \subseteq Q \times \Sigma \times Q$$
+
+y un conjunto de estados iniciales
+$$I \subseteq Q$$
+
+## Lenguaje aceptado
+A acepta si existe una ejecución de aceptación
+
+A rechaza si todas las ejecuciones no son de aceptación
+
+$$L(A) = \{ w \in \Sigma^* | A\ acepta\ w\}$$
+
+## Teorema
+Para todo autómata finito no determinista A, existe un automata determinista A' tal que
+
+$$L(A) = L(A')$$
+
+# Regex
+## Definición
+R es Regex sobre $\Sigma$ si R es igual a:
+1. $a \in \Sigma$
+2. $\epsilon$
+3. $\emptyset$
+4. (R1 + R2) (R1 o R2)
+5. $R1 \cdot R2$ (R1 seguido de R2)
+6. $R*$ (0 o más)
+
+# Automatas con transiciones sin lectura
+## Automata finito no-determinista con $\epsilon$-transiciones
+1. Tiene transiciones no deterministas
+2. Tiene transiciones leyendo $\epsilon$ (vacio)
+
+Es equivalente a un NFA
+
+# Lenguajes no regulares
+## Lema de bombeo
+Sea $L \in \Sigma*$, Si L es regular entonces
+
+$$\exists N > 0, \forall x \cdot y \cdot z \in W, |y| \geq N$$
+
+$$\exists u \cdot v \cdot w = y, v \neq \varepsilon, \forall i \geq 0, x \cdot u \cdot v^i \cdot w \cdot z \in L$$
+
+# Minimización de automatas
+1. Eliminar estados inaccesibles
+2. Colapsar estados equivalentes
+
+La parte dificil es colapsar estados equivalentes
+## Función de transicion extendida
+$$\hat\delta : Q \times \Sigma* \rightarrow Q$$
+
+inductivamente como:
+$$\hat\delta(q,\epsilon) \equiv q\$$
+$$\hat\delta(q, w\cdot a) \equiv \delta(\hat\delta(q,w),a)$$
+
+## Cuando colapsar estados
+p y q son indistiguibles ($p \approx_A q$) si
+
+$$p \approx_A q \iff (\hat\delta(p,w) \in F \iff \hat\delta(q,w) \in F) $$
