@@ -125,12 +125,16 @@ R es Regex sobre $\Sigma$ si R es igual a:
 5. $R1 \cdot R2$ (R1 seguido de R2)
 6. $R*$ (0 o más)
 
+## Teorema Kleene
+Para todo lenguaje regular L, existe una regex R tal que $L = L(R)$
 # Automatas con transiciones sin lectura
 ## Automata finito no-determinista con $\epsilon$-transiciones
 1. Tiene transiciones no deterministas
 2. Tiene transiciones leyendo $\epsilon$ (vacio)
 
 Es equivalente a un NFA
+
+
 
 # Lenguajes no regulares
 ## Lema de bombeo
@@ -155,4 +159,19 @@ $$\hat\delta(q, w\cdot a) \equiv \delta(\hat\delta(q,w),a)$$
 ## Cuando colapsar estados
 p y q son indistiguibles ($p \approx_A q$) si
 
-$$p \approx_A q \iff (\hat\delta(p,w) \in F \iff \hat\delta(q,w) \in F) $$
+$$p \approx_A q \iff (\hat\delta(p,w) \in F \iff \hat\delta(q,w) \in F), \forall w \in \Sigma $$
+
+## Algoritmo para encontrar las clases de equivalencia
+1. Construya tabla con los pares {p,q}
+2. Marque los pares (p,q) si p $\in F$ y q $\notin F$ o viceversa
+3. Repita hasta que no se marquen mas pares
+   1. Marque (p,q) si (p,q) no esta marcado y (delta(p,a), delta(q,a)) esta marcado
+4. Las clases de equivalencia son los pares no marcados $p \neq q \iff \{p,q\}$ está marcado
+
+
+
+
+
+
+
+
