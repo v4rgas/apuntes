@@ -169,9 +169,107 @@ $$p \approx_A q \iff (\hat\delta(p,w) \in F \iff \hat\delta(q,w) \in F), \forall
 4. Las clases de equivalencia son los pares no marcados $p \neq q \iff \{p,q\}$ está marcado
 
 
+# Teorema de Myhill-Nerode
+Un lenguaje L es regular si y solo si el numero de clases de equivalencia es finito
+
+# Autómatas en dos direcciones
+## Automatas finitos deterministas en dos direcciones
+1. Tiene una cinta infinita
+2. Puede moverse a la izquierda o derecha
+3. Tiene una cabeza de lectura
+
+
+### Definición
+$$A = (Q, \Sigma, \vdash, \dashv, \delta, q_0, q_f)$$
+
+Donde
+
+- $\vdash$ es el simbolo de inicio
+- $\dashv$ es el simbolo de fin
+- $\delta: Q \times \Sigma \rightarrow Q \times \Sigma \times \{L,R\}$
+- $q_0$ es el estado inicial
+- $q_f$ es el estado final
+- La cinta contiene un simbolo de inicio y fin $\vdash, \dashv$
+
+### Configuración
+Viene dada por un par
+$$(q,i) \in Q \times \{0,1,2,...\}$$
+
+Donde i es la posicion de la cabeza de lectura y q es el estado actual
+
+# Evaluación de Regex
+
+# Transductores
+## Definición
+Es una tupla
+
+$$T = (Q, \Sigma, \Omega, \Delta, I, F)$$
+
+Donde
+
+- Q es un conjunto finito de estados
+- $\Sigma$ es un alfabeto de entrada
+- $\Omega$ es un alfabeto de salida
+- $\Delta \subseteq Q \times \Sigma \times \Omega \times Q$
+- I es el estado inicial
+- F es el conjunto de estados finales
+
+
+## Propiedades
+Para una relación $R \subseteq \Sigma^* \times \Omega^*$
+
+$$\pi_1(R) = \{w \in \Sigma^* | \exists v \in \Omega^*, (w,v) \in R\}$$
+$$\pi_2(R) = \{v \in \Omega^* | \exists w \in \Sigma^*, (w,v) \in R\}$$
+
+### Teorema
+Si $T$ es un transductor, entonces
+
+$\pi_1(T)$ y $\pi_2(T)$ son regulares sobre $\Sigma$ y $\Omega$ respectivamente
 
 
 
 
 
+# Gramaticas libres de contexto
+## Definición
+Una gramatica libre de contexto es una tupla
 
+$$G = (V, \Sigma, P, S)$$
+
+Donde
+
+- V es un conjunto finito de variables
+- $\Sigma$ es un alfabeto de terminales tal que $V \cap \Sigma = \emptyset$
+- $P \subseteq V \times (V \cup \Sigma)^*$ es un conjunto finito de producciones
+- $S \in V$ es el simbolo inicial
+
+## Notación
+- Para variables en una gramatica se usa $X, Y, Z, A, B, C$
+- Para terminales se usa $a, b, c, d, e, f$
+- Para palabras en $V \cup \Sigma$ se usa $\alpha, \beta, \gamma$
+- Para una producción $(A, \alpha) \in P$ se escribe $A \rightarrow \alpha$
+  
+## Simplificación
+Si tenemos un conjunto de reglas de la forma
+
+1. $X \rightarrow \alpha_1$
+2. $X \rightarrow \alpha_2$
+3. $X \rightarrow \alpha_3$
+4. ...
+
+$$X \rightarrow \alpha_1 | \alpha_2 | \alpha_3 | ... | \alpha_n$$
+
+
+## Producciones
+
+Definamos la relación $\Rightarrow$ como $u \Rightarrow v$ si y solo si existe una producción $A \rightarrow \alpha$ tal que $u = \alpha_1 A \alpha_2$ y $v = \alpha_1 \alpha \alpha_2$
+
+## Derivaciones
+
+Definamos la relación $\Rightarrow^*$ como $u \Rightarrow^* v$ si y solo si existe una secuencia finita de palabras $u = u_0, u_1, u_2, ..., u_n = v$ tal que $u_i \Rightarrow u_{i+1}$
+
+## Lenguaje generado por una gramatica
+$$L(G) = \{w \in \Sigma^* | S \Rightarrow^* w\}$$
+
+## Lenguajes libres de contexto
+Un lenguaje es libre de contexto si y solo si existe una gramatica libre de contexto que lo genere
