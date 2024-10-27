@@ -169,6 +169,27 @@ $$p \approx_A q \iff (\hat\delta(p,w) \in F \iff \hat\delta(q,w) \in F), \forall
 4. Las clases de equivalencia son los pares no marcados $p \neq q \iff \{p,q\}$ está marcado
 
 
+# Relaciones de Myhill-Nerode
+## Definición
+Sea L un lenguaje sobre $\Sigma$ y $x, y \in \Sigma*$
+$$x \equiv_L y \iff \forall z \in \Sigma*, xz \in L \iff yz \in L$$
+
+O de manera equivalente
+
+$$x \equiv_L y \iff \hat\delta(q_0, x) \in F \iff \hat\delta(q_0, y) \in F$$
+
+## Clases de equivalencia
+$$[x]_L = \{y \in \Sigma* | x \equiv_L y\}$$
+
+## Relacion de Myhill-Nerode
+
+Una relación de equivalencia R sobre $\Sigma*$ es una relación de Myhill-Nerode si y solo si
+
+1. Es una congruencia por la derecha, es decir, $x \equiv_L y \implies \forall z \in \Sigma*, xz \equiv_L yz$
+2. Refina L, es decir, $x \equiv_L y \implies x \in L \iff y \in L$
+3. Es finita
+
+
 # Teorema de Myhill-Nerode
 Un lenguaje L es regular si y solo si el numero de clases de equivalencia es finito
 
@@ -197,7 +218,82 @@ $$(q,i) \in Q \times \{0,1,2,...\}$$
 
 Donde i es la posicion de la cabeza de lectura y q es el estado actual
 
+### Relacion de siguiente configuración
+
+$$(q,i) \rightarrow^A (q',i')$$
+
+### Ejecución
+
+Una ejecución de A sobre w es una secuencia finita de configuraciones
+
+$$(q_0,0) \rightarrow^A (p_1, i_1) \rightarrow^A (p_2, i_2) \rightarrow^A ... \rightarrow^A (p_f, i_f)$$
+
+Es de aceptación si $p_f = q_f$, $i_f = n+1$, $w = w_1...w_n$
+
+## 2DFA vs lenguajes regulares
+
+Para todo 2DFA A, existe un DFA A' tal que $L(A) = L(A')$
+
 # Evaluación de Regex
+## Como evaluar una regex
+1. Convertimos R en un $\epsilon$-NFA A_R$
+2. Verificamos si $w \in L(A_R)$
+
+## Como evaluar un automata no determinista
+### Tamaño del input
+
+- $|w|$: Largo de documento
+- $|A|$: $|Q| + |\Delta|$
+
+### Backtracking
+
+
+fun eval-backtracking(A, w):
+1. return backtracking(A, w, q_0, 1)
+
+fun backtracking(A, w, p, i):
+1. if $i \leq |w|$:
+   1.  for $(p, a_i, q) \in \Delta$:
+       1. if backtracking(A, w, q, i+1):
+          1. return True
+        2. else if $q \in F$:
+            1. return True
+2. return False
+
+### 2DFA
+fun eval-2DFA(A, w):
+1. q = $q_0$
+2. for i = 1 to $|w|$:
+   1. q = $\delta(q, w_i)$
+3. return $q \in F$
+
+Complejidad $O(|w|+ |A|)$
+
+### NFA Determinización
+fun eval-NFA(A, w):
+1. A' = determin(A)
+2. return eval-DFA(A', w)
+
+Complejidad $O(2^{|Q|} + |w|)$
+
+
+### NFA on-the-fly
+
+$\delta^{det}: 2^Q \times \Sigma \rightarrow 2^Q, \delta^{det}(S, a) = \{q \in Q | \exist p \in S, (p,a,q) \in \Delta \}$
+
+1. Mantenemos un conjunto de estados S
+2. Para cada letra a en w, actualizamos $\delta^{det}(S,a)$
+
+fun eval-NFA-on-the-fly(A, w):
+1. S = $I$
+2. $for i = 1 to $|w|$:$
+   1. $S_{old} = S$
+   2. $S = \emptyset$
+   3. $for p \in S_{old}:$
+      1. $S = S \cup \{ q | (p,a_i,q) \in \Delta \}$
+3. return $S \cap F \neq \emptyset$
+
+Complejidad $O(|w| \cdot |A|)$
 
 # Transductores
 ## Definición
@@ -227,7 +323,105 @@ Si $T$ es un transductor, entonces
 $\pi_1(T)$ y $\pi_2(T)$ son regulares sobre $\Sigma$ y $\Omega$ respectivamente
 
 
+# Introducción al analisis lexico
 
+## Transductores deterministas
+### Funcion parcial
+Un transductor define una funcion parcial si
+
+2. $\forall u \in \Sigma^*, \llbracket T \rrbracket (u) \leq 1$
+
+
+Un transductor es determinista si y solo si
+
+1. T define una funcion parcial $\llbracket T \rrbracket : \Sigma^* \rightarrow \Omega^*$
+2. $\forall (p,a_1,b_1,q_1), (p,a_2,b_2,q_2) \in \Delta, a_1 = a_2 \implies b_1 = b_2, q_1 = q_2$
+
+3. $\forall (p, \epsilon, b, q) \in Delta, \forall (p, a, b', q') \in \Delta, (a, b', q') = (\epsilon, b, q)$
+
+# Analisis lexico
+## Definición
+1. La sintaxis de un lenguaje es un conjunto de reglas que describes los programas validos en el lenguaje
+2. La semántica de un lenguaje define el significado de los programas validos
+
+## Verificación de sintaxis
+1. Analisis lexico (Lexer)
+2. Analisis sintactico (Parser)
+3. Analisis semantico
+
+## Lexer
+Se divide el programa en tokens, donde un token es una secuencia de caracteres que representa un elemento del lenguaje
+
+## Generador de analisis lexico
+Un generador de analisis lexico es un software que crea codigo para un lexer a partir de una especificacion de tokens
+
+### Lex
+El formato de un programa en Lex es
+1. Declaraciones
+2. Reglas de traducción
+3. Funciones auxiliares
+
+Las reglas de traducción son de la forma
+PATTERN ACTION
+
+Donde PATTERN es una expresion regular y ACTION es un fragmento de codigo
+
+Por ejemplo
+```
+digit [0-9]
+%%
+{digit}+ printf("Numero entero\n");
+```
+
+#### Evaluación de Lex
+Sea $P_1, P_2, ..., P_n$ un conjunto de patrones y $C_1, C_2, ..., C_n$ un conjunto de acciones en 'lex.l'
+
+1. Por cada patrón $P_i$ contruimos un NFA $A_i = (Q_i, \Sigma, \Delta_i, \{q_{0i}\}, \{q_{fi}\})$
+
+2. Evaluamos con el transductor determinista $T = (Q, \Sigma, \{C_1, C_2, ..., C_n\}, \Delta, \{q_0\}, F)$
+   - $Q = 2^{\cup_{i=1}^n Q_i}$
+   - $q_0 = \{q_{0i} | i = 1, 2, ..., n\}$
+   - $(S, a, \epsilon, S') \in \Delta \iff S' = \{q | \exists i, p \in S, (p,a,q) \in \Delta_i\}$
+   - $(S, _, C_i, q_0), (S, EOF, C_i, q_0) \in \Delta \iff q_{fi} \in F$
+   - $F = \{q_0\}$
+
+
+# Algoritmo de Knuth-Morris-Pratt
+## Problema
+Dado un patron $w = w_1w_2...w$ y un documento $d = d_1d_2...d_n$, encontrar todas las ocurrencias de w en d
+
+### Algoritmo ingenuo
+1. Para cada i = 1 a n-(m-1)
+   1. Para cada j = 1 a m
+      1. Si $d_{i+j-1} \neq w_j$ entonces break
+   2. Si $j > m$, return (i, i+m-1)
+
+### Automata de un patron
+Dado una palabra w, definimos el automata $NFA\ A_w = (Q, \Sigma, \Delta, I, F)$
+
+Donde
+
+- Q = {0, 1, ..., m}
+- $\Delta = \{ (0,a,0) | a \in \Sigma \} \cup \{ (j, w_{j+1}, j+1) | j = 0, 1, ..., m-1 \}$
+- I = {0}
+- F = {m}
+
+#### Determinización
+Dado un NFA A, definimos el DFA $DFA\ A' = (Q', \Sigma, \delta, q_0, F')$
+
+Donde
+
+- $Q' = 2^Q$
+- $\delta(S, a) = \{ q | \exists p \in S, (p,a,q) \in \Delta \}$
+- F' = ${S \in 2^Q | S \cap F \neq \emptyset}$
+
+
+Para todo $S \in Q'$
+
+$$ i \in S \iff w_1...w_i \text{ es un sufijo de } w_1,...w_{max(S)}$$
+
+### Automata finito con k-lookahead
+Dado un automata A, definimos el automata $A_k = (Q, \Sigma, \Delta, I, F)$
 
 
 # Gramaticas libres de contexto
