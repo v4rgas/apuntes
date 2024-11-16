@@ -421,8 +421,29 @@ Para todo $S \in Q'$
 $$ i \in S \iff w_1...w_i \text{ es un sufijo de } w_1,...w_{max(S)}$$
 
 ### Automata finito con k-lookahead
-Dado un automata A, definimos el automata $A_k = (Q, \Sigma, \Delta, I, F)$
+Dado un automata A, definimos el automata $A_k = (Q, \Sigma, \delta, I, F)$
 
+Donde
+
+- Q es un conjunto de estados
+- $\Sigma$ es un alfabeto
+- $q_0$ es el estado inicial
+- $F \subseteq Q$ es el conjunto de estados finales
+- $\delta: Q \times (\Sigma \cup \{ \$ \})^k \rightarrow Q$ es la funcion de transición
+   - $\forall p \in Q, w \in (\Sigma \cup \{ \$ \})^k: |\{ u.v | \delta(p, u.v) = q, uv =w \}| \leq 1$
+
+
+#### Teorema
+Para todo k-lookahead A, existe un DFA A' tal que $L(A) = L(A')$
+
+#### Lazy automata
+Un lazy automata es un DFA con 1 lookahead
+
+## Algoritmo KMP
+Dado una palabra w y un documento d
+
+1. Construimos $A_w^{lazy} desde A_w$
+2. Ejecutamos $A_w^{lazy}$ sobre d
 
 # Gramaticas libres de contexto
 ## Definición
@@ -467,3 +488,67 @@ $$L(G) = \{w \in \Sigma^* | S \Rightarrow^* w\}$$
 
 ## Lenguajes libres de contexto
 Un lenguaje es libre de contexto si y solo si existe una gramatica libre de contexto que lo genere
+
+# Arboles y derivaciones
+## Definiciones
+El conjunto de arboles ordenados y etiquetados sobre etiquetas $\Sigma$ y $V$ se define recursivamente como
+
+1. $t = \epsilon, t = a$ es un arbol etiquetado con $a \in \Sigma$
+2. Si $t_1, t_2, ..., t_n$ son arboles, entonces $t = (X, t_1, t_2, ..., t_n)$ es un arbol etiquetado con $X \in V$
+3. raiz(t) = X
+4. hijos(t) = {t_1, t_2, ..., t_n}
+5. t es una hoja si $hijos(t) = \emptyset$, raiz(t) = a
+
+## Arboles de derivación de una gramatica
+### Definición
+Se define el conjunto de arboles de derivación recursivamente,
+
+1. Si $a \in \Sigma \cup \{ \epsilon \}$, entonces $t = a$ es un arbol de derivación
+2. Si $X \rightarrow X_1X_2...X_k \in P$ y $t_1, t_2, ..., t_k$ son arboles de derivación con raiz($t_i) = X_i$, entonces $t = X(t_1, t_2, ..., t_k)$ es un arbol de derivación
+
+Es un arbol de derivación de G si raiz(t) = S
+
+
+## Arboles de derivación para una palabra
+Se define la funcion yield(t) sobre un arbol t como
+
+1. Si t = a, yield(t) = a
+2. Si t = X(t_1, t_2, ..., t_k), yield(t) = yield(t_1)yield(t_2)...yield(t_k)
+
+Decimos que t es un arbol de derivación de G para w si
+1. t es un arbol de derivación de G
+2. yield(t) = w
+
+## Equivalencias entre arboles de derivación y derivaciones
+$w \in L(G) \iff \exists t \text{ arbol de derivación de G para w}$
+
+## Derivaciones por la izquierda y derecha
+### Definición
+- Definimos derivacion por la izquierda como $u \Rightarrow_L v$
+   - $w \cdot X \cdot B \rightarrow_L w \cdot \gamma \cdot B \iff X \rightarrow \gamma \in P$
+- Definimos derivacion por la derecha como $u \Rightarrow_R v$
+   - $w \cdot X \cdot B \rightarrow_R w \cdot B \cdot \gamma \iff X \rightarrow \gamma \in P$ 
+
+# Variables inutiles 
+## Definición
+Una variable es util si existe una derivación de la forma 
+$$S \Rightarrow^* \alpha X \beta \Rightarrow^* w$$
+
+Para una variable $X \in V$
+
+1. Es alcanzable si existe una derivación de la forma $S \Rightarrow^* \alpha X \beta$ 
+2. Es generadora si existe una derivación de la forma $X \Rightarrow^* w$
+
+
+### Como determinar si es alcanzable
+fun alcanzable(G):
+1. $R = \{S\}$ 
+2. $C = \emptyset$
+3. while $R \neq \emptyset$:
+   1. $Y = R.pop()$
+   2. $C.add(Y)$
+   3. foreach $X \in V - C, (Y \rightarrow \alpha X \beta) \in P$:
+      1. $R.add(X)$
+4. return C
+
+### Como determinar si es generadora
