@@ -552,3 +552,132 @@ fun alcanzable(G):
 4. return C
 
 ### Como determinar si es generadora
+fun generadora(G):
+1. $G_0 = \{X \in V | X \rightarrow w \in P\}$
+2. $G = \emptyset$
+3. while $G \neq G_0$:
+   1. $G = G_0$
+   2. foreach $(X \rightarrow \alpha) \in P$:
+      1. if $\alpha \in G$:
+         1. $G_0.add(X)$
+
+4. return G
+
+# Simplificación de gramaticas
+## Eliminación de variables inutiles
+Sea $G = (V, \Sigma, P, S)$ una gramatica
+
+Sea $G''$ una gramatica creada a partir de $G$ tal que
+- se eliminaron todas las variables y reglas NO generadoras
+- se eliminaron todas las variables y reglas NO alcanzables
+
+Entonces $L(G) = L(G'')$ y $G''$ no tiene variables inutiles
+
+## Lenguaje vacio de una gramatica
+1. Ejecuto G = generadora(G)
+2. Si $S \in G$ entonces $L(G) \neq \emptyset$
+3. Si $S \notin G$ entonces $L(G) = \emptyset$
+
+## Producciones en vacío y unitarias
+### Producciones en vacío
+Una producción $X \rightarrow \epsilon$ es una producción en vacío
+
+### Producciones unitarias
+Una producción $X \rightarrow Y$ es una producción unitaria
+
+## Eliminación de producciones en vacío y unitarias
+Notemos que si $\epsilon \in L(G)$ entonces no podemos eliminar las producciones en vacío sin cambiar el lenguaje
+
+Asumamos que $\epsilon \notin L(G)$
+
+# Forma normal de Chomsky
+Una gramatica esta en forma normal de Chomsky si todas las producciones son de la forma
+
+1. $X \rightarrow a$
+2. $X \rightarrow YZ$
+
+Toda gramatica se puede convert a CNF
+
+# Lema del bombeo para lenguajes libres de contexto
+
+# Algortimo CYK
+## Problema
+Dado una gramatica G y una palabra w, determinar si w pertenece a L(G)
+
+1. Convertimos G a CNF
+2. Probamos todas las derivaciones de a lo mas $|w|$ pasos
+3. Si encontramos una derivación de w, entonces w pertenece a L(G)
+
+## Algoritmo
+### Tabla
+Dada una palabra w de largo n y una gramatica G en CNF
+
+Construimos tabla CKY donde
+
+- $T[i,j] = \{ X | X \Rightarrow^* w_i...w_j \}$
+
+# Automatas apiladores
+Un automata apilador (Pushdown Automaton) es una estructura
+$P = (Q, \Sigma, \Gamma, \delta, q_0, Z_0, F)$
+
+Donde
+
+- Q es un conjunto finito de estados
+- $\Sigma$ es un alfabeto de entrada
+- $q_0 \in Q$ es el estado inicial
+- F es un conjunto de estados finales
+- $\Gamma$ es un alfabeto de stack
+- $\bot \in \Gamma$ es el simbolo de inicio
+- $\delta \subseteq Q \times (\Sigma \cup \{ \epsilon \}) \times \Gamma $ es la funcion de transición
+
+Intuitivamente, si el automata apilador esta en un estado q, leyendo un simbolo a y con un simbolo x en el stack, entonces el automata puede cambiar a un nuevo estado q', leer un nuevo simbolo a' y cambiar el stack a yx
+
+## Definicion alternativa
+Un automata apilador es una tupla
+
+$$D = (Q, \Sigma, \Delta, q_0, F)$$
+
+Donde
+
+- Q es un conjunto finito de estados
+- $\Sigma$ es un alfabeto de entrada
+- $q_0 \in Q$ es el estado inicial
+- F es un conjunto de estados finales
+- $\Delta \subseteq Q^+ \times (\Sigma \cup \{ \epsilon \}) \times Q^*$ es la funcion de transición
+
+# Apiladores vs gramaticas libres de contexto
+## CFG a PDA
+Sea $G = (V, \Sigma, P, S)$ una gramatica libre de contexto
+
+Definamos D como un automata apilador tal que
+
+$D = (V \cup \Sigma \cup \{ q_0, q_f \}, \Sigma, \Delta, q_0, \{ q_f\})$
+
+La funcion de transición $\Delta$ se define como
+
+$\Delta_1 = \{ (q_0, \epsilon, S) \}$
+
+$\Delta_2 = \{ (X, \epsilon, \gamma) | X \rightarrow \gamma \in P \}$
+
+$\Delta_3 = \{ (a, a, \epsilon) | a \in \Sigma \}$
+
+$\Delta = \Delta_1 \cup \Delta_2 \cup \Delta_3$
+
+## PDA a CFG
+1. Convertir el PDA a un PDA' con un solo estado
+2. Convertir el PDA' a una gramatica libre de contexto
+
+# Parsing
+## Verificación de sintaxis
+1. Analisis lexico (Lexer)
+2. Analisis sintactico (Parser)
+3. Analisis semantico
+
+## Analisis sintactico
+### Definición
+Dado una gramatica G y una palabra w, contruir un arbol de derivación de G para w
+
+
+
+
+
