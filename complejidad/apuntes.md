@@ -107,9 +107,14 @@ $$M = (Q,\Sigma,\Gamma,\delta,q_0,q_f)$$
 - $Q$ es el conjunto finito de estados
 - $\Sigma$ es el alfabeto de entrada
 - $\Gamma$ es el alfabeto de la cinta
-- $\delta: Q \times \Gamma \rightarrow Q \times \Gamma \times \{L,R\}$ es la funcion de transicion
+- $\delta: Q \times \Gamma \rightharpoonup Q \times \Gamma \times \{L,R\}$ es la función de transición
 - $q_0 \in Q$ es el estado inicial
 - $q_f \in Q$ es el estado final
+
+
+Notar que
+
+$$\delta(q_f,a) = \emptyset$$
 
 
 
