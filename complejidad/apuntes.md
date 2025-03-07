@@ -134,6 +134,24 @@ Se define la relacion $\rightarrow^M$ tal que
 
 $$(p, i, u \cdot a \cdot v) \rightarrow^M (q, j, u \cdot b \cdot v)$$
 
+#### Ejecucion
+
+Una ejecucion de una maquina de Turing es una secuencia de configuraciones (no necesariamente finita)
+
+$$p: C_0 \rightarrow^M C_1 \rightarrow^M ... \rightarrow^M C_n$$
+
+Decimos que p es una ejecion de M sobre la palabra w si
+
+- $C_0 = (q_0,0,w)$
+- Si p es finito, entonces Cn es de detencion
+
+#### Lenguaje aceptado
+
+El lenguaje aceptado por una maquina de Turing M es
+
+$$L(M) = \{w \in \Sigma* | M \text{ acepta w}\}$$
+
+
 
 
 
