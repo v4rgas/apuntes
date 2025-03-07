@@ -116,6 +116,23 @@ Notar que
 
 $$\delta(q_f,a) = \emptyset$$
 
+#### Configuracion
+
+Una configuracion de una maquina de Turing es una terna
+
+$$C = (q,i,w) \in Q \times \mathbb{N} \times \Gamma*$$
+
+- $q$ es el estado actual
+- $i$ es la posicion del cabezal
+- $w$ es la palabra en la cinta
+
+Puede ser de aceptacion, de rechazo o de no detencion
+
+#### Siguiente configuracion
+
+Se define la relacion $\rightarrow^M$ tal que
+
+$$(p, i, u \cdot a \cdot v) \rightarrow^M (q, j, u \cdot b \cdot v)$$
 
 
 
