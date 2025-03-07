@@ -39,6 +39,17 @@ Toda estructura finita es posbile de representar como una palabra de un alfabeto
 
 (es como reducirlo a binario)
 
+Existen ciertaws representaciones que simplifican la solucion de un problema
+
+##### Ejemplo
+Un grafo G = (V,E) se puede representar como una palabra de la forma
+
+$G = v_1v_2v_3...v_n$
+
+$E = (v_1,v_2)(v_2,v_3)...(v_{n-1},v_n)$
+
+$w = G \cdot E$
+
 
 
 
