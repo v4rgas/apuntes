@@ -63,6 +63,56 @@ Verificar si dos nodos de un grafo estan conectados por una arista
 Instancia: Un grafo G y dos nodos u,v
 Problema: True si existe una arista que conecta u y v, False en otro caso
 
+#### Problema computacional (simplificado)
+
+Un problema de decision es un $L \subseteq \Sigma*$
+
+##### Ejemplo
+
+- $L = \{w \in \{0,1\}^* | w = 0^n1^n, n \geq 0\}$, modela el problema de si dos palabras tienen la misma longitud
+
+Un problema no es mas que un conjunto de palabras que defino, a esto se le denomina un lenguaje
+
+Una solucion entonces corresponde a una funcion computable:
+
+$$f: \Sigma* \rightarrow \{True,False\}$$
+
+$$f(w) = True \iff w \in L$$
+
+#### Computabilidad
+
+Definiciones formales
+
+- Funciones parcialmente recursivas
+- $\lambda$-calculo
+- Maquinas de Turing
+- Sistema de Post
+
+Utilizaremos maquinas de Turing porque modela bien la idea de recursos, tiempo y espacio
+
+## Maquinas de Turing
+### Definicion
+
+- Cinta infinita dividida en celdas
+- Cabezal de lectura/escritura
+- Conjunto finito de estados
+- Funcion de transicion
+
+### Formalizacion
+
+Una maquina de Turing determinista es una 6-tupla
+
+$$M = (Q,\Sigma,\Gamma,\delta,q_0,q_f)$$    
+
+- $Q$ es el conjunto finito de estados
+- $\Sigma$ es el alfabeto de entrada
+- $\Gamma$ es el alfabeto de la cinta
+- $\delta: Q \times \Gamma \rightarrow Q \times \Gamma \times \{L,R\}$ es la funcion de transicion
+- $q_0 \in Q$ es el estado inicial
+- $q_f \in Q$ es el estado final
+
+
+
 
 
 
