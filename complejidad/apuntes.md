@@ -50,6 +50,19 @@ $E = (v_1,v_2)(v_2,v_3)...(v_{n-1},v_n)$
 
 $w = G \cdot E$
 
+#### Soluciones de un problema
+
+Nos restringimos al conjutno de problemas de decision
+
+- $S = \{True,False\}$ es el conjunto de soluciones
+- cada instancia tiene una y solo una solucion
+
+##### Ejemplo
+Verificar si dos nodos de un grafo estan conectados por una arista
+
+Instancia: Un grafo G y dos nodos u,v
+Problema: True si existe una arista que conecta u y v, False en otro caso
+
 
 
 
