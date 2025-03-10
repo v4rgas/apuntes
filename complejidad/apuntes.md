@@ -11,11 +11,13 @@ Una solucion al problema P es una funcion $f: I \rightarrow S$ tal que, $\forall
 $$(X,f(X)) \in P$$
 
 ## Palabras
+
 - Un alfabeto $\Sigma$ es un conjunto finito
 - $x \in \Sigma$ es una letra o simbolo
 - Una palabra es una secuencia finita de simbolos
 
 ### Definiciones
+
 - $|w| =$ numero de letras en w
 
 - $|\epsilon| = 0$ es la palabra vacia
@@ -28,20 +30,20 @@ $$(X,f(X)) \in P$$
 
 - $w^n = w \cdot w \cdot w...w_n$
 
--  $w^0 = \epsilon$
-
+- $w^0 = \epsilon$
 
 ### Simplificaciones
 
 #### Instancias de un problema
 
-Toda estructura finita es posbile de representar como una palabra de un alfabeto finito de al menos dos letras 
+Toda estructura finita es posbile de representar como una palabra de un alfabeto finito de al menos dos letras
 
 (es como reducirlo a binario)
 
 Existen ciertaws representaciones que simplifican la solucion de un problema
 
 ##### Ejemplo
+
 Un grafo G = (V,E) se puede representar como una palabra de la forma
 
 $G = v_1v_2v_3...v_n$
@@ -58,6 +60,7 @@ Nos restringimos al conjutno de problemas de decision
 - cada instancia tiene una y solo una solucion
 
 ##### Ejemplo
+
 Verificar si dos nodos de un grafo estan conectados por una arista
 
 Instancia: Un grafo G y dos nodos u,v
@@ -91,6 +94,7 @@ Definiciones formales
 Utilizaremos maquinas de Turing porque modela bien la idea de recursos, tiempo y espacio
 
 ## Maquinas de Turing
+
 ### Definicion
 
 - Cinta infinita dividida en celdas
@@ -102,7 +106,7 @@ Utilizaremos maquinas de Turing porque modela bien la idea de recursos, tiempo y
 
 Una maquina de Turing determinista es una 6-tupla
 
-$$M = (Q,\Sigma,\Gamma,\delta,q_0,q_f)$$    
+$$M = (Q,\Sigma,\Gamma,\delta,q_0,q_f)$$
 
 - $Q$ es el conjunto finito de estados
 - $\Sigma$ es el alfabeto de entrada
@@ -110,7 +114,6 @@ $$M = (Q,\Sigma,\Gamma,\delta,q_0,q_f)$$
 - $\delta: Q \times \Gamma \rightharpoonup Q \times \Gamma \times \{L,R\}$ es la función de transición
 - $q_0 \in Q$ es el estado inicial
 - $q_f \in Q$ es el estado final
-
 
 Notar que
 
@@ -150,9 +153,3 @@ Decimos que p es una ejecion de M sobre la palabra w si
 El lenguaje aceptado por una maquina de Turing M es
 
 $$L(M) = \{w \in \Sigma* | M \text{ acepta w}\}$$
-
-
-
-
-
-

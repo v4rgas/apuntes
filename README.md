@@ -1,3 +1,3 @@
-Apuntes que he tomado en markdown a lo largo de la carrera
+# Que es esto
 
-Acepto todo pr directo al main sin revisar
+Estos son todos los apuntes que he tomado en markdown desde que entre a la universidad
