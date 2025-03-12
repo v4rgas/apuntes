@@ -153,3 +153,73 @@ Decimos que p es una ejecion de M sobre la palabra w si
 El lenguaje aceptado por una maquina de Turing M es
 
 $$L(M) = \{w \in \Sigma* | M \text{ acepta w}\}$$
+
+## Maquinas de Turing extendidas
+
+1. Cinta infinita en ambas direcciones
+2. Multiples cintas y cabezales
+3. No-determinismo
+4. Cinta en 2D, 3D, etc
+
+Son todas equivalentes a una maquina de Turing
+
+### Multiples cintas
+
+Dado el simbolo que cada cabezal lee, se elige el siguiente estado
+
+$$M = (Q,\Sigma,\Gamma,\delta,q_0,q_f)$$
+
+donde 
+
+$$\delta: Q \times \Gamma^k \rightharpoonup Q \times (\Gamma \times \{L,R\})^k$$
+
+#### Configuracion
+
+Una configuracion esta dada por
+
+- Estado actual
+- Posicion de cada cabezal
+- Contenido de cada cinta
+
+La representamos como un triple
+
+$$(q, (i_1,...,i_k), (w_1,...,w_k))$$
+
+- Es aceptacion si $q = q_f$
+- Es de detencion si $\delta(q,w_1[i_1],...,w_k[i_k])$ no esta definido
+
+#### Siguiente configuracion
+
+Se define la relacion $\rightarrow^M$ tal que
+
+<!-- $$(p, (i_1,...,i_k), (u_1,...,u_k)) \rightarrow^M (q, (i_1 + d_1,...,i_k + d_k), (v_1,...,v_k))$$ -->
+
+`COMPLETAR`
+
+
+#### Teorema
+
+Para cada maquina de Turing M con k cintas, existe una maquina de Turing M' con una cinta tal que
+
+$$L(M) = L(M')$$
+
+
+### Infinita en dos direcciones
+
+Dada una maquina de Turing M, existe una maquina de Turing M' con cinta infinita en ambas direcciones tal que
+
+$$L(M) = L(M')$$
+
+
+Es equivalente a una maquina de Turing con dos cintas
+
+### No-determinismo
+
+En una maquina no determinista, la funcion de transicion es una relacion de la forma
+
+$$\Delta \subseteq (Q \times \Gamma) \times (Q \times \Gamma \times \{L,R\})$$
+
+
+#### Ejecucion 
+
+M acepta w si existe una ejecucion de M sobre w que termina en un estado final
