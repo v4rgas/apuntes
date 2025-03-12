@@ -223,3 +223,13 @@ $$\Delta \subseteq (Q \times \Gamma) \times (Q \times \Gamma \times \{L,R\})$$
 #### Ejecucion 
 
 M acepta w si existe una ejecucion de M sobre w que termina en un estado final
+
+
+#### Interpretaciones
+
+Puede ser visto como:
+
+1. Paralelización infinito
+2. Guessing and verifying
+
+NO es aleatoriedad, y cada input siempre tiene la misma salida
