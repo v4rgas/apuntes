@@ -64,3 +64,71 @@ Es el standard para BD relacionales.
 
 - Sort: $\tau_{A1, A2, ..., An}(R)$
 
+# Almacenamiento de datos
+## Niveles de almacenamiento
+
+### No volatil
+- Cinta magnetica
+- HDD
+- SSD
+
+### Volatil
+- RAM
+- Cache
+- CPU
+
+## Unidades minimas de memoria
+- Sector: La unidad mínima de almacenamiento en un disco.
+- Bloque: Conjunto de sectores que el sistema operativo gestiona como una sola unidad.
+- Página: Unidad mínima de memoria gestionada en la memoria virtual.
+
+
+### Demora en la busqueda de datos
+
+$$TiempoTotal = SeekTime + RotationalDelay + TransferTime$$
+
+
+## Localidad de los datos
+
+Si las tuplas t y t' son parte de la misma relaciones entonces almacenar t:
+
+- en el mismo bloque que t'
+- en el mismo track que t'
+- en el mismo cilindro que t'
+- en el cilindro adyacente a t'
+
+
+## Pre fetch
+
+Es la estrategia de traer datos antes de que sean necesarios.
+
+Para una que requiere un bloque de datos, se traen los bloques adyacentes.
+
+## Planificacion del disco
+
+Dado una secuencia de peticiones, se busca minimizar el tiempo TiempoTotal
+
+### Algoritmo del ascensor
+
+- Disco es como un ascensor, donde los pisos son los cilindros.
+- Brazo del disco mantiene su dirección si quedan peticiones en la misma dirección.
+
+
+## Multipes discos
+
+Distribuir tuplas en múltiples discos para así tener acceso concurrente a los datos.
+
+## Comparacion de optimizaciones
+
+- OLAP: On-line Analytical Processing, consultas que no requieren respuesta instantanea, solo un proceso usando el disco
+- OLTP: On-line Transaction Processing, consultas que requieren respuesta instantanea, como transacciones de tarjetas de crédito.
+
+OLAP: Localidad de los datos, prefetch
+
+OLTP: Planificación del disco, múltiples discos
+
+
+## Nuevas tecnologias
+
+- SSD: Solid State Drive, no tiene partes moviles, por lo que es más rápido. Es más caro que un HDD.
+
