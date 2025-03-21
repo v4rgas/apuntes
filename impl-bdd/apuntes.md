@@ -132,3 +132,64 @@ OLTP: Planificación del disco, múltiples discos
 
 - SSD: Solid State Drive, no tiene partes moviles, por lo que es más rápido. Es más caro que un HDD.
 
+# Buffer manager
+
+Es un mediador entre el disco y la memoria principal
+
+Cuenta con una cantidad restringida de memoria ram.
+
+## Frames
+
+Cada frame tiene dos variables:
+
+1. #pin = cantidad de procesos que estan usando la pagina
+2. Dirty = Si es necesario guardar la pagina en disco
+
+## Funciones
+
+- pin(pageno): Solicita la pagina pageno
+    - Si la pagina no esta en memoria, se trae del disco
+        - Se selecciona un frame vacio
+        - Se trae la pagina pageno a memoria y se guarda en el frame
+        - Se actualiza FRAME.#pin = 1, FRAME.dirty = 0
+    - Si la pagina esta en memoria, se actualiza FRAME.#pin += 1
+    - Buffer manager retorna la direccion de memoria de la pagina
+
+- unpin(pageno, dirty)
+    - Se solicita liberacion de la pagina pageno
+    - Se decrementa FRAME.#pin
+    - Se actualiza FRAME.dirty = dirty
+
+### Requisitos
+1. Cada proceso debe mantener las funcione pin y unpin correctamente anidadas.
+2. Cada proceso debe liberar todas las paginas que ha solicitado lo antes posible.
+
+
+## Politicas de reemplazo
+
+La efectividad de un buffer manager depende de la politica de reemplazo.
+
+- FIFO: Reemplaza la pagina que lleva más tiempo en memoria.
+- LRU: Reemplaza la pagina que menos se ha usado.
+- CLOCK: Reemplazan las paginas de manera circular si no han sido usadas.
+- Random: Reemplaza una pagina al azar.
+
+### Tecnicas adicionales
+
+- Prefetch: Trae las paginas que se van a usar en el futuro.
+- Page fixing: Fija una pagina en memoria para que no sea reemplazada.
+- Buffer particionado: Divide la memoria en partes para diferentes procesos.
+
+### Ventajas de usar un buffer manager propio
+- Mayor conocimiento del patron de acceso a los datos.
+- Politicas de reemplazo personalizadas.
+- Pin y unpin personalizados.
+- Acceso fino por parte del administrador de transacciones.
+
+# Indices
+## Interfaz de acceso
+1. Create or destroy
+2. Insert
+3. Delete
+4. Get
+5. Scan
