@@ -132,3 +132,26 @@ OLTP: Planificación del disco, múltiples discos
 
 - SSD: Solid State Drive, no tiene partes moviles, por lo que es más rápido. Es más caro que un HDD.
 
+# Heapfile
+
+## Representacion de una tupla
+
+- Relacion: Players(pId, pName, pBirthdate, pDescription)
+- Tupla: (1, 'Messi', '1987-06-24', 'Best player in the world')
+
+
+## Record ID
+
+Un identificador unico para cada tupla en una relacion.
+
+Necesario para mantener la integridad de los datos.
+
+Usualmente $RID = (p, s)$, donde p es el numero de pagina y s es el slot.
+
+## Tipo de almacenamiento
+
+1 pagina = 1 bloque = 8KB
+
+- Tamaños: fijo o variable
+- Atomicidad: spanned o unspanned
+- Tipos de tuplas en una misma pagina: homogeneo o heterogeneo

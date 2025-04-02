@@ -233,3 +233,106 @@ Puede ser visto como:
 2. Guessing and verifying
 
 NO es aleatoriedad, y cada input siempre tiene la misma salida
+
+# Espacio
+
+## Cinta de trabajo
+
+Decimos que una maquina de turing tiene cinta de trabajo si
+
+$$\delta(p,a) = (q,(b,d) \implies a = b$$
+
+## Defincion 
+
+Sea una TM con k cintas de trabajo
+
+$$space_M(w) := \Sigma_{i=2}^{k+1} (|v_j|-1)$$
+
+Intuitivamente, es la cantidad de celdas que se usan en la cinta de trabajo
+
+$$space_M(w) := max\{space_M(\rho)\}  \leq S(|w|)$$
+
+
+## Eficiencia no determinismo
+
+Dada una maquina de Turing no determinista M que corre en tiempo $T(n)$,
+sabemos que existe una maquina determinista que corre en tiempo $c^T(n)$ para algun $c > 1$ 
+con c cintas
+
+# Propiedades de las clases de complejidad
+
+## Propiedades simples
+
+## Compresion de cintas
+Sea $M$ una maquina de Turing que corre en tiempo $T(n)$ y espacio $S(n)$. Existe una maquina de turing determinista con k cintas de trabajo que ahora corre en espacio
+
+$$S(n)/c$$
+
+o sea
+
+$$DSPACE(c \times S(n)) \subseteq DSPACE(S(n))$$
+
+## Aceleración Lineal
+Sea $M$ una máquina de Turing determinista con $k$ cintas ($k > 1$) que corre en tiempo $T(n)$.  
+Para todo $c \in \mathbb{N} \setminus \{0\}$, existe una máquina de Turing determinista $M_c$ con $k$ cintas que corre en tiempo:
+
+$$4 \cdot \lceil \frac{T(n)}{c} \rceil + n + \lceil \frac{n}{c} \rceil$$
+
+tal que:
+
+$$L(M) = L(M_c)$$
+
+# Clases P, NP, PSpace y otras
+
+## Tiempo no determinista
+Se define el tiempo no determinista como
+
+$NP := \bigcup_{k \in \mathbb{N}} NDTIME(n^k)$
+
+$NEXP := \bigcup_{k \in \mathbb{N}} NDTIME(2^{n^k})$
+
+## Espacio
+
+$$L := DSPACE(log(n))$$
+
+$$PSPACE := \bigcup_{k \in \mathbb{N}} DSPACE(n^k)$$
+
+$$EXPSPACE := \bigcup_{k \in \mathbb{N}} DSPACE(2^{n^k})$$
+
+## Espacio no determinista
+
+$$NL := NSPACE(log(n))$$
+$$NPSPACE := \bigcup_{k \in \mathbb{N}} NSPACE(n^k)$$
+$$NEXPSPACE := \bigcup_{k \in \mathbb{N}} NSPACE(2^{n^k})$$
+
+## Relaciones entre clases
+
+1. $DTIME(n) \subseteq NTIME(n)$
+2. $SPACE(n) \subseteq NSPACE(n)$
+
+Si $T(n) \in O(T'(n))$ y $S(n) \in O(S'(n))$ entonces
+
+3. $DTIME(T(n)) \subseteq DTIME(T'(n))$
+4. $DSPACE(S(n)) \subseteq DSPACE(S'(n))$
+
+## Relacion entre tiempo y espacio
+
+1. $DTIME(T(n)) \subseteq DSPACE(T(n))$
+2. $NTIME(T(n)) \subseteq NSPACE(T(n))$
+
+
+Si lo puedo resolver en tiempo T(n), y en cada paso a lo mas me muevo a una celda, entonces el espacio que uso es T(n) (en el peor de los casos)
+
+
+1. $DSPACE(S(n)) \subseteq DTIME(c^{S(n)})$
+2. $NSPACE(S(n)) \subseteq NTIME(c^{S(n)})$
+
+Notemos que la mayor cantida de configuracion esta dada por
+
+$$|Q| \cdot n \cdot |\Gamma|^{S(n)} \cdot S(n)$$
+
+Como no puede repetir configuracions (si no se queda pegada) entonces el tiempo es menor o igual a la cantidad de configuraciones
+
+## Relacion tiempo no determinsta y espacio
+
+1. $NTIME(T(n)) \subseteq DSPACE(T(n))$
