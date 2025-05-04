@@ -193,3 +193,43 @@ La efectividad de un buffer manager depende de la politica de reemplazo.
 3. Delete
 4. Get
 5. Scan
+
+## Que es un indice
+Un indice es una estructura de datos que permite lookup rapido y modificaciones a data entries por medio de un search key.
+
+Metodo de acceso que optimiza el acceso a los datos para una consulta.
+
+1. Un indice optimiza un subconjunto de consutlas
+2. Tambien puede hacer otras consultas mas costosas
+3. Es posible sacrificar tiempo por espacio
+
+
+
+### Que nos gustaria optimizar (lookups)
+1. Busqueda por valor (value query)
+2. Busqueda por rango (range query)
+3. Busqueda por match (query by match)
+
+El parametro mas importante de optimizar es el tiempo de acceso
+
+## Componentes de un indice
+1. Search key = parametro de busqueda, subconjunto de atributos en una relacion
+2. Index entry = puntero o valor de la tupla
+3. Data entry = tupla
+
+## Clustered vs non clustered
+- Clustered: Indice para el cual el orden de las data entries es el mismo que el orden de los records en el disco.
+- Non clustered: No clustered.
+
+Son usualmente conocidos como indice primario y secundario respectivamente.
+
+## Densos y dispersos
+
+- Denso: Un index entry por cada record de la relacion.
+- Disperso: No todos los records tienen un index entry.
+
+## Tipos de indices
+1. Basado en arboles: ISAM, B+Tree
+2. Basado en hashing: Extendable hashing
+
+# Indices basados en arboles
