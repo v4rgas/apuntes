@@ -233,3 +233,26 @@ Son usualmente conocidos como indice primario y secundario respectivamente.
 2. Basado en hashing: Extendable hashing
 
 # Indices basados en arboles
+# Heapfile
+
+## Representacion de una tupla
+
+- Relacion: Players(pId, pName, pBirthdate, pDescription)
+- Tupla: (1, 'Messi', '1987-06-24', 'Best player in the world')
+
+
+## Record ID
+
+Un identificador unico para cada tupla en una relacion.
+
+Necesario para mantener la integridad de los datos.
+
+Usualmente $RID = (p, s)$, donde p es el numero de pagina y s es el slot.
+
+## Tipo de almacenamiento
+
+1 pagina = 1 bloque = 8KB
+
+- Tamaños: fijo o variable
+- Atomicidad: spanned o unspanned
+- Tipos de tuplas en una misma pagina: homogeneo o heterogeneo
