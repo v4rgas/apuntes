@@ -107,6 +107,29 @@ $$\Pr[\text{Adversario gane Hash-Col}_n] \leq f(n)$$
 
 En otras palabras, la probabilidad de que cualquier adversario eficiente encuentre una colisión es despreciable.
 
+### HMAC
+
+La implementacion ingenua de HMAC es:
+$$\text{HMAC}_k(m) = h(m||k)$$
+
+Sin embargo, no es segura porque se puede realizar un length extension attack.
+
+Una implementación segura de HMAC es:
+$$\text{HMAC}_k(m) = h(k_1 || h(k_2 || m))$$
+
+donde $k_1$ y $k_2$ ocupan exactamente un bloque de longitud $n$
+
+No se conocen ataques practicos contra HMAC-MD5.
+
+### Key Derivation Functions (KDFs)
+
+#### Password-Based Key Derivation Function
+
+PBKDF1(hashfunction, password, salt, iterations, keylen)
+Es una función de derivación de claves basada en contraseñas que toma una contraseña, un salt, un número de iteraciones y una longitud de clave deseada, y produce una clave derivada.
+
+PBKDF2(HMAC, password, salt, iterations, keylen)
+
 ## Chapter 4: Message authentication codes
 
 La encriptacion no es suficiente para garantizar la integridad de los mensajes (o sea, que no hayan sido alterados). Para esto se utilizan los códigos de autenticación de mensajes (MACs).
@@ -200,3 +223,231 @@ En cada ronda de AES, se realizan las siguientes operaciones:
 5. Generamos nuevas claves de ronda a partir de la clave original.
 
 La gracia es que el paso 2 y 3 nos dan la difusion, y el paso 1 nos da la confusion.
+
+## Construir una funcion de hash
+
+Podriamos pensar que podemos construir una función de hash a partir de una funcion de encriptación, pero esto no es tan sencillo. Necesitamos que la función de hash sea resistente a colisiones y resistente a preimágenes.
+
+### Intento 1: $h(u||v) = \text{Enc}_u(v)$
+
+No funciona porque existe un algoritmo eficiente para contruir preimagenes.Esto ocurre para cualquier esquema criptografico.
+
+Dados $u,v \in \{0,1\}^n$, sea $x = h(u||v) = \text{Enc}_u(v)$.
+
+Considere $u' \in \{0,1\}^n$ arbitrario, y defina $v' = \text{Dec}_{u'}(x)$.
+
+Tenemos que:
+$$h(u'||v') = \text{Enc}_{u'}(v') = \text{Enc}_{u'}(\text{Dec}_{u'}(x)) = x$$
+
+Por lo tanto, $(u'||v')$ es una preimagen de $x$ para cualquier $u'$ elegido arbitrariamente. Esto demuestra que la función no es resistente a preimágenes, ya que dado cualquier valor hash $x$, podemos encontrar eficientemente una preimagen eligiendo cualquier $u'$ y calculando $v' = \text{Dec}_{u'}(x)$.
+
+### Davies-Meyer construction
+
+$$h(u||v) = \text{Enc}_u(v) \oplus v$$
+
+Esta construccion es resistente a colisiones si la F es un cifrado ideal
+
+### Merkle-Damgård construction
+
+Digamos que tenemos una funcion de hash $h: M \rightarrow H$ para mensajes de longitud fija y queremos construir una funcion de hash $H: M^* \rightarrow H$ que tome mensajes de longitud variable.
+
+podemos hacerlo de la siguiente manera:
+
+1. Definimos un IV (vector de inicialización) aleatorio de longitud $n$.
+2. Dividimos el mensaje en bloques de longitud fija $n$, haciendo padding si es necesario.
+3. Para cada bloque $m_i$ del mensaje, aplicamos la función de hash de la siguiente manera:
+
+   $$ H_i = h(H_{i-1} || m_i) $$
+
+La intuición es que si h es resistente a colisiones, entonces en cada paso del proceso iterado no se pueden producir dos entradas distintas que generen la misma salida. Al procesar un mensaje largo en bloques encadenados, cualquier colisión en la función hash completa implicaría forzosamente una colisión en algún paso intermedio.
+
+## Chapter 3: Private Key Encryption
+
+### Modes of operation
+
+Supongamos que tenemos un mensaje m de longitud variable, con padding dividido en l bloques de longitud fija n.
+
+#### Electronic Codebook (ECB)
+
+En el modo ECB, cada bloque de mensaje se cifra de manera independiente usando la misma clave. Esto significa que bloques idénticos en el mensaje original producirán bloques idénticos en el texto cifrado.
+
+#### Cipher Block Chaining (CBC)
+
+En CBC, se elige un IV aleatorio de longitud $n$ como bloque inicial $c_0$.
+
+**Cifrado:** Para $i = 1$ a $\ell$: $c_i := F_k(c_{i-1} \oplus m_i)$
+
+**Descifrado:** Para $i = 1$ a $\ell$: $m_i := F_k^{-1}(c_i) \oplus c_{i-1}$
+
+El texto cifrado final es $c_0, c_1, \ldots, c_\ell$ (incluye el IV). Bloques idénticos producen cifrados diferentes según su posición.
+
+#### CPA-secure encryption
+
+La seguridad CPA (Chosen Plaintext Attack) se define mediante el siguiente juego:
+
+**Juego CPA-Indistinguishability:**
+
+1. El verificador toma $k$ en base a $\text{Gen}(1^n)$
+2. El adversario puede preguntar lo que quiera a $\text{Enc}_k(\cdot)$
+3. El adversario genera mensajes $m_0$ y $m_1$ y los envía al verificador
+4. El verificador elige $b \in \{0,1\}$ y envía al adversario $c = \text{Enc}_k(m_b)$
+5. El adversario puede preguntar lo que quiera a $\text{Enc}_k(\cdot)$
+6. El adversario elige $b' \in \{0,1\}$ y gana si $b = b'$
+
+Un esquema criptográfico es seguro frente a ataques de texto elegido (CPA-secure) si:
+
+Para todo adversario $A$ de tiempo polinomial:
+
+$$\Pr[A \text{ gane el juego}] - \frac{1}{2}$$
+
+es una función despreciable en $n$.
+
+Notemos que si F es una función pseudorandom, entonces el esquema CBC es CPA-secure.
+
+## Chapter 12: Public-Key Encryption
+
+Dos problemas principales de la criptografia simetrica son:
+
+1. Dos usuarios deben reunirse para compartir una clave secreta.
+2. El numero de claves crece proporcionalmente al numero de usuarios.
+
+El cifrado asimetrico resuelve estos problemas
+
+1. Cada usuario tiene una clave pública $P_a$ y una clave privada $S_a$.
+2. Ambas claves estan relacionadasm $P_a$ se usa para cifrar y $S_a$ para descifrar.
+
+## Propiedades básicas
+
+Para que un esquema de cifrado asimétrico sea correcto, debe cumplir la propiedad fundamental de que el descifrado de un mensaje cifrado devuelva el mensaje original:
+
+$$\text{Dec}_{S_a}(\text{Enc}_{P_a}(m)) = m$$
+
+donde $P_a$ es la clave pública, $S_a$ es la clave privada correspondiente, y $m$ es el mensaje original.
+
+## RSA
+
+Las claves públicas y privadas se generan a partir de dos números primos, P y Q, de la siguiente manera:
+
+1. Se eligen dos numeros primos grandes P y Q.
+2. Se calcula $N = P \cdot Q$.
+3. Se define $\phi(N) = (P-1)(Q-1)$.
+4. Se genera un numero d tal que $MCD(d, \phi(N)) = 1$. (O sea, d es coprimo con $\phi(N)$).
+5. Se calcula $e$ tal que $e \cdot d \equiv 1 \mod \phi(N)$.
+6. $S_a =(d, N)$ es la clave privada, y $P_a = (e, N)$ es la clave pública.
+
+Luego,
+
+- $\text{Enc}_{P_a}(m) = m^e \mod N$
+- $\text{Dec}_{S_a}(c) = c^d \mod N$
+
+Notemos que para ejecutar de manera eficiente este algoritmo necesitamos:
+
+- Generacion aleatoria de numeros primos grandes
+- Operaciones basicas de aritmética modular
+- MCD
+- Generacion de un primo relativo
+- Algoritmo extendido de Euclides (para inverso modular)
+- Exponenciación rapida
+
+## Chapter 11: Key Management and the Public-Key Revolution
+
+### One way functions
+
+Una función unidireccional es una función que es fácil de calcular en una dirección.
+
+Un ejemplo de esto en RSA es:
+
+$$f(x) = x^e \mod N$$
+
+Para los subgrupos de $Z_p^*$, es dificil calcular el logaritmo discreto.
+
+#### Logaritmo discreto
+
+Dado $g \in G$ y el valor $y = g^x$, si $|\langle g \rangle|$ es grande, es difícil calculaur $x$.
+
+Siendo $g \in G$ un elemento que genera un subgrupo grande, la función $f(x) = g^x$ es una one-way function.
+
+### Diffie-Hellman Key Exchange
+
+Protocolo para acordar una clave secreta en un canal inseguro.
+
+- **Público**: primo \( p \), base \( g \)  
+- **Secreto**: \( x \) (Alice), \( y \) (Bob)
+
+1. Alice calcula y envía \( A = g^x \bmod p \) (**público**)  
+2. Bob calcula y envía \( B = g^y \bmod p \) (**público**)  
+3. Clave compartida:  
+   - Alice obtiene \( K = B^x \bmod p \)  
+   - Bob obtiene \( K = A^y \bmod p \)  
+   - Ambos comparten \( K = g^{xy} \bmod p \) (**secreta**)
+
+### ElGamal
+
+Protocolo para cifrado asimétrico basado en el intercambio de claves Diffie-Hellman.
+
+**Configuración inicial:**
+
+- **Público**: grupo $\langle g \rangle$ de orden primo $q$
+- **Clave privada de Alice**: $x \in \{1, ..., q\}$
+- **Clave pública de Alice**: $g^x$
+
+**Cifrado (Bob envía mensaje $m$ a Alice):**
+
+1. Bob genera una clave efímera aleatoria $y \in \{1, ..., q\}$
+2. Bob calcula $s = g^{xy}$ (secreto compartido)
+3. Bob envía el par $(m \cdot s, g^y)$ a Alice
+
+**Descifrado (Alice recibe $(m \cdot s, g^y)$):**
+
+1. Alice calcula $s^{-1} = g^{y(q-x)}$
+2. Alice recupera el mensaje: $m \cdot s \cdot s^{-1} = m$
+
+# Chapter 13: Digital Signatures
+
+La idea de las firmas digitales es demostrar que un mensaje fue enviado por una persona en particular y que no ha sido modificado.
+
+## Firmas digitales con RSA
+
+Supongamos que $P_a = (e, N)$ es la clave pública de Alice y $S_a = (d, N)$ es su clave privada.
+
+Notemos que:
+
+$$Enc_{P_a}((Dec_{S_a}(m)) = m$$
+
+Entondces, si Alice quiere firmar un mensaje $m$, puede calcular su firma como:
+$$s = Dec_{S_a}(m)$$
+
+Tambien, para que sea mas rapido se puede firmar el hash del mensaje en vez del mensaje completo.
+
+## Firmas de Schorr
+
+Firmas basadas en el problema del logaritmo discreto.
+
+Supongamos que dado un grupo finito $(G, *)$ y un elemento generador $g \in G$ tal que $|\langle g \rangle| = q$, donde:
+
+- $G$, $g$ y $q$ son públicos
+
+- $x \in \{1, ..., q\}$ es la clave privada de Alice
+- $y=g^x$ es la clave pública de Alice
+
+Alice firma m de la siguiente manera:
+
+1. Elige un número aleatorio $k \in \{1, ..., q-1\}$
+2. Calcula $c = h(g^r || m)$, donde $h$ es una función de hash
+3. Calcula $s = r + c \cdot x$
+4. Envía la firma $(c, s)$ a Bob
+
+Bob verifica la firma de la siguiente manera:
+
+1. Calcula $\alpha = g^s \cdot y^{q-c}$
+2. Verifica si $c = h(\alpha || m)$
+
+## Firmas de anillo
+
+Permite a un grupo de personas firmar un mensaje sin revelar quién lo firmó.
+
+El firmante es anonimo, pero se puede verificar que el mensaje fue firmado por alguien del grupo y los otros miembros grupo no necesitan consentir la firma.
+
+- Linkable Rin Signatures (LRS): Permite verificar que dos firmas fueron hechas por la misma persona pero no revela quién es.
+- Traceable Ring Signatures (TRS): Si dos firmas fueron hechas por la misma persona, se puede revelar quién es.
+
