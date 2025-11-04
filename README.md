@@ -107,6 +107,8 @@ Ver [LICENSE.md](LICENSE.md)
 
 ## Nota Final
 
-Ya me titulé, así que este repo no va a tener más updates. Muchas gracias a todos los que han pasado por acá y han usado estos apuntes, es bacán saber que le sirvieron a otra gente. Ojalá les sigan siendo útiles.
+Ya me titulé, así que este repo no va a tener más updates de mi parte. Muchas gracias a todos los que han pasado por acá y han usado estos apuntes, es bacán saber que le sirvieron a otra gente. Ojalá les sigan siendo útiles.
+
+Si quieren agregar correcciones o mejoras, siéntanse libres de mandar PRs.
 
 Un abrazo!
