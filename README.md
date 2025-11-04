@@ -105,6 +105,11 @@ Ver [LICENSE.md](LICENSE.md)
 
 ---
 
+## Otros Recursos Útiles
+
+- [Resumen IIC3413 - Implementación de Bases de Datos](https://github.com/v4rgas/resumen-iic3413)
+- [Resumen Electromagnetismo](https://github.com/v4rgas/resumen-electro)
+
 ## Nota Final
 
 Ya me titulé, así que este repo no va a tener más updates de mi parte. Muchas gracias a todos los que han pasado por acá y han usado estos apuntes, es bacán saber que le sirvieron a otra gente. Ojalá les sigan siendo útiles.
